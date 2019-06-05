@@ -1,5 +1,14 @@
+import {
+  Heading2,
+  Heading3,
+  Heading4,
+  List,
+  PageTitle,
+  Paragraph,
+} from '@octopusthink/nautilus';
 import React from "react";
 import Helmet from "react-helmet";
+import RehypeReact from 'rehype-react';
 import { graphql } from "gatsby";
 import Layout from "../layout";
 import UserInfo from "../components/UserInfo/UserInfo";
@@ -21,6 +30,21 @@ export default class PostTemplate extends React.Component {
     if (!post.category_id) {
       post.category_id = config.postDefaultCategoryID;
     }
+
+    const renderAst = new RehypeReact({
+      createElement: React.createElement,
+      components: {
+        h1: PageTitle,
+        h2: Heading2,
+        h3: Heading3,
+        h4: Heading4,
+        p: Paragraph,
+        ul: List,
+        ol: () => <List ordered />,
+        li: List.Item,
+      },
+    }).Compiler;
+
     return (
       <Layout>
         <div>
@@ -28,14 +52,15 @@ export default class PostTemplate extends React.Component {
             <title>{`${post.title} | ${config.siteTitle}`}</title>
           </Helmet>
           <SEO postPath={slug} postNode={postNode} postSEO />
-          <div>
-            <h1>{post.title}</h1>
-            <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
+          <article>
+            <PageTitle>{post.title}</PageTitle>
+            {/* <div dangerouslySetInnerHTML={{ __html: postNode.html }} /> */}
+            {renderAst(postNode.htmlAst)}
             <div className="post-meta">
               <PostTags tags={post.tags} />
             </div>
             <UserInfo config={config} />
-          </div>
+          </article>
         </div>
       </Layout>
     );
@@ -46,7 +71,7 @@ export default class PostTemplate extends React.Component {
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+      htmlAst
       timeToRead
       excerpt
       frontmatter {

@@ -1,3 +1,4 @@
+import { List, Paragraph } from "@octopusthink/nautilus";
 import React, { Component } from "react";
 import { Link } from "gatsby";
 import { css } from "@emotion/core";
@@ -10,21 +11,21 @@ class SiteHeader extends Component {
         display: flex;
         justify-content: space-between;
         `}>
-        <p><Link to="/">Octopus Think</Link></p>
+        <Paragraph small><Link to="/">Octopus Think</Link></Paragraph>
 
         <nav>
-          <ul css={css`
+          <List css={css`
             list-style-type: none;
             display: flex;
             grid-gap: 8px;
 
           `}>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/services">Services</Link></li>
-            <li><Link to="/work">Work</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
-          </ul>
+            <List.Item><Link to="/">Home</Link></List.Item>
+            <List.Item><Link to="/about">About</Link></List.Item>
+            <List.Item><Link to="/services">Services</Link></List.Item>
+            <List.Item><Link to="/work">Work</Link></List.Item>
+            <List.Item><Link to="/contact">Contact</Link></List.Item>
+          </List>
         </nav>
       </header>
     );
