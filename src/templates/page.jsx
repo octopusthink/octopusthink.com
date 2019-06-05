@@ -1,5 +1,8 @@
-import React from "react"
-import { graphql } from "gatsby"
+import React from "react";
+import Helmet from "react-helmet";
+import { graphql } from "gatsby";
+import Layout from "../layout";
+import SEO from "../components/SEO/SEO";
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
@@ -7,6 +10,10 @@ export default function Template({
   const { markdownRemark } = data; // data.markdownRemark holds our post data
   const { frontmatter, html } = markdownRemark;
   return (
+    <Helmet>
+      <title>{`${post.title} | ${config.siteTitle}`}</title>
+    </Helmet>
+    <SEO postPath={slug} postNode={postNode} postSEO />
     <div className="page-container">
       <div className="page">
         <h1>{frontmatter.title}</h1>
