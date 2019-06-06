@@ -18,7 +18,7 @@ export default class MainLayout extends React.Component {
         </Helmet>
         <SiteHeader />
         <div css={css`
-          max-width: 800px;
+          max-width: 680px;
         `}>
         {children}
         </div>
