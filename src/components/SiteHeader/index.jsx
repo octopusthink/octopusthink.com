@@ -10,22 +10,38 @@ class SiteHeader extends Component {
       <header css={css`
         display: flex;
         justify-content: space-between;
+        font-weight: 600;
+        border-bottom: 3px solid #393F49;
+        font-family: -apple-system,BlinkMacSystemFont,San Francisco,Roboto,Segoe UI,Helvetica Neue,sans-serif;
+        font-size: 1.8rem;
+        font-weight: 500;
+        align-items: center;
+
+        a {
+          text-decoration: none;
+          border: none;
+          color: #393F49;
+          padding-bottom: 8px;
+
+          &:hover {
+            color: #A42769;
+          }
+        }
         `}>
-        <Paragraph small><Link to="/">Octopus Think</Link></Paragraph>
+        <Link to="/">Octopus Think</Link>
 
         <nav>
-          <List css={css`
+          <ul css={css`
             list-style-type: none;
             display: flex;
-            grid-gap: 8px;
-
+            grid-gap: 24px;
           `}>
-            <List.Item><Link to="/">Home</Link></List.Item>
-            <List.Item><Link to="/about">About</Link></List.Item>
-            <List.Item><Link to="/services">Services</Link></List.Item>
-            <List.Item><Link to="/work">Work</Link></List.Item>
-            <List.Item><Link to="/contact">Contact</Link></List.Item>
-          </List>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About</Link></li>
+            <li><Link to="/services">Services</Link></li>
+            <li><Link to="/work">Work</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
+          </ul>
         </nav>
       </header>
     );
