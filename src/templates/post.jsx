@@ -1,7 +1,5 @@
 import {
-  Heading2,
-  Heading3,
-  Heading4,
+  Heading,
   List,
   PageTitle,
   Paragraph,
@@ -35,13 +33,13 @@ export default class PostTemplate extends React.Component {
       createElement: React.createElement,
       components: {
         h1: PageTitle,
-        h2: Heading2,
-        h3: Heading3,
-        h4: Heading4,
+        h2: (props) => <Heading {...props} level={2} />,
+        h3: (props) => <Heading {...props} level={3} />,
+        h4: (props) => <Heading {...props} level={4} />,
         p: Paragraph,
-        ul: List,
-        ol: () => <List ordered />,
-        li: List.Item,
+        ul: (props) => <List {...props} />,
+        ol: (props) => <List {...props} ordered />,
+        li: (props) => <List.Item {...props} />,
       },
     }).Compiler;
 

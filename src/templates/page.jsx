@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../layout";
@@ -10,18 +10,20 @@ export default function Template({
   const { markdownRemark } = data; // data.markdownRemark holds our post data
   const { frontmatter, html } = markdownRemark;
   return (
-    <Helmet>
-      <title>{`${post.title} | ${config.siteTitle}`}</title>
-    </Helmet>
-    <SEO postPath={slug} postNode={postNode} postSEO />
-    <div className="page-container">
-      <div className="page">
-        <h1>{frontmatter.title}</h1>
-        <div
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
+    <Fragment>
+      <Helmet>
+        <title>{`${post.title} | ${config.siteTitle}`}</title>
+      </Helmet>
+      <SEO postPath={slug} postNode={postNode} postSEO />
+      <div className="page-container">
+        <div className="page">
+          <h1>{frontmatter.title}</h1>
+          <div
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
+        </div>
       </div>
-    </div>
+    </Fragment>
   )
 }
 

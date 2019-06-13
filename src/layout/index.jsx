@@ -17,10 +17,12 @@ export default class MainLayout extends React.Component {
           <meta name="description" content={config.siteDescription} />
         </Helmet>
         <SiteHeader />
-        <div css={css`
-          max-width: 680px;
-        `}>
-        {children}
+        <div css={
+          css`
+            max-width: 680px;
+          `}
+        >
+          {children}
         </div>
       </Nautilus>
     );
