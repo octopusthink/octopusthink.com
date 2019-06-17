@@ -11,16 +11,6 @@ body {
     padding: 40px;
 }
 
-@media screen and (min-width: 480px) {
-  body {
-    padding: 80px;
-  }
-
-  h1 {
-    font-size: 4rem;
-  }
-}
-
 h2 {
   padding-top: 1.2rem;
   margin-top: 7.2rem;
@@ -36,4 +26,21 @@ a {
 
 a:hover {
   color: #A42769;
+}
+
+
+@media screen and (max-width: 479px) {
+  h1 {
+    font-size: 4.6rem !important;
+  }
+
+  h2 {
+    font-size: 3.6rem !important;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  body {
+    padding: 80px;
+  }
 }
