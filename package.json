@@ -6,7 +6,7 @@
 	"dependencies": {
 		"@emotion/core": "^10.0.10",
 		"@emotion/styled": "^10.0.12",
-		"@octopusthink/nautilus": "^0.1.0",
+		"@octopusthink/nautilus": "git://github.com/octopusthink/nautilus.git",
 		"emotion-theming": "^10.0.10",
 		"gatsby": "^2.9.2",
 		"gatsby-image": "^2.1.4",
