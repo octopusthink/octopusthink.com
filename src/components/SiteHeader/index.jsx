@@ -21,6 +21,10 @@ class SiteHeader extends Component {
           font-weight: 500;
           align-items: center;
 
+          @media screen and (max-width: 479px) {
+            margin-bottom: 64px;
+          }
+
           a {
             text-decoration: none;
             border: none;
@@ -49,7 +53,8 @@ class SiteHeader extends Component {
             align-items: start !important;
 
             @media screen and (max-width: 479px) {
-              display: none !important;
+              font-size: 2.6rem !important;
+              padding: 8px 0 !important;
             }
           `}
         >
