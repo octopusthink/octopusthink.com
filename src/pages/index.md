@@ -1,7 +1,11 @@
 ---
-path: "/"
-title: "Hello"
-slug: ""
+path: '/'
+title: 'Hello'
+slug: ''
 ---
 
-Hello there! We're Octopus Think, a duo based in Scotland with over three decades of combined software design, development, and DevOps experience.
+## Technology that works for you.
+
+We believe that **technology is a tool to make the world a better place**. Want to communicate better, improve your process, and accomplish your goals?
+
+[Learn more](/about) or [get in touch](/contact).
