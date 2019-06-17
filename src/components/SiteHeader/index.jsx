@@ -21,7 +21,7 @@ class SiteHeader extends Component {
           font-weight: 500;
           align-items: center;
 
-          @media screen and (max-width: 479px) {
+          @media screen and (max-width: 639px) {
             margin-bottom: 64px;
           }
 
@@ -39,7 +39,7 @@ class SiteHeader extends Component {
               color: #a42769;
             }
 
-            @media screen and (max-width: 479px) {
+            @media screen and (max-width: 639px) {
               padding: 16px 8px;
               font-size: 1.6rem;
             }
@@ -52,7 +52,7 @@ class SiteHeader extends Component {
             font-size: 2.6rem;
             align-items: start !important;
 
-            @media screen and (max-width: 479px) {
+            @media screen and (max-width: 639px) {
               font-size: 2.6rem !important;
               padding: 8px 0 !important;
             }
@@ -65,10 +65,11 @@ class SiteHeader extends Component {
           <ul
             css={css`
               list-style-type: none;
-              display: flex;
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 
 
-              @media screen and (max-width: 479px) {
+              @media screen and (max-width: 639px) {
                 position: fixed;
                 bottom: 0;
                 left: 0;
@@ -82,8 +83,8 @@ class SiteHeader extends Component {
                 border-top: 2px solid #393f49;
               }
 
-              @media screen and (min-width: 480px) {
-                grid-gap: 48px;
+              @media screen and (min-width: 640px) {
+                grid-gap: 24px;
               }
             `}
           >
