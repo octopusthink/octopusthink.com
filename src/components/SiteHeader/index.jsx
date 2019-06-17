@@ -34,6 +34,11 @@ class SiteHeader extends Component {
             &:hover {
               color: #a42769;
             }
+
+            @media screen and (max-width: 479px) {
+              padding: 16px 8px;
+              font-size: 1.6rem;
+            }
           }
         `}
       >
@@ -42,6 +47,10 @@ class SiteHeader extends Component {
           css={css`
             font-size: 2.6rem;
             align-items: start !important;
+
+            @media screen and (max-width: 479px) {
+              display: none !important;
+            }
           `}
         >
           {config.siteTitle}
@@ -52,7 +61,25 @@ class SiteHeader extends Component {
             css={css`
               list-style-type: none;
               display: flex;
-              grid-gap: 48px;
+
+
+              @media screen and (max-width: 479px) {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin-left: -40px;
+                grid-gap: 0;
+                justify-content: space-between;
+                width: calc(100% + 40px);
+                background: white;
+                margin-bottom: 0;
+                border-top: 2px solid #393f49;
+              }
+
+              @media screen and (min-width: 480px) {
+                grid-gap: 48px;
+              }
             `}
           >
             <li>
