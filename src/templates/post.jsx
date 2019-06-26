@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import RehypeReact from 'rehype-react';
 import { graphql } from 'gatsby';
 import Layout from '../layout';
-import UserInfo from '../components/UserInfo/UserInfo';
+import Footer from '../components/Footer/Footer';
 import PostTags from '../components/PostTags/PostTags';
 import SEO from '../components/SEO/SEO';
 import config from '../../data/SiteConfig';
@@ -52,8 +52,9 @@ export default class PostTemplate extends React.Component {
 						<div className="post-meta">
 							<PostTags tags={post.tags} />
 						</div>
-						<UserInfo config={config} />
+						{/* <UserInfo config={config} /> */}
 					</article>
+					<Footer config={config} />
 				</div>
 			</Layout>
 		);
