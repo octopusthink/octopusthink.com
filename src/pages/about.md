@@ -40,7 +40,7 @@ You shouldn't need to compromise on the things you believe just to keep the ligh
 - We leave our egos at the door.
 - We improve with every project.
 
-Are you making the world a better place? We offer a 15% discount for non-profits, governments, and open-source work.
+Are you making the world a better place? We offer a 15% discount for charities, non-profits, and open-source work.
 
 ## Hire us
 
