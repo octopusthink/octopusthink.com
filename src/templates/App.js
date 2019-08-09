@@ -1,3 +1,4 @@
+import { css, Global } from '@emotion/core';
 import Nautilus from '@octopusthink/nautilus';
 import { Link } from 'gatsby';
 import React from 'react';
@@ -16,8 +17,21 @@ export const App = props => {
 				/>
 				<title>Octopus Think</title>
 			</Helmet>
+			<Global
+				styles={css`
+					body {
+						padding: 40px;
+					}
+				`}
+			/>
 			<Header />
-			{children}
+			<div
+				css={css`
+					max-width: 680px;
+				`}
+			>
+				{children}
+			</div>
 		</Nautilus>
 	);
 };
