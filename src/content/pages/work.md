@@ -1,10 +1,9 @@
 ---
 path: '/work/'
-title: 'Our work'
+title: 'Selected projects'
 slug: 'work'
+summary: "We've designed and built all sorts of different apps, websites, and products over the years. Here are just a few of the things we've worked on."
 ---
-
-We've shipped some pretty awesome stuff over the years. Here are some things we're particularly proud of:
 
 ## Firefox Add-ons
 

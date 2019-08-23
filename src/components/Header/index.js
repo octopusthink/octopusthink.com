@@ -15,10 +15,6 @@ const Header = () => {
 				justify-content: space-between;
 				align-items: center;
 				padding: 0.8rem 0.8rem 0.8rem 1.6rem;
-
-				@media screen and (max-width: 639px) {
-					margin-bottom: 64px;
-				}
 			`}
 		>
 			<Link

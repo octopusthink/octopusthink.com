@@ -1,8 +1,9 @@
 ---
-title: 'About us'
+title: 'Who we are'
+summary: 'Hello there! Octopus Think is a digital design & development agency based in Scotland.'
 ---
 
-Hello there! Octopus Think is a digital design & development agency based in Scotland. We believe that staying small allows us to be nimble and adapt easily, and we pride ourselves in building great digital products whilst remaining flexible and responsive throughout the process.
+We believe that staying small allows us to be nimble and adapt easily, and we pride ourselves in building great digital products whilst remaining flexible and responsive throughout the process.
 
 Together, we have over thirty years of experience. We've worked on a wide range of projects with clients of all sizes: from Firefox Add-ons to the new WordPress editor, we've built experiences for hundreds of millions of users across the world.
 

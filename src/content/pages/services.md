@@ -1,10 +1,9 @@
 ---
 path: '/services/'
-title: 'Services'
+title: 'What we do'
 slug: 'services'
+summary: 'If you need smart, passionate, and pragmatic humans (or ocean-dwellers) to help out with your projects, we are here for you!'
 ---
-
-If you need smart, passionate, and pragmatic humans (or ocean-dwellers) to help out with your projects, we're here for you!
 
 We work remotely by default and provide frequent, open updates on your project. We've worked remotely for the past decade, but we can work with you on-site for parts of your project. We're also available to do on-site training and workshops.
 

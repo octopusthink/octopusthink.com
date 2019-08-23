@@ -1,4 +1,4 @@
-import { PageTitle } from '@octopusthink/nautilus';
+import { PageTitle, Paragraph } from '@octopusthink/nautilus';
 import { graphql } from 'gatsby';
 import React from 'react';
 import Helmet from 'react-helmet';
@@ -6,13 +6,14 @@ import Helmet from 'react-helmet';
 import { markdown } from '../utils/markdown';
 
 import App from './app';
+import PageHeader from '../components/PageHeader';
 
 export const Page = props => {
 	const { data } = props;
 
 	const { page } = data;
 	const { htmlAst } = page;
-	const { title } = page.fields;
+	const { summary, title } = page.fields;
 
 	const content = markdown(htmlAst);
 
@@ -21,7 +22,7 @@ export const Page = props => {
 			<Helmet>
 				<title>{title}</title>
 			</Helmet>
-			<PageTitle>{title}</PageTitle>
+			<PageHeader pageTitle={title} summary={summary} />
 			{content}
 		</App>
 	);
@@ -33,6 +34,7 @@ export const pageQuery = graphql`
 			fields {
 				slug
 				title
+				summary
 			}
 			htmlAst
 			rawMarkdownBody
