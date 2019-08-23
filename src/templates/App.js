@@ -5,11 +5,12 @@ import React from 'react';
 import Helmet from 'react-helmet';
 
 import Header from '../components/Header';
+import theme from '../../config/theme';
 
 export const App = props => {
 	const { children } = props;
 	return (
-		<Nautilus config={{ LinkComponent: Link }}>
+		<Nautilus theme={theme} config={{ LinkComponent: Link }}>
 			<Helmet>
 				<meta
 					name="description"
@@ -20,7 +21,7 @@ export const App = props => {
 			<Global
 				styles={css`
 					body {
-						padding: 40px;
+						margin: 0;
 					}
 				`}
 			/>
