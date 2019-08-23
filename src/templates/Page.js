@@ -7,6 +7,7 @@ import { markdown } from '../utils/markdown';
 
 import App from './app';
 import PageHeader from '../components/PageHeader';
+import PageBody from '../components/PageBody';
 
 export const Page = props => {
 	const { data } = props;
@@ -23,7 +24,7 @@ export const Page = props => {
 				<title>{title}</title>
 			</Helmet>
 			<PageHeader pageTitle={title} summary={summary} />
-			{content}
+			<PageBody>{content}</PageBody>
 		</App>
 	);
 };
