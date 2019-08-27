@@ -4,7 +4,8 @@ import { Link } from 'gatsby';
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import Header from '../components/Header';
+import SiteHeader from '../components/SiteHeader';
+import SiteFooter from '../components/SiteFooter';
 import theme from '../../config/theme';
 
 export const App = props => {
@@ -25,14 +26,9 @@ export const App = props => {
 					}
 				`}
 			/>
-			<Header />
-			<div
-				css={css`
-					max-width: 680px;
-				`}
-			>
-				{children}
-			</div>
+			<SiteHeader />
+			{children}
+			<SiteFooter />
 		</Nautilus>
 	);
 };

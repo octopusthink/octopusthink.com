@@ -11,7 +11,7 @@ const PageBody = props => {
 			css={css`
 				background: ${theme.colors.neutral.white};
 				padding: 1.6rem;
-				margin-top: 6.4rem;
+				margin: 6.4rem 0;
 			`}
 		>
 			{children}

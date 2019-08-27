@@ -6,7 +6,7 @@ import Logo from '../Logo';
 import NavigationMenu from '../NavigationMenu';
 import theme from '../../../config/theme';
 
-const Header = () => {
+const SiteHeader = () => {
 	return (
 		<header
 			css={css`
@@ -54,4 +54,4 @@ const Header = () => {
 	);
 };
 
-export default Header;
+export default SiteHeader;
