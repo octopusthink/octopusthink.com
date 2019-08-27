@@ -1,4 +1,4 @@
-import { PageTitle, Paragraph, heading } from '@octopusthink/nautilus';
+import { PageTitle, Paragraph, Tags, heading } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
@@ -8,7 +8,7 @@ import theme from '../../../config/theme';
 import divider from '../../../static/divider.svg';
 
 const PageHeader = props => {
-	const { children, pageTitle, summary } = props;
+	const { children, metadata, pageTitle, summary } = props;
 	return (
 		<header
 			css={css`
@@ -28,9 +28,15 @@ const PageHeader = props => {
 				}
 			`}
 		>
+			{metadata && (
+				<Tags>
+					<Tags.Tag>{metadata}</Tags.Tag>
+				</Tags>
+			)}
 			<PageTitle
 				css={css`
 					color: white;
+					margin: 0.8rem 0 3.2rem 0;
 				`}
 			>
 				{pageTitle}
