@@ -6,13 +6,15 @@ import Helmet from 'react-helmet';
 import { markdown } from '../utils/markdown';
 
 import App from './app';
+import PageHeader from '../components/PageHeader';
+import PageBody from '../components/PageBody';
 
 export const Portfolio = props => {
 	const { data } = props;
 
 	const { portfolioPiece } = data;
 	const { htmlAst } = portfolioPiece;
-	const { title } = portfolioPiece.fields;
+	const { title, summary } = portfolioPiece.fields;
 
 	const content = markdown(htmlAst);
 
@@ -21,8 +23,8 @@ export const Portfolio = props => {
 			<Helmet>
 				<title>{title}</title>
 			</Helmet>
-			<PageTitle>{title}</PageTitle>
-			{content}
+			<PageHeader pageTitle={title} summary={summary} />
+			<PageBody>{content}</PageBody>
 		</App>
 	);
 };
@@ -33,6 +35,7 @@ export const pageQuery = graphql`
 			fields {
 				slug
 				title
+				summary
 			}
 			htmlAst
 			rawMarkdownBody
