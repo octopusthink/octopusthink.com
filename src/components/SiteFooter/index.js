@@ -35,7 +35,70 @@ const SiteFooter = () => {
 				We heart inclusion, open source, emerging technologies, design systems, and React
 				development. We focus on solutions that are accessible, usable, and beautiful.
 			</Paragraph>
-			Social links Who we article What we do Etcetera
+
+			<div
+				css={css`
+					margin-bottom: 3.2rem;
+				`}
+			>
+				<Link
+					as="a"
+					href="//twitter.com/octopusthinks"
+					css={css`
+						border: 0;
+					`}
+				>
+					<Icon
+						css={css`
+							:hover {
+								background: ${theme.colors.accent.primaryLight};
+							}
+						`}
+						name="twitter"
+						background={theme.colors.accent.primary}
+						color={theme.colors.neutral.black}
+						label="Follow on Twitter"
+					/>
+				</Link>
+				<Link
+					as="a"
+					href="//github.com/octopusthink"
+					css={css`
+						border: 0;
+					`}
+				>
+					<Icon
+						css={css`
+							:hover {
+								background: ${theme.colors.accent.primaryLight};
+							}
+						`}
+						name="github"
+						background={theme.colors.accent.primary}
+						color={theme.colors.neutral.black}
+						label="Follow on Github"
+					/>
+				</Link>
+				<Link
+					as="a"
+					href="mailto:hello@octopusthink.com"
+					css={css`
+						border: 0;
+					`}
+				>
+					<Icon
+						css={css`
+							:hover {
+								background: ${theme.colors.accent.primaryLight};
+							}
+						`}
+						name="mail"
+						background={theme.colors.accent.primary}
+						color={theme.colors.neutral.black}
+						label="Send an email"
+					/>
+				</Link>
+			</div>
 			<Paragraph small inverse>
 				Copyright © 2019 Octopus Think Ltd.
 				<br />
