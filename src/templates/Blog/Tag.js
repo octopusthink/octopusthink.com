@@ -22,21 +22,21 @@ export const BlogTags = props => {
 			</Helmet>
 
 			<PageHeader pageTitle={title} summary={summary} />
-			<PageBody>{content}</PageBody>
+			<PageBody>
+				{posts.edges.map(({ node }) => {
+					const { author, date, slug, title } = node.fields;
 
-			{posts.edges.map(({ node }) => {
-				const { author, date, slug, title } = node.fields;
-
-				return (
-					<Fragment key={slug}>
-						<Link to={slug}>
-							<Heading level={2}>{title}</Heading>
-						</Link>
-						<Paragraph>{date}</Paragraph>
-						<Paragraph>By {author}</Paragraph>
-					</Fragment>
-				);
-			})}
+					return (
+						<Fragment key={slug}>
+							<Link to={slug}>
+								<Heading level={2}>{title}</Heading>
+							</Link>
+							<Paragraph>{date}</Paragraph>
+							<Paragraph>By {author}</Paragraph>
+						</Fragment>
+					);
+				})}
+			</PageBody>
 		</App>
 	);
 };
