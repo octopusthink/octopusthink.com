@@ -15,7 +15,7 @@ const config = {
 	dateFormat: 'YYYY/MM/DD', // Date format for display.
 	userName: 'Mechanical octopusthink', // Username to display in the author segment.
 	userEmail: 'robots@octopusthink.com', // Email used for RSS feed's author segment
-	userTwitter: 'octopus_think', // Optionally renders "Follow Me" in the UserInfo segment.
+	userTwitter: 'octopusthinks', // Optionally renders "Follow Me" in the UserInfo segment.
 	userLocation: 'Sunny Scotland', // User location to display in the author segment.
 	userAvatar: 'https://api.adorable.io/avatars/150/test.png', // User avatar to display in the author segment.
 	userDescription: '', // User description to display in the author segment.
@@ -28,7 +28,7 @@ const config = {
 		},
 		{
 			label: 'Twitter',
-			url: 'https://twitter.com/octopus_think',
+			url: 'https://twitter.com/octopusthinks',
 			iconClassName: 'fa fa-twitter',
 		},
 		{
