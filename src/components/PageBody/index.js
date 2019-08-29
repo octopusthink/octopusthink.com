@@ -1,4 +1,4 @@
-import { PageTitle, Paragraph, heading } from '@octopusthink/nautilus';
+import { PageTitle, Paragraph } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 

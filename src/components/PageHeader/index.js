@@ -1,9 +1,7 @@
-import { PageTitle, Paragraph, Tags, heading } from '@octopusthink/nautilus';
+import { PageTitle, Paragraph, Tags } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
-import Logo from '../Logo';
-import NavigationMenu from '../NavigationMenu';
 import theme from '../../../config/theme';
 
 const PageHeader = props => {
