@@ -10,8 +10,14 @@ const PageBody = props => {
 		<article
 			css={css`
 				background: ${theme.colors.neutral.white};
-				padding: 1.6rem;
 				margin: 6.4rem 0;
+				padding: ${theme.site.mobilePadding};
+				@media screen and (min-width: 640px) {
+					padding: ${theme.site.tabletPadding};
+				}
+				@media screen and (min-width: 1024px) {
+					padding: ${theme.site.desktopPadding};
+				}
 			`}
 		>
 			{children}

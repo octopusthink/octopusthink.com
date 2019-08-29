@@ -289,6 +289,13 @@ export const theme = {
 			xxLarge: 48,
 		},
 	},
+
+	// Extra site config type stuff.
+	site: {
+		mobilePadding: '1.6rem',
+		tabletPadding: '3.2rem',
+		desktopPadding: '6.4rem',
+	},
 };
 
 export default theme;

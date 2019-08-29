@@ -13,8 +13,15 @@ const PageHeader = props => {
 		<header
 			css={css`
 				background: ${theme.colors.neutral.black};
-				padding: 1.6rem;
+				padding: ${theme.site.mobilePadding};
 				position: relative;
+
+				@media screen and (min-width: 640px) {
+					padding: ${theme.site.tabletPadding};
+				}
+				@media screen and (min-width: 1024px) {
+					padding: ${theme.site.desktopPadding};
+				}
 
 				::after {
 					content: url(${divider});

@@ -10,8 +10,15 @@ const SiteFooter = () => {
 		<footer
 			css={css`
 				background: ${theme.colors.neutral.black};
-				padding: 0.8rem 0.8rem 0.8rem 1.6rem;
 				position: relative;
+				padding: ${theme.site.mobilePadding};
+
+				@media screen and (min-width: 640px) {
+					padding: ${theme.site.tabletPadding};
+				}
+				@media screen and (min-width: 1024px) {
+					padding: ${theme.site.desktopPadding};
+				}
 			`}
 		>
 			<img

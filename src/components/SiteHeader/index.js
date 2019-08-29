@@ -14,7 +14,15 @@ const SiteHeader = () => {
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
-				padding: 0.8rem 0.8rem 0.8rem 1.6rem;
+				padding: 0.8rem;
+				padding-left: ${theme.site.mobilePadding};
+
+				@media screen and (min-width: 640px) {
+					padding: ${theme.site.tabletPadding};
+				}
+				@media screen and (min-width: 1024px) {
+					padding: ${theme.site.desktopPadding};
+				}
 			`}
 		>
 			<Link
