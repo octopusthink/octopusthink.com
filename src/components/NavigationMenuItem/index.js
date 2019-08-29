@@ -10,27 +10,47 @@ const NavigationMenuItem = props => {
 	return (
 		<li>
 			<Link
+				activeClassName="activeLink"
 				to={link}
 				onClick={onClick}
 				css={css`
 					${interfaceUI.small(theme)};
 					text-decoration: none;
 					color: ${theme.colors.neutral.white};
+					font-weight: 600;
+					padding: 1.6rem;
 
 					&:hover {
-						color: #a42769;
+						color: ${theme.colors.accent.primaryLight};
 					}
 
 					@media screen and (max-width: 639px) {
 						border-bottom: 1px solid ${theme.colors.neutral.grey800};
 						display: block;
 						width: 100%;
-						padding: 1.6rem 1.6rem;
 					}
 
 					@media screen and (min-width: 640px) {
 						border-bottom: 0;
-						padding: 1.6rem 1.6rem;
+					}
+
+					&.activeLink {
+						color: ${theme.colors.accent.secondaryLight};
+
+						@media screen and (min-width: 640px) {
+							position: relative;
+
+							::after {
+								display: block;
+								width: calc(100% - 3.2rem);
+								content: '';
+								border-bottom: 2px solid;
+								position: absolute;
+								bottom: 0.8rem;
+								left: 1.6rem;
+								right: 1.6rem;
+							}
+						}
 					}
 				`}
 			>
