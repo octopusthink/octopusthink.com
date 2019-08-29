@@ -13,46 +13,59 @@ const PageHeader = props => {
 		<header
 			css={css`
 				background: ${theme.colors.neutral.black};
-				padding: ${theme.site.mobilePadding};
 				position: relative;
-
-				@media screen and (min-width: 640px) {
-					padding: ${theme.site.tabletPadding};
-				}
-				@media screen and (min-width: 1024px) {
-					padding: ${theme.site.desktopPadding};
-				}
+				overflow: hidden;
 
 				::after {
-					content: url(${divider});
-					height: 60px;
-					width: 100%;
-					margin-top: -4rem;
-					position: absolute;
-					bottom: -3.2rem;
-					left: 0;
-					right: 0;
+					content: '';
+					display: block;
+					width: 120%;
+					margin-left: -10%;
+					overflow: hidden;
+					height: 50px;
+					background-image: linear-gradient(
+						to bottom right,
+						${theme.colors.neutral.black},
+						${theme.colors.neutral.black} 46%,
+						${theme.colors.accent.primary} 47%,
+						${theme.colors.accent.primary} 53%,
+						${theme.colors.neutral.white} 54%,
+						${theme.colors.neutral.white}
+					);
 				}
 			`}
 		>
-			{metadata && (
-				<Tags>
-					<Tags.Tag>{metadata}</Tags.Tag>
-				</Tags>
-			)}
-			<PageTitle
+			<div
 				css={css`
-					color: white;
-					margin: 0.8rem 0 3.2rem 0;
+					padding: ${theme.site.mobilePadding};
+					@media screen and (min-width: 640px) {
+						padding: ${theme.site.tabletPadding};
+					}
+					@media screen and (min-width: 1024px) {
+						padding: ${theme.site.desktopPadding};
+						max-width: ${theme.site.maxContentWidth};
+					}
 				`}
 			>
-				{pageTitle}
-			</PageTitle>
-			<Paragraph large inverse light>
-				{summary}
-			</Paragraph>
+				{metadata && (
+					<Tags>
+						<Tags.Tag>{metadata}</Tags.Tag>
+					</Tags>
+				)}
+				<PageTitle
+					css={css`
+						color: white;
+						margin: 0.8rem 0 3.2rem 0;
+					`}
+				>
+					{pageTitle}
+				</PageTitle>
+				<Paragraph large inverse light>
+					{summary}
+				</Paragraph>
 
-			{children}
+				{children}
+			</div>
 		</header>
 	);
 };

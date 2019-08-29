@@ -17,6 +17,7 @@ const PageBody = props => {
 				}
 				@media screen and (min-width: 1024px) {
 					padding: ${theme.site.desktopPadding};
+					max-width: ${theme.site.maxContentWidth};
 				}
 			`}
 		>

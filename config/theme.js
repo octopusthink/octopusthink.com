@@ -144,8 +144,8 @@ export const theme = {
 			interactiveText: colors.pink600,
 			hover: colors.cyan200,
 			hoverText: colors.cyan600,
-			focusOutline: colors.pink200,
-			focusText: colors.pink600,
+			focusOutline: colors.cyan200,
+			focusText: colors.cyan600,
 			disabled: colors.grey700,
 			disabledDark: colors.grey800,
 			disabledLight: colors.grey200,
@@ -295,6 +295,7 @@ export const theme = {
 		mobilePadding: '1.6rem',
 		tabletPadding: '3.2rem',
 		desktopPadding: '6.4rem',
+		maxContentWidth: '760px',
 	},
 };
 
