@@ -100,12 +100,12 @@ export const theme = {
 	// All themeable colour variables go here.
 	colors: {
 		accent: {
-			primary: colors.pink600,
-			primaryDark: colors.pink800,
-			primaryLight: colors.pink400,
-			secondary: colors.cyan600,
-			secondaryDark: colors.cyan800,
-			secondaryLight: colors.cyan400,
+			primary: colors.pink500,
+			primaryDark: colors.pink700,
+			primaryLight: colors.pink300,
+			secondary: colors.cyan500,
+			secondaryDark: colors.cyan700,
+			secondaryLight: colors.cyan300,
 		},
 
 		neutral: {
