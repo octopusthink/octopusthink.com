@@ -1,7 +1,5 @@
 ---
-path: '/services/'
 title: 'What we do'
-slug: 'services'
 summary: 'If you need smart, passionate, and pragmatic humans (or ocean-dwellers) to help out with your projects, we are here for you!'
 ---
 

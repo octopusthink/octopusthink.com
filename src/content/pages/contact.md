@@ -1,7 +1,6 @@
 ---
 path: "/contact/"
 title: "Get in touch with us"
-slug: "contact"
 summary: 'Want to work with us? Have a great idea to share? Just want to learn more about us? Say hello!'
 ---
 

@@ -13,7 +13,7 @@ Together, we have over thirty years of experience. We've worked on a wide range 
 
 Matt is a full-stack developer with a soft spot for React and JavaScript. He's detail-oriented, quick to learn, and well-versed in navigating projects of all sizes. He cares about accessibility, automation, and writing clean, readable code that doesn't box you in.
 
-An enthusiastic contributor to open-source projects, he wrote the popular localForage library, used by thousands of apps/web services including Mozilla Add-ons, Cordova, Twitter and WordPress.com. He was also the accessibility lead for WordPress 5.0.
+An enthusiastic contributor to open-source projects, he wrote the popular localForage library, used by thousands of apps/web services including Mozilla Add-ons, Cordova, Twitter, and WordPress.com. He was also the accessibility lead for WordPress 5.0.
 
 Over the years, Matt has worked for Mozilla (Firefox), Automattic (WordPress), Nova Scotia government, and a slew of start-ups. He's hosted workshops around the world and spoken at conferences on nearly every continent.
 

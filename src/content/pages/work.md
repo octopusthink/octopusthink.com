@@ -1,7 +1,5 @@
 ---
-path: '/work/'
 title: 'Selected projects'
-slug: 'work'
 summary: "We've designed and built all sorts of different apps, websites, and products over the years. Here are just a few of the things we've worked on."
 ---
 
