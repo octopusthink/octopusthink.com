@@ -8,6 +8,7 @@ import { markdown } from '../../utils/markdown';
 import App from '../app';
 import PageHeader from '../../components/PageHeader';
 import PageBody from '../../components/PageBody';
+import config from '../../../data/SiteConfig';
 
 export const BlogPost = props => {
 	const { data } = props;
@@ -21,7 +22,7 @@ export const BlogPost = props => {
 	return (
 		<App>
 			<Helmet>
-				<title>{title}</title>
+				<title>{`${title} · ${config.siteTitle}`}</title>
 			</Helmet>
 			<Fragment key={slug}>
 				<PageHeader metadata={date} pageTitle={title} summary={summary} />

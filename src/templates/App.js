@@ -7,6 +7,7 @@ import Helmet from 'react-helmet';
 import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
 import theme from '../../config/theme';
+import config from '../../data/SiteConfig';
 
 export const App = props => {
 	const { children } = props;
@@ -17,7 +18,7 @@ export const App = props => {
 					name="description"
 					content="Octopus Think: Software Design and Development. We design and build accessible, beautiful, and fun software."
 				/>
-				<title>Octopus Think</title>
+				<title>{config.siteTitle}</title>
 			</Helmet>
 			<Global
 				styles={css`
