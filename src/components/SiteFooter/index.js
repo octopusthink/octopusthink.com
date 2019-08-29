@@ -116,7 +116,15 @@ const SiteFooter = () => {
 						/>
 					</Link>
 				</div>
-				<Paragraph small inverse>
+				<Paragraph
+					small
+					inverse
+					dark
+					css={css`
+						font-size: 1.6rem;
+						margin: 0;
+					`}
+				>
 					Copyright © 2019 Octopus Think Ltd.
 					<br />
 					UK Registered Company No. 11747595

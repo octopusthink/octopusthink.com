@@ -157,9 +157,9 @@ export const theme = {
 			default: colors.grey900,
 			dark: colors.black,
 			light: colors.grey800,
-			inverse: colors.grey0,
+			inverse: colors.grey100,
 			inverseLight: colors.white,
-			inverseDark: colors.grey100,
+			inverseDark: colors.grey300,
 			emphasis: colors.grey800,
 			emphasisBackground: 'transparent',
 			strong: colors.black,
@@ -248,12 +248,12 @@ export const theme = {
 		},
 
 		baseSizes: {
-			desktop: 18,
+			desktop: 19,
 			mobile: 16,
 		},
 
 		scaleModifiers: {
-			desktop: 1.15,
+			desktop: 1.1,
 			mobile: 1.15,
 		},
 
