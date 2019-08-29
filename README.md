@@ -19,7 +19,8 @@ Create a Gatsby site that includes blog posts, Markdown pages, and [Nautilus](ht
 
     ```bash
     cd my-site/
-    yarn start # or `npm start` if you use `npm`.
+    npm install
+    npm start # or `yarn start` if you use `yarn`.
     ```
 
 3.  **Open the source code and start editing!**
