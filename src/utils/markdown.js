@@ -13,7 +13,7 @@ export const markdown = htmlAst => {
 			p: props => <Paragraph {...props} />,
 			ul: props => <List {...props} />,
 			ol: props => <List {...props} ordered />,
-			li: props => <List.Item {...props} />,
+			li: List.Item,
 			a: originalProps => {
 				const props = { ...originalProps };
 
