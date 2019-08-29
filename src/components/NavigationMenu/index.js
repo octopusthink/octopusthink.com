@@ -24,7 +24,7 @@ const NavigationMenu = () => {
 		>
 			<button
 				css={css`
-					@media screen and (max-width: 639px) {
+					@media screen and (max-width: 479px) {
 						background: none;
 						border: none;
 						box-shadow: none;
@@ -36,7 +36,7 @@ const NavigationMenu = () => {
 						justify-content: center;
 					}
 
-					@media screen and (min-width: 640px) {
+					@media screen and (min-width: 480px) {
 						display: none;
 					}
 				`}
@@ -71,7 +71,7 @@ const NavigationMenu = () => {
 					padding: 0;
 
 					/* Mobile menu */
-					@media screen and (max-width: 639px) {
+					@media screen and (max-width: 479px) {
 						${hideMenu &&
 							css`
 								display: none;
@@ -87,9 +87,9 @@ const NavigationMenu = () => {
 						margin-bottom: 0;
 					}
 
-					@media screen and (min-width: 640px) {
+					@media screen and (min-width: 480px) {
 						display: flex;
-						margin-top: 0.5rem;
+						margin-top: 0.4rem;
 					}
 				`}
 			>

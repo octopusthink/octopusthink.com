@@ -5,17 +5,25 @@
  */
 
 module.exports = {
-  plugins: [
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-emotion',
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'content',
-        path: `${__dirname}/src/content/`,
-        ignore: [`**/*\.js`],
-      },
-    },
-    'gatsby-transformer-remark',
-  ],
+	plugins: [
+		'gatsby-plugin-react-helmet',
+		'gatsby-plugin-emotion',
+		{
+			resolve: 'gatsby-source-filesystem',
+			options: {
+				name: 'content',
+				path: `${__dirname}/src/content/`,
+				ignore: [`**/*\.js`],
+			},
+		},
+		'gatsby-transformer-remark',
+		{
+			resolve: 'gatsby-plugin-react-svg',
+			options: {
+				rule: {
+					include: /static/, // See below to configure properly
+				},
+			},
+		},
+	],
 };

@@ -24,7 +24,7 @@ const NavigationMenuItem = props => {
 						color: ${theme.colors.accent.primaryLight};
 					}
 
-					@media screen and (max-width: 639px) {
+					@media screen and (max-width: 479px) {
 						border-bottom: 1px solid ${theme.colors.neutral.grey800};
 						display: block;
 						width: 100%;
@@ -34,14 +34,14 @@ const NavigationMenuItem = props => {
 						}
 					}
 
-					@media screen and (min-width: 640px) {
+					@media screen and (min-width: 480px) {
 						border-bottom: 0;
 					}
 
 					&.activeLink {
 						color: ${theme.colors.accent.secondaryLight};
 
-						@media screen and (min-width: 640px) {
+						@media screen and (min-width: 480px) {
 							position: relative;
 
 							::after {
