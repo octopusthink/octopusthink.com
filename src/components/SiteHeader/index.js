@@ -1,4 +1,4 @@
-import { Link, heading } from '@octopusthink/nautilus';
+import { Link, SkipLink, heading } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
@@ -33,6 +33,7 @@ const SiteHeader = () => {
 				}
 			`}
 		>
+			<SkipLink />
 			<Link
 				to="/"
 				css={css`
