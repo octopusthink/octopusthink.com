@@ -12,6 +12,10 @@ const PageBody = props => {
 				background: ${theme.colors.neutral.white};
 				margin: 6.4rem 0;
 				padding: ${theme.site.mobilePadding};
+				min-height: 70vh;
+				display: flex;
+				align-items: center;
+
 				@media screen and (min-width: 640px) {
 					padding: ${theme.site.tabletPadding};
 				}
