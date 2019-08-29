@@ -25,7 +25,7 @@ export const Logo = props => {
 };
 
 Logo.defaultProps = {
-	size: '12.8rem',
+	size: '4.8rem',
 	mobileSize: '4.8rem',
 };
 

@@ -15,7 +15,6 @@ const NavigationMenuItem = props => {
 				css={css`
 					${interfaceUI.small(theme)};
 					text-decoration: none;
-					border-bottom: 1px solid ${theme.colors.neutral.grey800};
 					color: ${theme.colors.neutral.white};
 
 					&:hover {
@@ -23,24 +22,22 @@ const NavigationMenuItem = props => {
 					}
 
 					@media screen and (max-width: 639px) {
+						border-bottom: 1px solid ${theme.colors.neutral.grey800};
 						display: block;
 						width: 100%;
 						padding: 1.6rem 1.6rem;
 					}
 
 					@media screen and (min-width: 640px) {
-						display: flex;
-						flex-direction: column;
-						align-items: center;
-						grid-gap: 4px;
-						padding: 16px 8px;
-						font-size: 1.6rem;
+						border-bottom: 0;
+						padding: 1.6rem 1.6rem;
 					}
 				`}
 			>
 				<Icon
 					name={icon}
 					css={css`
+						display: none;
 						margin-right: 1.6rem;
 					`}
 				/>

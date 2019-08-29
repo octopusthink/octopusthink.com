@@ -88,9 +88,8 @@ const NavigationMenu = () => {
 					}
 
 					@media screen and (min-width: 640px) {
-						display: grid;
-						grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-						grid-gap: 24px;
+						display: flex;
+						margin-top: 0.5rem;
 					}
 				`}
 			>
@@ -100,10 +99,6 @@ const NavigationMenu = () => {
 
 				<NavigationMenuItem icon="help-circle" link="/about" onClick={closeMenu}>
 					About
-				</NavigationMenuItem>
-
-				<NavigationMenuItem icon="book" link="/blog" onClick={closeMenu}>
-					Blog
 				</NavigationMenuItem>
 
 				<NavigationMenuItem icon="coffee" link="/services" onClick={closeMenu}>
