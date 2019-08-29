@@ -3,7 +3,6 @@ import React from 'react';
 import { css } from '@emotion/core';
 
 import theme from '../../../config/theme';
-import divider from '../../../static/divider.svg';
 
 const SiteFooter = () => {
 	return (

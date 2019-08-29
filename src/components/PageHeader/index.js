@@ -5,7 +5,6 @@ import { css } from '@emotion/core';
 import Logo from '../Logo';
 import NavigationMenu from '../NavigationMenu';
 import theme from '../../../config/theme';
-import divider from '../../../static/divider.svg';
 
 const PageHeader = props => {
 	const { children, metadata, pageTitle, summary } = props;
