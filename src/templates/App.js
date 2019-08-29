@@ -33,7 +33,7 @@ export const App = props => {
 				`}
 			/>
 			<SiteHeader />
-			{children}
+			<main>{children}</main>
 			<SiteFooter />
 		</Nautilus>
 	);
