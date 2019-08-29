@@ -28,6 +28,10 @@ const NavigationMenuItem = props => {
 						border-bottom: 1px solid ${theme.colors.neutral.grey800};
 						display: block;
 						width: 100%;
+
+						&:hover {
+							border-bottom: 1px solid ${theme.colors.neutral.grey800};
+						}
 					}
 
 					@media screen and (min-width: 640px) {
