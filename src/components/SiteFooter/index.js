@@ -75,7 +75,7 @@ const SiteFooter = () => {
 							name="twitter"
 							background={theme.colors.accent.primary}
 							color={theme.colors.neutral.black}
-							label="Follow on Twitter"
+							title="Follow on Twitter"
 						/>
 					</Link>
 					<Link
@@ -94,7 +94,7 @@ const SiteFooter = () => {
 							name="github"
 							background={theme.colors.accent.primary}
 							color={theme.colors.neutral.black}
-							label="Follow on Github"
+							title="Follow on Github"
 						/>
 					</Link>
 					<Link
@@ -113,7 +113,7 @@ const SiteFooter = () => {
 							name="mail"
 							background={theme.colors.accent.primary}
 							color={theme.colors.neutral.black}
-							label="Send an email"
+							title="Send an email"
 						/>
 					</Link>
 				</div>
