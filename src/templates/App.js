@@ -11,9 +11,14 @@ import config from '../../data/SiteConfig';
 
 export const App = props => {
 	const { children } = props;
+	const lang = `en`;
 	return (
 		<Nautilus theme={theme} config={{ LinkComponent: Link }}>
-			<Helmet>
+			<Helmet
+				htmlAttributes={{
+					lang,
+				}}
+			>
 				<meta
 					name="description"
 					content="Octopus Think: Software Design and Development. We design and build accessible, beautiful, and fun software."
