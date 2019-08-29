@@ -3,6 +3,7 @@ import React from 'react';
 import { css } from '@emotion/core';
 
 import theme from '../../../config/theme';
+import SiteMap from '../SiteMap';
 
 const SiteFooter = () => {
 	return (
@@ -116,6 +117,9 @@ const SiteFooter = () => {
 						/>
 					</Link>
 				</div>
+
+				<SiteMap></SiteMap>
+
 				<Paragraph
 					small
 					inverse
