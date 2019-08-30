@@ -2,7 +2,7 @@ import { css, Global } from '@emotion/core';
 import Nautilus from '@octopusthink/nautilus';
 import { Link } from 'gatsby';
 import React from 'react';
-import Helmet from 'react-helmet';
+import 'typeface-inter';
 
 import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
