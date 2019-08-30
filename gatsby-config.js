@@ -5,6 +5,11 @@
  */
 
 module.exports = {
+	siteMetadata: {
+		title: `Octopus Think`,
+		description: `Octopus Think is a design and development agency based in Scotland. We build inclusive, usable, and smart websites and apps.`,
+		author: `@octopusthink`,
+	},
 	plugins: [
 		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-emotion',

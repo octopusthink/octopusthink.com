@@ -6,7 +6,7 @@ import Helmet from 'react-helmet';
 import App from '../app';
 import PageHeader from '../../components/PageHeader';
 import PageBody from '../../components/PageBody';
-import config from '../../../data/SiteConfig';
+import SEO from '../../components/SEO';
 
 export const BlogTags = props => {
 	const { data } = props;
@@ -17,10 +17,7 @@ export const BlogTags = props => {
 
 	return (
 		<App>
-			<Helmet>
-				<meta name="description" content={siteDescription} />
-				<title>{`Tag · ${config.siteTitle}`}</title>
-			</Helmet>
+			<SEO title={title} />
 
 			<PageHeader pageTitle={title} summary={summary} />
 			<PageBody>

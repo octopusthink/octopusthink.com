@@ -6,7 +6,7 @@ import Helmet from 'react-helmet';
 import App from '../app';
 import PageHeader from '../../components/PageHeader';
 import PageBody from '../../components/PageBody';
-import config from '../../../data/SiteConfig';
+import SEO from '../../components/SEO';
 
 export const BlogList = props => {
 	const { data, pageContext } = props;
@@ -18,11 +18,7 @@ export const BlogList = props => {
 
 	return (
 		<App>
-			<Helmet>
-				<meta name="description" content={siteDescription} />
-				<title>{`Stories · ${config.siteTitle}`}</title>
-			</Helmet>
-
+			<SEO title={title} />
 			<PageHeader pageTitle={title} summary={summary} />
 
 			<PageBody>

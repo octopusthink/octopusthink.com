@@ -7,24 +7,14 @@ import Helmet from 'react-helmet';
 import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
 import theme from '../../config/theme';
-import config from '../../data/SiteConfig';
+import SEO from '../components/SEO';
 
 export const App = props => {
 	const { children } = props;
 	const lang = `en`;
 	return (
 		<Nautilus theme={theme} config={{ LinkComponent: Link }}>
-			<Helmet
-				htmlAttributes={{
-					lang,
-				}}
-			>
-				<meta
-					name="description"
-					content="Octopus Think: Software Design and Development. We design and build accessible, beautiful, and fun software."
-				/>
-				<title>{config.siteTitle}</title>
-			</Helmet>
+			<SEO title="Home" />
 			<Global
 				styles={css`
 					body {
