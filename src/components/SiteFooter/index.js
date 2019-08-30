@@ -45,11 +45,23 @@ const SiteFooter = () => {
 					}
 				`}
 			>
-				<Paragraph large inverse>
+				<Paragraph
+					large
+					inverse
+					css={css`
+						letter-spacing: -0.017em;
+					`}
+				>
 					Octopus Think is a design & technology company based in Scotland with a special interest
 					in leveraging technology to make the world a better place.
 				</Paragraph>
-				<Paragraph large inverse>
+				<Paragraph
+					large
+					inverse
+					css={css`
+						letter-spacing: -0.017em;
+					`}
+				>
 					We ❤️ inclusion, open source, emerging technologies, design systems, and React
 					development. We focus on solutions that are accessible, usable, and beautiful.
 				</Paragraph>
