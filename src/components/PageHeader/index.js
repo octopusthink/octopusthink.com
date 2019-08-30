@@ -58,7 +58,14 @@ const PageHeader = props => {
 				>
 					{pageTitle}
 				</PageTitle>
-				<Paragraph large inverse light>
+				<Paragraph
+					large
+					inverse
+					light
+					css={css`
+						letter-spacing: -0.017em;
+					`}
+				>
 					{summary}
 				</Paragraph>
 
