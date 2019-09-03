@@ -14,9 +14,9 @@ export const BlogList = props => {
   const { numberOfPages, currentPage } = pageContext;
   const title = 'Stories';
   const summary =
-		'Where we talk about design, technology, inclusion, and adorable cephalopod stories.';
+    'Where we talk about design, technology, inclusion, and adorable cephalopod stories.';
   const description =
-		'The blog of Octopus Think. Design, technology, inclusion, and adorable cephalopod stories.';
+    'The blog of Octopus Think. Design, technology, inclusion, and adorable cephalopod stories.';
 
   return (
     <App>
@@ -59,26 +59,26 @@ export const BlogList = props => {
 };
 
 export const pageQuery = graphql`
-	query blogPostsList($skip: Int!, $limit: Int!) {
-		posts: allMarkdownRemark(
-			sort: { fields: [fields___date], order: DESC }
-			filter: { fileAbsolutePath: { regex: "//content/blog/" } }
-			limit: $limit
-			skip: $skip
-		) {
-			edges {
-				node {
-					fields {
-						date
-						slug
-						summary
-						title
-						tags
-					}
-				}
-			}
-		}
-	}
+  query blogPostsList($skip: Int!, $limit: Int!) {
+    posts: allMarkdownRemark(
+      sort: { fields: [fields___date], order: DESC }
+      filter: { fileAbsolutePath: { regex: "//content/blog/" } }
+      limit: $limit
+      skip: $skip
+    ) {
+      edges {
+        node {
+          fields {
+            date
+            slug
+            summary
+            title
+            tags
+          }
+        }
+      }
+    }
+  }
 `;
 
 export default BlogList;

@@ -30,7 +30,7 @@ export const BlogPost = props => {
         {content}
 
         <Paragraph>
-					Written by
+          Written by
           {author}
         </Paragraph>
       </PageBody>
@@ -39,22 +39,22 @@ export const BlogPost = props => {
 };
 
 export const pageQuery = graphql`
-	query($id: String!) {
-		post: markdownRemark(id: { eq: $id }) {
-			fields {
-				author
-				date
-				metaDescription
-				slug
-				summary
-				title
-				tags
-			}
-			htmlAst
-			rawMarkdownBody
-			id
-		}
-	}
+  query($id: String!) {
+    post: markdownRemark(id: { eq: $id }) {
+      fields {
+        author
+        date
+        metaDescription
+        slug
+        summary
+        title
+        tags
+      }
+      htmlAst
+      rawMarkdownBody
+      id
+    }
+  }
 `;
 
 export default BlogPost;

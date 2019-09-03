@@ -15,20 +15,20 @@ const SiteMapItem = props => {
         }}
         to={link}
         css={css`
-					${interfaceUI.small(theme)};
-					text-decoration: none;
-					color: ${theme.colors.text.inverse};
-					font-weight: 600;
-					border-bottom: 1px solid ${theme.colors.neutral.grey800};
-					display: block;
-					width: 100%;
-					padding: 1.6rem 0;
+          ${interfaceUI.small(theme)};
+          text-decoration: none;
+          color: ${theme.colors.text.inverse};
+          font-weight: 600;
+          border-bottom: 1px solid ${theme.colors.neutral.grey800};
+          display: block;
+          width: 100%;
+          padding: 1.6rem 0;
 
-					&:hover {
-						color: ${theme.colors.text.inverseLight};
-						border-color: ${theme.colors.neutral.grey600};
-					}
-				`}
+          &:hover {
+            color: ${theme.colors.text.inverseLight};
+            border-color: ${theme.colors.neutral.grey600};
+          }
+        `}
       >
         {children}
       </Link>

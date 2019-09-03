@@ -19,35 +19,35 @@ const NavigationMenu = () => {
     <nav
       role="navigation"
       css={css`
-				z-index: 1;
-			`}
+        z-index: 1;
+      `}
     >
       <button
         css={css`
-					@media screen and (max-width: 479px) {
-						background: none;
-						border: none;
-						box-shadow: none;
-						cursor: pointer;
-						height: 5.6rem;
-						width: 5.6rem;
-						display: flex;
-						align-items: center;
-						justify-content: center;
-					}
+          @media screen and (max-width: 479px) {
+            background: none;
+            border: none;
+            box-shadow: none;
+            cursor: pointer;
+            height: 5.6rem;
+            width: 5.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
 
-					@media screen and (min-width: 480px) {
-						display: none;
-					}
-				`}
+          @media screen and (min-width: 480px) {
+            display: none;
+          }
+        `}
         aria-expanded={hideMenu ? 'false' : 'true'}
         onClick={toggleMenu}
       >
         {hideMenu ? (
           <Icon
             css={css`
-							margin: 0;
-						`}
+              margin: 0;
+            `}
             color={theme.colors.neutral.white}
             name="menu"
             title="Open navigation menu"
@@ -55,8 +55,8 @@ const NavigationMenu = () => {
         ) : (
           <Icon
             css={css`
-							margin: 0;
-						`}
+              margin: 0;
+            `}
             color={theme.colors.neutral.white}
             name="x"
             title="Close navigation menu"
@@ -73,9 +73,9 @@ const NavigationMenu = () => {
 					/* Mobile menu */
 					@media screen and (max-width: 479px) {
 						${hideMenu &&
-							css`
-								display: none;
-							`}
+              css`
+                display: none;
+              `}
 						background: ${theme.colors.neutral.black};
 						position: fixed;
 						top: 6.4rem;
@@ -94,23 +94,23 @@ const NavigationMenu = () => {
 				`}
       >
         <NavigationMenuItem icon="compass" link="/" onClick={closeMenu}>
-					Home
+          Home
         </NavigationMenuItem>
 
         <NavigationMenuItem icon="help-circle" link="/about" onClick={closeMenu}>
-					About
+          About
         </NavigationMenuItem>
 
         <NavigationMenuItem icon="coffee" link="/services" onClick={closeMenu}>
-					Services
+          Services
         </NavigationMenuItem>
 
         <NavigationMenuItem icon="camera" link="/work" onClick={closeMenu}>
-					Work
+          Work
         </NavigationMenuItem>
 
         <NavigationMenuItem icon="send" link="/contact" onClick={closeMenu}>
-					Contact
+          Contact
         </NavigationMenuItem>
       </ul>
     </nav>

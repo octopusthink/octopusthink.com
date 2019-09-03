@@ -31,7 +31,7 @@ export const BlogTags = props => {
               </Link>
               <Paragraph>{date}</Paragraph>
               <Paragraph>
-By
+                By
                 {author}
               </Paragraph>
             </Fragment>
@@ -43,24 +43,24 @@ By
 };
 
 export const pageQuery = graphql`
-	query blogPostsTags($tag: String!) {
-		posts: allMarkdownRemark(
-			sort: { fields: [fields___date], order: DESC }
-			filter: { fileAbsolutePath: { regex: "//content/blog/" }, fields: { tags: { eq: $tag } } }
-		) {
-			edges {
-				node {
-					fields {
-						author
-						date
-						slug
-						title
-						tags
-					}
-				}
-			}
-		}
-	}
+  query blogPostsTags($tag: String!) {
+    posts: allMarkdownRemark(
+      sort: { fields: [fields___date], order: DESC }
+      filter: { fileAbsolutePath: { regex: "//content/blog/" }, fields: { tags: { eq: $tag } } }
+    ) {
+      edges {
+        node {
+          fields {
+            author
+            date
+            slug
+            title
+            tags
+          }
+        }
+      }
+    }
+  }
 `;
 
 export default BlogTags;
