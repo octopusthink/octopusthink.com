@@ -9,34 +9,37 @@ import PageBody from '../../components/PageBody';
 import SEO from '../../components/SEO';
 
 export const BlogTags = props => {
-	const { data } = props;
-	const { posts } = data;
-	const title = 'Tag archive';
-	const summary = 'Here is a description of this tag page.';
-	const description = 'A tag archive page.';
+  const { data } = props;
+  const { posts } = data;
+  const title = 'Tag archive';
+  const summary = 'Here is a description of this tag page.';
+  const description = 'A tag archive page.';
 
-	return (
-		<App>
-			<SEO title={title} description={description} />
+  return (
+    <App>
+      <SEO title={title} description={description} />
 
-			<PageHeader pageTitle={title} summary={summary} />
-			<PageBody>
-				{posts.edges.map(({ node }) => {
-					const { author, date, slug, title } = node.fields;
+      <PageHeader pageTitle={title} summary={summary} />
+      <PageBody>
+        {posts.edges.map(({ node }) => {
+          const { author, date, slug, title } = node.fields;
 
-					return (
-						<Fragment key={slug}>
-							<Link to={slug}>
-								<Heading level={2}>{title}</Heading>
-							</Link>
-							<Paragraph>{date}</Paragraph>
-							<Paragraph>By {author}</Paragraph>
-						</Fragment>
-					);
-				})}
-			</PageBody>
-		</App>
-	);
+          return (
+            <Fragment key={slug}>
+              <Link to={slug}>
+                <Heading level={2}>{title}</Heading>
+              </Link>
+              <Paragraph>{date}</Paragraph>
+              <Paragraph>
+By
+                {author}
+              </Paragraph>
+            </Fragment>
+          );
+        })}
+      </PageBody>
+    </App>
+  );
 };
 
 export const pageQuery = graphql`

@@ -5,10 +5,10 @@ import { css } from '@emotion/core';
 import theme from '../../../config/theme';
 
 const PageHeader = props => {
-	const { children, metadata, pageTitle, summary } = props;
-	return (
-		<header
-			css={css`
+  const { children, metadata, pageTitle, summary } = props;
+  return (
+    <header
+      css={css`
 				background: ${theme.colors.neutral.black};
 				position: relative;
 				overflow: hidden;
@@ -31,9 +31,9 @@ const PageHeader = props => {
 					);
 				}
 			`}
-		>
-			<div
-				css={css`
+    >
+      <div
+        css={css`
 					padding: ${theme.site.mobilePadding};
 					@media screen and (min-width: 640px) {
 						padding: ${theme.site.tabletPadding};
@@ -43,36 +43,36 @@ const PageHeader = props => {
 						max-width: ${theme.site.maxContentWidth};
 					}
 				`}
-			>
-				{metadata && (
-					<Tags>
-						<Tags.Tag>{metadata}</Tags.Tag>
-					</Tags>
-				)}
-				<PageTitle
-					css={css`
+      >
+        {metadata && (
+          <Tags>
+            <Tags.Tag>{metadata}</Tags.Tag>
+          </Tags>
+        )}
+        <PageTitle
+          css={css`
 						color: white;
 						margin: 0.8rem 0 3.2rem 0;
 						letter-spacing: -0.022em;
 					`}
-				>
-					{pageTitle}
-				</PageTitle>
-				<Paragraph
-					large
-					inverse
-					light
-					css={css`
+        >
+          {pageTitle}
+        </PageTitle>
+        <Paragraph
+          large
+          inverse
+          light
+          css={css`
 						letter-spacing: -0.017em;
 					`}
-				>
-					{summary}
-				</Paragraph>
+        >
+          {summary}
+        </Paragraph>
 
-				{children}
-			</div>
-		</header>
-	);
+        {children}
+      </div>
+    </header>
+  );
 };
 
 export default PageHeader;

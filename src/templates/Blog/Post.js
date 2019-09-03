@@ -11,28 +11,31 @@ import PageBody from '../../components/PageBody';
 import SEO from '../../components/SEO';
 
 export const BlogPost = props => {
-	const { data } = props;
-	const { post } = data;
+  const { data } = props;
+  const { post } = data;
 
-	const { htmlAst } = post;
-	const { author, date, slug, summary, title } = post.fields;
+  const { htmlAst } = post;
+  const { author, date, slug, summary, title } = post.fields;
 
-	const description = metaDescription || summary;
-	const content = markdown(htmlAst);
+  const description = metaDescription || summary;
+  const content = markdown(htmlAst);
 
-	return (
-		<App>
-			<SEO title={title} description={description} />
-			<Fragment key={slug}>
-				<PageHeader metadata={date} pageTitle={title} summary={summary} />
-			</Fragment>
-			<PageBody>
-				{content}
+  return (
+    <App>
+      <SEO title={title} description={description} />
+      <Fragment key={slug}>
+        <PageHeader metadata={date} pageTitle={title} summary={summary} />
+      </Fragment>
+      <PageBody>
+        {content}
 
-				<Paragraph>Written by {author}</Paragraph>
-			</PageBody>
-		</App>
-	);
+        <Paragraph>
+					Written by
+          {author}
+        </Paragraph>
+      </PageBody>
+    </App>
+  );
 };
 
 export const pageQuery = graphql`

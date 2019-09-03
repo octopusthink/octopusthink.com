@@ -6,24 +6,24 @@ import NavigationMenuItem from '../NavigationMenuItem';
 import theme from '../../../config/theme';
 
 const NavigationMenu = () => {
-	// Menu is hidden by default on mobile.
-	const [hideMenu, setHideMenu] = useState(true);
-	const toggleMenu = () => {
-		setHideMenu(!hideMenu);
-	};
-	const closeMenu = () => {
-		setHideMenu(true);
-	};
+  // Menu is hidden by default on mobile.
+  const [hideMenu, setHideMenu] = useState(true);
+  const toggleMenu = () => {
+    setHideMenu(!hideMenu);
+  };
+  const closeMenu = () => {
+    setHideMenu(true);
+  };
 
-	return (
-		<nav
-			role="navigation"
-			css={css`
+  return (
+    <nav
+      role="navigation"
+      css={css`
 				z-index: 1;
 			`}
-		>
-			<button
-				css={css`
+    >
+      <button
+        css={css`
 					@media screen and (max-width: 479px) {
 						background: none;
 						border: none;
@@ -40,32 +40,32 @@ const NavigationMenu = () => {
 						display: none;
 					}
 				`}
-				aria-expanded={hideMenu ? 'false' : 'true'}
-				onClick={toggleMenu}
-			>
-				{hideMenu ? (
-					<Icon
-						css={css`
+        aria-expanded={hideMenu ? 'false' : 'true'}
+        onClick={toggleMenu}
+      >
+        {hideMenu ? (
+          <Icon
+            css={css`
 							margin: 0;
 						`}
-						color={theme.colors.neutral.white}
-						name="menu"
-						title="Open navigation menu"
-					/>
-				) : (
-					<Icon
-						css={css`
+            color={theme.colors.neutral.white}
+            name="menu"
+            title="Open navigation menu"
+          />
+        ) : (
+          <Icon
+            css={css`
 							margin: 0;
 						`}
-						color={theme.colors.neutral.white}
-						name="x"
-						title="Close navigation menu"
-					/>
-				)}
-			</button>
+            color={theme.colors.neutral.white}
+            name="x"
+            title="Close navigation menu"
+          />
+        )}
+      </button>
 
-			<ul
-				css={css`
+      <ul
+        css={css`
 					list-style-type: none;
 					margin: 0;
 					padding: 0;
@@ -92,29 +92,29 @@ const NavigationMenu = () => {
 						margin-top: 0.4rem;
 					}
 				`}
-			>
-				<NavigationMenuItem icon="compass" link="/" onClick={closeMenu}>
+      >
+        <NavigationMenuItem icon="compass" link="/" onClick={closeMenu}>
 					Home
-				</NavigationMenuItem>
+        </NavigationMenuItem>
 
-				<NavigationMenuItem icon="help-circle" link="/about" onClick={closeMenu}>
+        <NavigationMenuItem icon="help-circle" link="/about" onClick={closeMenu}>
 					About
-				</NavigationMenuItem>
+        </NavigationMenuItem>
 
-				<NavigationMenuItem icon="coffee" link="/services" onClick={closeMenu}>
+        <NavigationMenuItem icon="coffee" link="/services" onClick={closeMenu}>
 					Services
-				</NavigationMenuItem>
+        </NavigationMenuItem>
 
-				<NavigationMenuItem icon="camera" link="/work" onClick={closeMenu}>
+        <NavigationMenuItem icon="camera" link="/work" onClick={closeMenu}>
 					Work
-				</NavigationMenuItem>
+        </NavigationMenuItem>
 
-				<NavigationMenuItem icon="send" link="/contact" onClick={closeMenu}>
+        <NavigationMenuItem icon="send" link="/contact" onClick={closeMenu}>
 					Contact
-				</NavigationMenuItem>
-			</ul>
-		</nav>
-	);
+        </NavigationMenuItem>
+      </ul>
+    </nav>
+  );
 };
 
 export default NavigationMenu;

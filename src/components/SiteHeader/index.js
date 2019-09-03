@@ -7,9 +7,9 @@ import NavigationMenu from '../NavigationMenu';
 import theme from '../../../config/theme';
 
 const SiteHeader = () => {
-	return (
-		<header
-			css={css`
+  return (
+    <header
+      css={css`
 				background: ${theme.colors.neutral.black};
 				display: flex;
 				justify-content: space-between;
@@ -32,16 +32,16 @@ const SiteHeader = () => {
 					padding-top: ${theme.site.tabletPadding};
 				}
 			`}
-		>
-			<SkipLink />
-			<Link
-				to="/"
-				css={css`
+    >
+      <SkipLink />
+      <Link
+        to="/"
+        css={css`
 					border: 0;
 				`}
-			>
-				<Logo
-					css={css`
+      >
+        <Logo
+          css={css`
 						height: 100%;
 						width: auto;
 						max-height: 45px;
@@ -57,12 +57,12 @@ const SiteHeader = () => {
 							max-width: 400px;
 						}
 					`}
-				/>
-			</Link>
+        />
+      </Link>
 
-			<NavigationMenu />
-		</header>
-	);
+      <NavigationMenu />
+    </header>
+  );
 };
 
 export default SiteHeader;

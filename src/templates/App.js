@@ -9,22 +9,22 @@ import SiteFooter from '../components/SiteFooter';
 import theme from '../../config/theme';
 
 export const App = props => {
-	const { children } = props;
-	const lang = `en`;
-	return (
-		<Nautilus theme={theme} config={{ LinkComponent: Link }}>
-			<Global
-				styles={css`
-					body {
-						margin: 0;
-					}
-				`}
-			/>
-			<SiteHeader />
-			<main id="content">{children}</main>
-			<SiteFooter />
-		</Nautilus>
-	);
+  const { children } = props;
+  const lang = `en`;
+  return (
+    <Nautilus theme={theme} config={{ LinkComponent: Link }}>
+      <Global
+        styles={css`
+          body {
+            margin: 0;
+          }
+        `}
+      />
+      <SiteHeader />
+      <main id="content">{children}</main>
+      <SiteFooter />
+    </Nautilus>
+  );
 };
 
 export default App;

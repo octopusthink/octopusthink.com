@@ -5,10 +5,10 @@ import { css } from '@emotion/core';
 import theme from '../../../config/theme';
 
 const PageBody = props => {
-	const { children, pageTitle, summary } = props;
-	return (
-		<article
-			css={css`
+  const { children, pageTitle, summary } = props;
+  return (
+    <article
+      css={css`
 				background: ${theme.colors.neutral.white};
 				margin: 6.4rem 0;
 				padding: ${theme.site.mobilePadding};
@@ -24,10 +24,10 @@ const PageBody = props => {
 					max-width: ${theme.site.maxContentWidth};
 				}
 			`}
-		>
-			{children}
-		</article>
-	);
+    >
+      {children}
+    </article>
+  );
 };
 
 export default PageBody;

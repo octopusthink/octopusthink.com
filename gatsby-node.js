@@ -188,14 +188,12 @@ const onCreateNode = ({ actions, node, getNode }) => {
       } else {
         slug = `/${pathWithoutPagesFolder}/${fileName}`;
       }
+    } else if (node.frontmatter && node.frontmatter.slug) {
+      slug = `/${parsedFilePath.dir}/${datePrefix}${node.frontmatter.slug}`;
+    } else if (parsedFilePath.name !== 'index' && parsedFilePath.dir !== '') {
+      slug = `/${parsedFilePath.dir}/${datePrefix}${fileName}`;
     } else {
-      if (node.frontmatter && node.frontmatter.slug) {
-        slug = `/${parsedFilePath.dir}/${datePrefix}${node.frontmatter.slug}`;
-      } else if (parsedFilePath.name !== 'index' && parsedFilePath.dir !== '') {
-        slug = `/${parsedFilePath.dir}/${datePrefix}${fileName}`;
-      } else {
-        slug = `/${parsedFilePath.dir}`;
-      }
+      slug = `/${parsedFilePath.dir}`;
     }
 
     // Create the slug, changing `/index` to `/` and removing any double

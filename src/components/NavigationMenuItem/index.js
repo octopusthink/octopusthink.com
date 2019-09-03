@@ -5,15 +5,15 @@ import { css } from '@emotion/core';
 import theme from '../../../config/theme';
 
 const NavigationMenuItem = props => {
-	const { children, icon, link, onClick } = props;
+  const { children, icon, link, onClick } = props;
 
-	return (
-		<li>
-			<Link
-				activeClassName="activeLink"
-				to={link}
-				onClick={onClick}
-				css={css`
+  return (
+    <li>
+      <Link
+        activeClassName="activeLink"
+        to={link}
+        onClick={onClick}
+        css={css`
 					${interfaceUI.small(theme)};
 					text-decoration: none;
 					color: ${theme.colors.neutral.white};
@@ -57,18 +57,18 @@ const NavigationMenuItem = props => {
 						}
 					}
 				`}
-			>
-				<Icon
-					name={icon}
-					css={css`
+      >
+        <Icon
+          name={icon}
+          css={css`
 						display: none;
 						margin-right: 1.6rem;
 					`}
-				/>
-				{children}
-			</Link>
-		</li>
-	);
+        />
+        {children}
+      </Link>
+    </li>
+  );
 };
 
 export default NavigationMenuItem;
