@@ -1,7 +1,6 @@
-import { PageTitle, Paragraph } from '@octopusthink/nautilus';
+import { Paragraph } from '@octopusthink/nautilus';
 import { graphql } from 'gatsby';
 import React, { Fragment } from 'react';
-import Helmet from 'react-helmet';
 
 import { markdown } from '../../utils/markdown';
 
