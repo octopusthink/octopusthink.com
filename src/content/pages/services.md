@@ -1,6 +1,7 @@
 ---
 title: 'What we do'
 summary: 'If you need smart, passionate, and pragmatic humans (or ocean-dwellers) to help out with your projects, we are here for you!'
+description: We offer React & full-stack development, accessibility audits, WordPress and iOS development, UX & UI design, user research, copyediting, open-source work, and training.
 ---
 
 We work remotely by default and provide frequent, open updates on your project. We've worked remotely for the past decade, but we can work with you on-site for parts of your project. We're also available to do on-site training and workshops.

@@ -2,6 +2,7 @@
 path: "/contact/"
 title: "Get in touch with us"
 summary: 'Want to work with us? Have a great idea to share? Just want to learn more about us? Say hello!'
+description: Get a quote or talk more about React development, inclusive design, or design systems.
 ---
 
 We're best-reached by good-old email: [hello@octopusthink.com](mailto:hello@octopusthink.com). If you'd like to say hi or you have a non-urgent message—send it to us via email!

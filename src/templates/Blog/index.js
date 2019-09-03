@@ -10,15 +10,17 @@ import SEO from '../../components/SEO';
 
 export const BlogList = props => {
 	const { data, pageContext } = props;
-	const siteDescription = 'foo';
 	const { posts } = data;
 	const { numberOfPages, currentPage } = pageContext;
-	const title = 'Blog archive';
-	const summary = 'Here is a description of this page.';
+	const title = 'Stories';
+	const summary =
+		'Where we talk about design, technology, inclusion, and adorable cephalopod stories.';
+	const description =
+		'The blog of Octopus Think. Design, technology, inclusion, and adorable cephalopod stories.';
 
 	return (
 		<App>
-			<SEO title={title} />
+			<SEO title={title} description={description} />
 			<PageHeader pageTitle={title} summary={summary} />
 
 			<PageBody>

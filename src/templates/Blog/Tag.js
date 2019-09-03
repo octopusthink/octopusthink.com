@@ -10,14 +10,14 @@ import SEO from '../../components/SEO';
 
 export const BlogTags = props => {
 	const { data } = props;
-	const siteDescription = 'foo';
 	const { posts } = data;
 	const title = 'Tag archive';
-	const summary = 'Here is a description of this site.';
+	const summary = 'Here is a description of this tag page.';
+	const description = 'A tag archive page.';
 
 	return (
 		<App>
-			<SEO title={title} />
+			<SEO title={title} description={description} />
 
 			<PageHeader pageTitle={title} summary={summary} />
 			<PageBody>

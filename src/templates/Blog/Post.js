@@ -17,11 +17,12 @@ export const BlogPost = props => {
 	const { htmlAst } = post;
 	const { author, date, slug, summary, title } = post.fields;
 
+	const description = metaDescription || summary;
 	const content = markdown(htmlAst);
 
 	return (
 		<App>
-			<SEO title={title} />
+			<SEO title={title} description={description} />
 			<Fragment key={slug}>
 				<PageHeader metadata={date} pageTitle={title} summary={summary} />
 			</Fragment>
@@ -40,10 +41,11 @@ export const pageQuery = graphql`
 			fields {
 				author
 				date
+				metaDescription
 				slug
+				summary
 				title
 				tags
-				summary
 			}
 			htmlAst
 			rawMarkdownBody

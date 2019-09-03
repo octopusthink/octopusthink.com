@@ -15,13 +15,14 @@ export const Portfolio = props => {
 
 	const { portfolioPiece } = data;
 	const { htmlAst } = portfolioPiece;
-	const { title, summary } = portfolioPiece.fields;
+	const { metaDescription, title, summary } = portfolioPiece.fields;
 
+	const description = metaDescription || summary;
 	const content = markdown(htmlAst);
 
 	return (
 		<App>
-			<SEO title={title} />
+			<SEO title={title} description={description} />
 			<PageHeader pageTitle={title} summary={summary} />
 			<PageBody>{content}</PageBody>
 		</App>
@@ -32,9 +33,10 @@ export const pageQuery = graphql`
 	query($id: String!) {
 		portfolioPiece: markdownRemark(id: { eq: $id }) {
 			fields {
+				metaDescription
 				slug
-				title
 				summary
+				title
 			}
 			htmlAst
 			rawMarkdownBody
