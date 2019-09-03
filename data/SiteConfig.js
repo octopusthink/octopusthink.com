@@ -6,7 +6,7 @@ const config = {
   siteUrl: 'https://octopusthink.com', // Domain of your website without pathPrefix.
   pathPrefix: '/', // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
   siteDescription:
-		"We're a graphic design and software development agency. We build, design, plan, and ship delightful apps and websites from sunny Scotland.", // Website description used for RSS feeds/meta description tag.
+    "We're a graphic design and software development agency. We build, design, plan, and ship delightful apps and websites from sunny Scotland.", // Website description used for RSS feeds/meta description tag.
   siteRss: '/rss.xml', // Path to the RSS file.
   siteFBAppID: '', // FB Application ID for using app insights
   googleAnalyticsID: 'UA-142191297-1', // GA tracking ID.
@@ -15,7 +15,7 @@ const config = {
   dateFormat: 'YYYY/MM/DD', // Date format for display.
   userName: 'Mechanical octopusthink', // Username to display in the author segment.
   userEmail: 'robots@octopusthink.com', // Email used for RSS feed's author segment
-  userTwitter: 'octopus_think', // Optionally renders "Follow Me" in the UserInfo segment.
+  userTwitter: 'octopusthinks', // Optionally renders "Follow Me" in the UserInfo segment.
   userLocation: 'Sunny Scotland', // User location to display in the author segment.
   userAvatar: 'https://api.adorable.io/avatars/150/test.png', // User avatar to display in the author segment.
   userDescription: '', // User description to display in the author segment.
@@ -28,7 +28,7 @@ const config = {
     },
     {
       label: 'Twitter',
-      url: 'https://twitter.com/octopus_think',
+      url: 'https://twitter.com/octopusthinks',
       iconClassName: 'fa fa-twitter',
     },
     {
@@ -37,9 +37,9 @@ const config = {
       iconClassName: 'fa fa-envelope',
     },
   ],
-  copyright: '© 2019 Octopus Think Ltd.', // Copyright string for the footer of the website and RSS feed.
-  themeColor: '#E33590', // Used for setting manifest and progress theme colors.
-  backgroundColor: '#181B1C', // Used for setting manifest background color.
+  copyright: 'Copyright © 2019. Octopus Think Ltd.', // Copyright string for the footer of the website and RSS feed.
+  themeColor: '#c62828', // Used for setting manifest and progress theme colors.
+  backgroundColor: '#e0e0e0', // Used for setting manifest background color.
 };
 
 // Validate
