@@ -50,11 +50,7 @@ const PageHeader = props => {
             }
           `}
         >
-          {metadata && (
-            <Tags>
-              <Tags.Tag>{metadata}</Tags.Tag>
-            </Tags>
-          )}
+          {metadata}
           <PageTitle
             css={css`
               color: white;
