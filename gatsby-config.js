@@ -8,13 +8,20 @@ module.exports = {
   siteMetadata: {
     title: `Octopus Think`,
     description: `Octopus Think is a design and development agency based in Scotland. We build inclusive, usable, and smart websites and apps.`,
-    author: `@octopusthink`,
+    author: `@octopusthinks`,
     siteUrl: `https://octopusthink.com`,
   },
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-emotion',
-    'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        // Exclude specific pages or groups of pages using glob parameters
+        // See: https://github.com/isaacs/minimatch
+        exclude: ['/blog', '/blog/*', '/blog/*/*', '/portfolio/*'],
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
