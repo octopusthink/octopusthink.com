@@ -14,7 +14,7 @@ export const BlogPost = props => {
   const { post } = data;
 
   const { htmlAst } = post;
-  const { author, date, slug, summary, title } = post.fields;
+  const { author, date, metaDescription, slug, summary, title } = post.fields;
 
   const description = metaDescription || summary;
   const content = markdown(htmlAst);
