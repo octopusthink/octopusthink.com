@@ -50,7 +50,7 @@ const SiteHeader = () => {
           <Logo
             css={css`
               height: 100%;
-              width: auto;
+              width: 100%;
               max-height: 45px;
               max-width: 300px;
 
