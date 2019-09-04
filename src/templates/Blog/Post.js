@@ -4,7 +4,7 @@ import React, { Fragment } from 'react';
 
 import { markdown } from '../../utils/markdown';
 
-import App from '../app';
+import App from '../App';
 import PageHeader from '../../components/PageHeader';
 import PageBody from '../../components/PageBody';
 import SEO from '../../components/SEO';

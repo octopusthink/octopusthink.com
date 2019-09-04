@@ -1,11 +1,9 @@
-import { PageTitle } from '@octopusthink/nautilus';
 import { graphql } from 'gatsby';
 import React from 'react';
-import Helmet from 'react-helmet';
 
 import { markdown } from '../utils/markdown';
 
-import App from './app';
+import App from './App';
 import PageHeader from '../components/PageHeader';
 import PageBody from '../components/PageBody';
 import SEO from '../components/SEO';

@@ -1,9 +1,8 @@
 import { Heading, Link, List, Paragraph } from '@octopusthink/nautilus';
 import { graphql } from 'gatsby';
 import React, { Fragment } from 'react';
-import Helmet from 'react-helmet';
 
-import App from '../app';
+import App from '../App';
 import PageHeader from '../../components/PageHeader';
 import PageBody from '../../components/PageBody';
 import SEO from '../../components/SEO';
