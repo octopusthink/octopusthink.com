@@ -1,0 +1,23 @@
+---
+name: Publish Website
+
+on:
+  push:
+    branches:
+      - "!*"
+      - master
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 10
+      - name: Install dependencies
+        run: npm install
+      - name: Publish to gh-pages
+        run: npm run build:gh -- --silent --repo "https://$GITHUB_ACCESS_TOKEN@github.com/octopusthink/octopusthink.com"
+        env:
+          GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_ACCESS_TOKEN }}
