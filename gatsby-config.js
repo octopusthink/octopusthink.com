@@ -22,6 +22,7 @@ module.exports = {
         exclude: ['/blog', '/blog/*', '/blog/*/*', '/portfolio/*'],
       },
     },
+    'gatsby-transformer-yaml',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -30,12 +31,20 @@ module.exports = {
         ignore: [`**/*.js`],
       },
     },
-		{
-			resolve: `gatsby-transformer-remark`,
-			options: {
-				plugins: [`gatsby-remark-smartypants`],
-			},
-		},
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'data',
+        path: `${__dirname}/data/`,
+        ignore: [`**/*.js`],
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [`gatsby-remark-smartypants`],
+      },
+    },
     {
       resolve: `gatsby-plugin-favicon`,
       options: {
@@ -51,4 +60,7 @@ module.exports = {
       },
     },
   ],
+  mapping: {
+    'MarkdownRemark.frontmatter.tags': `TagsYaml`,
+  },
 };

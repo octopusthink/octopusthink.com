@@ -31,6 +31,7 @@
     "gatsby-remark-smartypants": "^2.1.7",
     "gatsby-source-filesystem": "^2.1.5",
     "gatsby-transformer-remark": "^2.6.6",
+    "gatsby-transformer-yaml": "^2.2.8",
     "gh-pages": "^2.0.1",
     "identity-obj-proxy": "^3.0.0",
     "inter-ui": "^3.9.0",

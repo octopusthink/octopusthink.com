@@ -9,11 +9,19 @@ import PageBody from '../../components/PageBody';
 import SEO from '../../components/SEO';
 
 export const BlogTags = props => {
-  const { data } = props;
-  const { posts } = data;
-  const title = 'Tag archive';
-  const summary = 'Here is a description of this tag page.';
-  const description = 'A tag archive page.';
+  const { data, pageContext } = props;
+  const { posts, tag } = data;
+
+  let summary, title;
+  if (tag.edges.length > 0) {
+    const tagData = tag.edges[0].node;
+    title = `Posts tagged #${tagData.name}`;
+    summary = tagData.summary;
+  } else {
+    title = `Posts tagged #${pageContext.tag}`;
+    summary = `An archive of blog posts tagged #${pageContext.tag}`;
+  }
+  const description = summary;
 
   return (
     <App>
@@ -57,6 +65,15 @@ export const pageQuery = graphql`
             title
             tags
           }
+        }
+      }
+    }
+    tag: allTagsYaml(filter: { name: { eq: $tag } }) {
+      edges {
+        node {
+          id
+          summary
+          name
         }
       }
     }
