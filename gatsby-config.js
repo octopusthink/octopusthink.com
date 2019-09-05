@@ -62,5 +62,6 @@ module.exports = {
   ],
   mapping: {
     'MarkdownRemark.frontmatter.tags': `TagsYaml`,
+    'MarkdownRemark.fields.author': `AuthorsYaml`,
   },
 };

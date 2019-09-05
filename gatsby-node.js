@@ -50,7 +50,7 @@ const makeBlogPosts = ({ actions, blogPosts }) => {
     });
 
     if (edge.node.fields.tags) {
-      edge.node.fields.tags.forEach((tag) => {
+      edge.node.fields.tags.forEach(tag => {
         tags.add(tag);
       });
     }
@@ -79,7 +79,7 @@ const makeBlogPosts = ({ actions, blogPosts }) => {
 const makeBlogTags = ({ actions, tags }) => {
   const { createPage } = actions;
 
-  tags.forEach((tag) => {
+  tags.forEach(tag => {
     const slug = `/blog/tags/${kebabCase(tag)}/`;
 
     createPage({
@@ -97,9 +97,7 @@ const makePages = ({ actions, pages }) => {
     pages.edges.forEach((edge, index) => {
       createPage({
         path: edge.node.fields.slug,
-        component: path.resolve(
-          `src/templates/${edge.node.fields.component}.js`,
-        ),
+        component: path.resolve(`src/templates/${edge.node.fields.component}.js`),
         context: {
           id: edge.node.id,
           slug: edge.node.fields.slug,
@@ -178,10 +176,7 @@ const onCreateNode = ({ actions, node, getNode }) => {
     const fileName = date ? dateMatch[2] : parsedFilePath.name;
 
     if (parsedFilePath.dir.match(/^pages/)) {
-      const pathWithoutPagesFolder = parsedFilePath.dir.replace(
-        /^pages\/?/,
-        '',
-      );
+      const pathWithoutPagesFolder = parsedFilePath.dir.replace(/^pages\/?/, '');
 
       if (node.frontmatter && node.frontmatter.slug) {
         slug = `/${pathWithoutPagesFolder}/${node.frontmatter.slug}`;
@@ -208,7 +203,7 @@ const onCreateNode = ({ actions, node, getNode }) => {
     if (node.frontmatter && node.frontmatter.tags) {
       invariant(
         Array.isArray(node.frontmatter.tags),
-        `Tags for file ${parsedFilePath.name} has invalid tags. Tags should be a YAML-list, not a string.`,
+        `Tags for file ${parsedFilePath.name} has invalid tags. Tags should be a YAML-list, not a string.`
       );
 
       // Add the array of tags to this node.
@@ -223,10 +218,10 @@ const onCreateNode = ({ actions, node, getNode }) => {
     // query for fields instead of needing to know what's in `node.fields` and
     // what's in `node.frontmatter`.
     Object.keys(node.frontmatter)
-      .filter((key) => {
+      .filter(key => {
         return ['component', 'date', 'slug', 'tags'].indexOf(key) === -1;
       })
-      .forEach((key) => {
+      .forEach(key => {
         createNodeField({
           node,
           name: key,
@@ -241,14 +236,17 @@ const createPages = async ({ actions, graphql }) => {
 
   const markdownQueryResult = await graphql(`
     query {
-      blogPosts: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "//content/blog/" } }
-      ) {
+      blogPosts: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "//content/blog/" } }) {
         edges {
           node {
             id
             fields {
-              author
+              author {
+                id
+                avatar
+                name
+                bio
+              }
               date
               slug
               title
@@ -257,9 +255,7 @@ const createPages = async ({ actions, graphql }) => {
           }
         }
       }
-      pages: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "//content/(?!blog).+?/" } }
-      ) {
+      pages: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "//content/(?!blog).+?/" } }) {
         edges {
           node {
             id

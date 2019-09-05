@@ -7,6 +7,7 @@ import { markdown } from '../../utils/markdown';
 import dayjs from 'dayjs';
 
 import App from '../App';
+import AuthorByline from '../../components/AuthorByline';
 import PageHeader from '../../components/PageHeader';
 import PageBody from '../../components/PageBody';
 import SEO from '../../components/SEO';
@@ -19,6 +20,7 @@ export const BlogPost = props => {
 
   const { htmlAst } = post;
   const { author, date, metaDescription, slug, summary, tags, title } = post.fields;
+
   const formattedDate = dayjs(date).format(config.dateFormat);
 
   const formattedMetadata = (
@@ -77,10 +79,11 @@ export const BlogPost = props => {
       <PageBody>
         {content}
 
-        <Paragraph>
-          Written by
-          {author}
-        </Paragraph>
+        {author && (
+          <AuthorByline name={author.name} avatar={author.avatar}>
+            {author.bio}
+          </AuthorByline>
+        )}
       </PageBody>
     </App>
   );
@@ -90,7 +93,12 @@ export const pageQuery = graphql`
   query($id: String!) {
     post: markdownRemark(id: { eq: $id }) {
       fields {
-        author
+        author {
+          avatar
+          id
+          name
+          bio
+        }
         date
         metaDescription
         slug

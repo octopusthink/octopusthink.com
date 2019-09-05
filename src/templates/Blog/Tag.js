@@ -30,7 +30,7 @@ export const BlogTags = props => {
       <PageHeader pageTitle={title} summary={summary} />
       <PageBody>
         {posts.edges.map(({ node }) => {
-          const { author, date, slug, title } = node.fields;
+          const { date, slug, title } = node.fields;
 
           return (
             <Fragment key={slug}>
@@ -59,7 +59,6 @@ export const pageQuery = graphql`
       edges {
         node {
           fields {
-            author
             date
             slug
             title

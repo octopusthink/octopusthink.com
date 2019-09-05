@@ -1,0 +1,8 @@
+- id: sarah
+  name: Sarah Semark
+  avatar: /sarah-semark.jpg
+  bio: Sarah is a designer who codes. She likes building and fixing things, and believes that constructive criticism is vital to making the things you love better. When she’s not busy making things, Sarah likes obsessing over typography, collecting impractical footwear, and exploring new places.
+- id: matt
+  name: Matthew MacPherson
+  avatar: /matt.jpg
+  bio: Matt is a full-stack developer with a soft spot for React and JavaScript. He’s detail-oriented, quick to learn, and well-versed in navigating projects of all sizes. He cares about accessibility, automation, and writing clean, readable code that doesn’t box you in. In his spare time, Matt likes riding his motorcycle, hiking in the Highlands, and making three different types of coffee.
