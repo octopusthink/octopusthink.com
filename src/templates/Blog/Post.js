@@ -80,7 +80,7 @@ export const BlogPost = props => {
         {content}
 
         {author && (
-          <AuthorByline name={author.name} avatar={author.avatar}>
+          <AuthorByline name={author.name} avatar={author.avatar} title={author.title}>
             {author.bio}
           </AuthorByline>
         )}
@@ -95,9 +95,10 @@ export const pageQuery = graphql`
       fields {
         author {
           avatar
+          bio
           id
           name
-          bio
+          title
         }
         date
         metaDescription
