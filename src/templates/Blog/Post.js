@@ -8,8 +8,10 @@ import dayjs from 'dayjs';
 
 import App from '../App';
 import AuthorByline from '../../components/AuthorByline';
-import PageHeader from '../../components/PageHeader';
 import PageBody from '../../components/PageBody';
+import PageFooter from '../../components/PageFooter';
+import PageHeader from '../../components/PageHeader';
+import PageWrapper from '../../components/PageWrapper';
 import SequentialLink from '../../components/SequentialLink';
 import SEO from '../../components/SEO';
 import config from '../../../config';
@@ -73,36 +75,34 @@ export const BlogPost = props => {
   return (
     <App>
       <SEO title={title} description={description} />
-      <Fragment key={slug}>
-        <PageHeader metadata={formattedMetadata} pageTitle={title} summary={summary} />
-      </Fragment>
+      <PageWrapper>
+        <Fragment key={slug}>
+          <PageHeader metadata={formattedMetadata} pageTitle={title} summary={summary} />
+        </Fragment>
 
-      <PageBody>
-        {content}
-        {authors.map(author => (
-          <AuthorByline name={author.name} avatar={author.avatar} title={author.title}>
-            {author.bio}
-          </AuthorByline>
-        ))}
-      </PageBody>
+        <PageBody>
+          {content}
+          {authors.map(author => (
+            <AuthorByline name={author.name} avatar={author.avatar} title={author.title}>
+              {author.bio}
+            </AuthorByline>
+          ))}
+        </PageBody>
 
-      <div
-        css={css`
-          width: 100%;
-          padding: 3.2rem;
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          grid-gap: 3.2rem;
-        `}
-      >
-        <SequentialLink
-          direction="previous"
-          title={pageContext.prevtitle}
-          to={pageContext.prevslug}
-        />
+        <PageFooter>
+          <SequentialLink
+            direction="previous"
+            title={pageContext.prevtitle}
+            to={pageContext.prevslug}
+          />
 
-        <SequentialLink direction="next" title={pageContext.nexttitle} to={pageContext.nextslug} />
-      </div>
+          <SequentialLink
+            direction="next"
+            title={pageContext.nexttitle}
+            to={pageContext.nextslug}
+          />
+        </PageFooter>
+      </PageWrapper>
     </App>
   );
 };
