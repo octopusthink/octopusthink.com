@@ -1,4 +1,4 @@
-import { Heading, Link, Paragraph } from '@octopusthink/nautilus';
+import { Heading, Link, Paragraph, Tags } from '@octopusthink/nautilus';
 import { graphql } from 'gatsby';
 import React, { Fragment } from 'react';
 import Helmet from 'react-helmet';
@@ -6,9 +6,10 @@ import Helmet from 'react-helmet';
 import App from '../App';
 import PageHeader from '../../components/PageHeader';
 import PageBody from '../../components/PageBody';
+import PostCard from '../../components/PostCard';
 import SEO from '../../components/SEO';
 
-export const BlogTags = (props) => {
+export const BlogTags = props => {
   const { data, pageContext } = props;
   const { posts, tag } = data;
 
@@ -32,18 +33,11 @@ export const BlogTags = (props) => {
       <PageHeader pageTitle={title} summary={summary} />
       <PageBody>
         {posts.edges.map(({ node }) => {
-          const { authors, date, slug, title } = node.fields;
+          const { authors, date, slug, summary, title } = node.fields;
 
           return (
             <Fragment key={slug}>
-              <Link to={slug}>
-                <Heading level={2}>{title}</Heading>
-              </Link>
-              <Paragraph>{date}</Paragraph>
-              <Paragraph>
-                By
-                {authors.map((author) => author.name).join(', ')}
-              </Paragraph>
+              <PostCard slug={slug} date={date} title={title} summary={summary} />
             </Fragment>
           );
         })}
@@ -71,6 +65,7 @@ export const pageQuery = graphql`
             }
             date
             slug
+            summary
             title
             tags {
               id

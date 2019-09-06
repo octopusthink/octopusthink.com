@@ -1,15 +1,14 @@
 import { Heading, Link, List, Paragraph, Tags } from '@octopusthink/nautilus';
 import { graphql } from 'gatsby';
 import React, { Fragment } from 'react';
-import dayjs from 'dayjs';
 
 import App from '../App';
 import PageHeader from '../../components/PageHeader';
 import PageBody from '../../components/PageBody';
+import PostCard from '../../components/PostCard';
 import SEO from '../../components/SEO';
-import config from '../../../config';
 
-export const BlogList = (props) => {
+export const BlogList = props => {
   const { data, pageContext } = props;
   const { posts } = data;
   const { numberOfPages, currentPage } = pageContext;
@@ -27,16 +26,9 @@ export const BlogList = (props) => {
       <PageBody>
         {posts.edges.map(({ node }) => {
           const { date, slug, summary, title } = node.fields;
-          const formattedDate = dayjs(date).format(config.dateFormat);
           return (
             <Fragment key={slug}>
-              <Tags label="Date published">
-                <Tags.Tag>{formattedDate}</Tags.Tag>
-              </Tags>
-              <Link to={slug}>
-                <Heading level={2}>{title}</Heading>
-              </Link>
-              <Paragraph>{summary}</Paragraph>
+              <PostCard slug={slug} date={date} summary={summary} title={title} />
             </Fragment>
           );
         })}
