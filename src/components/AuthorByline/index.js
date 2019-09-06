@@ -2,6 +2,7 @@ import { Heading, Link, Paragraph, Tags } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
+import config from '../../../config';
 import theme from '../../../config/theme';
 
 const AuthorByline = props => {
@@ -26,6 +27,7 @@ const AuthorByline = props => {
           grid-template-columns: 1fr 2fr;
           grid-gap: 3.2rem;
           padding: 3.2rem;
+          width: calc(${theme.site.maxContentWidth} + 16rem);
         }
       `}
     >
@@ -64,9 +66,10 @@ const AuthorByline = props => {
           <Tags.Tag>{title}</Tags.Tag>
         </Tags>
         <Heading
-          small
+          level={2}
           css={css`
             margin-bottom: 0;
+            letter-spacing: -0.021em;
           `}
         >
           {name}

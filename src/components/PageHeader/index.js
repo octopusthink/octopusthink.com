@@ -46,7 +46,7 @@ const PageHeader = props => {
             }
             @media screen and (min-width: 1024px) {
               padding: ${theme.site.desktopPadding};
-              max-width: ${theme.site.maxContentWidth};
+              max-width: calc(${theme.site.maxContentWidth} + ${theme.site.desktopPadding} * 2);
             }
           `}
         >
