@@ -6,10 +6,11 @@
 
 module.exports = {
   siteMetadata: {
-    title: `Octopus Think`,
-    description: `Octopus Think is a design and development agency based in Scotland. We build inclusive, usable, and smart websites and apps.`,
-    author: `@octopusthinks`,
-    siteUrl: `https://octopusthink.com`,
+    title: 'Octopus Think',
+    description:
+      'Octopus Think is a design and development agency based in Scotland. We build inclusive, usable, and smart websites and apps.',
+    author: '@octopusthinks',
+    siteUrl: 'https://octopusthink.com',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -28,7 +29,7 @@ module.exports = {
       options: {
         name: 'content',
         path: `${__dirname}/src/content/`,
-        ignore: [`**/*.js`],
+        ignore: ['**/*.js'],
       },
     },
     {
@@ -36,17 +37,17 @@ module.exports = {
       options: {
         name: 'data',
         path: `${__dirname}/data/`,
-        ignore: [`**/*.js`],
+        ignore: ['**/*.js'],
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: 'gatsby-transformer-remark',
       options: {
-        plugins: [`gatsby-remark-smartypants`],
+        plugins: ['gatsby-remark-smartypants'],
       },
     },
     {
-      resolve: `gatsby-plugin-favicon`,
+      resolve: 'gatsby-plugin-favicon',
       options: {
         logo: './static/favicon.png',
       },
@@ -61,7 +62,7 @@ module.exports = {
     },
   ],
   mapping: {
-    'MarkdownRemark.frontmatter.tags': `TagsYaml`,
-    'MarkdownRemark.fields.author': `AuthorsYaml`,
+    'MarkdownRemark.fields.authors': 'AuthorsYaml',
+    'MarkdownRemark.fields.tags': 'TagsYaml',
   },
 };

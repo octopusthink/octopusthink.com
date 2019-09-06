@@ -9,7 +9,7 @@
     "build:pp": "gatsby build --prefix-paths",
     "build:gh": "npm run clean && npm run build && gh-pages -d public",
     "clean": "rm -rf public && rm -rf .cache",
-    "format": "prettier --write src/**/*.{js,jsx}",
+    "format": "prettier --write **/**/*.{js,jsx}",
     "lint": "eslint .",
     "start": "gatsby develop",
     "serve": "gatsby serve",

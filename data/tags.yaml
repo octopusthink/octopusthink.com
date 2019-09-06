@@ -1,4 +1,9 @@
-- name: foo
+- id: company-news
+  name: Company News
+  summary: Matt is annoyed.
+- id: foo
+  name: foo
   summary: Short for food, foolish, or foot-fetish. Not short for Foo Fighters.
-- name: bar
+- id: bar
+  name: bar
   summary: That place you go to get crunked. And/or for hitting people you don't care for over the head.

@@ -14,12 +14,12 @@ import SEO from '../../components/SEO';
 import config from '../../../config';
 import theme from '../../../config/theme';
 
-export const BlogPost = props => {
+export const BlogPost = (props) => {
   const { data } = props;
   const { post } = data;
 
   const { htmlAst } = post;
-  const { author, date, metaDescription, slug, summary, tags, title } = post.fields;
+  const { authors, date, metaDescription, slug, summary, tags, title } = post.fields;
 
   const formattedDate = dayjs(date).format(config.dateFormat);
 
@@ -44,11 +44,11 @@ export const BlogPost = props => {
         &middot;
       </span>
       <Tags label="Tags">
-        {tags.map(tag => {
+        {tags.map((tag) => {
           return (
             <Tags.Tag>
               <Link
-                to={`/blog/tags/${tag}`}
+                to={`/blog/tags/${tag.id}`}
                 css={css`
                   border: none;
                   color: ${theme.colors.neutral.grey800};
@@ -58,7 +58,7 @@ export const BlogPost = props => {
                   }
                 `}
               >
-                #{tag}
+                #{tag.name}
               </Link>
             </Tags.Tag>
           );
@@ -79,11 +79,11 @@ export const BlogPost = props => {
       <PageBody>
         {content}
 
-        {author && (
+        {authors.map((author) => (
           <AuthorByline name={author.name} avatar={author.avatar} title={author.title}>
             {author.bio}
           </AuthorByline>
-        )}
+        ))}
       </PageBody>
     </App>
   );
@@ -93,7 +93,7 @@ export const pageQuery = graphql`
   query($id: String!) {
     post: markdownRemark(id: { eq: $id }) {
       fields {
-        author {
+        authors {
           avatar
           bio
           id
@@ -105,7 +105,11 @@ export const pageQuery = graphql`
         slug
         summary
         title
-        tags
+        tags {
+          id
+          name
+          summary
+        }
       }
       htmlAst
       rawMarkdownBody

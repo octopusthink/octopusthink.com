@@ -50,7 +50,7 @@ const makeBlogPosts = ({ actions, blogPosts }) => {
     });
 
     if (edge.node.fields.tags) {
-      edge.node.fields.tags.forEach(tag => {
+      edge.node.fields.tags.forEach((tag) => {
         tags.add(tag);
       });
     }
@@ -79,13 +79,13 @@ const makeBlogPosts = ({ actions, blogPosts }) => {
 const makeBlogTags = ({ actions, tags }) => {
   const { createPage } = actions;
 
-  tags.forEach(tag => {
-    const slug = `/blog/tags/${kebabCase(tag)}/`;
+  tags.forEach((tag) => {
+    const slug = `/blog/tags/${tag.id}/`;
 
     createPage({
       path: slug,
       component: path.resolve('src/templates/Blog/Tag.js'),
-      context: { slug, tag },
+      context: { slug, tagId: tag.id },
     });
   });
 };
@@ -94,7 +94,7 @@ const makePages = ({ actions, pages }) => {
   const { createPage } = actions;
 
   if (pages) {
-    pages.edges.forEach((edge, index) => {
+    pages.edges.forEach((edge) => {
       createPage({
         path: edge.node.fields.slug,
         component: path.resolve(`src/templates/${edge.node.fields.component}.js`),
@@ -199,29 +199,14 @@ const onCreateNode = ({ actions, node, getNode }) => {
       value: slug.replace(/\/index$/, '/').replace(/\/{2,}/g, '/'),
     });
 
-    // Create the tags for this post.
-    if (node.frontmatter && node.frontmatter.tags) {
-      invariant(
-        Array.isArray(node.frontmatter.tags),
-        `Tags for file ${parsedFilePath.name} has invalid tags. Tags should be a YAML-list, not a string.`
-      );
-
-      // Add the array of tags to this node.
-      createNodeField({
-        node,
-        name: 'tags',
-        value: node.frontmatter.tags,
-      });
-    }
-
     // Create fields for every other frontmatter prop; this makes it easier to
     // query for fields instead of needing to know what's in `node.fields` and
     // what's in `node.frontmatter`.
     Object.keys(node.frontmatter)
-      .filter(key => {
-        return ['component', 'date', 'slug', 'tags'].indexOf(key) === -1;
+      .filter((key) => {
+        return ['component', 'date', 'slug'].indexOf(key) === -1;
       })
-      .forEach(key => {
+      .forEach((key) => {
         createNodeField({
           node,
           name: key,
@@ -232,8 +217,6 @@ const onCreateNode = ({ actions, node, getNode }) => {
 };
 
 const createPages = async ({ actions, graphql }) => {
-  const { createPage } = actions;
-
   const markdownQueryResult = await graphql(`
     query {
       blogPosts: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "//content/blog/" } }) {
@@ -241,7 +224,7 @@ const createPages = async ({ actions, graphql }) => {
           node {
             id
             fields {
-              author {
+              authors {
                 id
                 avatar
                 name
@@ -250,7 +233,11 @@ const createPages = async ({ actions, graphql }) => {
               date
               slug
               title
-              tags
+              tags {
+                id
+                name
+                summary
+              }
             }
           }
         }

@@ -8,11 +8,13 @@ import PageHeader from '../../components/PageHeader';
 import PageBody from '../../components/PageBody';
 import SEO from '../../components/SEO';
 
-export const BlogTags = props => {
+export const BlogTags = (props) => {
   const { data, pageContext } = props;
   const { posts, tag } = data;
 
-  let summary, title;
+  let summary;
+  let title;
+
   if (tag.edges.length > 0) {
     const tagData = tag.edges[0].node;
     title = `Posts tagged #${tagData.name}`;
@@ -30,7 +32,7 @@ export const BlogTags = props => {
       <PageHeader pageTitle={title} summary={summary} />
       <PageBody>
         {posts.edges.map(({ node }) => {
-          const { date, slug, title } = node.fields;
+          const { authors, date, slug, title } = node.fields;
 
           return (
             <Fragment key={slug}>
@@ -40,7 +42,7 @@ export const BlogTags = props => {
               <Paragraph>{date}</Paragraph>
               <Paragraph>
                 By
-                {author}
+                {authors.map((author) => author.name).join(', ')}
               </Paragraph>
             </Fragment>
           );
@@ -51,23 +53,35 @@ export const BlogTags = props => {
 };
 
 export const pageQuery = graphql`
-  query blogPostsTags($tag: String!) {
+  query($tagId: String!) {
     posts: allMarkdownRemark(
       sort: { fields: [fields___date], order: DESC }
-      filter: { fileAbsolutePath: { regex: "//content/blog/" }, fields: { tags: { eq: $tag } } }
+      filter: {
+        fileAbsolutePath: { regex: "//content/blog/" }
+        fields: { tags: { elemMatch: { id: { eq: $tagId } } } }
+      }
     ) {
       edges {
         node {
           fields {
+            authors {
+              bio
+              id
+              name
+            }
             date
             slug
             title
-            tags
+            tags {
+              id
+              name
+              summary
+            }
           }
         }
       }
     }
-    tag: allTagsYaml(filter: { name: { eq: $tag } }) {
+    tag: allTagsYaml(filter: { id: { eq: $tagId } }) {
       edges {
         node {
           id

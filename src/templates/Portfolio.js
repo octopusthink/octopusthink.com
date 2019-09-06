@@ -8,7 +8,7 @@ import PageHeader from '../components/PageHeader';
 import PageBody from '../components/PageBody';
 import SEO from '../components/SEO';
 
-export const Portfolio = props => {
+export const Portfolio = (props) => {
   const { data } = props;
 
   const { portfolioPiece } = data;
