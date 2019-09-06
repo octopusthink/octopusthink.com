@@ -20,14 +20,23 @@ const AuthorByline = props => {
           font-size: 0.8em;
           grid-gap: 2.4rem;
           padding: 2.4rem;
+          margin-left: -${theme.site.mobilePadding};
+          width: calc(100% + ${theme.site.mobilePadding} + ${theme.site.mobilePadding});
         }
 
         @media screen and (min-width: 640px) {
           align-items: center;
-          grid-template-columns: 1fr 2fr;
-          grid-gap: 3.2rem;
+          grid-template-columns: 16rem auto;
+          grid-column-gap: 3.2rem;
+          grid-row-gap: 1.6rem;
           padding: 3.2rem;
-          width: calc(${theme.site.maxContentWidth} + 16rem);
+          margin-left: -1.6rem;
+          width: calc(100% + 3.2rem);
+        }
+
+        @media screen and (min-width: 1024px) {
+          margin-left: -3.2rem;
+          width: calc(100% + 6.4rem);
         }
       `}
     >
@@ -47,10 +56,7 @@ const AuthorByline = props => {
             width: 100%;
             height: auto;
             border-radius: 50%;
-
-            @media screen and (max-width: 639px) {
-              max-width: 16rem;
-            }
+            max-width: 16rem;
           `}
         />
       </div>
