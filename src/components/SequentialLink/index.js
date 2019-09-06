@@ -21,9 +21,9 @@ const SequentialLink = props => {
       css={css`
         border: 0;
         display: flex;
-        align-items: middle;
+        align-items: center;
         justify-content: end;
-        grid-gap: 1.6rem;
+        grid-gap: 0.8rem;
 
         ${direction == 'previous' &&
           css`
@@ -44,9 +44,26 @@ const SequentialLink = props => {
         <Tags label="">
           <Tags.Tag>{direction} post</Tags.Tag>
         </Tags>
-        <Heading level={3}>{title}</Heading>
+        <Heading
+          level={3}
+          css={css`
+            margin-bottom: 0;
+          `}
+        >
+          {title}
+        </Heading>
       </div>
-      <Icon name={arrowIcon} background="black" color="white" medium />
+      <Icon
+        name={arrowIcon}
+        background="black"
+        color="white"
+        medium
+        css={css`
+          @media screen and (max-width: 480px) {
+            display: none;
+          }
+        `}
+      />
     </Link>
   );
 };
