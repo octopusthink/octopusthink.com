@@ -69,7 +69,7 @@ const AuthorByline = props => {
         `}
       >
         <Tags label="Job title">
-          <Tags.Tag>{title}</Tags.Tag>
+          <Tags.Tag>Written by</Tags.Tag>
         </Tags>
         <Heading
           level={2}

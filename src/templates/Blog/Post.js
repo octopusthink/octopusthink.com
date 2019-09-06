@@ -10,12 +10,13 @@ import App from '../App';
 import AuthorByline from '../../components/AuthorByline';
 import PageHeader from '../../components/PageHeader';
 import PageBody from '../../components/PageBody';
+import SequentialLink from '../../components/SequentialLink';
 import SEO from '../../components/SEO';
 import config from '../../../config';
 import theme from '../../../config/theme';
 
-export const BlogPost = (props) => {
-  const { data } = props;
+export const BlogPost = props => {
+  const { data, pageContext } = props;
   const { post } = data;
 
   const { htmlAst } = post;
@@ -44,7 +45,7 @@ export const BlogPost = (props) => {
         &middot;
       </span>
       <Tags label="Tags">
-        {tags.map((tag) => {
+        {tags.map(tag => {
           return (
             <Tags.Tag>
               <Link
@@ -78,13 +79,30 @@ export const BlogPost = (props) => {
 
       <PageBody>
         {content}
-
-        {authors.map((author) => (
+        {authors.map(author => (
           <AuthorByline name={author.name} avatar={author.avatar} title={author.title}>
             {author.bio}
           </AuthorByline>
         ))}
       </PageBody>
+
+      <div
+        css={css`
+          width: 100%;
+          padding: 3.2rem;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 3.2rem;
+        `}
+      >
+        <SequentialLink
+          direction="previous"
+          title={pageContext.prevtitle}
+          to={pageContext.prevslug}
+        />
+
+        <SequentialLink direction="next" title={pageContext.nexttitle} to={pageContext.nextslug} />
+      </div>
     </App>
   );
 };
