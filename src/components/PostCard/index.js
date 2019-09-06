@@ -1,4 +1,4 @@
-import { Button, Heading, Link, Paragraph, Tags } from '@octopusthink/nautilus';
+import { Button, Heading, Link, Paragraph, Tags, metadata } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 import dayjs from 'dayjs';
@@ -7,7 +7,7 @@ import config from '../../../config';
 import theme from '../../../config/theme';
 
 const PostCard = props => {
-  const { authors, date, slug, summary, tags, title } = props;
+  const { authors, date, readingTime, slug, summary, tags, title } = props;
   const formattedDate = dayjs(date).format(config.dateFormat);
 
   return (
@@ -23,6 +23,20 @@ const PostCard = props => {
       >
         <Tags label="Date Published">
           <Tags.Tag>{formattedDate}</Tags.Tag>
+        </Tags>
+
+        <span
+          css={css`
+            ${metadata.small(theme)};
+            color: ${theme.colors.neutral.grey800};
+            padding: 0 0.4rem;
+          `}
+        >
+          &middot;
+        </span>
+
+        <Tags label="Reading time">
+          <Tags.Tag>{readingTime.text}</Tags.Tag>
         </Tags>
       </div>
       <Heading

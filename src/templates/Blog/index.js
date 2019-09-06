@@ -25,10 +25,16 @@ export const BlogList = props => {
 
       <PageBody>
         {posts.edges.map(({ node }) => {
-          const { date, slug, summary, title } = node.fields;
+          const { date, readingTime, slug, summary, title } = node.fields;
           return (
             <Fragment key={slug}>
-              <PostCard slug={slug} date={date} summary={summary} title={title} />
+              <PostCard
+                date={date}
+                readingTime={readingTime}
+                slug={slug}
+                summary={summary}
+                title={title}
+              />
             </Fragment>
           );
         })}
@@ -66,6 +72,9 @@ export const pageQuery = graphql`
         node {
           fields {
             date
+            readingTime {
+              text
+            }
             slug
             summary
             title

@@ -33,11 +33,17 @@ export const BlogTags = props => {
       <PageHeader pageTitle={title} summary={summary} />
       <PageBody>
         {posts.edges.map(({ node }) => {
-          const { authors, date, slug, summary, title } = node.fields;
+          const { authors, date, readingTime, slug, summary, title } = node.fields;
 
           return (
             <Fragment key={slug}>
-              <PostCard slug={slug} date={date} title={title} summary={summary} />
+              <PostCard
+                date={date}
+                readingTime={readingTime}
+                slug={slug}
+                summary={summary}
+                title={title}
+              />
             </Fragment>
           );
         })}
@@ -64,6 +70,9 @@ export const pageQuery = graphql`
               name
             }
             date
+            readingTime {
+              text
+            }
             slug
             summary
             title
