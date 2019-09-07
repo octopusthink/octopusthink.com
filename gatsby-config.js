@@ -20,7 +20,7 @@ module.exports = {
       options: {
         // Exclude specific pages or groups of pages using glob parameters
         // See: https://github.com/isaacs/minimatch
-        exclude: ['/blog', '/blog/*', '/blog/*/*', '/portfolio/*'],
+        exclude: ['/portfolio/*'],
       },
     },
     'gatsby-transformer-yaml',
