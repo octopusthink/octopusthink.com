@@ -6,7 +6,7 @@ import config from '../../../config';
 import theme from '../../../config/theme';
 
 const AuthorByline = props => {
-  const { avatar, children, name, title } = props;
+  const { alt, avatar, children, name, title } = props;
   return (
     <div
       css={css`
@@ -58,6 +58,7 @@ const AuthorByline = props => {
             border-radius: 50%;
             max-width: 16rem;
           `}
+          alt={alt}
         />
       </div>
 

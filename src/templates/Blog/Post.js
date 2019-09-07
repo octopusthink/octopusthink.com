@@ -83,7 +83,12 @@ export const BlogPost = props => {
         <PageBody>
           {content}
           {authors.map(author => (
-            <AuthorByline name={author.name} avatar={author.avatar} title={author.title}>
+            <AuthorByline
+              name={author.name}
+              alt={author.alt}
+              avatar={author.avatar}
+              title={author.title}
+            >
               {author.bio}
             </AuthorByline>
           ))}
@@ -112,6 +117,7 @@ export const pageQuery = graphql`
     post: markdownRemark(id: { eq: $id }) {
       fields {
         authors {
+          alt
           avatar
           bio
           id
