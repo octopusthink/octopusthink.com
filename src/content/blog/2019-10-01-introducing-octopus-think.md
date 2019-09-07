@@ -33,6 +33,7 @@ We're going to talk about things that matter to us: Design and technology. Acces
 
 You can follow our updates via:
 
-- Twitter: @octopus_thinks (someone got @octopusthink before we did!)
-- Email newsletter: @there
-- RSS feed:
+- Twitter: [@octopusthinks](https://twitter.com/octopusthinks)
+- Email newsletter: [via MailChimp]
+- RSS feed: [Subscribe]
+- Medium: [@octopus-thinks](https://medium.com/octopus-thinks)
