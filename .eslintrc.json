@@ -1,14 +1,9 @@
 {
   "extends": [
-    "airbnb",
-    "prettier"
-  ],
-  "plugins": [
-    "react",
-    "jsx-a11y",
-    "import"
+    "@octopusthink/eslint-config"
   ],
   "rules": {
+    "react/jsx-props-no-spreading": "off",
     "indent": [
       "error",
       2
@@ -38,9 +33,5 @@
   },
   "settings": {
     "import/core-modules": []
-  },
-  "env": {
-    "browser": true
-  },
-  "parser": "babel-eslint"
+  }
 }
