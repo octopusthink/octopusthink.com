@@ -17,7 +17,7 @@ import SEO from '../../components/SEO';
 import config from '../../../config';
 import theme from '../../../config/theme';
 
-export const BlogPost = props => {
+export const BlogPost = (props) => {
   const { data, pageContext } = props;
   const { post } = data;
 
@@ -37,36 +37,42 @@ export const BlogPost = props => {
       <Tags label="Published on">
         <Tags.Tag>{formattedDate}</Tags.Tag>
       </Tags>
-      <span
-        css={css`
-          ${metadata.small(theme)};
-          color: ${theme.colors.neutral.grey800};
-          padding: 0 0.4rem;
-        `}
-      >
-        &middot;
-      </span>
-      <Tags label="Tags">
-        {tags.map(tag => {
-          return (
-            <Tags.Tag>
-              <Link
-                to={`/blog/tags/${tag.id}`}
-                css={css`
-                  border: none;
-                  color: ${theme.colors.neutral.grey800};
 
-                  &:hover {
-                    color: ${theme.colors.text.inverseDark};
-                  }
-                `}
-              >
-                #{tag.name}
-              </Link>
-            </Tags.Tag>
-          );
-        })}
-      </Tags>
+      {tags.length && (
+        <>
+          <span
+            css={css`
+              ${metadata.small(theme)};
+              color: ${theme.colors.neutral.grey800};
+              padding: 0 0.4rem;
+            `}
+          >
+            &middot;
+          </span>
+
+          <Tags label="Tags">
+            {tags.map((tag) => {
+              return (
+                <Tags.Tag>
+                  <Link
+                    to={`/blog/tags/${tag.id}`}
+                    css={css`
+                      border: none;
+                      color: ${theme.colors.neutral.grey800};
+
+                      &:hover {
+                        color: ${theme.colors.text.inverseDark};
+                      }
+                    `}
+                  >
+                    #{tag.name}
+                  </Link>
+                </Tags.Tag>
+              );
+            })}
+          </Tags>
+        </>
+      )}
     </div>
   );
   const description = metaDescription || summary;
@@ -82,7 +88,7 @@ export const BlogPost = props => {
 
         <PageBody>
           {content}
-          {authors.map(author => (
+          {authors.map((author) => (
             <AuthorByline
               name={author.name}
               alt={author.alt}
