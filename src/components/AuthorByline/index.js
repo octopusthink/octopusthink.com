@@ -5,12 +5,12 @@ import { css } from '@emotion/core';
 import config from '../../../config';
 import theme from '../../../config/theme';
 
-const AuthorByline = props => {
+const AuthorByline = (props) => {
   const { alt, avatar, children, name, title } = props;
   return (
     <div
       css={css`
-        background: white;
+        background: ${theme.colors.neutral.white};
         border: 1px solid ${theme.colors.neutral.grey0};
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.125);
         display: grid;
