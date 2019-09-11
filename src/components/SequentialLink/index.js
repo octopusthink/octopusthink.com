@@ -41,7 +41,7 @@ const SequentialLink = props => {
       `}
     >
       <div>
-        <Tags label="">
+        <Tags>
           <Tags.Tag>{direction} post</Tags.Tag>
         </Tags>
         <Heading
