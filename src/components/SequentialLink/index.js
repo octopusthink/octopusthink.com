@@ -25,7 +25,7 @@ const SequentialLink = props => {
         justify-content: end;
         grid-gap: 0.8rem;
 
-        ${direction == 'previous' &&
+        ${direction === 'previous' &&
           css`
             text-align: left;
             flex-direction: row-reverse;
