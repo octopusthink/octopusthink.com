@@ -32,7 +32,7 @@ const SequentialLink = props => {
             justify-content: start;
           `}
 
-        ${direction == 'next' &&
+        ${direction === 'next' &&
           css`
             text-align: right;
             flex-direction: row;
