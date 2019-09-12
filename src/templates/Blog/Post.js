@@ -101,17 +101,21 @@ export const BlogPost = (props) => {
         </PageBody>
 
         <PageFooter>
-          <SequentialLink
-            direction="previous"
-            title={pageContext.prevtitle}
-            to={pageContext.prevslug}
-          />
+          {pageContext.prevslug !== slug && (
+            <SequentialLink
+              direction="previous"
+              title={pageContext.prevtitle}
+              to={pageContext.prevslug}
+            />
+          )}
 
-          <SequentialLink
-            direction="next"
-            title={pageContext.nexttitle}
-            to={pageContext.nextslug}
-          />
+          {pageContext.nextslug !== slug && (
+            <SequentialLink
+              direction="next"
+              title={pageContext.nexttitle}
+              to={pageContext.nextslug}
+            />
+          )}
         </PageFooter>
       </PageWrapper>
     </App>
@@ -119,8 +123,8 @@ export const BlogPost = (props) => {
 };
 
 export const pageQuery = graphql`
-  query($id: String!) {
-    post: markdownRemark(id: { eq: $id }) {
+  query($id: String!, $nowTimestamp: Int!) {
+    post: markdownRemark(id: { eq: $id }, fields: { timestamp: { lte: $nowTimestamp } }) {
       fields {
         authors {
           alt

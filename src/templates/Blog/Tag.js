@@ -9,7 +9,7 @@ import PageBody from '../../components/PageBody';
 import PostCard from '../../components/PostCard';
 import SEO from '../../components/SEO';
 
-export const BlogTags = props => {
+export const BlogTags = (props) => {
   const { data, pageContext } = props;
   const { posts, tag } = data;
 
@@ -53,12 +53,12 @@ export const BlogTags = props => {
 };
 
 export const pageQuery = graphql`
-  query($tagId: String!) {
+  query($tagId: String!, $nowTimestamp: Int!) {
     posts: allMarkdownRemark(
       sort: { fields: [fields___date], order: DESC }
       filter: {
         fileAbsolutePath: { regex: "//content/blog/" }
-        fields: { tags: { elemMatch: { id: { eq: $tagId } } } }
+        fields: { timestamp: { lte: $nowTimestamp }, tags: { elemMatch: { id: { eq: $tagId } } } }
       }
     ) {
       edges {

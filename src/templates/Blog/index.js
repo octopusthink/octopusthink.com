@@ -8,7 +8,7 @@ import PageBody from '../../components/PageBody';
 import PostCard from '../../components/PostCard';
 import SEO from '../../components/SEO';
 
-export const BlogList = props => {
+export const BlogList = (props) => {
   const { data, pageContext } = props;
   const { posts } = data;
   const { numberOfPages, currentPage } = pageContext;
@@ -61,10 +61,13 @@ export const BlogList = props => {
 };
 
 export const pageQuery = graphql`
-  query blogPostsList($skip: Int!, $limit: Int!) {
+  query blogPostsList($skip: Int!, $limit: Int!, $nowTimestamp: Int!) {
     posts: allMarkdownRemark(
       sort: { fields: [fields___date], order: DESC }
-      filter: { fileAbsolutePath: { regex: "//content/blog/" } }
+      filter: {
+        fileAbsolutePath: { regex: "//content/blog/" }
+        fields: { timestamp: { lte: $nowTimestamp } }
+      }
       limit: $limit
       skip: $skip
     ) {
