@@ -10,6 +10,12 @@ const NavigationMenuItem = (props) => {
   return (
     <li className={className}>
       <Link
+        {...props}
+        getProps={({ isCurrent }) => {
+          return {
+            'aria-describedby': isCurrent ? 'isCurrentPageText' : false,
+          };
+        }}
         activeClassName="currentLink"
         to={link}
         onClick={onClick}
@@ -42,6 +48,7 @@ const NavigationMenuItem = (props) => {
 
           &.currentLink {
             color: ${theme.colors.accent.secondaryLight};
+            cursor: default;
 
             &:hover {
               background: none;

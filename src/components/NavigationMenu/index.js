@@ -1,4 +1,4 @@
-import { Icon } from '@octopusthink/nautilus';
+import { Icon, VisuallyHidden } from '@octopusthink/nautilus';
 import React, { useState } from 'react';
 import { css } from '@emotion/core';
 
@@ -150,6 +150,9 @@ const NavigationMenu = () => {
           Contact
         </NavigationMenuItem>
       </ul>
+      <VisuallyHidden>
+        <div id="isCurrentPageText">current page</div>
+      </VisuallyHidden>
     </nav>
   );
 };
