@@ -9,10 +9,11 @@ const config = require('./config');
 
 const { postsPerPage, useDatesInSlugs } = config;
 
-// HACK: In the future we should have a config to enable/disable timestamp
-// filters, but for now this works.
+// Gatsby Integers only support 32-bit integers, so this uses that as the
+// maximum timestamp value. Sort of a hack, but using `Number.MAX_SAFE_INTEGER`
+// will throw errors.
 const nowTimestamp =
-  process.env.NODE_ENV === 'production' || !process.env.SHOW_FUTURE_POSTS
+  process.env.NODE_ENV === 'production' || process.env.HIDE_FUTURE_POSTS
     ? parseInt(moment.utc().format('X'), 10)
     : 2147483647;
 
