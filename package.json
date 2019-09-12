@@ -18,7 +18,7 @@
   "prettier": "@octopusthink/prettier-config",
   "dependencies": {
     "@emotion/core": "^10.0.14",
-    "@octopusthink/nautilus": "https://github.com/octopusthink/nautilus.git",
+    "@octopusthink/nautilus": "github:octopusthink/nautilus#master",
     "a11y-react-emoji": "^1.1.1",
     "babel-jest": "^24.8.0",
     "babel-preset-gatsby": "^0.2.8",
