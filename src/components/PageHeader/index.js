@@ -43,18 +43,15 @@ const PageHeader = props => {
             padding: ${theme.site.mobilePadding};
             @media screen and (min-width: 640px) {
               padding: ${theme.site.tabletPadding};
+              max-width: calc(${theme.site.maxContentWidth} + ${theme.site.tabletPadding} * 2);
             }
             @media screen and (min-width: 1024px) {
               padding: ${theme.site.desktopPadding};
-              max-width: ${theme.site.maxContentWidth};
+              max-width: calc(${theme.site.maxContentWidth} + ${theme.site.desktopPadding} * 2);
             }
           `}
         >
-          {metadata && (
-            <Tags>
-              <Tags.Tag>{metadata}</Tags.Tag>
-            </Tags>
-          )}
+          {metadata}
           <PageTitle
             css={css`
               color: white;

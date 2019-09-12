@@ -4,8 +4,9 @@ import React from 'react';
 import { markdown } from '../utils/markdown';
 
 import App from './App';
-import PageHeader from '../components/PageHeader';
 import PageBody from '../components/PageBody';
+import PageHeader from '../components/PageHeader';
+import PageWrapper from '../components/PageWrapper';
 import SEO from '../components/SEO';
 
 export const Page = props => {
@@ -21,8 +22,10 @@ export const Page = props => {
   return (
     <App>
       <SEO title={title} description={description} />
-      <PageHeader pageTitle={title} summary={summary} description={description} />
-      <PageBody>{content}</PageBody>
+      <PageWrapper>
+        <PageHeader pageTitle={title} summary={summary} description={description} />
+        <PageBody>{content}</PageBody>
+      </PageWrapper>
     </App>
   );
 };

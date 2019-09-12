@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 
-const invariant = require('invariant');
 const { kebabCase } = require('lodash');
 const moment = require('moment');
 const { singular } = require('pluralize');
@@ -10,13 +9,25 @@ const config = require('./config');
 
 const { postsPerPage, useDatesInSlugs } = config;
 
+// Gatsby Integers only support 32-bit integers, so this uses that as the
+// maximum timestamp value. Sort of a hack, but using `Number.MAX_SAFE_INTEGER`
+// will throw errors.
+const nowTimestamp =
+  process.env.NODE_ENV === 'production' || process.env.HIDE_FUTURE_POSTS
+    ? parseInt(moment.utc().format('X'), 10)
+    : 2147483647;
+
 // Tags used across the site.
 const tags = new Set();
 
 const makeBlogPosts = ({ actions, blogPosts }) => {
   const { createPage } = actions;
 
-  blogPosts.edges.sort((postA, postB) => {
+  const postsToPublish = blogPosts.edges.filter((edge) => {
+    return edge.node.fields.timestamp <= nowTimestamp;
+  });
+
+  postsToPublish.sort((postA, postB) => {
     const dateA = moment.utc(postA.node.fields.date);
     const dateB = moment.utc(postB.node.fields.date);
 
@@ -30,33 +41,37 @@ const makeBlogPosts = ({ actions, blogPosts }) => {
     return 0;
   });
 
-  blogPosts.edges.forEach((edge, index) => {
-    const nextID = index + 1 < blogPosts.edges.length ? index + 1 : 0;
-    const prevID = index - 1 >= 0 ? index - 1 : blogPosts.edges.length - 1;
-    const nextEdge = blogPosts.edges[nextID];
-    const prevEdge = blogPosts.edges[prevID];
+  postsToPublish.forEach((edge, index) => {
+    const nextID = index + 1 < postsToPublish.length ? index + 1 : 0;
+    const prevID = index - 1 >= 0 ? index - 1 : postsToPublish.length - 1;
+    const nextEdge = postsToPublish[nextID];
+    const prevEdge = postsToPublish[prevID];
 
-    createPage({
-      path: edge.node.fields.slug,
-      component: path.resolve('src/templates/Blog/Post.js'),
-      context: {
-        id: edge.node.id,
-        slug: edge.node.fields.slug,
-        nexttitle: nextEdge.node.fields.title,
-        nextslug: `${nextEdge.node.fields.slug}`,
-        prevtitle: prevEdge.node.fields.title,
-        prevslug: `${prevEdge.node.fields.slug}`,
-      },
-    });
-
-    if (edge.node.fields.tags) {
-      edge.node.fields.tags.forEach((tag) => {
-        tags.add(tag);
+    // Don't create blog posts in the future when building for production.
+    if (edge.node.fields.timestamp <= nowTimestamp) {
+      createPage({
+        path: edge.node.fields.slug,
+        component: path.resolve('src/templates/Blog/Post.js'),
+        context: {
+          nowTimestamp,
+          id: edge.node.id,
+          slug: edge.node.fields.slug,
+          nexttitle: nextEdge.node.fields.title,
+          nextslug: `${nextEdge.node.fields.slug}`,
+          prevtitle: prevEdge.node.fields.title,
+          prevslug: `${prevEdge.node.fields.slug}`,
+        },
       });
+
+      if (edge.node.fields.tags) {
+        edge.node.fields.tags.forEach((tag) => {
+          tags.add(tag);
+        });
+      }
     }
   });
 
-  const numberOfPages = Math.ceil(blogPosts.edges.length / postsPerPage);
+  const numberOfPages = Math.ceil(postsToPublish.length / postsPerPage);
 
   Array(numberOfPages)
     .fill(null)
@@ -66,6 +81,7 @@ const makeBlogPosts = ({ actions, blogPosts }) => {
         path: index === 1 ? `/blog` : `/blog/page=${index}`,
         component: path.resolve('src/templates/Blog/index.js'),
         context: {
+          nowTimestamp,
           limit: postsPerPage,
           skip: i * postsPerPage,
           currentPage: index,
@@ -80,12 +96,12 @@ const makeBlogTags = ({ actions, tags }) => {
   const { createPage } = actions;
 
   tags.forEach((tag) => {
-    const slug = `/blog/tags/${kebabCase(tag)}/`;
+    const slug = `/blog/tags/${tag.id}/`;
 
     createPage({
       path: slug,
       component: path.resolve('src/templates/Blog/Tag.js'),
-      context: { slug, tag },
+      context: { nowTimestamp, slug, tagId: tag.id },
     });
   });
 };
@@ -94,12 +110,10 @@ const makePages = ({ actions, pages }) => {
   const { createPage } = actions;
 
   if (pages) {
-    pages.edges.forEach((edge, index) => {
+    pages.edges.forEach((edge) => {
       createPage({
         path: edge.node.fields.slug,
-        component: path.resolve(
-          `src/templates/${edge.node.fields.component}.js`,
-        ),
+        component: path.resolve(`src/templates/${edge.node.fields.component}.js`),
         context: {
           id: edge.node.id,
           slug: edge.node.fields.slug,
@@ -132,6 +146,12 @@ const onCreateNode = ({ actions, node, getNode }) => {
         node,
         name: 'date',
         value: date.toISOString(),
+      });
+
+      createNodeField({
+        node,
+        name: 'timestamp',
+        value: parseInt(date.format('X'), 10),
       });
     }
 
@@ -178,10 +198,7 @@ const onCreateNode = ({ actions, node, getNode }) => {
     const fileName = date ? dateMatch[2] : parsedFilePath.name;
 
     if (parsedFilePath.dir.match(/^pages/)) {
-      const pathWithoutPagesFolder = parsedFilePath.dir.replace(
-        /^pages\/?/,
-        '',
-      );
+      const pathWithoutPagesFolder = parsedFilePath.dir.replace(/^pages\/?/, '');
 
       if (node.frontmatter && node.frontmatter.slug) {
         slug = `/${pathWithoutPagesFolder}/${node.frontmatter.slug}`;
@@ -204,27 +221,12 @@ const onCreateNode = ({ actions, node, getNode }) => {
       value: slug.replace(/\/index$/, '/').replace(/\/{2,}/g, '/'),
     });
 
-    // Create the tags for this post.
-    if (node.frontmatter && node.frontmatter.tags) {
-      invariant(
-        Array.isArray(node.frontmatter.tags),
-        `Tags for file ${parsedFilePath.name} has invalid tags. Tags should be a YAML-list, not a string.`,
-      );
-
-      // Add the array of tags to this node.
-      createNodeField({
-        node,
-        name: 'tags',
-        value: node.frontmatter.tags,
-      });
-    }
-
     // Create fields for every other frontmatter prop; this makes it easier to
     // query for fields instead of needing to know what's in `node.fields` and
     // what's in `node.frontmatter`.
     Object.keys(node.frontmatter)
       .filter((key) => {
-        return ['component', 'date', 'slug', 'tags'].indexOf(key) === -1;
+        return ['component', 'date', 'slug'].indexOf(key) === -1;
       })
       .forEach((key) => {
         createNodeField({
@@ -237,29 +239,36 @@ const onCreateNode = ({ actions, node, getNode }) => {
 };
 
 const createPages = async ({ actions, graphql }) => {
-  const { createPage } = actions;
-
   const markdownQueryResult = await graphql(`
     query {
-      blogPosts: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "//content/blog/" } }
-      ) {
+      blogPosts: allMarkdownRemark(filter: {
+        fileAbsolutePath: { regex: "//content/blog/" }
+        fields: { timestamp: { lte: ${nowTimestamp} } }
+      }) {
         edges {
           node {
             id
             fields {
-              author
+              authors {
+                id
+                avatar
+                name
+                bio
+              }
               date
               slug
+              timestamp
               title
-              tags
+              tags {
+                id
+                name
+                summary
+              }
             }
           }
         }
       }
-      pages: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "//content/(?!blog).+?/" } }
-      ) {
+      pages: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "//content/(?!blog).+?/" } }) {
         edges {
           node {
             id

@@ -1,19 +1,20 @@
-import { Heading, Link, List, Paragraph } from '@octopusthink/nautilus';
+import { Heading, Link, List, Paragraph, Tags } from '@octopusthink/nautilus';
 import { graphql } from 'gatsby';
 import React, { Fragment } from 'react';
 
 import App from '../App';
 import PageHeader from '../../components/PageHeader';
 import PageBody from '../../components/PageBody';
+import PostCard from '../../components/PostCard';
 import SEO from '../../components/SEO';
 
-export const BlogList = props => {
+export const BlogList = (props) => {
   const { data, pageContext } = props;
   const { posts } = data;
   const { numberOfPages, currentPage } = pageContext;
   const title = 'Stories';
   const summary =
-    'Where we talk about design, technology, inclusion, and adorable cephalopod stories.';
+    'AKA our blog, in which we talk about design, technology, inclusion, and anything else we’ve been thinking about lately. Oh, and adorable cephalopod stories, because they make us happy.';
   const description =
     'The blog of Octopus Think. Design, technology, inclusion, and adorable cephalopod stories.';
 
@@ -24,14 +25,16 @@ export const BlogList = props => {
 
       <PageBody>
         {posts.edges.map(({ node }) => {
-          const { date, slug, summary, title } = node.fields;
+          const { date, readingTime, slug, summary, title } = node.fields;
           return (
             <Fragment key={slug}>
-              <Link to={slug}>
-                <Heading level={2}>{title}</Heading>
-              </Link>
-              <Paragraph>{date}</Paragraph>
-              <Paragraph>{summary}</Paragraph>
+              <PostCard
+                date={date}
+                readingTime={readingTime}
+                slug={slug}
+                summary={summary}
+                title={title}
+              />
             </Fragment>
           );
         })}
@@ -58,10 +61,13 @@ export const BlogList = props => {
 };
 
 export const pageQuery = graphql`
-  query blogPostsList($skip: Int!, $limit: Int!) {
+  query blogPostsList($skip: Int!, $limit: Int!, $nowTimestamp: Int!) {
     posts: allMarkdownRemark(
       sort: { fields: [fields___date], order: DESC }
-      filter: { fileAbsolutePath: { regex: "//content/blog/" } }
+      filter: {
+        fileAbsolutePath: { regex: "//content/blog/" }
+        fields: { timestamp: { lte: $nowTimestamp } }
+      }
       limit: $limit
       skip: $skip
     ) {
@@ -69,10 +75,16 @@ export const pageQuery = graphql`
         node {
           fields {
             date
+            readingTime {
+              text
+            }
             slug
             summary
             title
-            tags
+            tags {
+              name
+              summary
+            }
           }
         }
       }

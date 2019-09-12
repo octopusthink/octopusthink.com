@@ -8,7 +8,7 @@ import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
 import theme from '../../config/theme';
 
-export const App = props => {
+export const App = (props) => {
   const { children } = props;
   const lang = `en`;
   return (

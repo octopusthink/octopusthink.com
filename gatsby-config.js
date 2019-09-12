@@ -6,10 +6,11 @@
 
 module.exports = {
   siteMetadata: {
-    title: `Octopus Think`,
-    description: `Octopus Think is a design and development agency based in Scotland. We build inclusive, usable, and smart websites and apps.`,
-    author: `@octopusthinks`,
-    siteUrl: `https://octopusthink.com`,
+    title: 'Octopus Think',
+    description:
+      'Octopus Think is a design and development agency based in Scotland. We build inclusive, usable, and smart websites and apps.',
+    author: '@octopusthinks',
+    siteUrl: 'https://octopusthink.com',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -19,20 +20,34 @@ module.exports = {
       options: {
         // Exclude specific pages or groups of pages using glob parameters
         // See: https://github.com/isaacs/minimatch
-        exclude: ['/blog', '/blog/*', '/blog/*/*', '/portfolio/*'],
+        exclude: ['/portfolio/*'],
       },
     },
+    'gatsby-transformer-yaml',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'content',
         path: `${__dirname}/src/content/`,
-        ignore: [`**/*.js`],
+        ignore: ['**/*.js'],
       },
     },
-    'gatsby-transformer-remark',
     {
-      resolve: `gatsby-plugin-favicon`,
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'data',
+        path: `${__dirname}/data/`,
+        ignore: ['**/*.js'],
+      },
+    },
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: ['gatsby-remark-smartypants', 'gatsby-remark-reading-time'],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-favicon',
       options: {
         logo: './static/favicon.png',
       },
@@ -46,4 +61,8 @@ module.exports = {
       },
     },
   ],
+  mapping: {
+    'MarkdownRemark.fields.authors': 'AuthorsYaml',
+    'MarkdownRemark.fields.tags': 'TagsYaml',
+  },
 };
