@@ -2,10 +2,7 @@ import { Heading, Icon, Link, Tags } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
-import config from '../../../config';
-import theme from '../../../config/theme';
-
-const SequentialLink = props => {
+const SequentialLink = (props) => {
   const { direction, title, to } = props;
   let arrowIcon;
   if (direction == 'next') {

@@ -4,7 +4,7 @@ import { css } from '@emotion/core';
 
 import theme from '../../../config/theme';
 
-const NavigationMenuItem = props => {
+const NavigationMenuItem = (props) => {
   const { children, icon, link, onClick } = props;
 
   return (

@@ -9,7 +9,7 @@ import PageHeader from '../components/PageHeader';
 import PageWrapper from '../components/PageWrapper';
 import SEO from '../components/SEO';
 
-export const Portfolio = props => {
+export const Portfolio = (props) => {
   const { data } = props;
 
   const { portfolioPiece } = data;

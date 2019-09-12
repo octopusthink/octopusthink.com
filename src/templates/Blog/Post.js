@@ -1,10 +1,10 @@
-import { Link, Paragraph, Tags, metadata } from '@octopusthink/nautilus';
+import { Link, Tags, metadata } from '@octopusthink/nautilus';
 import { graphql } from 'gatsby';
 import React, { Fragment } from 'react';
 import { css } from '@emotion/core';
 
-import { markdown } from '../../utils/markdown';
 import dayjs from 'dayjs';
+import { markdown } from '../../utils/markdown';
 
 import App from '../App';
 import AuthorByline from '../../components/AuthorByline';
@@ -39,7 +39,7 @@ export const BlogPost = (props) => {
       </Tags>
 
       {tags.length && (
-        <>
+        <React.Fragment>
           <span
             css={css`
               ${metadata.small(theme)};
@@ -71,7 +71,7 @@ export const BlogPost = (props) => {
               );
             })}
           </Tags>
-        </>
+        </React.Fragment>
       )}
     </div>
   );

@@ -1,9 +1,7 @@
-import { Link } from '@octopusthink/nautilus';
-import React, { useState } from 'react';
+import React from 'react';
 import { css } from '@emotion/core';
 
 import SiteMapItem from '../SiteMapItem';
-import theme from '../../../config/theme';
 
 const SiteMap = () => {
   return (

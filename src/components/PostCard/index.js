@@ -1,4 +1,4 @@
-import { Button, Heading, Link, Paragraph, Tags, metadata } from '@octopusthink/nautilus';
+import { Button, Heading, Paragraph, Tags, metadata } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 import dayjs from 'dayjs';
@@ -6,8 +6,8 @@ import dayjs from 'dayjs';
 import config from '../../../config';
 import theme from '../../../config/theme';
 
-const PostCard = props => {
-  const { authors, date, readingTime, slug, summary, tags, title } = props;
+const PostCard = (props) => {
+  const { date, readingTime, slug, summary, title } = props;
   const formattedDate = dayjs(date).format(config.dateFormat);
 
   return (

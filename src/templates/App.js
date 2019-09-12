@@ -10,7 +10,7 @@ import theme from '../../config/theme';
 
 export const App = (props) => {
   const { children } = props;
-  const lang = `en`;
+
   return (
     <Nautilus theme={theme} config={{ LinkComponent: Link }}>
       <Global

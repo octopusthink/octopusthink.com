@@ -3,7 +3,7 @@ import { css } from '@emotion/core';
 
 import theme from '../../../config/theme';
 
-const PageBody = props => {
+const PageBody = (props) => {
   const { children } = props;
   return (
     <section

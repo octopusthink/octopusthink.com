@@ -15,14 +15,15 @@ export const markdown = (htmlAst) => {
       ol: (props) => <List {...props} ordered />,
       li: List.Item,
       a: (originalProps) => {
+        const { href } = originalProps;
         const props = { ...originalProps };
 
-        if (props.href.startsWith('/') && !props.href.startsWith('//')) {
-          props.to = props.href;
+        if (href.startsWith('/') && !href.startsWith('//')) {
+          props.to = href;
           delete props.href;
         } else {
           props.as = 'a';
-          if (!props.href.startsWith('mailto:')) {
+          if (!href.startsWith('mailto:')) {
             props.external = true;
           }
         }

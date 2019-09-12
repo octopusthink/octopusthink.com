@@ -1,4 +1,4 @@
-import { Icon, Link } from '@octopusthink/nautilus';
+import { Icon } from '@octopusthink/nautilus';
 import React, { useState } from 'react';
 import { css } from '@emotion/core';
 
@@ -42,6 +42,7 @@ const NavigationMenu = () => {
         `}
         aria-expanded={hideMenu ? 'false' : 'true'}
         onClick={toggleMenu}
+        type="button"
       >
         {hideMenu ? (
           <Icon
