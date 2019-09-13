@@ -8,7 +8,7 @@ import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
 import theme from '../../config/theme';
 
-export const App = (props) => {
+export const Apps = (props) => {
   const { children } = props;
 
   return (
@@ -27,4 +27,4 @@ export const App = (props) => {
   );
 };
 
-export default App;
+export default Apps;
