@@ -13,6 +13,8 @@ const PageHeader = props => {
         background: ${theme.colors.neutral.black};
         position: relative;
         overflow: hidden;
+        padding-top: calc(${theme.site.mobilePadding} * 2);
+        padding-bottom: calc(${theme.site.mobilePadding} * 2);
 
         @media screen and (min-width: 640px) {
           min-height: 320px;
@@ -74,6 +76,7 @@ const PageHeader = props => {
         <div
           css={css`
             padding: ${theme.site.mobilePadding};
+
             @media screen and (min-width: 640px) {
               padding: ${theme.site.tabletPadding};
               max-width: calc(${theme.site.maxContentWidth} + ${theme.site.tabletPadding} * 2);
