@@ -19,6 +19,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.14",
     "@octopusthink/nautilus": "https://github.com/octopusthink/nautilus.git",
+    "a11y-react-emoji": "^1.1.1",
     "babel-jest": "^24.8.0",
     "babel-preset-gatsby": "^0.2.8",
     "dayjs": "^1.8.16",
@@ -38,7 +39,10 @@
     "identity-obj-proxy": "^3.0.0",
     "inter-ui": "^3.9.0",
     "invariant": "^2.2.4",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
     "pluralize": "^8.0.0",
+    "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
@@ -47,8 +51,8 @@
     "typeface-inter": "0.0.77"
   },
   "devDependencies": {
-    "@octopusthink/eslint-config": "^0.3.0",
-    "@octopusthink/prettier-config": "^0.3.0",
+    "@octopusthink/eslint-config": "^0.4.0",
+    "@octopusthink/prettier-config": "^0.4.0",
     "babel-eslint": "^10.0.3",
     "eslint": "^6.3.0",
     "eslint-config-airbnb": "^18.0.1",

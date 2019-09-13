@@ -5,10 +5,10 @@ import { css } from '@emotion/core';
 const SequentialLink = (props) => {
   const { direction, title, to } = props;
   let arrowIcon;
-  if (direction == 'next') {
+  if (direction === 'next') {
     arrowIcon = 'arrow-right';
   }
-  if (direction == 'previous') {
+  if (direction === 'previous') {
     arrowIcon = 'arrow-left';
   }
 

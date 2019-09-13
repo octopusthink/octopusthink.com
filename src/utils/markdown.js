@@ -6,6 +6,7 @@ export const markdown = (htmlAst) => {
   const renderAst = new RehypeReact({
     createElement,
     components: {
+      /* eslint-disable react/jsx-props-no-spreading */
       h1: (props) => <PageTitle {...props} />,
       h2: (props) => <Heading {...props} level={2} />,
       h3: (props) => <Heading {...props} level={3} />,
@@ -31,6 +32,7 @@ export const markdown = (htmlAst) => {
         return <Link {...props} />;
       },
     },
+    /* eslint-enable react/jsx-props-no-spreading */
   }).Compiler;
 
   return renderAst(htmlAst);

@@ -1,6 +1,7 @@
-import { Icon, Link, Paragraph } from '@octopusthink/nautilus';
-import React from 'react';
 import { css } from '@emotion/core';
+import { Icon, Link, Paragraph } from '@octopusthink/nautilus';
+import Emoji from 'a11y-react-emoji';
+import React from 'react';
 
 import theme from '../../../config/theme';
 import SiteMap from '../SiteMap';
@@ -67,8 +68,9 @@ const SiteFooter = () => {
               letter-spacing: -0.017em;
             `}
           >
-            We ❤️ inclusion, open source, emerging technologies, design systems, and React
-            development. We focus on solutions that are accessible, usable, and beautiful.
+            We <Emoji symbol="❤" label="love" />️ inclusion, open source, emerging technologies,
+            design systems, and React development. We focus on solutions that are accessible,
+            usable, and beautiful.
           </Paragraph>
 
           <div
