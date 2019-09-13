@@ -20,21 +20,23 @@ const SiteHeader = () => {
           align-items: center;
           padding: 0.8rem;
           padding-top: ${theme.site.mobilePadding};
+          padding-bottom: ${theme.site.mobilePadding};
 
           @media screen and (min-width: 640px) {
             padding: ${theme.site.tabletPadding};
+            padding-bottom: 0;
           }
 
           @media screen and (min-width: 480px) and (max-width: 860px) {
             flex-direction: column;
             align-items: center;
             grid-gap: 1.6rem;
-            padding-bottom: 3.2rem;
             padding-top: ${theme.site.tabletPadding};
           }
 
           @media screen and (min-width: 1024px) {
             padding: ${theme.site.desktopPadding};
+            padding-bottom: 0;
             max-width: ${theme.site.maxSiteWidth};
             margin: 0 auto;
           }
