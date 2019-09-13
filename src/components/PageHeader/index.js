@@ -3,6 +3,7 @@ import React from 'react';
 import { css } from '@emotion/core';
 
 import theme from '../../../config/theme';
+import Watermark from '../../../static/watermark.svg';
 
 const PageHeader = props => {
   const { children, metadata, pageTitle, summary } = props;
@@ -13,6 +14,16 @@ const PageHeader = props => {
         position: relative;
         overflow: hidden;
 
+        @media screen and (min-width: 640px) {
+          min-height: 320px;
+          padding-top: ${theme.site.tabletPadding};
+        }
+
+        @media screen and (min-width: 1024px) {
+          min-height: 400px;
+          padding-top: ${theme.site.desktopPadding};
+        }
+
         ::after {
           content: '';
           display: block;
@@ -20,18 +31,40 @@ const PageHeader = props => {
           margin-left: -10%;
           overflow: hidden;
           height: 50px;
+          position: absolute;
+          bottom: 0;
           background-image: linear-gradient(
             to bottom right,
-            ${theme.colors.neutral.black},
-            ${theme.colors.neutral.black} 46%,
+            transparent,
+            transparent 46%,
             ${theme.colors.accent.primary} 47%,
             ${theme.colors.accent.primary} 53%,
             ${theme.colors.neutral.white} 54%,
             ${theme.colors.neutral.white}
           );
+          z-index: 2;
         }
       `}
     >
+      <Watermark
+        css={css`
+          @media screen and (max-width: 639px) {
+            display: none;
+          }
+          @media screen and (min-width: 640px) {
+            height: 480px;
+            width: auto;
+            position: absolute;
+            bottom: -160px;
+            right: -160px;
+            opacity: 0.05;
+            z-index: 0;
+          }
+          @media screen and (min-width: 1024px) {
+            bottom: -120px;
+          }
+        `}
+      />
       <div
         css={css`
           max-width: ${theme.site.maxSiteWidth};

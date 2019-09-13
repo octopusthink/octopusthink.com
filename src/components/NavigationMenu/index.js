@@ -91,6 +91,10 @@ const NavigationMenu = () => {
 						display: flex;
 						margin-top: 0.4rem;
 					}
+
+          @media screen and (min-width: 480px) and (max-width: 860px) {
+            margin-top: 1.6rem;
+          }
 				`}
       >
         <NavigationMenuItem icon="compass" link="/" onClick={closeMenu}>
