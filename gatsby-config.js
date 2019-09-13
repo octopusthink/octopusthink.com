@@ -18,7 +18,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-sitemap',
       options: {
-        // Exclude specific pages or groups of pages using glob parameters
+        // Exclude specific pages or groups of pages using glob params
         // See: https://github.com/isaacs/minimatch
         exclude: ['/portfolio/*'],
       },
