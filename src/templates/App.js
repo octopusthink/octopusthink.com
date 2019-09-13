@@ -8,7 +8,7 @@ import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
 import theme from '../../config/theme';
 
-export const Apps = (props) => {
+export const App = (props) => {
   const { children } = props;
 
   return (
@@ -16,6 +16,7 @@ export const Apps = (props) => {
       <Global
         styles={css`
           body {
+            background: ${theme.colors.neutral.white};
             margin: 0;
           }
         `}
@@ -27,4 +28,4 @@ export const Apps = (props) => {
   );
 };
 
-export default Apps;
+export default App;

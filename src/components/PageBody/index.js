@@ -9,18 +9,23 @@ const PageBody = (props) => {
     <section
       css={css`
         background: ${theme.colors.neutral.white};
-        margin: 6.4rem auto;
-        padding: ${theme.site.mobilePadding};
+        margin: 0 auto;
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+        padding-left: ${theme.site.mobilePadding};
+        padding-right: ${theme.site.mobilePadding};
         min-height: 70vh;
         justify-content: center;
         display: flex;
         flex-direction: column;
 
         @media screen and (min-width: 640px) {
-          padding: ${theme.site.tabletPadding};
+          padding-left: ${theme.site.tabletPadding};
+          padding-right: ${theme.site.tabletPadding};
         }
         @media screen and (min-width: 1024px) {
-          padding: ${theme.site.desktopPadding};
+          padding-left: ${theme.site.desktopPadding};
+          padding-right: ${theme.site.desktopPadding};
           max-width: ${theme.site.maxSiteWidth};
         }
       `}
