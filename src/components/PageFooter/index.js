@@ -1,9 +1,7 @@
 import React from 'react';
 import { css } from '@emotion/core';
 
-import theme from '../../../config/theme';
-
-const PageFooter = props => {
+const PageFooter = (props) => {
   const { children } = props;
 
   return (

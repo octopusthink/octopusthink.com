@@ -1,10 +1,10 @@
-import { Icon, Link, interfaceUI } from '@octopusthink/nautilus';
+import { Link, interfaceUI } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
 import theme from '../../../config/theme';
 
-const SiteMapItem = props => {
+const SiteMapItem = (props) => {
   const { children, link } = props;
 
   return (

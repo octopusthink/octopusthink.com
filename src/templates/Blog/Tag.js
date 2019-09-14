@@ -1,7 +1,5 @@
-import { Heading, Link, Paragraph, Tags } from '@octopusthink/nautilus';
 import { graphql } from 'gatsby';
 import React, { Fragment } from 'react';
-import Helmet from 'react-helmet';
 
 import App from '../App';
 import PageHeader from '../../components/PageHeader';
@@ -13,27 +11,25 @@ export const BlogTags = (props) => {
   const { data, pageContext } = props;
   const { posts, tag } = data;
 
-  let summary;
-  let title;
-
+  let pageSummary;
+  let pageTitle;
   if (tag.edges.length > 0) {
     const tagData = tag.edges[0].node;
-    title = `Posts tagged #${tagData.name}`;
-    summary = tagData.summary;
+    pageTitle = `Posts tagged #${tagData.name}`;
+    pageSummary = tagData.summary;
   } else {
-    title = `Posts tagged #${pageContext.tag}`;
-    summary = `An archive of blog posts tagged #${pageContext.tag}`;
+    pageTitle = `Posts tagged #${pageContext.tag}`;
+    pageSummary = `An archive of blog posts tagged #${pageContext.tag}`;
   }
-  const description = summary;
 
   return (
     <App>
-      <SEO title={title} description={description} />
+      <SEO title={pageTitle} description={pageSummary} />
 
-      <PageHeader pageTitle={title} summary={summary} />
+      <PageHeader pageTitle={pageTitle} summary={pageSummary} />
       <PageBody>
         {posts.edges.map(({ node }) => {
-          const { authors, date, readingTime, slug, summary, title } = node.fields;
+          const { date, readingTime, slug, summary, title } = node.fields;
 
           return (
             <Fragment key={slug}>

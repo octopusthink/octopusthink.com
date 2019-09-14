@@ -18,7 +18,7 @@ const nowTimestamp =
     : 2147483647;
 
 // Tags used across the site.
-const tags = new Set();
+const siteTags = new Set();
 
 const makeBlogPosts = ({ actions, blogPosts }) => {
   const { createPage } = actions;
@@ -65,7 +65,7 @@ const makeBlogPosts = ({ actions, blogPosts }) => {
 
       if (edge.node.fields.tags) {
         edge.node.fields.tags.forEach((tag) => {
-          tags.add(tag);
+          siteTags.add(tag);
         });
       }
     }
@@ -139,6 +139,7 @@ const onCreateNode = ({ actions, node, getNode }) => {
       date = moment.utc(dateMatch[1]);
 
       if (!date || !date.isValid) {
+        // eslint-disable-next-line no-console
         console.warn(`WARNING: Invalid date for ${parsedFilePath.name}`);
       }
 
@@ -284,6 +285,7 @@ const createPages = async ({ actions, graphql }) => {
   `);
 
   if (markdownQueryResult.errors) {
+    // eslint-disable-next-line no-console
     console.error(markdownQueryResult.errors);
     throw markdownQueryResult.errors;
   }
@@ -291,7 +293,7 @@ const createPages = async ({ actions, graphql }) => {
   const { blogPosts, pages } = markdownQueryResult.data;
 
   makeBlogPosts({ actions, blogPosts });
-  makeBlogTags({ actions, blogPosts, tags });
+  makeBlogTags({ actions, blogPosts, siteTags });
   makePages({ actions, pages });
 };
 

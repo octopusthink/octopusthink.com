@@ -1,4 +1,4 @@
-import { Heading, Link, List, Paragraph, Tags } from '@octopusthink/nautilus';
+import { Link, List } from '@octopusthink/nautilus';
 import { graphql } from 'gatsby';
 import React, { Fragment } from 'react';
 
@@ -12,16 +12,16 @@ export const BlogList = (props) => {
   const { data, pageContext } = props;
   const { posts } = data;
   const { numberOfPages, currentPage } = pageContext;
-  const title = 'Stories';
-  const summary =
+  const pageTitle = 'Stories';
+  const pageSummary =
     'AKA our blog, in which we talk about design, technology, inclusion, and anything else we’ve been thinking about lately. Oh, and adorable cephalopod stories, because they make us happy.';
   const description =
     'The blog of Octopus Think. Design, technology, inclusion, and adorable cephalopod stories.';
 
   return (
     <App>
-      <SEO title={title} description={description} />
-      <PageHeader pageTitle={title} summary={summary} />
+      <SEO title={pageTitle} description={description} />
+      <PageHeader pageTitle={pageTitle} summary={pageSummary} />
 
       <PageBody>
         {posts.edges.map(({ node }) => {

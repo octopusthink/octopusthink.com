@@ -9,7 +9,7 @@ import PageHeader from '../components/PageHeader';
 import PageWrapper from '../components/PageWrapper';
 import SEO from '../components/SEO';
 
-export const NotFound = props => {
+export const NotFound = (props) => {
   const { data } = props;
 
   const { page } = data;
