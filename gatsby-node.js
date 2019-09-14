@@ -293,7 +293,7 @@ const createPages = async ({ actions, graphql }) => {
   const { blogPosts, pages } = markdownQueryResult.data;
 
   makeBlogPosts({ actions, blogPosts });
-  makeBlogTags({ actions, blogPosts, siteTags });
+  makeBlogTags({ actions, blogPosts, tags: siteTags });
   makePages({ actions, pages });
 };
 
