@@ -1,20 +1,20 @@
 import {
   Button,
-  // Emphasis,
+  Emphasis,
   Heading,
   Icon,
   Link,
   List,
   Paragraph,
   TextField,
-  // interfaceUI,
+  interfaceUI,
 } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
 import theme from '../../../config/theme';
 import Panel from '../Panel';
-// import Checkbox from '../Checkbox'; // Move this to Nautilus!
+import Checkbox from '../Checkbox'; // Move this to Nautilus!
 
 //         */[photo of us together][photo of Edinburgh?]/* * * *//
 
@@ -231,12 +231,23 @@ const ContactContent = () => {
           We&apos;re always interested in hearing from people with exciting projects. If you have
           work you&apos;d like to discuss, drop us a line at{' '}
           <Link to="mailto:work.with@octopusthink.com">work.with@octopusthink.com</Link>
-          {/* or fill in
-          the form below for a no-strings-attached estimate */}. You&apos;ll
-          hear back from us within 48 hours.
+          or fill in the form below for a no-strings-attached estimate. You&apos;ll hear back from
+          us within 48 hours.
         </Paragraph>
-        {/* <form>
-          <fieldset
+        <form
+          action="https://mailthis.to/work.with@octopusthink.com"
+          method="POST"
+          encType="multipart/form-data"
+        >
+          <input type="hidden" name="_subject" value="New quote request" />
+          {/*<input type="hidden" name="_after" value="https://octopusthink.com/thank-you" />*/}
+          <input type="hidden" name="_honeypot" value="" />
+          <input
+            type="hidden"
+            name="_confirmation"
+            value="Thanks for your message! We'll be in touch soon."
+          />
+          {/*<fieldset
             css={css`
               border: none;
               padding: 0;
@@ -253,10 +264,10 @@ const ContactContent = () => {
 
             <Paragraph>
               Hello! Why don&apos;t you tell us a wee bit about yourself to get started.
-            </Paragraph>
-            <TextField autocomplete="name" label="Name" />
-            <TextField autocomplete="email" label="Email" />
-            <TextField autocomplete="organisation" label="Organisation" optional />
+            </Paragraph>*/}
+          <TextField autocomplete="name" type="text" name="name" label="Name" />
+          <TextField autocomplete="email" type="email" name="_replyto" label="Email" />
+          {/*<TextField autocomplete="organisation" label="Organisation" optional />
             <Button
               primary
               css={css`
@@ -325,31 +336,35 @@ const ContactContent = () => {
               optional
               hint="Are there any milestones or
               deadlines that we need to keep in mind?"
-            />
-            <TextField
-              multiline
-              label="Project details"
-              hint="What do we need to know about your project?"
-            />
-            <Checkbox
+            />*/}
+
+          <TextField
+            multiline
+            name="message"
+            label="Project details"
+            hint="What do we need to know about your project?"
+          />
+
+          {/*<Checkbox
               css={css`
-                margin-bottom: 3.2rem;
+                padding-bottom: 3.2rem;
               `}
             >
               Sign me up for the quarterly Octopus Think newsletter. I love getting emails.
-            </Checkbox>
-            <Button
-              primary
-              css={css`
+            </Checkbox>*/}
+          <Button
+            primary
+            css={css`
               margin: 0 0 6.4rem;
             }
             `}
-            >
-              Send me a quote!
-            </Button>
-          </fieldset>
+          >
+            Send me a quote!
+          </Button>
+          {/*</fieldset>*/}
         </form>
 
+        {/*
         <div
           css={css`
             display: none;
@@ -363,7 +378,8 @@ const ContactContent = () => {
             work.with@octopusthink.com
           </Link>
           . Cheers!
-        </div> */}
+        </div>
+        */}
       </Panel>
     </React.Fragment>
   );
