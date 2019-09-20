@@ -9,7 +9,7 @@ Hi there! We’re [Sarah](https://triggersandsparks.com) and [Matt](https://tofu
 
 Together, we’re **Octopus Think**, a digital design and development agency. We're based in beautiful Edinburgh, Scotland but we're both frequent travellers and can often be found travelling the globe. 🌍
 
-We build accessible, fast, and thoughtful apps and websites. We design inclusive, usable, and beautiful experiences, interfaces, and communications. We're always learning and teaching others. We're experienced public speakers and leaders who empower people to build awesome stuff. And above all, we believe in the power of technology to **solve problems and make the world a better place**. ✌️
+We build accessible, fast, and thoughtful apps and websites. We design inclusive, usable, and beautiful experiences, interfaces, and communications. We're always learning and teaching others. We're experienced public speakers and leaders who empower people to build awesome stuff. And above all, we believe in the power of technology to **solve problems** and make the world a better place. ✌️
 
 ## Who are we anyway?
 
@@ -27,7 +27,7 @@ Having highly complementary skills, we're able have joint ownership and make dec
 
 ## What to expect from this blog
 
-We're still figuring things out, but expect us to talk about things that matter most to us. **Design and technology. Accessibility and inclusion.** We're still figuring things out, but expect us to talk about things that matter most to us. **Design and technology. Accessibility and inclusion.** Oh, and adorable cephalopod stories, because we aren’t made of stone. *Those suckers are really cute.* 🐙
+We're still figuring things out, but expect us to talk about things that matter most to us. **Design and technology. Accessibility and inclusion.** Oh, and adorable cephalopod stories, because we aren’t made of stone. *Those suckers are really cute.* 🐙
 
 ## What we’re working on
 
