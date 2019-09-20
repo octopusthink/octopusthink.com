@@ -1,4 +1,4 @@
-import { Button, Heading, Paragraph, useTheme } from '@octopusthink/nautilus';
+import { Button, Heading, Paragraph, Strong, useTheme } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
@@ -89,7 +89,7 @@ const HomepageContent = () => {
           primary
           to="/services/"
         >
-          Learn more about our services
+          Explore our services
         </Button>
       </Panel>
 
@@ -112,11 +112,12 @@ const HomepageContent = () => {
           <Heading>Work with us</Heading>
 
           <Paragraph>
-            Our website is still under construction, as evidenced by our friend Bubbles still
-            needing a hard hat. More is coming soon, so stay tuned!
+            Our website is still under construction. That’s why our friend Bubbles here is wearing a
+            hard hat—and why he's still in pencil-sketch format. More is coming soon, so stay tuned!
           </Paragraph>
           <Paragraph>
-            Have a project you’d like to discuss? Drop us a line for a no-strings-attached estimate.
+            Have a project you’d like to discuss? Drop us a line for a{' '}
+            <Strong>no-strings-attached</Strong> estimate.
           </Paragraph>
 
           <Button minimal navigation to="/contact/">

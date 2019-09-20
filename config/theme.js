@@ -163,13 +163,13 @@ export const theme = {
       emphasis: colors.grey800,
       emphasisBackground: 'transparent',
       strong: colors.black,
-      strongBackground: colors.cyan0,
+      strongBackground: colors.cyan100,
     },
 
     buttons: {
       neutral: colors.white,
       default: colors.pink600,
-      defaultDark: colors.pink800,
+      defaultDark: colors.cyan600,
       defaultLight: colors.pink200,
     },
   },
