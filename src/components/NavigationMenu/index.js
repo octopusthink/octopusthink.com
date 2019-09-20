@@ -96,11 +96,11 @@ const NavigationMenu = () => {
             justify-content: space-between;
             margin-bottom: 0;
             box-shadow: 4px 0 8px rgba(0, 0, 0, 0.25);
-            width: 32rem;
+            width: calc(100% - 6.4rem);
             transition: left 200ms ease-in;
             ${hideMenu &&
               css`
-                left: -34rem;
+                left: -100%;
               `}
           }
 
