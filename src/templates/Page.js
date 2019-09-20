@@ -4,6 +4,7 @@ import React from 'react';
 import { markdown } from '../utils/markdown';
 
 import App from './App';
+import NewsletterSignupForm from '../components/NewsletterSignupForm';
 import PageBody from '../components/PageBody';
 import PageHeader from '../components/PageHeader';
 import PageWrapper from '../components/PageWrapper';
@@ -24,7 +25,10 @@ export const Page = (props) => {
       <SEO title={title} description={description} />
       <PageWrapper>
         <PageHeader pageTitle={title} summary={summary} description={description} />
-        <PageBody>{content}</PageBody>
+        <PageBody>
+          <NewsletterSignupForm />
+          {content}
+        </PageBody>
       </PageWrapper>
     </App>
   );

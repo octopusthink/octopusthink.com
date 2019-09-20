@@ -60,6 +60,13 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+        endpoint:
+          'https://octopusthink.us4.list-manage.com/subscribe/post?u=dec5c2d889866b4c67a61ff55&amp;id=cd3b5cf599',
+      },
+    },
   ],
   mapping: {
     'MarkdownRemark.fields.authors': 'AuthorsYaml',
