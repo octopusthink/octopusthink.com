@@ -59,48 +59,98 @@ const ContactContent = (props) => {
           >
             <List.Item>
               <Icon
-                background={theme.colors.accent.secondaryLight}
-                color={theme.colors.neutral.black}
+                background={theme.colors.neutral.grey0}
+                fillColor={theme.colors.accent.secondaryLight}
+                strokeColor={theme.colors.accent.secondaryDark}
                 name="mail"
                 title="Email"
               />
-              <Link to="mailto:hello@octopusthink.com">hello@octopusthink.com</Link>
+              <Link
+                to="mailto:hello@octopusthink.com"
+                css={css`
+                  border-bottom: 0;
+                  color: white;
+                  font-weight: bold;
+                `}
+              >
+                hello@octopusthink.com
+              </Link>
             </List.Item>
             <List.Item>
               <Icon
-                background={theme.colors.accent.secondaryLight}
-                color={theme.colors.neutral.black}
+                background={theme.colors.neutral.grey0}
+                fillColor={theme.colors.accent.secondaryLight}
+                strokeColor={theme.colors.accent.secondaryDark}
                 name="twitter"
                 title="Twitter"
               />
-              <Link to="https://twitter.com/octopusthinks">@octopusthinks</Link>
+              <Link
+                to="https://twitter.com/octopusthinks"
+                css={css`
+                  border-bottom: 0;
+                  color: white;
+                  font-weight: bold;
+                `}
+              >
+                @octopusthinks
+              </Link>
             </List.Item>
             <List.Item>
               <Icon
-                background={theme.colors.accent.secondaryLight}
-                color={theme.colors.neutral.black}
+                background={theme.colors.neutral.grey0}
+                fillColor={theme.colors.accent.secondaryLight}
+                strokeColor={theme.colors.accent.secondaryDark}
                 name="instagram"
                 title="Instagram"
               />
-              <Link to="https://instagram.com/octopusthinks">@octopusthinks</Link>
+              <Link
+                to="https://instagram.com/octopusthinks"
+                css={css`
+                  border-bottom: 0;
+                  color: white;
+                  font-weight: bold;
+                `}
+              >
+                @octopusthinks
+              </Link>
             </List.Item>
             <List.Item>
               <Icon
-                background={theme.colors.accent.secondaryLight}
-                color={theme.colors.neutral.black}
+                background={theme.colors.neutral.grey0}
+                fillColor={theme.colors.accent.secondaryLight}
+                strokeColor={theme.colors.accent.secondaryDark}
                 name="rss"
                 title="RSS feed"
               />
-              <Link to="#">Coming soon!</Link>
+              <Link
+                to="#"
+                css={css`
+                  border-bottom: 0;
+                  color: white;
+                  font-weight: bold;
+                `}
+              >
+                Coming soon!
+              </Link>
             </List.Item>
             <List.Item>
-              <Icon
-                background={theme.colors.accent.secondaryLight}
-                color={theme.colors.neutral.black}
-                name="github"
-                title="GithHb"
-              />
-              <Link to="https://github.com/octopusthink">@octopusthink</Link>
+              <Link
+                to="https://github.com/octopusthink"
+                css={css`
+                  border-bottom: 0;
+                  color: white;
+                  font-weight: bold;
+                `}
+              >
+                <Icon
+                  background={theme.colors.neutral.grey0}
+                  fillColor={theme.colors.accent.secondaryLight}
+                  strokeColor={theme.colors.accent.secondaryDark}
+                  name="github"
+                  title="GithHb"
+                />
+                @octopusthink
+              </Link>
             </List.Item>
           </List>
         </div>
@@ -142,7 +192,9 @@ const ContactContent = (props) => {
               <Heading level={3}>About you</Heading>
             </legend>
 
-            <Paragraph small>First, introduce yourself.</Paragraph>
+            <Paragraph small>
+              Hello! Why don't you tell us a wee bit about yourself to get started.
+            </Paragraph>
             <TextField autocomplete="name" label="Name" />
             <TextField autocomplete="email" label="Email" />
             <TextField autocomplete="organisation" label="Organisation" optional />
@@ -153,7 +205,7 @@ const ContactContent = (props) => {
             }
             `}
             >
-              Tell us more
+              Next step
             </Button>
           </fieldset>
 
@@ -169,8 +221,8 @@ const ContactContent = (props) => {
               <Heading level={3}>About your project</Heading>
             </legend>
             <Paragraph small>
-              Now, tell us a little bit about your project. You don't need to be super detailed at
-              this stage, but the more you tell us, the fewer questions we'll ask.
+              Now, tell us a little bit about your project. You don't need to be _super_ detailed at
+              this stage, but the more you tell us, the fewer questions we'll ask later on.
             </Paragraph>
 
             <fieldset
@@ -215,9 +267,15 @@ const ContactContent = (props) => {
               label="Project details"
               hint="What do we need to know about your project?"
             />
-            <Checkbox>
+            {/*
+            <Checkbox
+              css={css`
+                margin-bottom: 3.2rem;
+              `}
+            >
               Sign me up for the quarterly Octopus Think newsletter. I love getting emails.
             </Checkbox>
+            */}
             <Button
               primary
               css={css`
