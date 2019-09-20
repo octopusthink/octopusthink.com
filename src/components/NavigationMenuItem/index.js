@@ -20,26 +20,33 @@ const NavigationMenuItem = (props) => {
           font-weight: 600;
           padding: 1.6rem;
 
-          &:hover {
-            color: ${theme.colors.accent.primaryLight};
-          }
-
           @media screen and (max-width: 479px) {
             border-bottom: 1px solid ${theme.colors.neutral.grey800};
             display: block;
             width: 100%;
 
             &:hover {
-              border-bottom: 1px solid ${theme.colors.neutral.grey800};
+              border-bottom: 1px solid ${theme.colors.accent.primaryDark};
+              background: ${theme.colors.accent.primaryDark};
+              color: ${theme.colors.neutral.white};
             }
           }
 
           @media screen and (min-width: 480px) {
             border-bottom: 0;
+
+            &:hover {
+              color: ${theme.colors.accent.primaryLight};
+            }
           }
 
           &.activeLink {
             color: ${theme.colors.accent.secondaryLight};
+
+            &:hover {
+              background: none;
+              border-color: ${theme.colors.neutral.grey800};
+            }
 
             @media screen and (min-width: 480px) {
               position: relative;
