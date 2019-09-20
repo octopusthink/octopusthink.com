@@ -69,13 +69,20 @@ const ServicesContent = () => {
 
       <Panel dark grid="1fr 1fr">
         {/* <Heading>Who are we?</Heading> */}
-        <IllustratedPoint label="Matthew Riley MacPherson">
+        <IllustratedPoint
+          label="Matthew Riley MacPherson"
+          photo="/photos/matt-serious.jpg"
+          photoAlt="Two photos of Matt: one serious, looking out a window, and one in which he is being eaten by a stuffed shark and looking silly."
+          photoHover="/photos/matt-silly.jpg"
+        >
           <Paragraph inverse>
-            Matt is a full-stack developer with a soft spot for React and JavaScript. He's
-            detail-oriented, quick to learn, and well-versed in navigating projects of all sizes. He
-            cares about accessibility, automation, and writing clean, readable code that doesn't box
-            you in.
+            Matt is a full-stack developer with a soft spot for React and JavaScript. An
+            enthusiastic contributor to open-source projects, he wrote the popular localForage
+            library. He's hosted workshops around the world and spoken at conferences on nearly
+            every continent. He cares about accessibility, automation, and writing clean, readable
+            code.
           </Paragraph>
+          {/*
           <Paragraph inverse>
             An enthusiastic contributor to open-source projects, he wrote the popular localForage
             library, used by thousands of apps/web services including Mozilla Add-ons, Cordova,
@@ -89,28 +96,36 @@ const ServicesContent = () => {
           <Paragraph inverse>
             In his spare time, Matt likes riding his motorcycle, hiking in the Highlands, and making
             three different types of coffee.
-          </Paragraph>
+          </Paragraph> */}
         </IllustratedPoint>
-        <IllustratedPoint label="Sarah London Semark">
+        <IllustratedPoint
+          label="Sarah London Semark"
+          photo="/photos/sarah-serious.jpg"
+          photoAlt="Two photos of Sarah: one looking serious, one sticking out her tongue."
+          photoHover="/photos/sarah-silly.jpg"
+        >
           <Paragraph inverse>
-            Sarah calls herself a "designer who codes", which means she cares most about typography
-            and colour but can also write a React component when the mood strikes (which it doesn't
-            often).
+            Sarah calls herself a "designer who codes", which means she cares most about user needs
+            and typography but can also write a React component when the mood strikes. She's spoken
+            at conferences around the world about design, inclusion, and technology. You can find
+            her working happily wherever art and science intersect.
           </Paragraph>
-          <Paragraph inverse>
+          {/*<Paragraph inverse>
             Sarah's design work is inclusive from the outset and thoughtfully considered. She's
             skilled at framing a problem from a user-centric perspective and simplifying complex or
-            abstract topics (then distilling them in visual form). Sarah has worked with clients
-            like Automattic, Feminist Frequency, Joel on Software, and Smitten Kitchen on product
-            design, ground-up site redesigns, and user research projects. She's spoken at
-            conferences around the world about design, inclusion, and technology.{' '}
+            abstract topics (then distilling them in visual form).{' '}
+          </Paragraph>
+          <Paragraph inverse>
+            Sarah has worked with clients like Automattic, Feminist Frequency, Joel on Software, and
+            Smitten Kitchen on product design, ground-up site redesigns, and user research projects.
+            She's spoken at conferences around the world about design, inclusion, and technology.{' '}
           </Paragraph>
           <Paragraph inverse>
             She's especially interested in the intersection of art and science. Data visualisation,
             machine learning, design systems, and user research are among her passions. When she’s
             not busy making things, Sarah likes obsessing over typography, collecting impractical
             footwear, and exploring new places.
-          </Paragraph>
+          </Paragraph> */}
         </IllustratedPoint>
       </Panel>
 
