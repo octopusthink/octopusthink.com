@@ -10,7 +10,7 @@ const NavigationMenuItem = (props) => {
   return (
     <li className={className}>
       <Link
-        activeClassName="activeLink"
+        activeClassName="currentLink"
         to={link}
         onClick={onClick}
         css={css`
@@ -40,12 +40,16 @@ const NavigationMenuItem = (props) => {
             }
           }
 
-          &.activeLink {
+          &.currentLink {
             color: ${theme.colors.accent.secondaryLight};
 
             &:hover {
               background: none;
               border-color: ${theme.colors.neutral.grey800};
+            }
+
+            &:focus {
+              color: ${theme.colors.neutral.black};
             }
 
             @media screen and (min-width: 480px) {
