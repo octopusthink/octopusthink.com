@@ -40,43 +40,55 @@ const ServicesContent = () => {
       </Panel>
       <Panel dark grid="1fr 1fr">
         <IllustratedPoint label="Strategy & training" illustration={StrategyIllustration}>
-          Not sure how to get started, what JavaScript framework you need, or what your users really
-          need? We can help with planning, strategy, and execution. We also offer bespoke training
-          and workshops, on-site or remotely.
+          <Paragraph inverse>
+            Not sure how to get started, what JavaScript framework you need, or what your users
+            really need? We can help with planning, strategy, and execution. We also offer bespoke
+            training and workshops, on-site or remotely.
+          </Paragraph>
         </IllustratedPoint>
 
         <IllustratedPoint label="Accessibility" illustration={AccessibilityIllustration}>
-          Accessibility and inclusion are fundamental to good design. Everything we make begins with
-          an inclusive design process and is built to accessible standards. We can also help with
-          audits, compliance and testing.
+          <Paragraph inverse>
+            Accessibility and inclusion are fundamental to good design. Everything we make begins
+            with an inclusive design process and is built to accessible standards. We can also help
+            with audits, compliance and testing.
+          </Paragraph>
         </IllustratedPoint>
 
         <IllustratedPoint label="Web development" illustration={WebIllustration}>
-          Because you need more than just a Facebook page. Django, WordPress, Gatsby, React,
-          Rails—we’ve been doing this a long time, so we know how to design & build gorgeous
-          websites that are fast, accessible, and mobile-optimised. Oh, and they’ll be SEO optimised
-          and privacy-aware to boot.
+          <Paragraph inverse>
+            Because you need more than just a Facebook page. Django, WordPress, Gatsby, React,
+            Rails—we’ve been doing this a long time, so we know how to design & build gorgeous
+            websites that are fast, accessible, and mobile-optimised. Oh, and they’ll be SEO
+            optimised and privacy-aware to boot.
+          </Paragraph>
         </IllustratedPoint>
 
         <IllustratedPoint label="App development" illustration={AppIllustration}>
-          Need a web app or a native mobile app? We love building apps that delight users and solve
-          real problems. Whether it’s a React Native app or a full-stack solution, you can rest
-          assured that you’ll end up with an app that’s stable, performant, easy to use, and
-          delightful.
+          <Paragraph inverse>
+            Need a web app or a native mobile app? We love building apps that delight users and
+            solve real problems. Whether it’s a React Native app or a full-stack solution, you can
+            rest assured that you’ll end up with an app that’s stable, performant, easy to use, and
+            delightful.
+          </Paragraph>
         </IllustratedPoint>
 
         <IllustratedPoint label="Product design" illustration={ProductIllustration}>
-          Design isn’t just about making it pretty—it’s about how it works. We approach problems
-          from a user-centric perspective, ensuring every interaction is intuitive and pleasant.
-          From user research to usability testing and all the journey maps, wireframes, and
-          prototypes in between, we’ve got you covered.
+          <Paragraph inverse>
+            Design isn’t just about making it pretty—it’s about how it works. We approach problems
+            from a user-centric perspective, ensuring every interaction is intuitive and pleasant.
+            From user research to usability testing and all the journey maps, wireframes, and
+            prototypes in between, we’ve got you covered.
+          </Paragraph>
         </IllustratedPoint>
 
         <IllustratedPoint label="Visual design" illustration={VisualIllustration}>
-          Once you’ve got everything usable, you may want to make it pretty after all. Graphic
-          design is about using visual media to communicate a message. Whatever you need—design
-          systems, branding, visualisations, web design—we ensure your message is communicated
-          clearly and effectively.
+          <Paragraph inverse>
+            Once you’ve got everything usable, you may want to make it pretty after all. Graphic
+            design is about using visual media to communicate a message. Whatever you need—design
+            systems, branding, visualisations, web design—we ensure your message is communicated
+            clearly and effectively.
+          </Paragraph>
         </IllustratedPoint>
       </Panel>
 

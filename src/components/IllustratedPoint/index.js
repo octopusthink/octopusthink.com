@@ -18,7 +18,7 @@ const IllustratedPoint = (props) => {
           justify-content: center;
         `}
       >
-        <Illustration />
+        {Illustration && <Illustration />}
       </div>
       <Heading
         level={3}
@@ -29,15 +29,7 @@ const IllustratedPoint = (props) => {
       >
         {label}
       </Heading>
-      <Paragraph
-        small
-        inverse
-        css={css`
-          grid-start: 1;
-        `}
-      >
-        {children}
-      </Paragraph>
+      <div>{children}</div>
     </div>
   );
 };

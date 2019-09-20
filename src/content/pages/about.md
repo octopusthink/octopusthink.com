@@ -1,12 +1,28 @@
 ---
-title: 'Who we are'
-summary: 'Hello there! Octopus Think is a digital design & development agency based in Scotland.'
+title: Who we are
+summary: Octopus Think is a design & development duo based in Scotland. We build inclusive, usable, and smart digital products. We love open source and are frequent contributors  to major  open source projects. We believe technology is  a tool to make the world a better place, and we are guided by ethical decision-making.
+summaryExtra: Oh, and we really like strange ocean creatures. 🐙
 metaDescription: Octopus Think is a digital design & development agency based in Scotland.
+component: About
 ---
 
-We believe that staying small allows us to be nimble and adapt easily, and we pride ourselves in building great digital products whilst remaining flexible and responsive throughout the process.
+## We care about things.
 
-Together, we have over thirty years of experience. We've worked on a wide range of projects with clients of all sizes: from Firefox Add-ons to the new WordPress editor, we've built experiences for hundreds of millions of users across the world.
+We believe that technology can be a tool to improve people's lives. As technology becomes more intertwined in our everyday lives, it becomes more important that we build products thoughtfully and empathically. Our mission is to leverage everything we've learned to make the world a little bit better—one website, app, or visualisation at a time.
+
+We care deeply about making the world a better, fairer place, and we're not willing to compromise our values to make a quick quid. We make the most ethical decisions possible, from the projects we take on (sorry, Monsanto: we're not interested) to the tools we use. We work with governments so vital services are accessible and friendly; we leverage our experience with big companies to help small businesses realise big ideas.
+
+## We don't do busy work.
+
+Staying small allows us to be nimble and adapt easily. We get things done without getting bogged down in endless meetings or onerous administrative overhead. If we can take a boring task off your plate so you can direct your energy better—we'll be delighted.
+
+We love automation and efficiency, which is a thread that runs through all of our work. Want to talk about tooling and improving your workflows? We love that kind of thing, and it's evidenced in our best work.
+
+## We get things *done*.
+
+We've been on the Internet since MUDs and Mosaic. We've worked on a wide range of projects with clients of all sizes. We've built experiences for hundreds of millions of users across the world. We've contributed thousands of hours to major open-source software projects. We've spoken at conferences all over the world. We've taught, mentored, and encouraged all sorts of different people.
+
+We eschew clever for **simple**, exclusive for **open**, and safety for **boldness**.
 
 ## Who are we?
 
@@ -14,19 +30,21 @@ Together, we have over thirty years of experience. We've worked on a wide range 
 
 Matt is a full-stack developer with a soft spot for React and JavaScript. He's detail-oriented, quick to learn, and well-versed in navigating projects of all sizes. He cares about accessibility, automation, and writing clean, readable code that doesn't box you in.
 
-An enthusiastic contributor to open-source projects, he wrote the popular localForage library, used by thousands of apps/web services including Mozilla Add-ons, Cordova, Twitter, and WordPress.com. He was also the accessibility lead for WordPress 5.0.
+An enthusiastic contributor to open-source projects, he wrote the popular localForage library, used by thousands of apps/web services including Mozilla Add-ons, Cordova, Twitter and WordPress.com. He also served as the accessibility lead for WordPress 5.0.
 
-Over the years, Matt has worked for Mozilla (Firefox), Automattic (WordPress), Nova Scotia government, and a slew of start-ups. He's hosted workshops around the world and spoken at conferences on nearly every continent.
+Over the years, Matt has worked for Mozilla (Firefox), Automattic (WordPress), the Nova Scotia government, and a variety of start-ups. He's hosted workshops around the world and spoken at conferences on nearly every continent.
 
 In his spare time, Matt likes riding his motorcycle, hiking in the Highlands, and making three different types of coffee.
 
-### Sarah Semark
+### Sarah London Semark
 
 Sarah calls herself a "designer who codes", which means she cares most about typography and colour but can also write a React component when the mood strikes.
 
-Sarah creates designs that are both visually striking and usable. Her designs incorporate accessibility from the beginning. She's skilled at framing a problem from a user-centric perspective and simplifying complex or abstract topics.
+Sarah creates designs that are both visually striking and usable. Her designs are inclusive from the outset and thoughtfully considered. She's skilled at framing a problem from a user-centric perspective and simplifying complex or abstract topics (then distilling them in visual form).
 
-Sarah has worked with clients like Automattic, Feminist Frequency, Joel on Software, and Smitten Kitchen on product design, ground-up site redesigns, and user testing projects. She's spoken at conferences around the world about design, inclusion, and technology.
+Sarah has worked with clients like Automattic, Feminist Frequency, Joel on Software, and Smitten Kitchen on product design, ground-up site redesigns, and user research projects. She's spoken at conferences around the world about design, inclusion, and technology.
+
+She's especially interested in the intersection of art and science. Data visualisation, machine learning, design systems, and user research are among her passions.
 
 When she’s not busy making things, Sarah likes obsessing over typography, collecting impractical footwear, and exploring new places.
 
@@ -34,14 +52,16 @@ When she’s not busy making things, Sarah likes obsessing over typography, coll
 
 You shouldn't need to compromise on the things you believe just to keep the lights on. We are advocates of inclusive design, fans of open source, and we believe that technology is a tool to make the world a better place.
 
-- We believe that accessibility, beauty, and usability should co-exist.
+- We believe that accessibility, beauty, and usability co-exist.
 - We aim for transparency, clarity, and openness.
 - We are advocates for inclusive design and open source.
-- We leave our egos at the door.
-- We improve with every project.
+- We leave our egos at the door and are pragmatic; not dogmatic.
+- We improve with every project and love to pass on what we're learned.
 
 Are you making the world a better place? We offer a 15% discount for charities, non-profits, and open-source work.
 
 ## Hire us
 
-Have an idea you want to build? Maybe you need some extra resources to join your existing team? [Drop us a line and we'll talk.](/contact)
+Have an idea you want to build? Maybe you need some extra resources to join your existing team? Drop us a line and we'll talk.
+
+[contact link/button]
