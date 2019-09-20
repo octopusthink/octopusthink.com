@@ -71,6 +71,7 @@ const ServicesContent = () => {
         {/* <Heading>Who are we?</Heading> */}
         <IllustratedPoint
           label="Matthew Riley MacPherson"
+          metadata="Chief Technical Octopus"
           photo="/photos/matt-serious.jpg"
           photoAlt="Two photos of Matt: one serious, looking out a window, and one in which he is being eaten by a stuffed shark and looking silly."
           photoHover="/photos/matt-silly.jpg"
@@ -100,6 +101,7 @@ const ServicesContent = () => {
         </IllustratedPoint>
         <IllustratedPoint
           label="Sarah London Semark"
+          metadata="Chief Design Octopus"
           photo="/photos/sarah-serious.jpg"
           photoAlt="Two photos of Sarah: one looking serious, one sticking out her tongue."
           photoHover="/photos/sarah-silly.jpg"

@@ -1,9 +1,17 @@
-import { Heading, Paragraph, useTheme } from '@octopusthink/nautilus';
+import { Heading, Paragraph, Tags, useTheme } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
 const IllustratedPoint = (props) => {
-  const { children, illustration: Illustration, label, photo, photoAlt, photoHover } = props;
+  const {
+    children,
+    illustration: Illustration,
+    label,
+    metadata,
+    photo,
+    photoAlt,
+    photoHover,
+  } = props;
 
   const theme = useTheme();
 
@@ -69,15 +77,37 @@ const IllustratedPoint = (props) => {
           />
         )}
       </div>
-      <Heading
-        level={3}
+
+      <div
         css={css`
-          color: ${theme.colors.text.inverse};
           text-align: center;
         `}
       >
-        {label}
-      </Heading>
+        {metadata && (
+          <Tags label="Title">
+            <Tags.Tag>
+              <span
+                css={css`
+                  color: ${theme.colors.neutral.grey600};
+                  display: inline-block;
+                  padding-bottom: 0.4rem;
+                `}
+              >
+                {metadata}
+              </span>
+            </Tags.Tag>
+          </Tags>
+        )}
+        <Heading
+          level={3}
+          css={css`
+            color: ${theme.colors.text.inverse};
+          `}
+        >
+          {label}
+        </Heading>
+      </div>
+
       <div>{children}</div>
     </div>
   );
