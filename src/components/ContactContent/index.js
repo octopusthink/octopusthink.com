@@ -38,14 +38,7 @@ const ContactContent = (props) => {
           follow us if you just want to keep tabs on what we're up to.
         </Paragraph>
       </Panel>
-      <Panel
-        dark
-        grid="2fr 3fr"
-        css={css`
-          display: grid !important;
-          grid-template-columns: 1fr 1fr;
-        `}
-      >
+      <Panel dark grid="5fr 7fr">
         <div>
           <Heading
             css={css`

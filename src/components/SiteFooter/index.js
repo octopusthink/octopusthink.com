@@ -46,7 +46,7 @@ const SiteFooter = () => {
             max-width: ${theme.site.maxSiteWidth};
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 4fr 3fr;
+            grid-template-columns: 7fr 5fr;
             grid-gap: ${theme.site.desktopPadding};
           }
         `}
