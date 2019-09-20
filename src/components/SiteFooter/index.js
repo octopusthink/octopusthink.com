@@ -4,6 +4,7 @@ import Emoji from 'a11y-react-emoji';
 import React from 'react';
 
 import theme from '../../../config/theme';
+import Logo from '../../../static/octopusthink.svg';
 import SiteMap from '../SiteMap';
 
 const SiteFooter = () => {
@@ -45,12 +46,18 @@ const SiteFooter = () => {
             max-width: ${theme.site.maxSiteWidth};
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 4fr 3fr;
             grid-gap: ${theme.site.desktopPadding};
           }
         `}
       >
         <div>
+          <Logo
+            css={css`
+              margin: 0 0 3.2rem -1.6rem;
+              max-width: 32rem;
+            `}
+          />
           <Paragraph
             large
             inverse
