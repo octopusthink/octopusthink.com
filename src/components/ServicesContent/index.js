@@ -9,7 +9,7 @@ import {
   Strong,
   Tags,
   TextField,
-  interfaceUI,
+  metadata,
 } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
@@ -132,9 +132,45 @@ const ServicesContent = (props) => {
       </Panel>
 
       <Panel dark>
-        <Paragraph large inverse>
-          Put a great testimonial here.
-        </Paragraph>
+        <blockquote
+          css={css`
+            font-size: 1.2em;
+            position: relative;
+
+            &::before {
+              color: ${theme.colors.text.inverseDark};
+              content: '“';
+              font-family: Georgia, 'Times New Roman', Times, serif;
+              font-size: 12rem;
+              position: absolute;
+              top: -2.8rem;
+              left: -5.6rem;
+              display: block;
+              opacity: 0.25;
+            }
+          `}
+        >
+          <Paragraph large inverse>
+            Matt built an entire streaming video platform complete with a custom API and layers upon
+            layers of tests to validate all future changes against. All of this in about six months.
+            It was truly awe-inspiring to watch.
+          </Paragraph>
+          <Paragraph large inverse>
+            Do me a favor and don’t hire Octopus Think, because I’d like to book all of their hours
+            myself.
+          </Paragraph>
+
+          <cite
+            css={css`
+              ${metadata.small(theme)};
+              color: ${theme.colors.text.inverseDark};
+              font-style: normal;
+              opacity: 0.7;
+            `}
+          >
+            Dave Wiskus, CEO @ Standard Broadcast
+          </cite>
+        </blockquote>
       </Panel>
 
       <Panel>
