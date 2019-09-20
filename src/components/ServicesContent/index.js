@@ -1,4 +1,13 @@
-import { Emphasis, Heading, Link, List, Paragraph, Strong, metadata } from '@octopusthink/nautilus';
+import {
+  Button,
+  Emphasis,
+  Heading,
+  Link,
+  List,
+  Paragraph,
+  Strong,
+  metadata,
+} from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
@@ -198,6 +207,10 @@ const ServicesContent = () => {
           contracts with us for the betterment of the project, so rest assured we aren’t trying to
           up-sell you.
         </Paragraph>
+
+        <Button navigation to="/contact" minimal>
+          Contact us to discuss your project
+        </Button>
       </Panel>
     </React.Fragment>
   );
