@@ -83,11 +83,11 @@ const Panel = (props) => {
             ${grid &&
               css`
                 display: grid;
-                grid-template-columns: ${grid};
                 grid-gap: ${theme.site.mobilePadding};
 
                 @media screen and (min-width: 640px) {
                   grid-gap: ${theme.site.tabletPadding};
+                  grid-template-columns: ${grid};
                 }
 
                 @media screen and (min-width: 1024px) {
