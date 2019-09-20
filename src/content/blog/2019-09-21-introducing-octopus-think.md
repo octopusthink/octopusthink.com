@@ -7,7 +7,7 @@ summary: Let's talk about design. And technology. And cephalopods, because we ca
 
 Hi there! We’re [Sarah](https://triggersandsparks.com) and [Matt](https://tofumatt.com).
 
-Together, we’re **Octopus 🐙💡Think**, a digital design and development agency. We're based in beautiful Edinburgh, Scotland but we're both frequent travellers and can often be found travelling the globe.
+Together, we’re **Octopus Think**, a digital design and development agency. We're based in beautiful Edinburgh, Scotland but we're both frequent travellers and can often be found travelling the globe. 🌍
 
 We build accessible, fast, and thoughtful apps and websites. We design inclusive, usable, and beautiful experiences, interfaces, and communications. We're always learning and teaching others. We're experienced public speakers and leaders who empower people to build awesome stuff. And above all, we believe in the power of technology to **solve problems and make the world a better place**. ✌️
 
@@ -21,16 +21,13 @@ Sarah is passionate about leveraging technology in order to create social change
 
 Matt is an avid motorcyclist and coffee equipment enthusiast. It's possible he needs more storage space. 🛵
 
-
 **Together**, we’ve worked on an array of different one-off projects over the years. Realising the world could use more accessible, thoughtfully-designed, and lovingly-crafted apps, interfaces, and websites, we've decided to team up and build great things together.
 
-Having highly complementary skills, we're able have joint ownership and make decisions in a diplomatic way.
-
-Where we *do* overlap are the passions that ignite us: **automation, empowerment, inclusion, and social justice**. That’s where we’ll be directing the majority of our efforts. 💪🏻
+Having highly complementary skills, we're able have joint ownership and make decisions in a diplomatic way. Where we *do* overlap are the passions that ignite us: **automation, empowerment, inclusion, and social justice**. That’s where we’ll be directing the majority of our efforts. 🔥
 
 ## What to expect from this blog
 
-We're still figuring things out, but expect us to talk about things that matter most to us. **Design and technology. Accessibility and inclusion.** Oh, and adorable cephalopod stories, because we aren’t stones. Those *suckers* are really cute. 🐙
+We're still figuring things out, but expect us to talk about things that matter most to us. **Design and technology. Accessibility and inclusion.** We're still figuring things out, but expect us to talk about things that matter most to us. **Design and technology. Accessibility and inclusion.** Oh, and adorable cephalopod stories, because we aren’t made of stone. *Those suckers are really cute.* 🐙
 
 ## What we’re working on
 
