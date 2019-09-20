@@ -181,9 +181,9 @@ const ContactContent = () => {
             method="post"
             id="mc-embedded-subscribe-form"
             name="mc-embedded-subscribe-form"
-            class="validate"
+            className="validate"
             target="_blank"
-            novalidate
+            noValidate
             css={css`
               align-items: center;
               display: grid;
@@ -209,7 +209,7 @@ const ContactContent = () => {
               <input
                 type="text"
                 name="b_dec5c2d889866b4c67a61ff55_cd3b5cf599"
-                tabindex="-1"
+                tabIndex="-1"
                 value=""
               />
             </div>
