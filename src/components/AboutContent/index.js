@@ -1,15 +1,5 @@
-import {
-  Button,
-  Emphasis,
-  Heading,
-  Link,
-  List,
-  Paragraph,
-  Strong,
-  metadata,
-} from '@octopusthink/nautilus';
+import { Button, Heading, List, Paragraph, Strong } from '@octopusthink/nautilus';
 import React from 'react';
-import { css } from '@emotion/core';
 
 import IllustratedPoint from '../IllustratedPoint';
 import Panel from '../Panel';
@@ -21,44 +11,42 @@ const ServicesContent = () => {
         <Heading>We care about stuff.</Heading>
 
         <Paragraph>
-          We believe that technology can be a tool to improve people's lives. As technology becomes
+          We believe that technology can be a tool to improve people’s lives. As technology becomes
           more intertwined in our everyday lives, it becomes more important that we build products
-          thoughtfully and empathically. Our mission is to leverage everything we've learned to make
+          thoughtfully and empathically. Our mission is to leverage everything we’ve learned to make
           the world a little bit better—one website, app, or visualisation at a time.
         </Paragraph>
 
         <Paragraph>
-          We care deeply about making the world a better, fairer place, and we're not willing to
+          We care deeply about making the world a better, fairer place, and we’re not willing to
           compromise our values to make a quick quid. We make the most ethical decisions possible,
-          from the projects we take on (sorry, Monsanto: we're not interested) to the tools we use.
-          We work with governments so vital services are accessible and friendly; we leverage our
+          from the projects we take on (Sorry Monsanto, we’re not interested) to the tools we use.
+          We work with governments so vital services are accessible and friendly and we leverage our
           experience with big companies to help small businesses realise big ideas.
         </Paragraph>
 
-        <Heading>We don't do busy work.</Heading>
+        <Heading>We don’t do busy work.</Heading>
 
         <Paragraph>
           Staying small allows us to be nimble and adapt easily. We get things done without getting
           bogged down in endless meetings or onerous administrative overhead. If we can take a
-          boring task off your plate so you can direct your energy better—we'll be delighted.
+          boring task off your plate so you can direct your energy better—we’ll be delighted.
         </Paragraph>
 
         <Paragraph>
           We love automation and efficiency, which is a thread that runs through all of our work.
           Want to talk about tooling and improving your workflows? We love that kind of thing, and
-          it's evidenced in our best work.
+          it’s evidenced in our best work.
         </Paragraph>
 
-        <Heading>
-          We get things <Strong>done</Strong>.
-        </Heading>
+        <Heading>We get things done.</Heading>
 
         <Paragraph>
-          We've been on the Internet since MUDs and Mosaic. We've worked on a wide range of projects
-          with clients of all sizes. We've built experiences for hundreds of millions of users
-          across the world. We've contributed thousands of hours to major open-source software
-          projects. We've spoken at conferences all over the world. We've taught, mentored, and
-          encouraged all sorts of different people.
+          We’ve been on the Internet since MUDs and Mosaic. (Remember those? No? We do!) We’ve
+          worked on a wide range of projects with clients of all sizes. We’ve built experiences for
+          hundreds of millions of users across the world. We’ve contributed thousands of hours to
+          major open-source software projects. We’ve spoken at conferences all over the world, and
+          we’ve taught, mentored, and encouraged all sorts of different people along the way.
         </Paragraph>
 
         <Paragraph>
@@ -79,7 +67,7 @@ const ServicesContent = () => {
           <Paragraph inverse>
             Matt is a full-stack developer with a soft spot for React and JavaScript. An
             enthusiastic contributor to open-source projects, he wrote the popular localForage
-            library. He's hosted workshops around the world and spoken at conferences on nearly
+            library. He’s hosted workshops around the world and spoken at conferences on nearly
             every continent. He cares about accessibility, automation, and writing clean, readable
             code.
           </Paragraph>
@@ -107,12 +95,12 @@ const ServicesContent = () => {
           photoHover="/photos/sarah-silly.jpg"
         >
           <Paragraph inverse>
-            Sarah calls herself a "designer who codes", which means she cares most about user needs
-            and typography but can also write a React component when the mood strikes. She's spoken
+            Sarah calls herself a “designer who codes”, which means she cares most about user needs
+            and typography but can also write a React component when the mood strikes. She’s spoken
             at conferences around the world about design, inclusion, and technology. You can find
             her working happily wherever art and science intersect.
           </Paragraph>
-          {/*<Paragraph inverse>
+          {/* <Paragraph inverse>
             Sarah's design work is inclusive from the outset and thoughtfully considered. She's
             skilled at framing a problem from a user-centric perspective and simplifying complex or
             abstract topics (then distilling them in visual form).{' '}
@@ -134,17 +122,19 @@ const ServicesContent = () => {
       <Panel>
         <Heading>Our values</Heading>
         <Paragraph>
-          You shouldn't need to compromise on the things you believe just to keep the lights on. We
+          You shouldn’t need to compromise on the things you believe just to keep the lights on. We
           are advocates of inclusive design, fans of open source, and we believe that technology is
           a tool to make the world a better place.
         </Paragraph>
         <List>
-          <List.Item>We believe that accessibility, beauty, and usability co-exist.</List.Item>
+          <List.Item>
+            We believe that accessibility, beauty, and usability can (and should!) co-exist.
+          </List.Item>
           <List.Item>We aim for transparency, clarity, and openness.</List.Item>
           <List.Item>We are advocates for inclusive design and open source.</List.Item>
-          <List.Item>We leave our egos at the door and are pragmatic; not dogmatic.</List.Item>
+          <List.Item>We leave our egos at the door. We are pragmatic, not dogmatic.</List.Item>
           <List.Item>
-            We improve with every project and love to pass on what we're learned.
+            We improve with every project and love to pass on what we’ve learned.
           </List.Item>
         </List>
         <Paragraph>
@@ -154,7 +144,7 @@ const ServicesContent = () => {
         <Heading>Hire us</Heading>
         <Paragraph>
           Have an idea you want to build? Maybe you need some extra resources to join your existing
-          team? Drop us a line and we'll talk.
+          team? Drop us a line and we’ll talk.
         </Paragraph>
 
         <Button navigation to="/contact" minimal>
