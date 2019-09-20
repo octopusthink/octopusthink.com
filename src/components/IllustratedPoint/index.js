@@ -1,9 +1,9 @@
-import { Button, Heading, Link, Paragraph, useTheme } from '@octopusthink/nautilus';
+import { Heading, Paragraph, useTheme } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
 const IllustratedPoint = (props) => {
-  const { children, illustration: Illustration, label, ...otherProps } = props;
+  const { children, illustration: Illustration, label } = props;
 
   const theme = useTheme();
 

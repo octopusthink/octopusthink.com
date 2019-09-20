@@ -1,21 +1,7 @@
-import {
-  Button,
-  Heading,
-  Emphasis,
-  Icon,
-  Link,
-  List,
-  Paragraph,
-  Strong,
-  Tags,
-  TextField,
-  metadata,
-} from '@octopusthink/nautilus';
+import { Emphasis, Heading, Link, List, Paragraph, Strong, metadata } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
-import { markdown } from '../../utils/markdown';
-import config from '../../../config';
 import theme from '../../../config/theme';
 
 import IllustratedPoint from '../IllustratedPoint';
@@ -27,9 +13,9 @@ import ProductIllustration from '../../../static/illustrations/product.svg';
 import VisualIllustration from '../../../static/illustrations/visual.svg';
 import Panel from '../Panel';
 
-const ServicesContent = (props) => {
+const ServicesContent = () => {
   return (
-    <>
+    <React.Fragment>
       <Panel>
         <Heading>What we do</Heading>
         <Paragraph>
@@ -48,8 +34,8 @@ const ServicesContent = (props) => {
         <Paragraph>
           Some may think that makes us masters of none, but we don’t believe that (and neither do
           our clients!){' '}
-          {/*For more perspective on this, read our blog post: Masters of some: Why we’re
-          proud to call ourselves generalists.*/}
+          {/* For more perspective on this, read our blog post: Masters of some: Why we’re
+          proud to call ourselves generalists. */}
         </Paragraph>
       </Panel>
       <Panel dark grid="1fr 1fr">
@@ -67,27 +53,27 @@ const ServicesContent = (props) => {
 
         <IllustratedPoint label="Web development" illustration={WebIllustration}>
           Because you need more than just a Facebook page. Django, WordPress, Gatsby, React,
-          Rails—we've been doing this a long time, so we know how to design & build gorgeous
-          websites that are fast, accessible, and mobile-optimised. Oh, and they'll be SEO optimised
+          Rails—we’ve been doing this a long time, so we know how to design & build gorgeous
+          websites that are fast, accessible, and mobile-optimised. Oh, and they’ll be SEO optimised
           and privacy-aware to boot.
         </IllustratedPoint>
 
         <IllustratedPoint label="App development" illustration={AppIllustration}>
           Need a web app or a native mobile app? We love building apps that delight users and solve
-          real problems. Whether it's a React Native app or a full-stack solution, you can rest
-          assured that you'll end up with an app that's stable, performant, easy to use, and
+          real problems. Whether it’s a React Native app or a full-stack solution, you can rest
+          assured that you’ll end up with an app that’s stable, performant, easy to use, and
           delightful.
         </IllustratedPoint>
 
         <IllustratedPoint label="Product design" illustration={ProductIllustration}>
-          Design isn't just about making it pretty—it's about how it works. We approach problems
+          Design isn’t just about making it pretty—it’s about how it works. We approach problems
           from a user-centric perspective, ensuring every interaction is intuitive and pleasant.
           From user research to usability testing and all the journey maps, wireframes, and
-          prototypes in between, we've got you covered.
+          prototypes in between, we’ve got you covered.
         </IllustratedPoint>
 
         <IllustratedPoint label="Visual design" illustration={VisualIllustration}>
-          Once you've got everything usable, you may want to make it pretty after all. Graphic
+          Once you’ve got everything usable, you may want to make it pretty after all. Graphic
           design is about using visual media to communicate a message. Whatever you need—design
           systems, branding, visualisations, web design—we ensure your message is communicated
           clearly and effectively.
@@ -97,15 +83,15 @@ const ServicesContent = (props) => {
       <Panel>
         <Heading>How we work</Heading>
         <Paragraph>
-          Every project is different, so we don't adhere to a rigid process. Our process follows an
+          Every project is different, so we don’t adhere to a rigid process. Our process follows an
           adaptable framework that responds to the unique needs of your project.
         </Paragraph>
-        {/*}[process diagram]*/}
+        {/* [process diagram] */}
         <Paragraph>
-          We've spent the last decade working remotely with small and large organisations, so we're
-          great communicators and we know how to manage work across divergent time zones. We're also
+          We’ve spent the last decade working remotely with small and large organisations, so we’re
+          great communicators and we know how to manage work across divergent time zones. We’re also
           available to work on-site if the project calls for it, to do staff training, or for short
-          periods during a longer project. Here's what you can expect of working with us:
+          periods during a longer project. Here’s what you can expect of working with us:
         </Paragraph>
         <List
           css={css`
@@ -124,23 +110,23 @@ const ServicesContent = (props) => {
             experience.
           </List.Item>
           <List.Item>
-            <Strong>Friendly, open, and transparent communication.</Strong> It's easier to be
+            <Strong>Friendly, open, and transparent communication.</Strong> It’s easier to be
             straightforward about concerns, delays, improvements, or suggestions. When we each
-            respect one another's time, we can get more done.
+            respect one another’s time, we can get more done.
           </List.Item>
           <List.Item>
-            <Strong>Zero bullshit.</Strong> We don't believe in busywork, complex hierarchies of
-            middle-management, or needless meetings. Instead, we're going to focus on getting things
+            <Strong>Zero bullshit.</Strong> We don’t believe in busywork, complex hierarchies of
+            middle-management, or needless meetings. Instead, we’re going to focus on getting things
             done and getting them done <Emphasis>well</Emphasis>.
           </List.Item>
           <List.Item>
-            <Strong>Agility and pragmatism.</Strong> We aren't dogmatic about things, and we don't
-            believe in one-size-fits-all solutions. Instead, we'll work with you to determine the
+            <Strong>Agility and pragmatism.</Strong> We aren’t dogmatic about things, and we don’t
+            believe in one-size-fits-all solutions. Instead, we’ll work with you to determine the
             technologies, tools, and process that best fits your needs.
           </List.Item>
           <List.Item>
             <Strong>A stress-free launch day.</Strong> We know launching a product is a big deal.
-            We'll be on call for you all day, taking care of anything unexpected that comes up. That
+            We’ll be on call for you all day, taking care of anything unexpected that comes up. That
             way, all you need to do is sit back and watch the compliments come rolling in.
           </List.Item>
         </List>
@@ -191,17 +177,17 @@ const ServicesContent = (props) => {
       <Panel>
         <Heading>Work with us</Heading>
         <Paragraph>
-          If you're ready to discuss your project with us, <Link to="/contact">drop us a line</Link>{' '}
+          If you’re ready to discuss your project with us, <Link to="/contact">drop us a line</Link>{' '}
           for a no-strings-attached estimate.
         </Paragraph>
         <Paragraph>
           Just in the planning stages? Reach out anyway! We can help you plan, focus, research, and
-          give you unbiased feedback about your idea. We've talked past clients out of lucrative
-          contracts with us for the betterment of the project, so rest assured we aren't trying to
+          give you unbiased feedback about your idea. We’ve talked past clients out of lucrative
+          contracts with us for the betterment of the project, so rest assured we aren’t trying to
           up-sell you.
         </Paragraph>
       </Panel>
-    </>
+    </React.Fragment>
   );
 };
 
