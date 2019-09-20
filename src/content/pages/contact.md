@@ -1,6 +1,7 @@
 ---
 title: Let's talk
-summary: Ready to build a new app or website? Need some beautiful design work for a new project? Have an idea you want help getting off the ground? Get the ball rolling with a no-strings-attached quote. Or you could just keep tabs on what we're up to, or have a chat about Nessie. Your call.
+summary: Ready to build a new app or website? Need some beautiful design work for a new project? Have an idea you want help getting off the ground? Get the ball rolling with a no-strings-attached quote.
+summaryExtra: Or you could just keep tabs on what we're up to, or have a chat about Nessie. Your call.
 description: Get a quote or talk more about React development, inclusive design, or design systems.
 component: Contact
 ---

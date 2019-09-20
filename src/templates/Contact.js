@@ -15,16 +15,22 @@ export const Page = (props) => {
 
   const { page } = data;
   const { htmlAst } = page;
-  const { metaDescription, summary, title } = page.fields;
+  const { metaDescription, summary, summaryExtra, title } = page.fields;
 
   const description = metaDescription || summary;
   const content = markdown(htmlAst);
+  //const formattedSummary = markdown(summary);
 
   return (
     <App>
       <SEO title={title} description={description} />
       <PageWrapper>
-        <PageHeader pageTitle={title} summary={summary} description={description} />
+        <PageHeader
+          pageTitle={title}
+          summary={summary}
+          summaryExtra={summaryExtra}
+          description={description}
+        />
         <ContactContent />
       </PageWrapper>
     </App>
@@ -38,6 +44,7 @@ export const pageQuery = graphql`
         metaDescription
         slug
         summary
+        summaryExtra
         title
       }
       htmlAst

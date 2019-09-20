@@ -6,7 +6,7 @@ import theme from '../../../config/theme';
 import Watermark from '../../../static/watermark.svg';
 
 const PageHeader = (props) => {
-  const { children, metadata, pageTitle, summary } = props;
+  const { children, metadata, pageTitle, summary, summaryExtra } = props;
   return (
     <header
       css={css`
@@ -108,6 +108,19 @@ const PageHeader = (props) => {
           >
             {summary}
           </Paragraph>
+
+          {summaryExtra && (
+            <Paragraph
+              large
+              inverse
+              light
+              css={css`
+                letter-spacing: -0.025em;
+              `}
+            >
+              {summaryExtra}
+            </Paragraph>
+          )}
 
           {children}
         </div>
