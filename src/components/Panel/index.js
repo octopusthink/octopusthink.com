@@ -13,10 +13,45 @@ const Panel = (props) => {
     <section
       css={css`
         background: ${panelBackground};
-        //min-height: 70vh;
-        //justify-content: center;
-        //display: flex;
-        //flex-direction: column;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+
+        ${dark &&
+          css`
+            ::before,
+            ::after {
+              content: '';
+              display: block;
+              width: 120%;
+              margin-left: -10%;
+              overflow: hidden;
+              height: 50px;
+              background-image: linear-gradient(
+                to bottom left,
+                ${theme.colors.neutral.white},
+                ${theme.colors.neutral.white} 46%,
+                ${theme.colors.accent.primary} 47%,
+                ${theme.colors.accent.primary} 53%,
+                ${theme.colors.neutral.black} 54%,
+                ${theme.colors.neutral.black}
+              );
+            }
+
+            ::after {
+              background-image: linear-gradient(
+                to top right,
+                ${theme.colors.neutral.white},
+                ${theme.colors.neutral.white} 46%,
+                ${theme.colors.accent.primary} 47%,
+                ${theme.colors.accent.primary} 53%,
+                ${theme.colors.neutral.black} 54%,
+                ${theme.colors.neutral.black}
+              );
+            }
+          `}
       `}
     >
       <div
