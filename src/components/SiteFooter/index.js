@@ -1,13 +1,13 @@
 import { css } from '@emotion/core';
-import { Icon, Link, Paragraph } from '@octopusthink/nautilus';
+import { Icon, Link, Paragraph, useTheme } from '@octopusthink/nautilus';
 import Emoji from 'a11y-react-emoji';
 import React from 'react';
 
-import theme from '../../../config/theme';
 import Logo from '../../../static/octopusthink.svg';
 import SiteMap from '../SiteMap';
 
 const SiteFooter = () => {
+  const theme = useTheme();
   return (
     <footer
       css={css`
@@ -83,59 +83,63 @@ const SiteFooter = () => {
           <div
             css={css`
               margin-bottom: 3.2rem;
+
+              a {
+                border: 0;
+
+                // This should be done in the props but for some reason it isn't?
+                span {
+                  background: ${theme.colors.neutral.white};
+                }
+
+                &:focus,
+                &:hover {
+                  background: none;
+                }
+
+                  &:focus {
+                    span {
+                      box-shadow: 0 0 0 3px ${theme.colors.accent.primaryLight};
+                    }
+                  }
+
+                  &:hover {
+                    span {
+                      background: ${theme.colors.accent.primaryLight};
+                      box-shadow: 0 0 0 2px ${theme.colors.accent.primaryLight};
+                    }
+                  }
+                }
+              }
             `}
           >
-            <Link
-              as="a"
-              href="//twitter.com/octopusthinks"
-              css={css`
-                border: 0;
-              `}
-            >
+            <Link as="a" href="//twitter.com/octopusthinks">
               <Icon
-                css={css`
-                  :hover {
-                    background: ${theme.colors.accent.primaryLight};
-                  }
-                `}
+                background={theme.colors.neutral.white}
+                fillColor={theme.colors.accent.primaryLight}
+                strokeColor={theme.colors.accent.primaryDark}
                 name="twitter"
                 background={theme.colors.accent.primary}
                 color={theme.colors.neutral.black}
                 title="Follow on Twitter"
               />
             </Link>
-            <Link
-              as="a"
-              href="//github.com/octopusthink"
-              css={css`
-                border: 0;
-              `}
-            >
+            <Link as="a" href="//github.com/octopusthink">
               <Icon
-                css={css`
-                  :hover {
-                    background: ${theme.colors.accent.primaryLight};
-                  }
-                `}
+                background={theme.colors.neutral.white}
+                fillColor={theme.colors.accent.primaryLight}
+                strokeColor={theme.colors.accent.primaryDark}
                 name="github"
                 background={theme.colors.accent.primary}
                 color={theme.colors.neutral.black}
                 title="Follow on Github"
               />
             </Link>
-            <Link
-              as="a"
-              href="mailto:hello@octopusthink.com"
-              css={css`
-                border: 0;
-              `}
-            >
+            <Link as="a" href="mailto:hello@octopusthink.com">
               <Icon
-                css={css`
-                  :hover {
-                    background: ${theme.colors.accent.primaryLight};
-                  }
-                `}
+                background={theme.colors.neutral.white}
+                fillColor={theme.colors.accent.primaryLight}
+                strokeColor={theme.colors.accent.primaryDark}
                 name="mail"
                 background={theme.colors.accent.primary}
                 color={theme.colors.neutral.black}
