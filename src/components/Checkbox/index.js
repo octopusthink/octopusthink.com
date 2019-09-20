@@ -1,43 +1,89 @@
 import { interfaceUI } from '@octopusthink/nautilus';
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 import { css } from '@emotion/core';
+import shortid from 'shortid';
 
 import config from '../../../config';
 import theme from '../../../config/theme';
 
 export const Checkbox = (props) => {
-  const { children, ...otherProps } = props;
+  const { children, id, ...otherProps } = props;
+  const [generatedId] = useState(shortid.generate());
+  const inputId = useMemo(() => {
+    return id || generatedId;
+  }, [generatedId, id]);
 
   return (
-    <div>
+    <div
+      css={css`
+        margin-bottom: 0.8rem;
+      `}
+    >
       <input
+        id={inputId}
         type="checkbox"
         css={css`
-          //display: none;
-          margin-bottom: 1.6rem;
-          border-bottom: 2px solid ${theme.colors.state.interactive};
-          color: ${theme.colors.state.interactiveText};
-          text-decoration: none;
-          transition: all 200ms ease-in-out;
+          position: absolute;
+          z-index: 1;
+          top: -2px;
+          left: -2px;
+          width: 44px;
+          height: 44px;
+          margin: 0;
+          opacity: 0;
 
-
-          &:hover {
-            border-color: ${theme.colors.state.hover};
-            color: ${theme.colors.state.hoverText};
+          &:checked + label {
+            color: ${theme.colors.text.dark};
           }
 
-          &:focus {
-            background: ${theme.colors.state.interactive};
-            border-color: ${theme.colors.state.interactiveText};
-            color: ${theme.colors.text.dark};
-            outline: none;
+          /* Hide the checkmark by default. */
+          & + label::after {
+            content: none;
+          }
 
+          /*Unhide the checkmark on the checked state*/
+          &:checked + label::after {
+            content: '';
+          }
         `}
         {...otherProps}
       />
       <label
+        htmlFor={inputId}
         css={css`
           ${interfaceUI.small(theme)};
+          color: ${theme.colors.text.default};
+          position: relative;
+          padding-left: 3.2rem;
+
+          &::before,
+          &::after {
+            position: absolute;
+          }
+
+          /*Outer-box*/
+          &::before {
+            border: 2px solid ${theme.colors.neutral.black};
+            content: '';
+            display: inline-block;
+            height: 2rem;
+            width: 2rem;
+            top: 0;
+            left: 0;
+          }
+
+          /*Checkmark*/
+          &::after {
+            left: 4px;
+            top: 6px;
+            content: '';
+            display: inline-block;
+            height: 6px;
+            width: 14px;
+            border-left: 3px solid ${theme.colors.accent.secondary};
+            border-bottom: 3px solid ${theme.colors.accent.secondary};
+            transform: rotate(-50deg);
+          }
         `}
       >
         {children}

@@ -7,6 +7,7 @@ import {
   Paragraph,
   Tags,
   TextField,
+  interfaceUI,
 } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
@@ -121,10 +122,8 @@ const ContactContent = (props) => {
           <Paragraph small inverse>
             We send out emails around once a quarter with highlights of what we've been up to, what
             we're doing next, apps and tools we've built, and things we've found to make your life
-            easier.
-          </Paragraph>
-          <Paragraph small inverse dark>
-            You can unsubscribe at any time and we'll never sell your information to anyone else.
+            easier. You can unsubscribe any time you get bored, and we promise never to sell your
+            details.
           </Paragraph>
         </div>
       </Panel>
@@ -181,12 +180,29 @@ const ContactContent = (props) => {
               this stage, but the more you tell us, the fewer questions we'll ask.
             </Paragraph>
 
-            <Checkbox>App development</Checkbox>
-            <Checkbox>Web development</Checkbox>
-            <Checkbox>Strategy & training</Checkbox>
-            <Checkbox>Visual design</Checkbox>
-            <Checkbox>Product design</Checkbox>
-            <Checkbox>Accessibility</Checkbox>
+            <fieldset
+              css={css`
+                border: 0;
+                margin: 0;
+                padding: 0 0 3.2rem;
+              `}
+            >
+              <legend
+                css={css`
+                  ${interfaceUI.small(theme)};
+                  margin: 0;
+                  padding: 0 0 1.6rem;
+                `}
+              >
+                Type(s) of work
+              </legend>
+              <Checkbox>App development</Checkbox>
+              <Checkbox>Web development</Checkbox>
+              <Checkbox>Strategy & training</Checkbox>
+              <Checkbox>Visual design</Checkbox>
+              <Checkbox>Product design</Checkbox>
+              <Checkbox>Accessibility</Checkbox>
+            </fieldset>
 
             <TextField
               autocomplete="name"
