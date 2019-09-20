@@ -1,11 +1,11 @@
-import { Icon, Link, interfaceUI } from '@octopusthink/nautilus';
+import { Link, interfaceUI } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
 import theme from '../../../config/theme';
 
 const NavigationMenuItem = (props) => {
-  const { children, icon, link, onClick } = props;
+  const { children, link, onClick } = props;
 
   return (
     <li>
@@ -65,13 +65,6 @@ const NavigationMenuItem = (props) => {
           }
         `}
       >
-        <Icon
-          name={icon}
-          css={css`
-            display: none;
-            margin-right: 1.6rem;
-          `}
-        />
         {children}
       </Link>
     </li>

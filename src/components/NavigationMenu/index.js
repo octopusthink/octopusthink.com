@@ -114,23 +114,23 @@ const NavigationMenu = () => {
           }
         `}
       >
-        <NavigationMenuItem icon="compass" link="/" onClick={closeMenu}>
+        <NavigationMenuItem link="/" onClick={closeMenu}>
           Home
         </NavigationMenuItem>
 
-        <NavigationMenuItem icon="help-circle" link="/about" onClick={closeMenu}>
+        <NavigationMenuItem link="/about" onClick={closeMenu}>
           About
         </NavigationMenuItem>
 
-        <NavigationMenuItem icon="coffee" link="/services" onClick={closeMenu}>
+        <NavigationMenuItem link="/services" onClick={closeMenu}>
           Services
         </NavigationMenuItem>
 
-        <NavigationMenuItem icon="camera" link="/work" onClick={closeMenu}>
+        <NavigationMenuItem link="/work" onClick={closeMenu}>
           Work
         </NavigationMenuItem>
 
-        <NavigationMenuItem icon="send" link="/contact" onClick={closeMenu}>
+        <NavigationMenuItem link="/contact" onClick={closeMenu}>
           Contact
         </NavigationMenuItem>
       </ul>
