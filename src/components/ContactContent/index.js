@@ -1,12 +1,12 @@
 import {
-  // Button,
+  Button,
   // Emphasis,
   Heading,
   Icon,
   Link,
   List,
   Paragraph,
-  // TextField,
+  TextField,
   // interfaceUI,
 } from '@octopusthink/nautilus';
 import React from 'react';
@@ -175,6 +175,53 @@ const ContactContent = () => {
             to make your life easier. You can unsubscribe any time you get bored, and we promise
             never to sell your details.
           </Paragraph>
+
+          <form
+            action="https://octopusthink.us4.list-manage.com/subscribe/post?u=dec5c2d889866b4c67a61ff55&amp;id=cd3b5cf599"
+            method="post"
+            id="mc-embedded-subscribe-form"
+            name="mc-embedded-subscribe-form"
+            class="validate"
+            target="_blank"
+            novalidate
+            css={css`
+              align-items: center;
+              display: grid;
+              grid-gap: 0.4rem;
+              grid-template-columns: auto auto;
+
+              label {
+                color: ${theme.colors.text.inverse};
+              }
+            `}
+          >
+            <div>
+              <TextField type="email" name="EMAIL" id="mce-EMAIL" label="Email" />
+            </div>
+
+            <div
+              css={css`
+                position: absolute;
+                left: -5000px;
+              `}
+              aria-hidden="true"
+            >
+              <input
+                type="text"
+                name="b_dec5c2d889866b4c67a61ff55_cd3b5cf599"
+                tabindex="-1"
+                value=""
+              />
+            </div>
+            <Button
+              type="submit"
+              css={css`
+                margin-top: 0.4rem;
+              `}
+            >
+              Subscribe
+            </Button>
+          </form>
         </div>
       </Panel>
       <Panel>
