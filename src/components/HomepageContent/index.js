@@ -15,38 +15,65 @@ const HomepageContent = () => {
   const theme = useTheme();
   return (
     <React.Fragment>
-      <Panel>
-        <Heading>Who we are</Heading>
-        <Paragraph>
-          We’re a duo based in Scotland with three decades of design and development experience.
-        </Paragraph>
-        <Paragraph>
-          Matt is our Chief Technical Octopus, a software developer and vintage motorcycle
-          enthusiast. Sarah is our Chief Design Octopus, a graphic and product designer with a
-          penchant for bold colours and impractical footwear.
-        </Paragraph>
+      <Panel grid="auto 40rem">
+        <div>
+          <Heading>Who we are</Heading>
+          <Paragraph>
+            We’re a duo based in Scotland with three decades of{' '}
+            <Strong>design and development</Strong> experience.
+          </Paragraph>
+          <Paragraph>
+            Matt is our Chief Technical Octopus, a software developer and vintage motorcycle
+            enthusiast. Sarah is our Chief Design Octopus, a graphic and product designer with a
+            penchant for bold colours and impractical footwear.
+          </Paragraph>
+          <Paragraph>
+            We don’t take ourselves too seriously, but we do <Strong>great work</Strong>.
+          </Paragraph>
 
-        <Button minimal navigation to="/about/">
-          Read more about us
-        </Button>
+          <Button
+            css={css`
+              max-width: max-content;
+            `}
+            minimal
+            navigation
+            to="/about/"
+          >
+            Read about us
+          </Button>
+        </div>
+        <img
+          src="/photos/sarah-and-matt.jpg"
+          alt="A sketch of our mascot, Bubbles: an octopus wearing a hard hat and safety goggles."
+          width="480"
+          height="480"
+          css={css`
+            max-width: 100%;
+            height: auto;
+            border-radius: 100%;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.125);
+          `}
+        />
       </Panel>
       <Panel dark grid="1fr 1fr 1fr" gridSmall="1fr 1fr">
         <Heading
           css={css`
             color: ${theme.colors.text.inverseLight};
             grid-column: 1 / -1;
+            text-align: center;
+            margin: 0;
           `}
         >
           What we do
         </Heading>
-
-        <IllustratedPoint label="Strategy & training" illustration={StrategyIllustration} />
 
         <IllustratedPoint label="Accessibility" illustration={AccessibilityIllustration} />
 
         <IllustratedPoint label="Web development" illustration={WebIllustration} />
 
         <IllustratedPoint label="App development" illustration={AppIllustration} />
+
+        <IllustratedPoint label="Strategy & training" illustration={StrategyIllustration} />
 
         <IllustratedPoint label="Product design" illustration={ProductIllustration} />
 
