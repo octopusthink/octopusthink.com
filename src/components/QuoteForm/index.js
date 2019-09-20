@@ -53,7 +53,7 @@ const QuoteForm = () => {
         encType="multipart/form-data"
         onSubmit={submitForm}
       >
-        {successMessage && <p>Success! {successMessage}</p>}
+        {/*successMessage && <p>Success! {successMessage}</p>*/}
 
         <input type="hidden" name="_subject" value="New quote request" />
         {/*<input type="hidden" name="_after" value="https://octopusthink.com/thank-you" />*/}
