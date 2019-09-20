@@ -20,6 +20,20 @@ const NavigationMenu = () => {
       role="navigation"
       css={css`
         z-index: 1;
+
+        ${!hideMenu &&
+          css`
+            ::before {
+              background: ${theme.colors.neutral.white};
+              content: '';
+              position: absolute;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              opacity: 0.1;
+            }
+          `}
       `}
     >
       <button
@@ -67,36 +81,38 @@ const NavigationMenu = () => {
 
       <ul
         css={css`
-					list-style-type: none;
-					margin: 0;
-					padding: 0;
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
 
-					/* Mobile menu */
-					@media screen and (max-width: 479px) {
-						${hideMenu &&
+          /* Mobile menu */
+          @media screen and (max-width: 479px) {
+            background: ${theme.colors.neutral.black};
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            grid-gap: 0;
+            justify-content: space-between;
+            margin-bottom: 0;
+            box-shadow: 4px 0 8px rgba(0, 0, 0, 0.25);
+            width: 32rem;
+            transition: left 200ms ease-in;
+            ${hideMenu &&
               css`
-                display: none;
+                left: -34rem;
               `}
-						background: ${theme.colors.neutral.black};
-						position: fixed;
-						top: 6.4rem;
-						left: 0;
-						right: 0;
-						grid-gap: 0;
-						justify-content: space-between;
-						width: 100%;
-						margin-bottom: 0;
-					}
+          }
 
-					@media screen and (min-width: 480px) {
-						display: flex;
-						margin-top: 0.4rem;
-					}
+          @media screen and (min-width: 480px) {
+            display: flex;
+            margin-top: 0.4rem;
+          }
 
           @media screen and (min-width: 480px) and (max-width: 860px) {
             margin-top: 1.6rem;
           }
-				`}
+        `}
       >
         <NavigationMenuItem icon="compass" link="/" onClick={closeMenu}>
           Home

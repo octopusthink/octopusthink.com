@@ -44,7 +44,7 @@ const PageHeader = (props) => {
             ${theme.colors.neutral.white} 54%,
             ${theme.colors.neutral.white}
           );
-          z-index: 2;
+          z-index: 0;
         }
       `}
     >
