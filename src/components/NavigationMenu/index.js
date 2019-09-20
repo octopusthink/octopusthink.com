@@ -48,6 +48,10 @@ const NavigationMenu = () => {
             display: flex;
             align-items: center;
             justify-content: center;
+
+            &:focus {
+              border: 2px solid ${theme.colors.accent.primaryLight};
+            }
           }
 
           @media screen and (min-width: 480px) {
