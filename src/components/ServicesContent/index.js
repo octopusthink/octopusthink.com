@@ -80,15 +80,17 @@ const ServicesContent = (props) => {
         </IllustratedPoint>
 
         <IllustratedPoint label="Product design" illustration={ProductIllustration}>
-          Design isn't just about making it pretty—it's about how it works. From user research to
-          usability testing and all the journey maps, wireframes, and prototypes in between, we've
-          got you covered.
+          Design isn't just about making it pretty—it's about how it works. We approach problems
+          from a user-centric perspective, ensuring every interaction is intuitive and pleasant.
+          From user research to usability testing and all the journey maps, wireframes, and
+          prototypes in between, we've got you covered.
         </IllustratedPoint>
 
         <IllustratedPoint label="Visual design" illustration={VisualIllustration}>
-          Once you've got everything usable, you may want to make it pretty after all. Whatever you
-          need—design systems, branding, visualisations, web design—we ensure your message is
-          communicated clearly and effectively.
+          Once you've got everything usable, you may want to make it pretty after all. Graphic
+          design is about using visual media to communicate a message. Whatever you need—design
+          systems, branding, visualisations, web design—we ensure your message is communicated
+          clearly and effectively.
         </IllustratedPoint>
       </Panel>
 
