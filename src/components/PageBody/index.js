@@ -33,6 +33,7 @@ const PageBody = (props) => {
       <div
         css={css`
           max-width: ${theme.site.maxContentWidth};
+          margin: 0 auto;
         `}
       >
         {children}

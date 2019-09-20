@@ -295,7 +295,7 @@ export const theme = {
     mobilePadding: '1.6rem',
     tabletPadding: '3.2rem',
     desktopPadding: '6.4rem',
-    maxContentWidth: '64rem',
+    maxContentWidth: '72rem',
     maxSiteWidth: '120rem',
   },
 };
