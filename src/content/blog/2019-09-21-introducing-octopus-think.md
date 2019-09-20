@@ -27,7 +27,7 @@ Having highly complementary skills, we're able have joint ownership and make dec
 
 ## What to expect from this blog
 
-We're still figuring things out, but expect us to talk about things that matter most to us. **Design and technology. Accessibility and inclusion.** Oh, and adorable cephalopod stories, because we aren’t made of stone. *Those suckers are really cute.* 🐙
+We're still figuring things out, but expect us to talk about things that matter most to us. **Design and technology**. **Accessibility and inclusion**. Oh, and adorable cephalopod stories, because we aren’t made of stone. *Those suckers are really cute.* 🐙
 
 ## What we’re working on
 

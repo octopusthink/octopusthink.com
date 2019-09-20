@@ -41,28 +41,14 @@ export const App = (props) => {
             h3 strong,
             h3 strong,
             strong {
-              background-color: transparent !important;
-              background-image: linear-gradient(
-                  181deg,
-                  rgba(255, 255, 255, 0) 50%,
-                  ${theme.colors.text.strongBackground} 50%,
-                  ${theme.colors.text.strongBackground} 90%,
-                  rgba(255, 255, 255, 0) 90%
+              background: linear-gradient(
+                  -180.5deg,
+                  rgba(255, 255, 255, 0) 45%,
+                  ${theme.colors.text.strongBackground} 45%,
+                  ${theme.colors.text.strongBackground} 85%,
+                  rgba(255, 255, 255, 0) 85%
                 ) !important;
-                padding-right: 0.2em;
-                position: relative;
-                z-index: 2;
-
-                &::before {
-                  content: '';
-                  position: absolute;
-                  top: 0;
-                  left: 0;
-                  width: 0.4em;
-                  bottom: 0;
-                  background: white;
-                  z-index: -1;
-                }
+                padding-right: 0.1em;
               }
             }
 
