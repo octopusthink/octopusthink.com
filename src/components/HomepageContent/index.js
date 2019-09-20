@@ -1,17 +1,6 @@
-import {
-  Button,
-  Emphasis,
-  Heading,
-  Link,
-  List,
-  Paragraph,
-  Strong,
-  metadata,
-} from '@octopusthink/nautilus';
+import { Button, Heading, Paragraph, useTheme } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
-
-import theme from '../../../config/theme';
 
 import IllustratedPoint from '../IllustratedPoint';
 import AccessibilityIllustration from '../../../static/illustrations/accessibility.svg';
@@ -23,12 +12,13 @@ import VisualIllustration from '../../../static/illustrations/visual.svg';
 import Panel from '../Panel';
 
 const HomepageContent = () => {
+  const theme = useTheme();
   return (
     <React.Fragment>
       <Panel>
         <Heading>Who we are</Heading>
         <Paragraph>
-          We're a duo based in Scotland with three decades of design and development experience.
+          We’re a duo based in Scotland with three decades of design and development experience.
         </Paragraph>
         <Paragraph>
           Matt is our Chief Technical Octopus, a software developer and vintage motorcycle
@@ -36,7 +26,7 @@ const HomepageContent = () => {
           penchant for bold colours and impractical footwear.
         </Paragraph>
 
-        <Button navigation to="/about" minimal>
+        <Button navigation to="/about/" minimal>
           Read more about us
         </Button>
       </Panel>
@@ -49,29 +39,17 @@ const HomepageContent = () => {
         >
           What we do
         </Heading>
-        <IllustratedPoint
-          label="Strategy & training"
-          illustration={StrategyIllustration}
-        ></IllustratedPoint>
+        <IllustratedPoint label="Strategy & training" illustration={StrategyIllustration} />
 
-        <IllustratedPoint
-          label="Accessibility"
-          illustration={AccessibilityIllustration}
-        ></IllustratedPoint>
+        <IllustratedPoint label="Accessibility" illustration={AccessibilityIllustration} />
 
-        <IllustratedPoint label="Web development" illustration={WebIllustration}></IllustratedPoint>
+        <IllustratedPoint label="Web development" illustration={WebIllustration} />
 
-        <IllustratedPoint label="App development" illustration={AppIllustration}></IllustratedPoint>
+        <IllustratedPoint label="App development" illustration={AppIllustration} />
 
-        <IllustratedPoint
-          label="Product design"
-          illustration={ProductIllustration}
-        ></IllustratedPoint>
+        <IllustratedPoint label="Product design" illustration={ProductIllustration} />
 
-        <IllustratedPoint
-          label="Visual design"
-          illustration={VisualIllustration}
-        ></IllustratedPoint>
+        <IllustratedPoint label="Visual design" illustration={VisualIllustration} />
 
         <Button
           css={css`
@@ -80,7 +58,7 @@ const HomepageContent = () => {
             grid-column: 1 / 4;
           `}
           navigation
-          to="/services"
+          to="/services/"
           minimal
         >
           Learn more about our services
@@ -93,7 +71,7 @@ const HomepageContent = () => {
           Have a project you’d like to discuss? Drop us a line for a no-strings-attached estimate.
         </Paragraph>
 
-        <Button navigation to="/contact" minimal>
+        <Button navigation to="/contact/" minimal>
           Get in touch with us
         </Button>
       </Panel>
