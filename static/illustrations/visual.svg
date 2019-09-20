@@ -2,9 +2,9 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg width="100%" height="100%" viewBox="0 0 600 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
     <g transform="matrix(1,0,0,1,-777,-3924)">
-        <g id="visual-design" serif:id="visual design" transform="matrix(0.950872,0,0,0.950872,773.197,2463.46)">
+        <g class="visual-design" serif:class="visual design" transform="matrix(0.950872,0,0,0.950872,773.197,2463.46)">
             <rect x="4" y="1536" width="631" height="631" style="fill:rgb(24,27,28);"/>
-            <g id="rings" transform="matrix(1.05167,0,0,1.05167,-101.167,-256.04)">
+            <g class="rings" transform="matrix(1.05167,0,0,1.05167,-101.167,-256.04)">
                 <g transform="matrix(0.767011,0,0,0.767011,-3.26618,1594.21)">
                     <circle cx="525.763" cy="534.273" r="333.763" style="fill:none;stroke:rgb(104,189,198);stroke-width:10.43px;"/>
                 </g>
@@ -12,7 +12,7 @@
                     <circle cx="525.763" cy="534.273" r="333.763" style="fill:none;stroke:rgb(221,124,179);stroke-width:11.13px;"/>
                 </g>
             </g>
-            <g id="visual-drawing" serif:id="visual drawing" transform="matrix(1.05167,0,0,1.05167,-1449.4,1236.28)">
+            <g class="visual-drawing" serif:class="visual drawing" transform="matrix(1.05167,0,0,1.05167,-1449.4,1236.28)">
                 <g transform="matrix(-2.11688,0,0,0.846797,2610.78,-388.014)">
                     <path d="M402,980L479,980" style="fill:none;stroke:white;stroke-width:2.48px;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:3;"/>
                 </g>
