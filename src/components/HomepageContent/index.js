@@ -44,7 +44,7 @@ const HomepageContent = () => {
         </div>
         <img
           src="/photos/sarah-and-matt.jpg"
-          alt="A sketch of our mascot, Bubbles: an octopus wearing a hard hat and safety goggles."
+          alt="Sarah and Matt discussing cufflinks."
           width="480"
           height="480"
           css={css`
