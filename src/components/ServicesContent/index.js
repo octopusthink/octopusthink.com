@@ -1,4 +1,13 @@
-import { Button, Emphasis, Heading, Link, List, Paragraph, Strong } from '@octopusthink/nautilus';
+import {
+  Button,
+  Emphasis,
+  Heading,
+  Link,
+  List,
+  Paragraph,
+  Strong,
+  useTheme,
+} from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
@@ -13,6 +22,8 @@ import Panel from '../Panel';
 import Testimonial from '../Testimonial';
 
 const ServicesContent = () => {
+  const theme = useTheme();
+
   return (
     <React.Fragment>
       <Panel>
@@ -151,9 +162,15 @@ const ServicesContent = () => {
           url="https://standard.tv"
         >
           <Paragraph large inverse>
-            Matt built an{' '}
-            <Link as="a" href="https://watchnebula.com/">
-              entire streaming video platform
+            Matt built an entire{' '}
+            <Link
+              as="a"
+              href="https://watchnebula.com/"
+              css={css`
+                color: ${theme.colors.state.interactiveTextInverse};
+              `}
+            >
+              streaming video platform
             </Link>{' '}
             complete with a custom API and layers upon layers of tests to validate all future
             changes against. All of this in about six months. It was truly awe-inspiring to watch.

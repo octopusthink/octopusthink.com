@@ -141,6 +141,7 @@ export const theme = {
 
     state: {
       interactive: colors.pink200,
+      interactiveTextInverse: colors.pink500,
       interactiveText: colors.pink600,
       hover: colors.cyan200,
       hoverText: colors.cyan600,
@@ -157,9 +158,9 @@ export const theme = {
       default: colors.grey900,
       dark: colors.black,
       light: colors.grey800,
-      inverse: colors.grey100,
+      inverse: colors.grey200,
       inverseLight: colors.white,
-      inverseDark: colors.grey300,
+      inverseDark: colors.grey600,
       emphasis: colors.grey800,
       emphasisBackground: 'transparent',
       strong: colors.black,

@@ -32,11 +32,24 @@ const ServicesContent = (props) => {
           ${metadata.small(theme)};
           color: ${theme.colors.text.inverseDark};
           font-style: normal;
+          padding-left: 0.4rem;
         `}
       >
         {author}
-        {position && <React.Fragment>, {position} </React.Fragment>}
-        <Link as="a" href={url}>
+        {position && (
+          <React.Fragment>
+            {' · '}
+            {position}{' '}
+          </React.Fragment>
+        )}
+        <Link
+          as="a"
+          href={url}
+          css={css`
+            color: ${theme.colors.text.inverse};
+            border-color: ${theme.colors.text.inverseDark};
+          `}
+        >
           {company}
         </Link>
       </cite>
