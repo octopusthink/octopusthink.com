@@ -1,6 +1,6 @@
 ---
 title: 'Selected projects'
-summary: "We've designed and built all sorts of different apps, websites, and products over the years. Here are just a few of the things we've worked on."
+summary: "We’ve designed and built all sorts of different apps, websites, and products over the years. Here are just a few of the things we’ve worked on."
 description: An overview of projects we've worked on, ranging from WordPress development and design systems to open-source projects and custom web apps.
 ---
 

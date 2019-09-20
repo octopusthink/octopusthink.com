@@ -1,7 +1,7 @@
 ---
 title: What we do
 summary: We have a broad range of skills and take a holistic approach to solving problems for clients. Our small, agile team is able to help with everything from app development to print design.
-summaryExtra: "Want an accessibility audit? We can do that. UX and user research? Sure. A React app plus an accompanying API running on AWS? You got it. What about a design system built from scratch? You get the idea: we're here to help you kick ass."
+summaryExtra: "Want an accessibility audit? We can do that. UX and user research? Sure. A React app plus an accompanying API running on AWS? You got it. What about a design system built from scratch? You get the idea: we’re here to help you kick ass."
 description: We offer React & full-stack development, accessibility audits, WordPress and iOS development, UX & UI design, user research, copyediting, open-source work, and training.
 component: Services
 ---
