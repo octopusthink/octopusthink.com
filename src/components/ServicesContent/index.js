@@ -83,7 +83,74 @@ const ServicesContent = (props) => {
             and testing.
           </Paragraph>
         </div>
+
+        <div>
+          <Heading
+            level={3}
+            css={css`
+              color: ${theme.colors.text.inverse};
+            `}
+          >
+            Web development
+          </Heading>
+          <Paragraph small inverse>
+            Because you need more than just a Facebook page. Django, WordPress, Gatsby, React,
+            Rails—we've been doing this a long time, so we know how to design & build gorgeous
+            websites that are fast, accessible, and mobile-optimised. Oh, and they'll be SEO
+            optimised and privacy-aware to boot.
+          </Paragraph>
+        </div>
+
+        <div>
+          <Heading
+            level={3}
+            css={css`
+              color: ${theme.colors.text.inverse};
+            `}
+          >
+            App development
+          </Heading>
+          <Paragraph small inverse>
+            Need a web app or a native mobile app? We love building apps that delight users and
+            solve real problems. Whether it's a React Native app or a full-stack solution, you can
+            rest assured that you'll end up with an app that's stable, performant, easy to use, and
+            delightful.
+          </Paragraph>
+        </div>
+
+        <div>
+          <Heading
+            level={3}
+            css={css`
+              color: ${theme.colors.text.inverse};
+            `}
+          >
+            Product design
+          </Heading>
+          <Paragraph small inverse>
+            Design isn't just about making it pretty—it's about how it *works*. From user research
+            to usability testing and all the journey maps, wireframes, and prototypes in between,
+            we've got you covered.
+          </Paragraph>
+        </div>
+
+        <div>
+          <Heading
+            level={3}
+            css={css`
+              color: ${theme.colors.text.inverse};
+            `}
+          >
+            Visual design
+          </Heading>
+          <Paragraph small inverse>
+            Visual design isn't just about making it pretty—it's about communication. Whatever you
+            need—design systems, branding, visualisations, web design—we make sure your message is
+            clearly communicated. With feeling.
+          </Paragraph>
+        </div>
       </Panel>
+
       <Panel>
         <Heading>How we work</Heading>
         <Paragraph>
@@ -97,7 +164,13 @@ const ServicesContent = (props) => {
           available to work on-site if the project calls for it, to do staff training, or for short
           periods during a longer project. Here's what you can expect of working with us:
         </Paragraph>
-        <List>
+        <List
+          css={css`
+            li {
+              margin-bottom: 1.6rem;
+            }
+          `}
+        >
           <List.Item>
             <Strong>Frequent status updates.</Strong> Communication is what makes or breaks a
             project.
