@@ -17,6 +17,14 @@ import { css } from '@emotion/core';
 import { markdown } from '../../utils/markdown';
 import config from '../../../config';
 import theme from '../../../config/theme';
+
+import IllustratedPoint from '../IllustratedPoint';
+import AccessibilityIllustration from '../../../static/illustrations/accessibility.svg';
+import StrategyIllustration from '../../../static/illustrations/strategy.svg';
+import AppIllustration from '../../../static/illustrations/app.svg';
+import WebIllustration from '../../../static/illustrations/web.svg';
+import ProductIllustration from '../../../static/illustrations/product.svg';
+import VisualIllustration from '../../../static/illustrations/visual.svg';
 import Panel from '../Panel';
 
 const ServicesContent = (props) => {
@@ -45,110 +53,43 @@ const ServicesContent = (props) => {
         </Paragraph>
       </Panel>
       <Panel dark grid="1fr 1fr">
-        <div>
-          <Heading
-            level={3}
-            css={css`
-              color: ${theme.colors.text.inverse};
-            `}
-          >
-            Strategy & training
-          </Heading>
-          <Paragraph small inverse>
-            There are always things to improve, but we'll help you decide *what* and then *how*. Not
-            sure how to get started, what JavaScript framework you need, or how many engineers your
-            new app will require? We can help with planning, strategy, and execution.
-            {/*}-
-            Documentation and copy-editing (internal, external, and user-facing) - Open source
-            software (community, development, and project management) - Workflow & automation
-            (developer experience, continuous integration, DevOps, git, GitHub, and automated
-            testing) - Bespoke workshops and training (remote work, React, open source, automation,
-            DevOps, user research, and design systems)
-            */}
-          </Paragraph>
-        </div>
+        <IllustratedPoint label="Strategy & training" illustration={StrategyIllustration}>
+          Not sure how to get started, what JavaScript framework you need, or what your users really
+          need? We can help with planning, strategy, and execution. We also offer bespoke training
+          and workshops, on-site or remotely.
+        </IllustratedPoint>
 
-        <div>
-          <Heading
-            level={3}
-            css={css`
-              color: ${theme.colors.text.inverse};
-            `}
-          >
-            Accessibility
-          </Heading>
-          <Paragraph small inverse>
-            Accessibility is just good design. Everything we make begins with an inclusive design
-            process and is built to accessible standards. We can also help with audits, compliance
-            and testing.
-          </Paragraph>
-        </div>
+        <IllustratedPoint label="Accessibility" illustration={AccessibilityIllustration}>
+          Accessibility and inclusion are fundamental to good design. Everything we make begins with
+          an inclusive design process and is built to accessible standards. We can also help with
+          audits, compliance and testing.
+        </IllustratedPoint>
 
-        <div>
-          <Heading
-            level={3}
-            css={css`
-              color: ${theme.colors.text.inverse};
-            `}
-          >
-            Web development
-          </Heading>
-          <Paragraph small inverse>
-            Because you need more than just a Facebook page. Django, WordPress, Gatsby, React,
-            Rails—we've been doing this a long time, so we know how to design & build gorgeous
-            websites that are fast, accessible, and mobile-optimised. Oh, and they'll be SEO
-            optimised and privacy-aware to boot.
-          </Paragraph>
-        </div>
+        <IllustratedPoint label="Web development" illustration={WebIllustration}>
+          Because you need more than just a Facebook page. Django, WordPress, Gatsby, React,
+          Rails—we've been doing this a long time, so we know how to design & build gorgeous
+          websites that are fast, accessible, and mobile-optimised. Oh, and they'll be SEO optimised
+          and privacy-aware to boot.
+        </IllustratedPoint>
 
-        <div>
-          <Heading
-            level={3}
-            css={css`
-              color: ${theme.colors.text.inverse};
-            `}
-          >
-            App development
-          </Heading>
-          <Paragraph small inverse>
-            Need a web app or a native mobile app? We love building apps that delight users and
-            solve real problems. Whether it's a React Native app or a full-stack solution, you can
-            rest assured that you'll end up with an app that's stable, performant, easy to use, and
-            delightful.
-          </Paragraph>
-        </div>
+        <IllustratedPoint label="App development" illustration={AppIllustration}>
+          Need a web app or a native mobile app? We love building apps that delight users and solve
+          real problems. Whether it's a React Native app or a full-stack solution, you can rest
+          assured that you'll end up with an app that's stable, performant, easy to use, and
+          delightful.
+        </IllustratedPoint>
 
-        <div>
-          <Heading
-            level={3}
-            css={css`
-              color: ${theme.colors.text.inverse};
-            `}
-          >
-            Product design
-          </Heading>
-          <Paragraph small inverse>
-            Design isn't just about making it pretty—it's about how it *works*. From user research
-            to usability testing and all the journey maps, wireframes, and prototypes in between,
-            we've got you covered.
-          </Paragraph>
-        </div>
+        <IllustratedPoint label="Product design" illustration={ProductIllustration}>
+          Design isn't just about making it pretty—it's about how it works. From user research to
+          usability testing and all the journey maps, wireframes, and prototypes in between, we've
+          got you covered.
+        </IllustratedPoint>
 
-        <div>
-          <Heading
-            level={3}
-            css={css`
-              color: ${theme.colors.text.inverse};
-            `}
-          >
-            Visual design
-          </Heading>
-          <Paragraph small inverse>
-            Visual design isn't just about making it pretty—it's about communication. Whatever you
-            need—design systems, branding, visualisations, web design—we make sure your message is
-            clearly communicated. With feeling.
-          </Paragraph>
-        </div>
+        <IllustratedPoint label="Visual design" illustration={VisualIllustration}>
+          Once you've got everything usable, you may want to make it pretty after all. Whatever you
+          need—design systems, branding, visualisations, web design—we ensure your message is
+          communicated clearly and effectively.
+        </IllustratedPoint>
       </Panel>
 
       <Panel>
@@ -159,7 +100,7 @@ const ServicesContent = (props) => {
         </Paragraph>
         {/*}[process diagram]*/}
         <Paragraph>
-          We've spent the last decade working remotely with small and large organisations; we're
+          We've spent the last decade working remotely with small and large organisations, so we're
           great communicators and we know how to manage work across divergent time zones. We're also
           available to work on-site if the project calls for it, to do staff training, or for short
           periods during a longer project. Here's what you can expect of working with us:
@@ -196,10 +137,9 @@ const ServicesContent = (props) => {
             technologies, tools, and process that best fits your needs.
           </List.Item>
           <List.Item>
-            <Strong>A stress-free launch day.</Strong> We know launching a product is a big deal,
-            and we prioritise your launch. You can expect us to be on call all day, taking care of
-            anything unexpected that comes up. That way, you can sit back and watch the compliments
-            come rolling in.
+            <Strong>A stress-free launch day.</Strong> We know launching a product is a big deal.
+            We'll be on call for you all day, taking care of anything unexpected that comes up. That
+            way, all you need to do is sit back and watch the compliments come rolling in.
           </List.Item>
         </List>
       </Panel>
@@ -249,12 +189,12 @@ const ServicesContent = (props) => {
       <Panel>
         <Heading>Work with us</Heading>
         <Paragraph>
-          If you're ready to discuss your project with us, [drop us a line] for a
-          no-strings-attached estimate.
+          If you're ready to discuss your project with us, <Link to="/contact">drop us a line</Link>{' '}
+          for a no-strings-attached estimate.
         </Paragraph>
         <Paragraph>
-          Just in the planning stages? Reach out anyway: we can help you plan, focus, research, and
-          give you unbiased feedback about your idea. We have talked past clients out of lucrative
+          Just in the planning stages? Reach out anyway! We can help you plan, focus, research, and
+          give you unbiased feedback about your idea. We've talked past clients out of lucrative
           contracts with us for the betterment of the project, so rest assured we aren't trying to
           up-sell you.
         </Paragraph>
