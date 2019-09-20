@@ -5,10 +5,10 @@ import { css } from '@emotion/core';
 import theme from '../../../config/theme';
 
 const NavigationMenuItem = (props) => {
-  const { children, link, onClick } = props;
+  const { children, className, link, onClick } = props;
 
   return (
-    <li>
+    <li className={className}>
       <Link
         activeClassName="activeLink"
         to={link}

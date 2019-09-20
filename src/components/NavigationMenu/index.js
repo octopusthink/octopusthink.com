@@ -114,7 +114,15 @@ const NavigationMenu = () => {
           }
         `}
       >
-        <NavigationMenuItem link="/" onClick={closeMenu}>
+        <NavigationMenuItem
+          link="/"
+          onClick={closeMenu}
+          css={css`
+            @media screen and (min-width: 480px) {
+              display: none;
+            }
+          `}
+        >
           Home
         </NavigationMenuItem>
 
@@ -128,6 +136,10 @@ const NavigationMenu = () => {
 
         <NavigationMenuItem link="/work" onClick={closeMenu}>
           Work
+        </NavigationMenuItem>
+
+        <NavigationMenuItem link="/blog" onClick={closeMenu}>
+          Blog
         </NavigationMenuItem>
 
         <NavigationMenuItem link="/contact" onClick={closeMenu}>
