@@ -18,6 +18,35 @@ export const App = (props) => {
           body {
             background: ${theme.colors.neutral.white};
             margin: 0;
+
+            h1,
+            h2,
+            h3,
+            h4 {
+              color: ${theme.colors.text.dark};
+            }
+
+            h2 {
+              letter-spacing: -0.04em;
+            }
+
+            h3 {
+              color: ${theme.colors.text.default};
+              letter-spacing: -0.035em;
+              margin-bottom: 1.6rem !important;
+            }
+
+            p {
+              letter-spacing: -0.015em;
+            }
+
+            p + h2 {
+              padding-top: 3.2rem;
+            }
+
+            p + h3 {
+              padding-top: 1.6rem;
+            }
           }
         `}
       />

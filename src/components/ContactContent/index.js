@@ -184,15 +184,18 @@ const ContactContent = (props) => {
             css={css`
               border: none;
               padding: 0;
-              margin: 0;
-              //background: ${theme.colors.neutral.black};
+              margin: 1.6rem 0 0 0;
             `}
           >
-            <legend>
+            <legend
+              css={css`
+                padding: 0;
+              `}
+            >
               <Heading level={3}>About you</Heading>
             </legend>
 
-            <Paragraph small>
+            <Paragraph>
               Hello! Why don't you tell us a wee bit about yourself to get started.
             </Paragraph>
             <TextField autocomplete="name" label="Name" />
@@ -213,14 +216,17 @@ const ContactContent = (props) => {
             css={css`
               border: none;
               padding: 0;
-              margin: 0;
-              //background: ${theme.colors.neutral.black};
+              margin: 0.8rem 0 0 0;
             `}
           >
-            <legend>
+            <legend
+              css={css`
+                padding: 0;
+              `}
+            >
               <Heading level={3}>About your project</Heading>
             </legend>
-            <Paragraph small>
+            <Paragraph>
               Now, tell us a little bit about your project. You don't need to be _super_ detailed at
               this stage, but the more you tell us, the fewer questions we'll ask later on.
             </Paragraph>

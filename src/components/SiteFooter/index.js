@@ -62,7 +62,7 @@ const SiteFooter = () => {
             large
             inverse
             css={css`
-              letter-spacing: -0.017em;
+              letter-spacing: -0.025em;
             `}
           >
             Octopus Think is a design & technology company based in Scotland with a special interest
