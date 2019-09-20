@@ -113,7 +113,7 @@ const HomepageContent = () => {
 
           <Paragraph>
             Our website is still under construction. That’s why our friend Bubbles here is wearing a
-            hard hat—and why he's still in pencil-sketch format. More is coming soon, so stay tuned!
+            hard hat—and why he’s still in pencil-sketch format. More is coming soon, so stay tuned!
           </Paragraph>
           <Paragraph>
             Have a project you’d like to discuss? Drop us a line for a{' '}
