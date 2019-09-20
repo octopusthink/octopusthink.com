@@ -65,15 +65,39 @@ const HomepageContent = () => {
         </Button>
       </Panel>
 
-      <Panel>
-        <Heading>Work with us</Heading>
-        <Paragraph>
-          Have a project you’d like to discuss? Drop us a line for a no-strings-attached estimate.
-        </Paragraph>
+      <Panel grid="40rem auto">
+        <img
+          src="/illustrations/construction-sketch-transparent.png"
+          alt="A sketch of an octopus wearing a hard hat and safety goggles."
+          width="480"
+          height="480"
+          css={css`
+            max-width: 100%;
+            height: auto;
+            //border-radius: 100%;
+            //box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.125);
+          `}
+        />
+        <div
+          css={css`
+            align-self: center;
+          `}
+        >
+          <Heading>Work with us</Heading>
 
-        <Button minimal navigation to="/contact/">
-          Get in touch with us
-        </Button>
+          <Paragraph>
+            Our website is currently under construction. So under construction in fact, that even
+            our "construction octopus" illustration is still only as far as the rough sketch stage!
+            More is coming soon though, so stay tuned.
+          </Paragraph>
+          <Paragraph>
+            Have a project you’d like to discuss? Drop us a line for a no-strings-attached estimate.
+          </Paragraph>
+
+          <Button minimal navigation to="/contact/">
+            Get in touch with us
+          </Button>
+        </div>
       </Panel>
     </React.Fragment>
   );
