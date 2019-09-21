@@ -1,16 +1,16 @@
-import { Icon, Link, interfaceUI } from '@octopusthink/nautilus';
+import { Link, interfaceUI } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
 import theme from '../../../config/theme';
 
 const NavigationMenuItem = (props) => {
-  const { children, icon, link, onClick } = props;
+  const { children, className, link, onClick } = props;
 
   return (
-    <li>
+    <li className={className}>
       <Link
-        activeClassName="activeLink"
+        activeClassName="currentLink"
         to={link}
         onClick={onClick}
         css={css`
@@ -20,26 +20,37 @@ const NavigationMenuItem = (props) => {
           font-weight: 600;
           padding: 1.6rem;
 
-          &:hover {
-            color: ${theme.colors.accent.primaryLight};
-          }
-
           @media screen and (max-width: 479px) {
             border-bottom: 1px solid ${theme.colors.neutral.grey800};
             display: block;
             width: 100%;
 
             &:hover {
-              border-bottom: 1px solid ${theme.colors.neutral.grey800};
+              border-bottom: 1px solid ${theme.colors.accent.primaryDark};
+              background: ${theme.colors.accent.primaryDark};
+              color: ${theme.colors.neutral.white};
             }
           }
 
           @media screen and (min-width: 480px) {
             border-bottom: 0;
+
+            &:hover {
+              color: ${theme.colors.accent.primaryLight};
+            }
           }
 
-          &.activeLink {
+          &.currentLink {
             color: ${theme.colors.accent.secondaryLight};
+
+            &:hover {
+              background: none;
+              border-color: ${theme.colors.neutral.grey800};
+            }
+
+            &:focus {
+              color: ${theme.colors.neutral.black};
+            }
 
             @media screen and (min-width: 480px) {
               position: relative;
@@ -58,13 +69,6 @@ const NavigationMenuItem = (props) => {
           }
         `}
       >
-        <Icon
-          name={icon}
-          css={css`
-            display: none;
-            margin-right: 1.6rem;
-          `}
-        />
         {children}
       </Link>
     </li>
