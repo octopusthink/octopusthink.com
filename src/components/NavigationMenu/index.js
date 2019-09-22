@@ -151,7 +151,7 @@ const NavigationMenu = () => {
         </NavigationMenuItem>
       </ul>
       <VisuallyHidden>
-        <div id="isCurrentPageText">current page</div>
+        <div id="isCurrentPageText">Current page</div>
       </VisuallyHidden>
     </nav>
   );
