@@ -6,7 +6,7 @@ import theme from '../../../config/theme';
 import Watermark from '../../../static/watermark.svg';
 
 const PageHeader = (props) => {
-  const { children, metadata, pageTitle, summary } = props;
+  const { children, metadata, pageTitle, summary, summaryExtra } = props;
   return (
     <header
       css={css`
@@ -76,6 +76,7 @@ const PageHeader = (props) => {
         <div
           css={css`
             padding: ${theme.site.mobilePadding};
+            //margin: 0 auto;
 
             @media screen and (min-width: 640px) {
               padding: ${theme.site.tabletPadding};
@@ -92,7 +93,7 @@ const PageHeader = (props) => {
             css={css`
               color: white;
               margin: 0.8rem 0 3.2rem 0;
-              letter-spacing: -0.022em;
+              letter-spacing: -0.05em;
             `}
           >
             {pageTitle}
@@ -102,11 +103,24 @@ const PageHeader = (props) => {
             inverse
             light
             css={css`
-              letter-spacing: -0.017em;
+              letter-spacing: -0.025em;
             `}
           >
             {summary}
           </Paragraph>
+
+          {summaryExtra && (
+            <Paragraph
+              large
+              inverse
+              light
+              css={css`
+                letter-spacing: -0.025em;
+              `}
+            >
+              {summaryExtra}
+            </Paragraph>
+          )}
 
           {children}
         </div>

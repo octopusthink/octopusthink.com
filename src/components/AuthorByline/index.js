@@ -75,7 +75,6 @@ const AuthorByline = (props) => {
           level={2}
           css={css`
             margin-bottom: 0;
-            letter-spacing: -0.021em;
           `}
         >
           {name}

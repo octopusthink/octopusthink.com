@@ -248,12 +248,12 @@ export const theme = {
     },
 
     baseSizes: {
-      desktop: 19,
+      desktop: 18,
       mobile: 16,
     },
 
     scaleModifiers: {
-      desktop: 1.1,
+      desktop: 1.16,
       mobile: 1.15,
     },
 
@@ -295,7 +295,7 @@ export const theme = {
     mobilePadding: '1.6rem',
     tabletPadding: '3.2rem',
     desktopPadding: '6.4rem',
-    maxContentWidth: '64rem',
+    maxContentWidth: '72rem',
     maxSiteWidth: '120rem',
   },
 };

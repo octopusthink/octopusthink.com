@@ -20,6 +20,7 @@
     "@emotion/core": "^10.0.14",
     "@octopusthink/nautilus": "https://github.com/octopusthink/nautilus.git",
     "a11y-react-emoji": "^1.1.1",
+    "acorn": "^7.0.0",
     "babel-jest": "^24.8.0",
     "babel-preset-gatsby": "^0.2.8",
     "dayjs": "^1.8.16",
@@ -48,6 +49,7 @@
     "react-helmet": "^5.2.1",
     "react-test-renderer": "^16.8.6",
     "rehype-react": "^4.0.1",
+    "shortid": "^2.2.15",
     "typeface-inter": "0.0.77"
   },
   "devDependencies": {
