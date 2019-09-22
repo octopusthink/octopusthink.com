@@ -214,10 +214,11 @@ const ContactContent = () => {
               />
             </div>
             <Button
-              type="submit"
               css={css`
                 margin-top: 0.4rem;
               `}
+              primary
+              type="submit"
             >
               Subscribe
             </Button>
