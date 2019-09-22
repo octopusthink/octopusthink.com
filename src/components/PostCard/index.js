@@ -30,7 +30,7 @@ const PostCard = (props) => {
             css={css`
               ${metadata.small(theme)};
               color: ${theme.colors.neutral.grey800};
-              padding: 0 0.4rem;
+              padding: 0 0.4rem 0.4rem 0;
             `}
           >
             &middot;

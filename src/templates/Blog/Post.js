@@ -35,7 +35,15 @@ export const BlogPost = (props) => {
       `}
     >
       <Tags label="Published on">
-        <Tags.Tag>{formattedDate}</Tags.Tag>
+        <Tags.Tag>
+          <span
+            css={css`
+              color: ${theme.colors.neutral.grey600};
+            `}
+          >
+            {formattedDate}
+          </span>
+        </Tags.Tag>
       </Tags>
 
       {tags.length && (
@@ -43,8 +51,8 @@ export const BlogPost = (props) => {
           <span
             css={css`
               ${metadata.small(theme)};
-              color: ${theme.colors.neutral.grey800};
-              padding: 0 0.4rem;
+              color: ${theme.colors.neutral.grey600};
+              padding: 0 0.4rem 0.4rem 0;
             `}
           >
             &middot;
@@ -58,7 +66,7 @@ export const BlogPost = (props) => {
                     to={`/blog/tags/${tag.id}`}
                     css={css`
                       border: none;
-                      color: ${theme.colors.neutral.grey800};
+                      color: ${theme.colors.neutral.grey600};
 
                       &:hover {
                         color: ${theme.colors.text.inverseDark};
