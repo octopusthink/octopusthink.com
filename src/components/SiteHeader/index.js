@@ -1,12 +1,14 @@
-import { Link, SkipLink } from '@octopusthink/nautilus';
-import React from 'react';
+import { Link, SkipLink, useTheme } from '@octopusthink/nautilus';
+import React, { useState } from 'react';
 import { css } from '@emotion/core';
 
 import Logo from '../../../static/octopusthink.svg';
 import NavigationMenu from '../NavigationMenu';
-import theme from '../../../config/theme';
 
 const SiteHeader = () => {
+  const [onHomepage, setOnHomepage] = useState();
+  const theme = useTheme();
+
   return (
     <header
       css={css`
@@ -44,10 +46,25 @@ const SiteHeader = () => {
       >
         <SkipLink />
         <Link
-          to="/"
           css={css`
             border: 0;
           `}
+          getProps={(linkProps) => {
+            const { isCurrent: isCurrentRouterLink } = linkProps;
+            if (isCurrentRouterLink !== onHomepage) {
+              if (isCurrentRouterLink) {
+                setOnHomepage(true);
+              } else {
+                setOnHomepage(false);
+              }
+            }
+          }}
+          onClick={(event) => {
+            if (onHomepage) {
+              event.currentTarget.blur();
+            }
+          }}
+          to="/"
         >
           <Logo
             css={css`

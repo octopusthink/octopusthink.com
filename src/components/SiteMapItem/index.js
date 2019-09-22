@@ -1,18 +1,16 @@
-import { Link, interfaceUI } from '@octopusthink/nautilus';
-import React from 'react';
+import { Link, interfaceUI, useTheme } from '@octopusthink/nautilus';
+import React, { useState } from 'react';
 import { css } from '@emotion/core';
 
-import theme from '../../../config/theme';
-
 const SiteMapItem = (props) => {
-  const { children, link } = props;
+  const { children, link, onClick } = props;
+
+  const [isCurrent, setIsCurrent] = useState();
+  const theme = useTheme();
 
   return (
     <li>
       <Link
-        activeStyle={{
-          color: theme.colors.text.inverseDark,
-        }}
         to={link}
         css={css`
           ${interfaceUI.small(theme)};
@@ -28,7 +26,31 @@ const SiteMapItem = (props) => {
             color: ${theme.colors.text.inverseLight};
             border-color: ${theme.colors.neutral.grey600};
           }
+
+          ${isCurrent &&
+            css`
+              color: ${theme.colors.text.inverseDark};
+            `}
         `}
+        getProps={(linkProps) => {
+          const { isCurrent: isCurrentRouterLink } = linkProps;
+          if (isCurrentRouterLink !== isCurrent) {
+            if (isCurrentRouterLink) {
+              setIsCurrent(true);
+            } else {
+              setIsCurrent(false);
+            }
+          }
+        }}
+        onClick={(event) => {
+          if (typeof onClick === 'function') {
+            onClick(event);
+          }
+
+          if (isCurrent) {
+            event.currentTarget.blur();
+          }
+        }}
       >
         {children}
       </Link>

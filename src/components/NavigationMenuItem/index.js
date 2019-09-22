@@ -1,24 +1,18 @@
-import { Link, interfaceUI } from '@octopusthink/nautilus';
-import React from 'react';
+import { Link, interfaceUI, useTheme } from '@octopusthink/nautilus';
+import React, { useState } from 'react';
 import { css } from '@emotion/core';
-
-import theme from '../../../config/theme';
 
 const NavigationMenuItem = (props) => {
   const { children, className, link, onClick } = props;
 
+  const [isCurrent, setIsCurrent] = useState();
+  const theme = useTheme();
+
   return (
     <li className={className}>
       <Link
-        {...props}
-        getProps={({ isCurrent }) => {
-          return {
-            'aria-describedby': isCurrent ? 'isCurrentPageText' : false,
-          };
-        }}
-        activeClassName="currentLink"
-        to={link}
-        onClick={onClick}
+        aria-describedby={isCurrent ? 'isCurrentPageText' : false}
+        className={className}
         css={css`
           ${interfaceUI.small(theme)};
           text-decoration: none;
@@ -46,35 +40,56 @@ const NavigationMenuItem = (props) => {
             }
           }
 
-          &.currentLink {
-            color: ${theme.colors.accent.secondaryLight};
-            cursor: default;
+          ${isCurrent &&
+            css`
+              color: ${theme.colors.accent.secondaryLight};
+              cursor: default;
 
-            &:hover {
-              background: none;
-              border-color: ${theme.colors.neutral.grey800};
-            }
-
-            &:focus {
-              color: ${theme.colors.neutral.black};
-            }
-
-            @media screen and (min-width: 480px) {
-              position: relative;
-
-              ::after {
-                display: block;
-                width: calc(100% - 3.2rem);
-                content: '';
-                border-bottom: 2px solid;
-                position: absolute;
-                bottom: 0.8rem;
-                left: 1.6rem;
-                right: 1.6rem;
+              &:hover {
+                background: none;
+                border-color: ${theme.colors.neutral.grey800};
               }
+
+              &:focus {
+                color: ${theme.colors.neutral.black};
+              }
+
+              @media screen and (min-width: 480px) {
+                position: relative;
+
+                ::after {
+                  display: block;
+                  width: calc(100% - 3.2rem);
+                  content: '';
+                  border-bottom: 2px solid;
+                  position: absolute;
+                  bottom: 0.8rem;
+                  left: 1.6rem;
+                  right: 1.6rem;
+                }
+              }
+            `}
+        `}
+        getProps={(linkProps) => {
+          const { isCurrent: isCurrentRouterLink } = linkProps;
+          if (isCurrentRouterLink !== isCurrent) {
+            if (isCurrentRouterLink) {
+              setIsCurrent(true);
+            } else {
+              setIsCurrent(false);
             }
           }
-        `}
+        }}
+        onClick={(event) => {
+          if (typeof onClick === 'function') {
+            onClick(event);
+          }
+
+          if (isCurrent) {
+            event.currentTarget.blur();
+          }
+        }}
+        to={link}
       >
         {children}
       </Link>

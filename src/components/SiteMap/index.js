@@ -22,19 +22,19 @@ const SiteMap = () => {
           Home
         </SiteMapItem>
 
-        <SiteMapItem icon="help-circle" link="/about">
+        <SiteMapItem icon="help-circle" link="/about/">
           Who we are
         </SiteMapItem>
 
-        <SiteMapItem icon="coffee" link="/services">
+        <SiteMapItem icon="coffee" link="/services/">
           What we do
         </SiteMapItem>
 
-        <SiteMapItem icon="camera" link="/work">
+        <SiteMapItem icon="camera" link="/work/">
           Some of our work
         </SiteMapItem>
 
-        <SiteMapItem icon="send" link="/contact">
+        <SiteMapItem icon="send" link="/contact/">
           Contact us
         </SiteMapItem>
       </ul>
