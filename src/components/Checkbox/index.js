@@ -3,7 +3,6 @@ import React, { useMemo, useState } from 'react';
 import { css } from '@emotion/core';
 import shortid from 'shortid';
 
-import config from '../../../config';
 import theme from '../../../config/theme';
 
 export const Checkbox = (props) => {
@@ -46,6 +45,7 @@ export const Checkbox = (props) => {
             content: '';
           }
         `}
+        // eslint-disable-next-line react/jsx-props-no-spreading
         {...otherProps}
       />
       <label
