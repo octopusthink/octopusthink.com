@@ -163,7 +163,7 @@ export const theme = {
       emphasis: colors.grey800,
       emphasisBackground: 'transparent',
       strong: colors.black,
-      strongBackground: colors.yellow100,
+      strongBackground: colors.cyan0,
     },
 
     buttons: {

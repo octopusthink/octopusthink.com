@@ -1,30 +1,121 @@
 ---
-title: 'What we do'
-summary: 'If you need smart, passionate, and pragmatic humans (or ocean-dwellers) to help out with your projects, we are here for you!'
+title: What we do
+summary: We have a broad range of skills and take a holistic approach to solving problems for clients. Our small, agile team is able to help with everything from app development to print design.
+summaryExtra: "Want an accessibility audit? We can do that. UX and user research? Sure. A React app plus an accompanying API running on AWS? You got it. What about a design system built from scratch? You get the idea: we're here to help you kick ass."
 description: We offer React & full-stack development, accessibility audits, WordPress and iOS development, UX & UI design, user research, copyediting, open-source work, and training.
+component: Services
 ---
 
-We work remotely by default and provide frequent, open updates on your project. We've worked remotely for the past decade, but we can work with you on-site for parts of your project. We're also available to do on-site training and workshops.
+### What we do
 
-Here are a few things we can help with:
+We have decades of experience working on the web—we remember when bandwidth was measured in baud. Over that time, we’ve picked up a whole range of different skills and keep ourselves up-to-date with best practices in design & development.
 
-## Development
+Rather than being narrowly scoped, we have a range of skills and experience allowing us to approach projects with a holistic understanding of how everything fits together. We can smoothly shepherd your project through all phases of implementation—from research to design, development to deployment: Octopus Think does it.
 
-- React and React-Native development (React, Redux, React Hooks, GraphQL, Flow, TypeScript)
-- Full-stack web development (Django, Rails, WordPress, React)
-- Accessibility (accessible design, accessibility audits/compliance, JAWS/NVDA/VoiceOver testing)
-- WordPress development (Gutenberg blocks, plugin development, theme development)
-- iOS Development (Swift and React Native)
+Some may think that makes us masters of none, but we don’t believe that (and neither do our clients!) For more perspective on this, read our blog post: Masters of some: Why we’re proud to call ourselves generalists.
 
-## Design
+A non-exhaustive list of some things we can help with:
 
-- Graphic design (logos, visual design, web design, branding)
-- Product design (UI, UX, mockups, prototypes, user flows, design systems)
-- User research & usability testing
+### Accessibility
 
-## Other stuff
+Accessibility isn't the antithesis of good design; it's a *core tenant of good design*.
 
-- Documentation and copy-editing
-- Open source software (community, development, project management)
-- Workflow & automation (continuous integration, DevOps, git, GitHub, testing)
-- Bespoke workshops and training (remote work, React, open source, automation, DevOps, user research, design systems)
+We build things to be accessible by default. That said, if you're looking for additional accessibility services, we can help with:
+
+- Accessibility audits & compliance
+- Inclusive design
+- JAWS/NVDA/VoiceOver testing
+
+### App development
+
+Need a native mobile app, or a web app? We've got the coding skills to help.
+
+We love building apps that delight users and solve real problems. We mix equal parts practicality, React, and whimsy until you get something better than you could have imagined. We focus on:
+
+- React development (React, Redux, React Hooks, Flow, and TypeScript)
+- iOS apps (Swift and React Native)
+- Android apps (React Native)
+- Browser Extensions (Firefox, Chrome, and Safari)
+- APIs and backends (Django, GraphQL, Rails, payment processing, and Stripe)
+- Infrastructure and security (AWS, Azure, DevOps, and Kubernetes)
+
+### Web development
+
+Because you need more than just a Facebook page.
+
+We design and build gorgeous websites that with awesome SEO. Having a place on the web that *you* control and can update whenever you like beats paying to promote your tweets. We offer:
+
+- Full-stack web development (Django, Rails, WordPress, and React)
+- WordPress development (Gutenberg blocks, plugin development, and theme development)
+- Gatsby static sites (Flexible backends including custom solutions)
+- JavaScript frameworks (Backbone, Ember, and React)
+- Privacy-aware add-ons (analytics and GDPR compliance)
+
+### Product design
+
+Design isn't just about making it pretty—it's about how it *works*.
+
+We've run user research and usability tests for [WordPress.com](http://wordpress.com) and the WordPress open-source project. We can help you build the right features into your product with:
+
+- user research & usability testing (learn about what your users think about your market segment and your product)
+- user experience design (UX for apps, documentation, and websites)
+- prototyping (user flows, user stories, user journeys, and wireframes)
+
+### Visual design
+
+Once you have the experience sorted, you probably want to make it pretty.
+
+We treat visual design as a means of communication, meaning our focus is ensuring that your message—whatever it may be—is clearly communicated. With feeling. We design:
+
+- logos & branding
+- websites
+- design systems & style guides
+- user interface design
+- data visualisations
+
+### Strategy & training
+
+There are always things to improve, but we'll help you decide **what** and then *how*.
+
+Not sure how to get started, what JavaScript framework you need, or how many engineers your new app will require? We can help with planning, strategy, and execution:
+
+- Documentation and copy-editing (internal, external, and user-facing)
+- Open source software (community, development, and project management)
+- Workflow & automation (developer experience, continuous integration, DevOps, git, GitHub, and automated testing)
+- Bespoke workshops and training (remote work, React, open source, automation, DevOps, user research, and design systems)
+
+
+We're also life-long learners (Sarah is learning data science & machine learning while Matt is experimenting with GraphQL servers) so this list may already be out of date. If there's something you need that you don't see here, drop us a line anyway. We'll either be able to help, or direct you to someone who'd be well-suited to work on your project.
+
+## How we work
+
+Every project is different, so we don't adhere to a rigid process. Our process follows an adaptable framework that responds to the unique needs of your project.
+
+[process diagram]
+
+We've spent the last decade working remotely with small and large organisations; we're great communicators and we know how to manage work across divergent time zones. We're also available to work on-site if the project calls for it, to do staff training, or for short periods during a longer project.
+
+Here's what you can expect of working with us:
+
+- Frequent status updates. Communication is what makes or breaks a project.
+- Clear milestones, ownership, and deliverables. Setting expectations up-front and having clear lines of delivery makes for a smoother, more pleasant experience.
+- Friendly, open, and transparent communication. It's easier to be straightforward about concerns, delays, improvements, or suggestions. When we each respect one another's time, we can get more done.
+- No bullshit. We don't believe in busywork, complex hierarchies of middle-management, or needless meetings. Instead, we're going to focus on getting things done and getting them done *well*.
+- Agility and pragmatism. We aren't dogmatic about things, and we don't believe in one-size-fits-all solutions. Instead, we'll work with you to determine the technologies, tools, and process that best fits your needs.
+- A stress-free launch day. We know launching a product is a big deal, and we prioritise your launch. You can expect us to be on call all day, taking care of anything unexpected that comes up. That way, you can sit back and watch the compliments come rolling in.
+
+[Process](https://www.notion.so/9fb6fcf7a02346afa7986c12ea5256cd)
+
+## Work with us
+
+If you're ready to discuss your project with us, [drop us a line] for a no-strings-attached estimate.
+
+Just in the planning stages? Reach out anyway: we can help you plan, focus, research, and give you unbiased feedback about your idea. We have talked past clients out of lucrative contracts with us for the betterment of the project, so rest assured we aren't trying to up-sell you.
+
+---
+
+## Future sections:
+
+- Support content with testimonials?
+- Workshops
+- Pricing
