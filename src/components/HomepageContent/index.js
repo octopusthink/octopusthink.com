@@ -30,15 +30,16 @@ const HomepageContent = () => {
           Read more about us
         </Button>
       </Panel>
-      <Panel dark grid="1fr 1fr 1fr">
+      <Panel dark grid="1fr 1fr 1fr" gridSmall="1fr 1fr">
         <Heading
           css={css`
             color: ${theme.colors.text.inverseLight};
-            grid-column: 1 / 4;
+            grid-column: 1 / -1;
           `}
         >
           What we do
         </Heading>
+
         <IllustratedPoint label="Strategy & training" illustration={StrategyIllustration} />
 
         <IllustratedPoint label="Accessibility" illustration={AccessibilityIllustration} />
@@ -53,7 +54,7 @@ const HomepageContent = () => {
 
         <Button
           css={css`
-            grid-column: 1 / 4;
+            grid-column: 1 / -1;
             margin: 0 auto;
             max-width: max-content;
           `}
@@ -68,14 +69,12 @@ const HomepageContent = () => {
       <Panel grid="40rem auto">
         <img
           src="/illustrations/construction-sketch-transparent.png"
-          alt="A sketch of an octopus wearing a hard hat and safety goggles."
+          alt="A sketch of our mascot, Bubbles: an octopus wearing a hard hat and safety goggles."
           width="480"
           height="480"
           css={css`
             max-width: 100%;
             height: auto;
-            //border-radius: 100%;
-            //box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.125);
           `}
         />
         <div
@@ -86,9 +85,8 @@ const HomepageContent = () => {
           <Heading>Work with us</Heading>
 
           <Paragraph>
-            Our website is currently under construction. So under construction in fact, that even
-            our "construction octopus" illustration is still only as far as the rough sketch stage!
-            More is coming soon though, so stay tuned.
+            Our website is still under construction, as evidenced by our friend Bubbles still
+            needing a hard hat. More is coming soon, so stay tuned!
           </Paragraph>
           <Paragraph>
             Have a project you’d like to discuss? Drop us a line for a no-strings-attached estimate.
