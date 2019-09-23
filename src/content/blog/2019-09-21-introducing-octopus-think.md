@@ -1,5 +1,5 @@
 ---
-authors: [matt, sarah]
+authors: [sarah, matt]
 tags: [updates]
 title: Hello! We're Octopus Think.
 summary: Let's talk about design. And technology. And cephalopods, because we can't always be that serious.

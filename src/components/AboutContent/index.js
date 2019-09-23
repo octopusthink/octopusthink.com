@@ -58,36 +58,6 @@ const ServicesContent = () => {
       <Panel dark grid="1fr 1fr">
         {/* <Heading>Who are we?</Heading> */}
         <IllustratedPoint
-          label="Matthew Riley MacPherson"
-          metadata="Chief Technical Octopus"
-          photo="/photos/matt-serious.jpg"
-          photoAlt="Two photos of Matt: one serious, looking out a window, and one in which he is being eaten by a stuffed shark and looking silly."
-          photoHover="/photos/matt-silly.jpg"
-        >
-          <Paragraph inverse>
-            Matt is a full-stack developer with a soft spot for React and JavaScript. An
-            enthusiastic contributor to open-source projects, he wrote the popular localForage
-            library. He’s hosted workshops around the world and spoken at conferences on nearly
-            every continent. He cares about accessibility, automation, and writing clean, readable
-            code.
-          </Paragraph>
-          {/*
-          <Paragraph inverse>
-            An enthusiastic contributor to open-source projects, he wrote the popular localForage
-            library, used by thousands of apps/web services including Mozilla Add-ons, Cordova,
-            Twitter and WordPress.com. He also served as the accessibility lead for WordPress 5.0.
-          </Paragraph>
-          <Paragraph inverse>
-            Over the years, Matt has worked for Mozilla (Firefox), Automattic (WordPress), the Nova
-            Scotia government, and a variety of start-ups. He's hosted workshops around the world
-            and spoken at conferences on nearly every continent.
-          </Paragraph>
-          <Paragraph inverse>
-            In his spare time, Matt likes riding his motorcycle, hiking in the Highlands, and making
-            three different types of coffee.
-          </Paragraph> */}
-        </IllustratedPoint>
-        <IllustratedPoint
           label="Sarah London Semark"
           metadata="Chief Design Octopus"
           photo="/photos/sarah-serious.jpg"
@@ -115,6 +85,36 @@ const ServicesContent = () => {
             machine learning, design systems, and user research are among her passions. When she’s
             not busy making things, Sarah likes obsessing over typography, collecting impractical
             footwear, and exploring new places.
+          </Paragraph> */}
+        </IllustratedPoint>
+        <IllustratedPoint
+          label="Matthew Riley MacPherson"
+          metadata="Chief Technical Octopus"
+          photo="/photos/matt-serious.jpg"
+          photoAlt="Two photos of Matt: one serious, looking out a window, and one in which he is being eaten by a stuffed shark and looking silly."
+          photoHover="/photos/matt-silly.jpg"
+        >
+          <Paragraph inverse>
+            Matt is a full-stack developer with a soft spot for React and JavaScript. An
+            enthusiastic contributor to open-source projects, he wrote the popular localForage
+            library. He’s hosted workshops around the world and spoken at conferences on nearly
+            every continent. He cares about accessibility, automation, and writing clean, readable
+            code.
+          </Paragraph>
+          {/*
+          <Paragraph inverse>
+            An enthusiastic contributor to open-source projects, he wrote the popular localForage
+            library, used by thousands of apps/web services including Mozilla Add-ons, Cordova,
+            Twitter and WordPress.com. He also served as the accessibility lead for WordPress 5.0.
+          </Paragraph>
+          <Paragraph inverse>
+            Over the years, Matt has worked for Mozilla (Firefox), Automattic (WordPress), the Nova
+            Scotia government, and a variety of start-ups. He's hosted workshops around the world
+            and spoken at conferences on nearly every continent.
+          </Paragraph>
+          <Paragraph inverse>
+            In his spare time, Matt likes riding his motorcycle, hiking in the Highlands, and making
+            three different types of coffee.
           </Paragraph> */}
         </IllustratedPoint>
       </Panel>
