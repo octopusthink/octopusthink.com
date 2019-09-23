@@ -19,7 +19,7 @@ module.exports = {
       resolve: 'gatsby-plugin-matomo',
       options: {
         siteId: '1',
-        matomoUrl: 'https://analytics.octopusth.ink/',
+        matomoUrl: 'https://analytics.octopusth.ink',
         siteUrl: 'https://octopusthink.com',
         requireConsent: false,
         disableCookies: true,
