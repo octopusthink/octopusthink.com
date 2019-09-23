@@ -26,7 +26,7 @@ const ServicesContent = () => {
   return (
     <React.Fragment>
       <Panel>
-        <Heading>What we do</Heading>
+        <Heading>What we know</Heading>
         <Paragraph>
           We have decades of experience working on the web—we remember when bandwidth was measured
           in baud. Over that time, we’ve picked up a whole range of different skills and keep
