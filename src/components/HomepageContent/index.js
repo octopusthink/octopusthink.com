@@ -26,7 +26,7 @@ const HomepageContent = () => {
           penchant for bold colours and impractical footwear.
         </Paragraph>
 
-        <Button navigation to="/about/" minimal>
+        <Button minimal navigation to="/about/">
           Read more about us
         </Button>
       </Panel>
@@ -53,13 +53,13 @@ const HomepageContent = () => {
 
         <Button
           css={css`
-            color: ${theme.colors.text.inverseLight};
-            background: transparent !important;
             grid-column: 1 / 4;
+            margin: 0 auto;
+            max-width: max-content;
           `}
           navigation
+          primary
           to="/services/"
-          minimal
         >
           Learn more about our services
         </Button>
@@ -71,7 +71,7 @@ const HomepageContent = () => {
           Have a project you’d like to discuss? Drop us a line for a no-strings-attached estimate.
         </Paragraph>
 
-        <Button navigation to="/contact/" minimal>
+        <Button minimal navigation to="/contact/">
           Get in touch with us
         </Button>
       </Panel>
