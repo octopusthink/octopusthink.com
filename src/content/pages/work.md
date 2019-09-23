@@ -1,6 +1,6 @@
 ---
 title: 'Selected projects'
-summary: "We've designed and built all sorts of different apps, websites, and products over the years. Here are just a few of the things we've worked on."
+summary: "We’ve designed and built all sorts of different apps, websites, and products over the years. Here are just a few of the things we’ve worked on."
 description: An overview of projects we've worked on, ranging from WordPress development and design systems to open-source projects and custom web apps.
 ---
 
@@ -26,4 +26,4 @@ Matt is the author and co-maintainer of localForage, used in production on sites
 
 ## Nebula Streaming Service
 
-Developed the entire web infrastructure for the [Nebula streaming service](https://watchnebula.com), a paid video streaming service from [Standard Broadcast creators](https://standard.tv/). Using a barebones video backend service, Matt planned, created, and ran the entire infrastructure needed for the Nebula web app and iOS app—a Django API, a server-rendered React app, Stripe integration, and a Kubernetes cluster on AWS—in under five months.
+Developed the entire web infrastructure for the [Nebula streaming service](https://watchnebula.com), a paid video streaming service from [Standard Broadcast creators](https://standard.tv/). Using a barebones video backend service, Matt planned, created, and ran the entire infrastructure needed for the Nebula web app and iOS app—a Django API, a server-rendered React app, Stripe integration, and a Kubernetes cluster on AWS—all in six months.

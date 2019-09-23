@@ -8,7 +8,9 @@ const ServicesContent = () => {
   return (
     <React.Fragment>
       <Panel>
-        <Heading>We care about stuff.</Heading>
+        <Heading>
+          We <Strong>care</Strong> about stuff.
+        </Heading>
 
         <Paragraph>
           We believe that technology can be a tool to improve people’s lives. As technology becomes
@@ -19,13 +21,16 @@ const ServicesContent = () => {
 
         <Paragraph>
           We care deeply about making the world a better, fairer place, and we’re not willing to
-          compromise our values to make a quick quid. We make the most ethical decisions possible,
-          from the projects we take on (Sorry Monsanto, we’re not interested) to the tools we use.
-          We work with governments so vital services are accessible and friendly and we leverage our
-          experience with big companies to help small businesses realise big ideas.
+          compromise our values to make a quick quid. We make the most{' '}
+          <Strong>ethical decisions</Strong> possible, from the projects we take on (Sorry Monsanto,
+          we’re not interested) to the tools we use. We work with governments so vital services are
+          accessible and friendly and we leverage our experience with big companies to help small
+          businesses realise big ideas.
         </Paragraph>
 
-        <Heading>We don’t do busy work.</Heading>
+        <Heading>
+          We don’t do <Strong>busy work</Strong>.
+        </Heading>
 
         <Paragraph>
           Staying small allows us to be nimble and adapt easily. We get things done without getting
@@ -34,19 +39,22 @@ const ServicesContent = () => {
         </Paragraph>
 
         <Paragraph>
-          We love automation and efficiency, which is a thread that runs through all of our work.
-          Want to talk about tooling and improving your workflows? We love that kind of thing, and
-          it’s evidenced in our best work.
+          We love <Strong>automation and efficiency</Strong>, which is a thread that runs through
+          all of our work. Want to talk about tooling and improving your workflows? We love that
+          kind of thing, and it’s evidenced in our best work.
         </Paragraph>
 
-        <Heading>We get things done.</Heading>
+        <Heading>
+          We get things <Strong>done</Strong>.
+        </Heading>
 
         <Paragraph>
           We’ve been on the Internet since MUDs and Mosaic. (Remember those? No? We do!) We’ve
           worked on a wide range of projects with clients of all sizes. We’ve built experiences for
-          hundreds of millions of users across the world. We’ve contributed thousands of hours to
-          major open-source software projects. We’ve spoken at conferences all over the world, and
-          we’ve taught, mentored, and encouraged all sorts of different people along the way.
+          hundreds of <Strong>millions of users</Strong> across the world. We’ve contributed
+          thousands of hours to major open-source software projects. We’ve spoken at conferences all
+          over the world, and we’ve taught, mentored, and encouraged all sorts of different people
+          along the way.
         </Paragraph>
 
         <Paragraph>
@@ -57,36 +65,6 @@ const ServicesContent = () => {
 
       <Panel dark grid="1fr 1fr">
         {/* <Heading>Who are we?</Heading> */}
-        <IllustratedPoint
-          label="Matthew Riley MacPherson"
-          metadata="Chief Technical Octopus"
-          photo="/photos/matt-serious.jpg"
-          photoAlt="Two photos of Matt: one serious, looking out a window, and one in which he is being eaten by a stuffed shark and looking silly."
-          photoHover="/photos/matt-silly.jpg"
-        >
-          <Paragraph inverse>
-            Matt is a full-stack developer with a soft spot for React and JavaScript. An
-            enthusiastic contributor to open-source projects, he wrote the popular localForage
-            library. He’s hosted workshops around the world and spoken at conferences on nearly
-            every continent. He cares about accessibility, automation, and writing clean, readable
-            code.
-          </Paragraph>
-          {/*
-          <Paragraph inverse>
-            An enthusiastic contributor to open-source projects, he wrote the popular localForage
-            library, used by thousands of apps/web services including Mozilla Add-ons, Cordova,
-            Twitter and WordPress.com. He also served as the accessibility lead for WordPress 5.0.
-          </Paragraph>
-          <Paragraph inverse>
-            Over the years, Matt has worked for Mozilla (Firefox), Automattic (WordPress), the Nova
-            Scotia government, and a variety of start-ups. He's hosted workshops around the world
-            and spoken at conferences on nearly every continent.
-          </Paragraph>
-          <Paragraph inverse>
-            In his spare time, Matt likes riding his motorcycle, hiking in the Highlands, and making
-            three different types of coffee.
-          </Paragraph> */}
-        </IllustratedPoint>
         <IllustratedPoint
           label="Sarah London Semark"
           metadata="Chief Design Octopus"
@@ -117,6 +95,36 @@ const ServicesContent = () => {
             footwear, and exploring new places.
           </Paragraph> */}
         </IllustratedPoint>
+        <IllustratedPoint
+          label="Matthew Riley MacPherson"
+          metadata="Chief Technical Octopus"
+          photo="/photos/matt-serious.jpg"
+          photoAlt="Two photos of Matt: one serious, looking out a window, and one in which he is being eaten by a stuffed shark and looking silly."
+          photoHover="/photos/matt-silly.jpg"
+        >
+          <Paragraph inverse>
+            Matt is a full-stack developer with a soft spot for React and JavaScript. An
+            enthusiastic contributor to open-source projects, he wrote the popular localForage
+            library. He’s hosted workshops around the world and spoken at conferences on nearly
+            every continent. He cares about accessibility, automation, and writing clean, readable
+            code.
+          </Paragraph>
+          {/*
+          <Paragraph inverse>
+            An enthusiastic contributor to open-source projects, he wrote the popular localForage
+            library, used by thousands of apps/web services including Mozilla Add-ons, Cordova,
+            Twitter and WordPress.com. He also served as the accessibility lead for WordPress 5.0.
+          </Paragraph>
+          <Paragraph inverse>
+            Over the years, Matt has worked for Mozilla (Firefox), Automattic (WordPress), the Nova
+            Scotia government, and a variety of start-ups. He's hosted workshops around the world
+            and spoken at conferences on nearly every continent.
+          </Paragraph>
+          <Paragraph inverse>
+            In his spare time, Matt likes riding his motorcycle, hiking in the Highlands, and making
+            three different types of coffee.
+          </Paragraph> */}
+        </IllustratedPoint>
       </Panel>
 
       <Panel>
@@ -128,13 +136,20 @@ const ServicesContent = () => {
         </Paragraph>
         <List>
           <List.Item>
-            We believe that accessibility, beauty, and usability can (and should!) co-exist.
+            We believe that <Strong>accessibility, beauty, and usability</Strong> can (and should!)
+            co-exist.
           </List.Item>
-          <List.Item>We aim for transparency, clarity, and openness.</List.Item>
-          <List.Item>We are advocates for inclusive design and open source.</List.Item>
-          <List.Item>We leave our egos at the door. We are pragmatic, not dogmatic.</List.Item>
           <List.Item>
-            We improve with every project and love to pass on what we’ve learned.
+            We aim for <Strong>transparency, clarity, and openness</Strong>.
+          </List.Item>
+          <List.Item>
+            We are advocates for <Strong>inclusive design and open source</Strong>.
+          </List.Item>
+          <List.Item>
+            We leave our egos at the door. We are <Strong>pragmatic, not dogmatic</Strong>.
+          </List.Item>
+          <List.Item>
+            We improve with every project and <Strong>share what we’ve learned</Strong>.
           </List.Item>
         </List>
         <Paragraph>

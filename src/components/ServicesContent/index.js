@@ -26,18 +26,18 @@ const ServicesContent = () => {
   return (
     <React.Fragment>
       <Panel>
-        <Heading>What we do</Heading>
+        <Heading>What we know</Heading>
         <Paragraph>
-          We have decades of experience working on the web—we remember when bandwidth was measured
-          in baud. Over that time, we’ve picked up a whole range of different skills and keep
-          ourselves up-to-date with best practices in design & development.
+          We have <Strong>decades of experience</Strong> working on the web—we remember when
+          bandwidth was measured in baud. Over that time, we’ve picked up a whole range of different
+          skills and keep ourselves up-to-date with best practices in design & development.
         </Paragraph>
 
         <Paragraph>
           Rather than being narrowly scoped, we have a range of skills and experience allowing us to
           approach projects with a holistic understanding of how everything fits together. We can
-          smoothly shepherd your project through all phases of implementation—from research to
-          design, development to deployment: Octopus Think does it.
+          smoothly shepherd your project through all phases of implementation—from{' '}
+          <Strong>research to design, development to deployment</Strong>: Octopus Think does it.
         </Paragraph>
 
         <Paragraph>
@@ -202,10 +202,10 @@ const ServicesContent = () => {
           for a no-strings-attached estimate.
         </Paragraph>
         <Paragraph>
-          Just in the planning stages? Reach out anyway! We can help you plan, focus, research, and
-          give you unbiased feedback about your idea. We’ve talked past clients out of lucrative
-          contracts with us for the betterment of the project, so rest assured we aren’t trying to
-          up-sell you.
+          Just in the planning stages? <Strong>Reach out anyway!</Strong> We can help you plan,
+          focus, research, and give you unbiased feedback about your idea. We once talked a client
+          out of a lucrative contract because it wasn’t the best fit for their needs. Rest assured
+          we have no interest in up-selling you.
         </Paragraph>
 
         <Button navigation to="/contact" minimal>
