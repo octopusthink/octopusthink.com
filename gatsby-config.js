@@ -16,6 +16,16 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-emotion',
     {
+      resolve: 'gatsby-plugin-matomo',
+      options: {
+        siteId: '1',
+        matomoUrl: '//stats.octopusthink.com/',
+        siteUrl: 'https://octopusthink.com',
+        requireConsent: false,
+        disableCookies: true,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-sitemap',
       options: {
         // Exclude specific pages or groups of pages using glob params
