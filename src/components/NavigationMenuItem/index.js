@@ -11,7 +11,7 @@ const NavigationMenuItem = (props) => {
   return (
     <li className={className}>
       <Link
-        aria-describedby={isCurrent ? 'isCurrentPageText' : false}
+        aria-describedby={isCurrent ? 'isCurrentPageText' : undefined}
         className={className}
         css={css`
           ${interfaceUI.small(theme)};
