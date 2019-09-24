@@ -173,9 +173,12 @@ const ServicesContent = () => {
           `}
         >
           <Paragraph large inverse>
-            Matt built an entire streaming video platform complete with a custom API and layers upon
-            layers of tests to validate all future changes against. All of this in about six months.
-            It was truly awe-inspiring to watch.
+            Matt built an{' '}
+            <Link as="a" href="https://watchnebula.com/dwiskus">
+              entire streaming video platform
+            </Link>{' '}
+            complete with a custom API and layers upon layers of tests to validate all future
+            changes against. All of this in about six months. It was truly awe-inspiring to watch.
           </Paragraph>
           <Paragraph large inverse>
             Do me a favor and don’t hire Octopus Think, because I’d like to book all of their hours
@@ -190,7 +193,10 @@ const ServicesContent = () => {
               opacity: 0.7;
             `}
           >
-            Dave Wiskus, CEO @ Standard Broadcast
+            Dave Wiskus, CEO,{' '}
+            <Link as="a" href="https://standard.tv/">
+              Standard Broadcast
+            </Link>
           </cite>
         </blockquote>
       </Panel>
