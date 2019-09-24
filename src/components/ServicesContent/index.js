@@ -6,12 +6,10 @@ import {
   List,
   Paragraph,
   Strong,
-  metadata,
+  useTheme,
 } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
-
-import theme from '../../../config/theme';
 
 import IllustratedPoint from '../IllustratedPoint';
 import AccessibilityIllustration from '../../../static/illustrations/accessibility.svg';
@@ -21,8 +19,11 @@ import WebIllustration from '../../../static/illustrations/web.svg';
 import ProductIllustration from '../../../static/illustrations/product.svg';
 import VisualIllustration from '../../../static/illustrations/visual.svg';
 import Panel from '../Panel';
+import Testimonial from '../Testimonial';
 
 const ServicesContent = () => {
+  const theme = useTheme();
+
   return (
     <React.Fragment>
       <Panel>
@@ -154,45 +155,31 @@ const ServicesContent = () => {
       </Panel>
 
       <Panel dark>
-        <blockquote
-          css={css`
-            font-size: 1.2em;
-            position: relative;
-
-            &::before {
-              color: ${theme.colors.text.inverseDark};
-              content: '“';
-              font-family: Georgia, 'Times New Roman', Times, serif;
-              font-size: 12rem;
-              position: absolute;
-              top: -2.8rem;
-              left: -5.6rem;
-              display: block;
-              opacity: 0.25;
-            }
-          `}
+        <Testimonial
+          author="Dave Wiskus"
+          position="CEO"
+          company="Standard Broadcast"
+          url="https://standard.tv"
         >
           <Paragraph large inverse>
-            Matt built an entire streaming video platform complete with a custom API and layers upon
-            layers of tests to validate all future changes against. All of this in about six months.
-            It was truly awe-inspiring to watch.
+            Matt built an entire{' '}
+            <Link
+              as="a"
+              href="https://watchnebula.com/"
+              css={css`
+                color: ${theme.colors.state.interactiveTextInverse};
+              `}
+            >
+              streaming video platform
+            </Link>{' '}
+            complete with a custom API and layers upon layers of tests to validate all future
+            changes against. All of this in about six months. It was truly awe-inspiring to watch.
           </Paragraph>
           <Paragraph large inverse>
             Do me a favor and don’t hire Octopus Think, because I’d like to book all of their hours
             myself.
           </Paragraph>
-
-          <cite
-            css={css`
-              ${metadata.small(theme)};
-              color: ${theme.colors.text.inverseDark};
-              font-style: normal;
-              opacity: 0.7;
-            `}
-          >
-            Dave Wiskus, CEO @ Standard Broadcast
-          </cite>
-        </blockquote>
+        </Testimonial>
       </Panel>
 
       <Panel>
