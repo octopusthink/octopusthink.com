@@ -87,11 +87,6 @@ const SiteFooter = () => {
               a {
                 border: 0;
 
-                // This should be done in the props but for some reason it isn't?
-                span {
-                  background: ${theme.colors.neutral.white};
-                }
-
                 &:focus,
                 &:hover {
                   background: none;
@@ -119,7 +114,6 @@ const SiteFooter = () => {
                 fillColor={theme.colors.accent.primaryLight}
                 strokeColor={theme.colors.accent.primaryDark}
                 name="twitter"
-                background={theme.colors.accent.primary}
                 color={theme.colors.neutral.black}
                 title="Follow on Twitter"
               />
@@ -130,7 +124,6 @@ const SiteFooter = () => {
                 fillColor={theme.colors.accent.primaryLight}
                 strokeColor={theme.colors.accent.primaryDark}
                 name="github"
-                background={theme.colors.accent.primary}
                 color={theme.colors.neutral.black}
                 title="Follow on Github"
               />
@@ -141,7 +134,6 @@ const SiteFooter = () => {
                 fillColor={theme.colors.accent.primaryLight}
                 strokeColor={theme.colors.accent.primaryDark}
                 name="mail"
-                background={theme.colors.accent.primary}
                 color={theme.colors.neutral.black}
                 title="Send an email"
               />
