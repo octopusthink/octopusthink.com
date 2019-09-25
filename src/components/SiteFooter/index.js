@@ -108,6 +108,16 @@ const SiteFooter = () => {
               }
             `}
           >
+            <Link as="a" href="//instagram.com/octopusthinks">
+              <Icon
+                background={theme.colors.neutral.white}
+                fillColor={theme.colors.accent.primaryLight}
+                strokeColor={theme.colors.accent.primaryDark}
+                name="instagram"
+                color={theme.colors.neutral.black}
+                title="Follow on Instagram"
+              />
+            </Link>
             <Link as="a" href="//twitter.com/octopusthinks">
               <Icon
                 background={theme.colors.neutral.white}

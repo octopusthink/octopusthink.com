@@ -99,7 +99,7 @@ const ContactContent = () => {
                 @octopusthinks
               </Link>
             </List.Item>
-            {/* <List.Item>
+            <List.Item>
               <Icon
                 background={theme.colors.neutral.grey0}
                 fillColor={theme.colors.accent.secondaryLight}
@@ -118,7 +118,7 @@ const ContactContent = () => {
               >
                 @octopusthinks
               </Link>
-            </List.Item> */}
+            </List.Item>
             {/* <List.Item>
               <Icon
                 background={theme.colors.neutral.grey0}
