@@ -15,7 +15,6 @@ const NewsletterSignupForm = (props) => {
     <form
       action="https://octopusthink.us4.list-manage.com/subscribe/post?u=dec5c2d889866b4c67a61ff55&amp;id=cd3b5cf599"
       method="post"
-      id="mc-embedded-subscribe-form"
       name="mc-embedded-subscribe-form"
       className={classnames('validate', props.className)}
       target="_blank"
@@ -32,7 +31,7 @@ const NewsletterSignupForm = (props) => {
       `}
     >
       <div>
-        <TextField type="email" name="EMAIL" id="mce-EMAIL" label="Email" />
+        <TextField type="email" name="EMAIL" label="Email" />
       </div>
 
       <div

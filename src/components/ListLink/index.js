@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { css } from '@emotion/core';
 
 const ListLink = (props) => {
-  const { children, link, onClick } = props;
+  const { children, icon, link, onClick } = props;
 
   const [isCurrent, setIsCurrent] = useState();
   const theme = useTheme();
@@ -15,7 +15,7 @@ const ListLink = (props) => {
         css={css`
           ${interfaceUI.small(theme)};
           text-decoration: none;
-          color: ${theme.colors.text.inverseDark};
+          color: ${theme.colors.text.inverse};
           font-weight: 500;
           border-bottom: 0;
           display: block;
@@ -51,7 +51,28 @@ const ListLink = (props) => {
           }
         }}
       >
-        {children}
+        <span
+          css={css`
+            position: relative;
+
+            &::after {
+              content: '';
+              border-bottom: 2px solid ${theme.colors.text.inverseDark};
+              position: absolute;
+              bottom: -4px;
+              left: 0;
+              right: 0;
+
+              ${icon &&
+                css`
+                  display: none;
+                `}
+            }
+          `}
+        >
+          {icon}
+          {children}
+        </span>
       </Link>
     </li>
   );

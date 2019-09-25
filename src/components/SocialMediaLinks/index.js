@@ -2,7 +2,7 @@ import { Heading, Icon, Link, List, useTheme } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
-import SiteMapItem from '../SiteMapItem';
+import ListLink from '../ListLink';
 
 const SocialMediaLinks = (props) => {
   const theme = useTheme();
@@ -16,25 +16,33 @@ const SocialMediaLinks = (props) => {
         padding: 0;
       `}
     >
-      <SiteMapItem link="//twitter.com/octopusthinks">
-        <Icon strokeColor={theme.colors.neutral.grey600} name="twitter" title="Twitter" />
+      <ListLink
+        link="//twitter.com/octopusthinks"
+        icon={<Icon strokeColor={theme.colors.neutral.grey600} name="twitter" />}
+      >
         Twitter
-      </SiteMapItem>
+      </ListLink>
 
-      <SiteMapItem link="//instagram.com/octopusthinks">
-        <Icon strokeColor={theme.colors.neutral.grey600} name="instagram" title="Instagram" />
+      <ListLink
+        link="//instagram.com/octopusthinks"
+        icon={<Icon strokeColor={theme.colors.neutral.grey600} name="instagram" />}
+      >
         Instagram
-      </SiteMapItem>
+      </ListLink>
 
-      <SiteMapItem link="mailto:hello@octopusthink.com">
-        <Icon strokeColor={theme.colors.neutral.grey600} name="inbox" title="Email" />
+      <ListLink
+        link="mailto:hello@octopusthink.com"
+        icon={<Icon strokeColor={theme.colors.neutral.grey600} name="inbox" />}
+      >
         Email
-      </SiteMapItem>
+      </ListLink>
 
-      <SiteMapItem link="//github.com/octopusthink">
-        <Icon strokeColor={theme.colors.neutral.grey600} name="github" title="GitHub" />
+      <ListLink
+        link="//github.com/octopusthink"
+        icon={<Icon strokeColor={theme.colors.neutral.grey600} name="github" />}
+      >
         GitHub
-      </SiteMapItem>
+      </ListLink>
     </ul>
   );
 };
