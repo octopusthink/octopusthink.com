@@ -4,6 +4,7 @@ import Emoji from 'a11y-react-emoji';
 import React from 'react';
 
 import Logo from '../../../static/octopusthink.svg';
+import NewsletterSignupForm from '../NewsletterSignupForm';
 import SiteMap from '../SiteMap';
 
 const SiteFooter = () => {
@@ -80,6 +81,8 @@ const SiteFooter = () => {
             usable, and beautiful.
           </Paragraph>
 
+          <NewsletterSignupForm />
+        </div>
           <div
             css={css`
               margin-bottom: 3.2rem;
