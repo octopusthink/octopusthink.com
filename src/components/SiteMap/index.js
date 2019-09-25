@@ -3,14 +3,9 @@ import { css } from '@emotion/core';
 
 import SiteMapItem from '../SiteMapItem';
 
-const SiteMap = () => {
+const SiteMap = (props) => {
   return (
-    <nav
-      role="navigation"
-      css={css`
-        margin-bottom: 3.2rem;
-      `}
-    >
+    <nav role="navigation" className={props.className}>
       <ul
         css={css`
           list-style-type: none;

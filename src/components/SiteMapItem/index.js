@@ -2,7 +2,7 @@ import { Link, interfaceUI, useTheme } from '@octopusthink/nautilus';
 import React, { useState } from 'react';
 import { css } from '@emotion/core';
 
-const SiteMapItem = (props) => {
+const ListLink = (props) => {
   const { children, link, onClick } = props;
 
   const [isCurrent, setIsCurrent] = useState();
@@ -15,12 +15,11 @@ const SiteMapItem = (props) => {
         css={css`
           ${interfaceUI.small(theme)};
           text-decoration: none;
-          color: ${theme.colors.text.inverse};
-          font-weight: 600;
-          border-bottom: 1px solid ${theme.colors.neutral.grey800};
+          color: ${theme.colors.text.inverseDark};
+          font-weight: 500;
+          border-bottom: 0;
           display: block;
-          width: 100%;
-          padding: 1.6rem 0;
+          padding: 0.8rem 0;
 
           &:hover {
             color: ${theme.colors.text.inverseLight};
@@ -58,4 +57,4 @@ const SiteMapItem = (props) => {
   );
 };
 
-export default SiteMapItem;
+export default ListLink;

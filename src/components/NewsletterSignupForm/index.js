@@ -6,6 +6,7 @@ import {
 } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
+import classnames from 'classnames';
 
 const NewsletterSignupForm = (props) => {
   const theme = useTheme();
@@ -16,7 +17,7 @@ const NewsletterSignupForm = (props) => {
       method="post"
       id="mc-embedded-subscribe-form"
       name="mc-embedded-subscribe-form"
-      className="validate"
+      className={classnames('validate', props.className)}
       target="_blank"
       noValidate
       css={css`

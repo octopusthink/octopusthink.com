@@ -1,11 +1,12 @@
 import { css } from '@emotion/core';
-import { Icon, Link, Paragraph, useTheme } from '@octopusthink/nautilus';
+import { Heading, Icon, Link, Paragraph, useTheme } from '@octopusthink/nautilus';
 import Emoji from 'a11y-react-emoji';
 import React from 'react';
 
 import Logo from '../../../static/octopusthink.svg';
 import NewsletterSignupForm from '../NewsletterSignupForm';
 import SiteMap from '../SiteMap';
+import SocialMediaLinks from '../SocialMediaLinks';
 
 const SiteFooter = () => {
   const theme = useTheme();
@@ -47,8 +48,9 @@ const SiteFooter = () => {
             max-width: ${theme.site.maxSiteWidth};
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 7fr 5fr;
-            grid-gap: ${theme.site.desktopPadding};
+            grid-template-columns: 7fr 3fr 2fr;
+            grid-column-gap: ${theme.site.desktopPadding};
+            grid-row-gap: 3.2rem;
           }
         `}
       >
@@ -60,126 +62,67 @@ const SiteFooter = () => {
             `}
           />
           <Paragraph
-            large
             inverse
+            large
             css={css`
               letter-spacing: -0.025em;
             `}
           >
-            Octopus Think is a design & technology company based in Scotland with a special interest
-            in leveraging technology to make the world a better place.
+            Octopus Think is a digital product company specialising in inclusive, user-centred
+            design and smart React development. We build smart, inclusive, usable digital products
+            that make people's lives better.
           </Paragraph>
           <Paragraph
+            inverse
             large
-            inverse
             css={css`
-              letter-spacing: -0.017em;
+              letter-spacing: -0.025em;
             `}
           >
-            We <Emoji symbol="❤" label="love" />️ inclusion, open source, emerging technologies,
-            design systems, and React development. We focus on solutions that are accessible,
-            usable, and beautiful.
-          </Paragraph>
-
-          <NewsletterSignupForm />
-        </div>
-          <div
-            css={css`
-              margin-bottom: 3.2rem;
-
-              a {
-                border: 0;
-
-                &:focus,
-                &:hover {
-                  background: none;
-                }
-
-                  &:focus {
-                    span {
-                      box-shadow: 0 0 0 3px ${theme.colors.accent.primaryLight};
-                    }
-                  }
-
-                  &:hover {
-                    span {
-                      background: ${theme.colors.accent.primaryLight};
-                      box-shadow: 0 0 0 2px ${theme.colors.accent.primaryLight};
-                    }
-                  }
-                }
-              }
-            `}
-          >
-            <Link as="a" href="//instagram.com/octopusthinks">
-              <Icon
-                background={theme.colors.neutral.white}
-                fillColor={theme.colors.accent.primaryLight}
-                strokeColor={theme.colors.accent.primaryDark}
-                name="instagram"
-                color={theme.colors.neutral.black}
-                title="Follow on Instagram"
-              />
-            </Link>
-            <Link as="a" href="//twitter.com/octopusthinks">
-              <Icon
-                background={theme.colors.neutral.white}
-                fillColor={theme.colors.accent.primaryLight}
-                strokeColor={theme.colors.accent.primaryDark}
-                name="twitter"
-                color={theme.colors.neutral.black}
-                title="Follow on Twitter"
-              />
-            </Link>
-            <Link as="a" href="//github.com/octopusthink">
-              <Icon
-                background={theme.colors.neutral.white}
-                fillColor={theme.colors.accent.primaryLight}
-                strokeColor={theme.colors.accent.primaryDark}
-                name="github"
-                color={theme.colors.neutral.black}
-                title="Follow on Github"
-              />
-            </Link>
-            <Link as="a" href="mailto:hello@octopusthink.com">
-              <Icon
-                background={theme.colors.neutral.white}
-                fillColor={theme.colors.accent.primaryLight}
-                strokeColor={theme.colors.accent.primaryDark}
-                name="mail"
-                color={theme.colors.neutral.black}
-                title="Send an email"
-              />
-            </Link>
-          </div>
-        </div>
-
-        <div>
-          <SiteMap />
-
-          <Paragraph
-            small
-            inverse
-            dark
-            css={css`
-              font-size: 1.6rem;
-              margin: 0;
-            `}
-          >
-            <span
-              css={css`
-                display: none;
-              `}
-            >
-              Copyright
-            </span>{' '}
-            © 2019 Octopus Think Ltd.
-            <br />
-            UK Registered Company No. 11747595
-            <br />
-            VAT ID: GB324954685
+            Ready for your technology to work for you?
           </Paragraph>
         </div>
+
+        <SiteMap
+          css={css`
+            margin-top: 8rem;
+          `}
+        />
+
+        <SocialMediaLinks
+          css={css`
+            margin-top: 8rem;
+          `}
+        />
+
+        <Paragraph
+          small
+          inverse
+          dark
+          css={css`
+            font-size: 1.6rem;
+            margin: 0;
+          `}
+        >
+          <span
+            css={css`
+              display: none;
+            `}
+          >
+            Copyright
+          </span>{' '}
+          © 2019 Octopus Think Ltd.
+          <br />
+          UK Registered Company No. 11747595
+          <br />
+          VAT ID: GB324954685
+        </Paragraph>
+
+        <NewsletterSignupForm
+          css={css`
+            grid-column: 2 / -1;
+          `}
+        />
       </div>
     </footer>
   );
