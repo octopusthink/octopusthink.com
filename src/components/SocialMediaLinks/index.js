@@ -1,15 +1,16 @@
-import { Heading, Icon, Link, List, useTheme } from '@octopusthink/nautilus';
+import { Icon, useTheme } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
 import ListLink from '../ListLink';
 
 const SocialMediaLinks = (props) => {
+  const { className } = props;
   const theme = useTheme();
 
   return (
     <ul
-      className={props.className}
+      className={className}
       css={css`
         list-style-type: none;
         margin: 0;

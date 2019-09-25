@@ -1,6 +1,5 @@
 import { css } from '@emotion/core';
-import { Heading, Icon, Link, Paragraph, useTheme } from '@octopusthink/nautilus';
-import Emoji from 'a11y-react-emoji';
+import { Paragraph, useTheme } from '@octopusthink/nautilus';
 import React from 'react';
 
 import Logo from '../../../static/octopusthink.svg';
@@ -70,7 +69,7 @@ const SiteFooter = () => {
           >
             Octopus Think is a digital product company specialising in inclusive, user-centred
             design and smart React development. We build smart, inclusive, usable digital products
-            that make people's lives better.
+            that make people’s lives better.
           </Paragraph>
           <Paragraph
             inverse

@@ -1,15 +1,4 @@
-import {
-  Button,
-  // Emphasis,
-  Heading,
-  Icon,
-  Link,
-  List,
-  Paragraph,
-  TextField,
-  // interfaceUI,
-  useTheme,
-} from '@octopusthink/nautilus';
+import { Heading, Link, Paragraph, useTheme } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 

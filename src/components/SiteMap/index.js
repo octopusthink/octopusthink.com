@@ -4,8 +4,9 @@ import { css } from '@emotion/core';
 import ListLink from '../ListLink';
 
 const SiteMap = (props) => {
+  const { className } = props;
   return (
-    <nav role="navigation" className={props.className}>
+    <nav role="navigation" className={className}>
       <ul
         css={css`
           list-style-type: none;

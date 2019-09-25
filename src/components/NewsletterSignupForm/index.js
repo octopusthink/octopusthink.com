@@ -6,9 +6,9 @@ import {
 } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
-import classnames from 'classnames';
 
 const NewsletterSignupForm = (props) => {
+  const { className } = props;
   const theme = useTheme();
 
   return (
@@ -16,8 +16,7 @@ const NewsletterSignupForm = (props) => {
       action="https://octopusthink.us4.list-manage.com/subscribe/post?u=dec5c2d889866b4c67a61ff55&amp;id=cd3b5cf599"
       method="post"
       name="mc-embedded-subscribe-form"
-      className={classnames('validate', props.className)}
-      target="_blank"
+      className={className}
       noValidate
       css={css`
         align-items: center;
