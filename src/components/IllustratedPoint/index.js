@@ -17,18 +17,12 @@ const IllustratedPoint = (props) => {
   const theme = useTheme();
 
   return (
-    <div
-      css={css`
-        display: flex;
-        flex-direction: column;
-        grid-gap: 1.6rem;
-      `}
-    >
+    <div>
       <div
         css={css`
           height: 24rem;
           width: 24rem;
-          margin: 0 auto;
+          margin: 0 auto 1.6rem;
           align-items: center;
           justify-content: center;
           position: relative;
