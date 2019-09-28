@@ -1,4 +1,4 @@
-import { Icon, useTheme } from '@octopusthink/nautilus';
+import { useTheme } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
@@ -17,31 +17,19 @@ const SocialMediaLinks = (props) => {
         padding: 0;
       `}
     >
-      <ListLink
-        link="//twitter.com/octopusthinks"
-        icon={<Icon strokeColor={theme.colors.neutral.grey600} name="twitter" />}
-      >
+      <ListLink link="//twitter.com/octopusthinks" iconName="twitter">
         Twitter
       </ListLink>
 
-      <ListLink
-        link="//instagram.com/octopusthinks"
-        icon={<Icon strokeColor={theme.colors.neutral.grey600} name="instagram" />}
-      >
+      <ListLink link="//instagram.com/octopusthinks" iconName="instagram">
         Instagram
       </ListLink>
 
-      <ListLink
-        link="mailto:hello@octopusthink.com"
-        icon={<Icon strokeColor={theme.colors.neutral.grey600} name="inbox" />}
-      >
+      <ListLink link="mailto:hello@octopusthink.com" iconName="inbox">
         Email
       </ListLink>
 
-      <ListLink
-        link="//github.com/octopusthink"
-        icon={<Icon strokeColor={theme.colors.neutral.grey600} name="github" />}
-      >
+      <ListLink link="//github.com/octopusthink" iconName="github">
         GitHub
       </ListLink>
     </ul>

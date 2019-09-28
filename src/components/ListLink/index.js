@@ -1,9 +1,9 @@
-import { Link, interfaceUI, useTheme } from '@octopusthink/nautilus';
+import { Icon, Link, interfaceUI, useTheme } from '@octopusthink/nautilus';
 import React, { useState } from 'react';
 import { css } from '@emotion/core';
 
 const ListLink = (props) => {
-  const { children, icon, link, onClick } = props;
+  const { children, iconName, link, onClick } = props;
 
   const [isCurrent, setIsCurrent] = useState();
   const theme = useTheme();
@@ -20,10 +20,24 @@ const ListLink = (props) => {
           border-bottom: 0;
           display: block;
           padding: 0.8rem 0;
+          z-index: 2;
+          position: relative;
 
           &:hover {
             color: ${theme.colors.text.inverseLight};
             border-color: ${theme.colors.neutral.grey600};
+
+            .icon {
+              &::before {
+                transform: scale(1);
+              }
+
+              svg {
+                stroke: ${theme.colors.accent.primary};
+                z-index: 2;
+                position: relative;
+              }
+            }
           }
 
           ${isCurrent &&
@@ -63,14 +77,39 @@ const ListLink = (props) => {
               left: 0;
               right: 0;
 
-              ${icon &&
+              ${iconName &&
                 css`
                   display: none;
                 `}
             }
           `}
         >
-          {icon}
+          {iconName && (
+            <Icon
+              className="icon"
+              strokeColor={theme.colors.neutral.grey600}
+              name={iconName}
+              css={css`
+                width: 2.4rem;
+                height: 2.4rem;
+                position: relative;
+
+                ::before {
+                  transform: scale(0.1);
+                  content: '';
+                  position: absolute;
+                  top: -8px;
+                  right: -8px;
+                  bottom: -8px;
+                  left: -8px;
+                  background: rgba(0, 0, 0, 0.5);
+                  border-radius: 100%;
+                  z-index: 1;
+                  transition: all 200ms ease-out;
+                }
+              `}
+            />
+          )}
           {children}
         </span>
       </Link>
