@@ -37,6 +37,13 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
+        name: 'images',
+        path: `${__dirname}/src/images/`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
         name: 'content',
         path: `${__dirname}/src/content/`,
         ignore: ['**/*.js'],
@@ -50,6 +57,8 @@ module.exports = {
         ignore: ['**/*.js'],
       },
     },
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-transformer-remark',
       options: {

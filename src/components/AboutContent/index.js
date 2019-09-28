@@ -1,10 +1,64 @@
 import { Button, Heading, List, Paragraph, Strong } from '@octopusthink/nautilus';
+import { useStaticQuery, graphql } from 'gatsby';
 import React from 'react';
 
 import IllustratedPoint from '../IllustratedPoint';
 import Panel from '../Panel';
 
 const ServicesContent = () => {
+  const staticData = useStaticQuery(graphql`
+    {
+      mattPhoto: file(relativePath: { eq: "photos/matt-serious.jpg" }) {
+        childImageSharp {
+          fixed(height: 240, width: 240) {
+            aspectRatio
+            base64
+            height
+            src
+            srcSet
+            width
+          }
+        }
+      }
+      mattPhotoHover: file(relativePath: { eq: "photos/matt-silly.jpg" }) {
+        childImageSharp {
+          fixed(height: 240, width: 240) {
+            aspectRatio
+            height
+            src
+            srcSet
+            width
+          }
+        }
+      }
+      sarahPhoto: file(relativePath: { eq: "photos/sarah-serious.jpg" }) {
+        childImageSharp {
+          fixed(height: 240, width: 240) {
+            aspectRatio
+            base64
+            height
+            src
+            srcSet
+            width
+          }
+        }
+      }
+      sarahPhotoHover: file(relativePath: { eq: "photos/sarah-silly.jpg" }) {
+        childImageSharp {
+          fixed(height: 240, width: 240) {
+            aspectRatio
+            height
+            src
+            srcSet
+            width
+          }
+        }
+      }
+    }
+  `);
+
+  const { mattPhoto, mattPhotoHover, sarahPhoto, sarahPhotoHover } = staticData;
+
   return (
     <React.Fragment>
       <Panel>
@@ -68,9 +122,9 @@ const ServicesContent = () => {
         <IllustratedPoint
           label="Sarah London Semark"
           metadata="Chief Design Octopus"
-          photo="/photos/sarah-serious.jpg"
+          photo={sarahPhoto}
           photoAlt="Two photos of Sarah: one looking serious, one sticking out her tongue."
-          photoHover="/photos/sarah-silly.jpg"
+          photoHover={sarahPhotoHover}
         >
           <Paragraph inverse>
             Sarah calls herself a “designer who codes”, which means she cares most about user needs
@@ -98,9 +152,9 @@ const ServicesContent = () => {
         <IllustratedPoint
           label="Matthew Riley MacPherson"
           metadata="Chief Technical Octopus"
-          photo="/photos/matt-serious.jpg"
+          photo={mattPhoto}
           photoAlt="Two photos of Matt: one serious, looking out a window, and one in which he is being eaten by a stuffed shark and looking silly."
-          photoHover="/photos/matt-silly.jpg"
+          photoHover={mattPhotoHover}
         >
           <Paragraph inverse>
             Matt is a full-stack developer with a soft spot for React and JavaScript. An

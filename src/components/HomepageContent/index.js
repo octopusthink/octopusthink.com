@@ -1,4 +1,6 @@
 import { Button, Heading, Paragraph, Strong, useTheme } from '@octopusthink/nautilus';
+import { useStaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 import React from 'react';
 import { css } from '@emotion/core';
 
@@ -12,7 +14,38 @@ import VisualIllustration from '../../../static/illustrations/visual.svg';
 import Panel from '../Panel';
 
 const HomepageContent = () => {
+  const staticData = useStaticQuery(graphql`
+    {
+      sarahAndMattPhoto: file(relativePath: { eq: "photos/sarah-and-matt.jpg" }) {
+        childImageSharp {
+          fixed(height: 400, width: 400) {
+            base64
+            height
+            src
+            srcSet
+            width
+          }
+        }
+      }
+      octopusSketch: file(
+        relativePath: { eq: "illustrations/construction-sketch-transparent.png" }
+      ) {
+        childImageSharp {
+          fluid {
+            aspectRatio
+            src
+            srcSet
+            sizes
+            tracedSVG
+          }
+        }
+      }
+    }
+  `);
   const theme = useTheme();
+
+  const { octopusSketch, sarahAndMattPhoto } = staticData;
+
   return (
     <React.Fragment>
       <Panel grid="auto 40rem">
@@ -42,14 +75,10 @@ const HomepageContent = () => {
             Read about us
           </Button>
         </div>
-        <img
-          src="/photos/sarah-and-matt.jpg"
+        <Img
+          fixed={sarahAndMattPhoto.childImageSharp.fixed}
           alt="Sarah and Matt discussing cufflinks."
-          width="480"
-          height="480"
           css={css`
-            max-width: 100%;
-            height: auto;
             border-radius: 100%;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.125);
           `}
@@ -94,15 +123,9 @@ const HomepageContent = () => {
       </Panel>
 
       <Panel grid="40rem auto">
-        <img
-          src="/illustrations/construction-sketch-transparent.png"
+        <Img
+          fluid={octopusSketch.childImageSharp.fluid}
           alt="A sketch of our mascot, Bubbles: an octopus wearing a hard hat and safety goggles."
-          width="480"
-          height="480"
-          css={css`
-            max-width: 100%;
-            height: auto;
-          `}
         />
         <div
           css={css`
