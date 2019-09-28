@@ -4,12 +4,12 @@ name: Tests
 on:
   push:
     branches:
-      - "!*"
-      - "!gh-pages"
-      - "master"
+      - '!*'
+      - '!gh-pages'
+      - 'master'
   pull_request:
     branches:
-      - "*"
+      - '*'
 
 jobs:
   build:
@@ -26,11 +26,5 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 10
-      - name: Install dependencies
-        run: npm install
-      - name: Lint JS
-        run: npm run lint
+      - name: ESLint checks
+        uses: gimenete/eslint-action@1.0
