@@ -1,5 +1,5 @@
 import { css } from '@emotion/core';
-import { Paragraph, metadata, useTheme, VisuallyHiddenStyles } from '@octopusthink/nautilus';
+import { Button, Paragraph, metadata, useTheme } from '@octopusthink/nautilus';
 import React from 'react';
 
 import Logo from '../../../static/octopusthink.svg';
@@ -67,18 +67,40 @@ const SiteFooter = () => {
               letter-spacing: -0.025em;
             `}
           >
-            Octopus Think is a digital product company specialising in inclusive, user-centred
-            design and smart React development. We build smart, inclusive, usable digital products
-            that make people’s lives better.
+            Octopus Think is a design & development agency specialising in user-centred design and
+            React development. We build smart, inclusive, usable digital products that make people's
+            lives better.
           </Paragraph>
           <Paragraph
             inverse
             large
             css={css`
               letter-spacing: -0.025em;
+              margin-bottom: 1.6rem;
             `}
           >
             Ready for your technology to work for you?
+          </Paragraph>
+          <Paragraph
+            inverse
+            large
+            css={css`
+              letter-spacing: -0.025em;
+              margin-bottom: 0;
+            `}
+          >
+            <Button
+              minimal
+              navigation
+              to="/contact"
+              css={css`
+                color: ${theme.colors.state.interactiveTextInverse};
+                font-size: 2.1rem;
+                margin: 0;
+              `}
+            >
+              Contact us!
+            </Button>
           </Paragraph>
         </div>
 
