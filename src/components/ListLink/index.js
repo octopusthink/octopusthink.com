@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { css } from '@emotion/core';
 
 const ListLink = (props) => {
-  const { children, iconName, link, onClick } = props;
+  const { a, children, iconName, link, onClick } = props;
 
   const [isCurrent, setIsCurrent] = useState();
   const theme = useTheme();
@@ -12,7 +12,9 @@ const ListLink = (props) => {
     <li>
       <Link
         __unstyled
-        to={link}
+        as={a ? 'a' : undefined}
+        href={a ? link : undefined}
+        to={a ? undefined : link}
         css={css`
           ${interfaceUI.small(theme)};
           text-decoration: none;
@@ -20,15 +22,16 @@ const ListLink = (props) => {
           font-weight: 500;
           border-bottom: 0;
           display: block;
-          padding: 0.8rem 0;
+          padding: 0.4rem 0;
+          margin-bottom: 0.8rem;
           z-index: 2;
           position: relative;
 
           &:hover {
-            color: ${theme.colors.accent.primary};
+            color: ${theme.colors.state.hoverText};
 
             span::after {
-              border-color: ${theme.colors.accent.primaryLight};
+              border-color: ${theme.colors.state.hover};
             }
 
             .icon {
@@ -38,7 +41,7 @@ const ListLink = (props) => {
               }
 
               svg {
-                stroke: ${theme.colors.accent.primary};
+                stroke: ${theme.colors.state.hoverText};
                 z-index: 2;
                 position: relative;
               }
@@ -46,8 +49,8 @@ const ListLink = (props) => {
           }
 
           &:focus {
-            outline: 2px solid ${theme.colors.accent.primaryLight};
-            outline-offset: 2px;
+            outline: 0.2rem solid ${theme.colors.accent.primaryLight};
+            outline-offset: 0.4rem;
 
             span::after {
               border-color: transparent;
