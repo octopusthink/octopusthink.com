@@ -34,7 +34,7 @@ const NewsletterSignupForm = (props) => {
           type="email"
           name="EMAIL"
           label="Email"
-          placeholder="eg: you@here.com"
+          placeholder="eg: name@yourdomain.com"
           css={css`
             margin-bottom: 0;
           `}

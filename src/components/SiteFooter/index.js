@@ -75,9 +75,9 @@ const SiteFooter = () => {
               letter-spacing: -0.025em;
             `}
           >
-            Octopus Think is a design & development agency specialising in user-centred design and
-            React development. We build smart, inclusive, usable digital products that make people’s
-            lives better.
+            Octopus Think is a design &amp; development agency specialising in user-centred design
+            and React development. We build smart, inclusive, usable digital products that make
+            people’s lives better.
           </Paragraph>
           <Paragraph
             inverse
