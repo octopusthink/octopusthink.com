@@ -226,9 +226,8 @@ const QuoteForm = () => {
         </legend>
         <Paragraph>
           Now, tell us a little bit about your project. You don&apos;t need to be{' '}
-          <Emphasis>super</Emphasis>
-          detailed at this stage, but the more you tell us, the fewer questions we&apos;ll ask later
-          on.
+          <Emphasis>super</Emphasis> detailed at this stage, but the more you tell us now, the fewer
+          questions we&apos;ll need to ask later on.
         </Paragraph>
 
         <fieldset
@@ -300,13 +299,7 @@ const QuoteForm = () => {
           hint="What do we need to know about your project?"
         />
 
-        <Checkbox
-          css={css`
-            padding-bottom: 3.2rem;
-          `}
-          onChange={setField('newsletter')}
-          checked={formState.newsletter}
-        >
+        <Checkbox onChange={setField('newsletter')} checked={formState.newsletter}>
           Sign me up for the quarterly Octopus Think newsletter. I love getting emails.
         </Checkbox>
         <input
@@ -317,11 +310,24 @@ const QuoteForm = () => {
         <div
           css={css`
             align-items: center;
-            display: flex;
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-gap: 2.4rem;
             justify-content: space-between;
-            margin: 0 0 6.4rem;
+            margin: 3.2rem 0 6.4rem;
           `}
         >
+          {!isSubmitting && (
+            <Button
+              minimal
+              onClick={() => {
+                setStep(step - 1);
+              }}
+            >
+              ← Go back
+            </Button>
+          )}
+
           <Button
             disabled={!formState.name || !formState.email || !formState.project_details}
             onClick={(event) => {
@@ -342,15 +348,6 @@ const QuoteForm = () => {
           >
             {isSubmitting ? 'Sending message…' : 'Send me a quote!'}
           </Button>
-          {!isSubmitting && (
-            <Button
-              onClick={() => {
-                setStep(step - 1);
-              }}
-            >
-              Go back
-            </Button>
-          )}
         </div>
       </fieldset>
     </form>
