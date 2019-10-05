@@ -11,6 +11,7 @@ const ListLink = (props) => {
   return (
     <li>
       <Link
+        __unstyled
         to={link}
         css={css`
           ${interfaceUI.small(theme)};
@@ -41,6 +42,15 @@ const ListLink = (props) => {
                 z-index: 2;
                 position: relative;
               }
+            }
+          }
+
+          &:focus {
+            outline: 2px solid ${theme.colors.accent.primaryLight};
+            outline-offset: 2px;
+
+            span::after {
+              border-color: transparent;
             }
           }
 
