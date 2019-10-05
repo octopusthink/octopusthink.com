@@ -1,24 +1,17 @@
-import {
-  Button,
-  // Emphasis,
-  Heading,
-  Icon,
-  Link,
-  List,
-  Paragraph,
-  TextField,
-  // interfaceUI,
-} from '@octopusthink/nautilus';
+import { Heading, Link, Paragraph, useTheme } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
-import theme from '../../../config/theme';
 import Panel from '../Panel';
+import NewsletterSignupForm from '../NewsletterSignupForm';
+import SocialMediaLinks from '../SocialMediaLinks';
 // import Checkbox from '../Checkbox'; // Move this to Nautilus!
 
 //         */[photo of us together][photo of Edinburgh?]/* * * *//
 
 const ContactContent = () => {
+  const theme = useTheme();
+
   return (
     <React.Fragment>
       <Panel>
@@ -49,117 +42,7 @@ const ContactContent = () => {
           >
             Follow along
           </Heading>
-          <List
-            css={css`
-              li {
-                padding-bottom: 0.8rem;
-                &:before {
-                  display: none;
-                }
-              }
-            `}
-          >
-            <List.Item>
-              <Icon
-                background={theme.colors.neutral.grey0}
-                fillColor={theme.colors.accent.secondaryLight}
-                strokeColor={theme.colors.accent.secondaryDark}
-                name="mail"
-                title="Email"
-              />
-              <Link
-                as="a"
-                css={css`
-                  border-bottom: 0;
-                  color: white;
-                  font-weight: bold;
-                `}
-                href="mailto:hello@octopusthink.com"
-              >
-                hello@octopusthink.com
-              </Link>
-            </List.Item>
-            <List.Item>
-              <Link
-                as="a"
-                css={css`
-                  border-bottom: 0;
-                  color: white;
-                  font-weight: bold;
-                `}
-                href="https://twitter.com/octopusthinks"
-              >
-                <Icon
-                  background={theme.colors.neutral.grey0}
-                  fillColor={theme.colors.accent.secondaryLight}
-                  strokeColor={theme.colors.accent.secondaryDark}
-                  name="twitter"
-                  title="Twitter"
-                />
-                @octopusthinks
-              </Link>
-            </List.Item>
-            {/* <List.Item>
-              <Icon
-                background={theme.colors.neutral.grey0}
-                fillColor={theme.colors.accent.secondaryLight}
-                strokeColor={theme.colors.accent.secondaryDark}
-                name="instagram"
-                title="Instagram"
-              />
-              <Link
-                as="a"
-                css={css`
-                  border-bottom: 0;
-                  color: white;
-                  font-weight: bold;
-                `}
-                href="https://instagram.com/octopusthinks"
-              >
-                @octopusthinks
-              </Link>
-            </List.Item> */}
-            {/* <List.Item>
-              <Icon
-                background={theme.colors.neutral.grey0}
-                fillColor={theme.colors.accent.secondaryLight}
-                strokeColor={theme.colors.accent.secondaryDark}
-                name="rss"
-                title="RSS feed"
-              />
-              <Link
-                as="a"
-                css={css`
-                  border-bottom: 0;
-                  color: white;
-                  font-weight: bold;
-                `}
-                href="#rss"
-              >
-                Coming soon!
-              </Link>
-            </List.Item> */}
-            <List.Item>
-              <Link
-                as="a"
-                css={css`
-                  border-bottom: 0;
-                  color: white;
-                  font-weight: bold;
-                `}
-                href="https://github.com/octopusthink"
-              >
-                <Icon
-                  background={theme.colors.neutral.grey0}
-                  fillColor={theme.colors.accent.secondaryLight}
-                  strokeColor={theme.colors.accent.secondaryDark}
-                  name="github"
-                  title="GitHub"
-                />
-                octopusthink
-              </Link>
-            </List.Item>
-          </List>
+          <SocialMediaLinks />
         </div>
         <div>
           <Heading
@@ -175,54 +58,7 @@ const ContactContent = () => {
             to make your life easier. You can unsubscribe any time you get bored, and we promise
             never to sell your details.
           </Paragraph>
-
-          <form
-            action="https://octopusthink.us4.list-manage.com/subscribe/post?u=dec5c2d889866b4c67a61ff55&amp;id=cd3b5cf599"
-            method="post"
-            id="mc-embedded-subscribe-form"
-            name="mc-embedded-subscribe-form"
-            className="validate"
-            target="_blank"
-            noValidate
-            css={css`
-              align-items: center;
-              display: grid;
-              grid-gap: 0.4rem;
-              grid-template-columns: auto auto;
-
-              label {
-                color: ${theme.colors.text.inverse};
-              }
-            `}
-          >
-            <div>
-              <TextField type="email" name="EMAIL" id="mce-EMAIL" label="Email" />
-            </div>
-
-            <div
-              css={css`
-                position: absolute;
-                left: -5000px;
-              `}
-              aria-hidden="true"
-            >
-              <input
-                type="text"
-                name="b_dec5c2d889866b4c67a61ff55_cd3b5cf599"
-                tabIndex="-1"
-                value=""
-              />
-            </div>
-            <Button
-              css={css`
-                margin-top: 0.4rem;
-              `}
-              primary
-              type="submit"
-            >
-              Subscribe
-            </Button>
-          </form>
+          <NewsletterSignupForm />
         </div>
       </Panel>
       <Panel>

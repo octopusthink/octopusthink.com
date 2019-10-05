@@ -1,16 +1,12 @@
 import React from 'react';
 import { css } from '@emotion/core';
 
-import SiteMapItem from '../SiteMapItem';
+import ListLink from '../ListLink';
 
-const SiteMap = () => {
+const SiteMap = (props) => {
+  const { className } = props;
   return (
-    <nav
-      role="navigation"
-      css={css`
-        margin-bottom: 3.2rem;
-      `}
-    >
+    <nav role="navigation" className={className}>
       <ul
         css={css`
           list-style-type: none;
@@ -18,12 +14,12 @@ const SiteMap = () => {
           padding: 0;
         `}
       >
-        <SiteMapItem link="/">Home</SiteMapItem>
-        <SiteMapItem link="/about/">Who we are</SiteMapItem>
-        <SiteMapItem link="/services/">What we do</SiteMapItem>
-        <SiteMapItem link="/work/">Some of our work</SiteMapItem>
-        <SiteMapItem link="/blog/">Stories we&apos;ve written</SiteMapItem>
-        <SiteMapItem link="/contact/">Contact us</SiteMapItem>
+        <ListLink link="/">Home</ListLink>
+        <ListLink link="/about/">Who we are</ListLink>
+        <ListLink link="/services/">What we do</ListLink>
+        <ListLink link="/work/">Some of our work</ListLink>
+        <ListLink link="/blog/">Stories we&apos;ve written</ListLink>
+        <ListLink link="/contact/">Contact us</ListLink>
       </ul>
     </nav>
   );

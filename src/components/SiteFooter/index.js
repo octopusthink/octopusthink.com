@@ -1,13 +1,16 @@
 import { css } from '@emotion/core';
-import { Icon, Link, Paragraph, useTheme } from '@octopusthink/nautilus';
-import Emoji from 'a11y-react-emoji';
-import React from 'react';
+import { Button, Link, Paragraph, metadata, useTheme } from '@octopusthink/nautilus';
+import React, { useRef } from 'react';
 
 import Logo from '../../../static/octopusthink.svg';
+import NewsletterSignupForm from '../NewsletterSignupForm';
 import SiteMap from '../SiteMap';
+import SocialMediaLinks from '../SocialMediaLinks';
 
 const SiteFooter = () => {
+  const emailRef = useRef();
   const theme = useTheme();
+
   return (
     <footer
       css={css`
@@ -37,21 +40,30 @@ const SiteFooter = () => {
       <div
         css={css`
           padding: ${theme.site.mobilePadding};
+          display: grid;
+          grid-row-gap: ${theme.site.tabletPadding};
 
           @media screen and (min-width: 640px) {
+            grid-template-columns: 6fr 6fr;
             padding: ${theme.site.tabletPadding};
           }
+
           @media screen and (min-width: 1024px) {
             padding: ${theme.site.desktopPadding};
             max-width: ${theme.site.maxSiteWidth};
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 7fr 5fr;
-            grid-gap: ${theme.site.desktopPadding};
+            grid-template-columns: 7fr 3fr 2fr;
+            grid-column-gap: ${theme.site.desktopPadding};
           }
         `}
       >
-        <div>
+        <div
+          css={css`
+            @media screen and (min-width: 640px) and (max-width: 1023px) {
+              grid-column: 1 / span 2;
+            }
+          `}
+        >
           <Logo
             css={css`
               margin: 0 0 3.2rem -1.6rem;
@@ -59,114 +71,158 @@ const SiteFooter = () => {
             `}
           />
           <Paragraph
-            large
             inverse
+            large
             css={css`
               letter-spacing: -0.025em;
             `}
           >
-            Octopus Think is a design & technology company based in Scotland with a special interest
-            in leveraging technology to make the world a better place.
+            Octopus Think is a design &amp; development agency specialising in user-centred design
+            and React development. We build smart, inclusive, usable digital products that make
+            people’s lives better.
           </Paragraph>
           <Paragraph
+            inverse
             large
-            inverse
             css={css`
-              letter-spacing: -0.017em;
+              letter-spacing: -0.025em;
+              margin-bottom: 1.6rem;
             `}
           >
-            We <Emoji symbol="❤" label="love" />️ inclusion, open source, emerging technologies,
-            design systems, and React development. We focus on solutions that are accessible,
-            usable, and beautiful.
+            Ready for your technology to work for you?
           </Paragraph>
-
-          <div
-            css={css`
-              margin-bottom: 3.2rem;
-
-              a {
-                border: 0;
-
-                &:focus,
-                &:hover {
-                  background: none;
-                }
-
-                  &:focus {
-                    span {
-                      box-shadow: 0 0 0 3px ${theme.colors.accent.primaryLight};
-                    }
-                  }
-
-                  &:hover {
-                    span {
-                      background: ${theme.colors.accent.primaryLight};
-                      box-shadow: 0 0 0 2px ${theme.colors.accent.primaryLight};
-                    }
-                  }
-                }
-              }
-            `}
-          >
-            <Link as="a" href="//twitter.com/octopusthinks">
-              <Icon
-                background={theme.colors.neutral.white}
-                fillColor={theme.colors.accent.primaryLight}
-                strokeColor={theme.colors.accent.primaryDark}
-                name="twitter"
-                color={theme.colors.neutral.black}
-                title="Follow on Twitter"
-              />
-            </Link>
-            <Link as="a" href="//github.com/octopusthink">
-              <Icon
-                background={theme.colors.neutral.white}
-                fillColor={theme.colors.accent.primaryLight}
-                strokeColor={theme.colors.accent.primaryDark}
-                name="github"
-                color={theme.colors.neutral.black}
-                title="Follow on Github"
-              />
-            </Link>
-            <Link as="a" href="mailto:hello@octopusthink.com">
-              <Icon
-                background={theme.colors.neutral.white}
-                fillColor={theme.colors.accent.primaryLight}
-                strokeColor={theme.colors.accent.primaryDark}
-                name="mail"
-                color={theme.colors.neutral.black}
-                title="Send an email"
-              />
-            </Link>
-          </div>
-        </div>
-
-        <div>
-          <SiteMap />
-
           <Paragraph
-            small
             inverse
-            dark
+            large
             css={css`
-              font-size: 1.6rem;
-              margin: 0;
+              letter-spacing: -0.025em;
+              margin-bottom: 0;
             `}
           >
-            <span
+            <Button
+              minimal
+              navigation
+              to="/contact"
               css={css`
-                display: none;
+                color: ${theme.colors.state.interactiveTextInverse};
+                font-size: 2.1rem;
+                margin: 0;
               `}
             >
-              Copyright
-            </span>{' '}
-            © 2019 Octopus Think Ltd.
-            <br />
-            UK Registered Company No. 11747595
-            <br />
-            VAT ID: GB324954685
+              Contact us!
+            </Button>
           </Paragraph>
         </div>
+
+        <SiteMap
+          css={css`
+            @media screen and (min-width: 1024px) {
+              margin-top: 8rem;
+            }
+          `}
+        />
+
+        <SocialMediaLinks
+          css={css`
+            @media screen and (min-width: 1024px) {
+              margin-top: 8rem;
+            }
+          `}
+        />
+
+        <div
+          css={css`
+            @media screen and (min-width: 640px) and (max-width: 1023px) {
+              grid-column: 1 / span 2;
+            }
+
+            @media screen and (min-width: 1024px) {
+              grid-column: 2 / -1;
+              order: 5;
+            }
+
+            label {
+              border: 0;
+              clip-path: rect(0 0 0 0);
+              height: 1px;
+              margin: -1px;
+              overflow: hidden;
+              padding: 0;
+              position: absolute;
+              white-space: nowrap;
+              width: 1px;
+            }
+
+            @media screen and (min-width: 640px) {
+              button {
+                margin-top: -0.4rem;
+              }
+            }
+          `}
+        >
+          <Paragraph
+            css={css`
+              ${metadata.small(theme)};
+              color: ${theme.colors.text.inverseDark};
+              margin-bottom: 0.8rem;
+
+              &:hover {
+                cursor: default;
+              }
+            `}
+            onClick={() => {
+              if (emailRef && emailRef.current) {
+                emailRef.current.focus();
+              }
+            }}
+          >
+            Sign up for quarterly updates
+          </Paragraph>
+          <NewsletterSignupForm emailRef={emailRef} />
+        </div>
+
+        <Paragraph
+          small
+          inverse
+          dark
+          css={css`
+            font-size: 1.6rem;
+            margin: 0;
+
+            @media screen and (min-width: 640px) and (max-width: 1023px) {
+              grid-column: 1 / span 2;
+            }
+
+            @media screen and (min-width: 1024px) {
+              grid-column: 1 / 2;
+            }
+          `}
+        >
+          <span
+            css={css`
+              display: none;
+            `}
+          >
+            Copyright
+          </span>{' '}
+          © 2019 Octopus Think Ltd.
+          <br />
+          UK Registered Company No. 11747595
+          <br />
+          VAT ID: GB324954685
+          <br />
+          <Link
+            as="a"
+            css={css`
+              color: ${theme.colors.text.inverse};
+              border: 0;
+            `}
+            href="https://github.com/octopusthink/octopusthink.com/issues/new"
+          >
+            {' '}
+            Report an issue with this website
+          </Link>
+        </Paragraph>
       </div>
     </footer>
   );
