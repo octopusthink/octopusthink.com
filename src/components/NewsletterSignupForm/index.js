@@ -3,7 +3,7 @@ import React from 'react';
 import { css } from '@emotion/core';
 
 const NewsletterSignupForm = (props) => {
-  const { className } = props;
+  const { className, emailRef } = props;
   const theme = useTheme();
 
   return (
@@ -34,6 +34,7 @@ const NewsletterSignupForm = (props) => {
           type="email"
           name="EMAIL"
           label="Email"
+          ref={emailRef}
           placeholder="eg: name@yourdomain.com"
           css={css`
             margin-bottom: 0;

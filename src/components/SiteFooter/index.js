@@ -1,6 +1,6 @@
 import { css } from '@emotion/core';
 import { Button, Link, Paragraph, metadata, useTheme } from '@octopusthink/nautilus';
-import React from 'react';
+import React, { useRef } from 'react';
 
 import Logo from '../../../static/octopusthink.svg';
 import NewsletterSignupForm from '../NewsletterSignupForm';
@@ -8,7 +8,9 @@ import SiteMap from '../SiteMap';
 import SocialMediaLinks from '../SocialMediaLinks';
 
 const SiteFooter = () => {
+  const emailRef = useRef();
   const theme = useTheme();
+
   return (
     <footer
       css={css`
@@ -163,11 +165,20 @@ const SiteFooter = () => {
               ${metadata.small(theme)};
               color: ${theme.colors.text.inverseDark};
               margin-bottom: 0.8rem;
+
+              &:hover {
+                cursor: default;
+              }
             `}
+            onClick={() => {
+              if (emailRef && emailRef.current) {
+                emailRef.current.focus();
+              }
+            }}
           >
             Sign up for quarterly updates
           </Paragraph>
-          <NewsletterSignupForm />
+          <NewsletterSignupForm emailRef={emailRef} />
         </div>
 
         <Paragraph
@@ -209,7 +220,7 @@ const SiteFooter = () => {
             href="https://github.com/octopusthink/octopusthink.com/issues/new"
           >
             {' '}
-            Report a website issue
+            Report an issue with this website
           </Link>
         </Paragraph>
       </div>
