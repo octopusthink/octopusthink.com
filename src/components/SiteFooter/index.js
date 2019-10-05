@@ -76,7 +76,7 @@ const SiteFooter = () => {
             `}
           >
             Octopus Think is a design & development agency specialising in user-centred design and
-            React development. We build smart, inclusive, usable digital products that make people's
+            React development. We build smart, inclusive, usable digital products that make people’s
             lives better.
           </Paragraph>
           <Paragraph
@@ -209,7 +209,7 @@ const SiteFooter = () => {
             href="https://github.com/octopusthink/octopusthink.com/issues/new"
           >
             {' '}
-            Report an issue
+            Report a website issue
           </Link>
         </Paragraph>
       </div>
