@@ -1,5 +1,5 @@
 import { css } from '@emotion/core';
-import { Paragraph, useTheme } from '@octopusthink/nautilus';
+import { Paragraph, metadata, useTheme, VisuallyHiddenStyles } from '@octopusthink/nautilus';
 import React from 'react';
 
 import Logo from '../../../static/octopusthink.svg';
@@ -117,11 +117,38 @@ const SiteFooter = () => {
           VAT ID: GB324954685
         </Paragraph>
 
-        <NewsletterSignupForm
+        <div
           css={css`
             grid-column: 2 / -1;
+
+            label {
+              border: 0;
+              clip-path: rect(0 0 0 0);
+              height: 1px;
+              margin: -1px;
+              overflow: hidden;
+              padding: 0;
+              position: absolute;
+              white-space: nowrap;
+              width: 1px;
+            }
+
+            button {
+              margin-top: -0.4rem;
+            }
           `}
-        />
+        >
+          <Paragraph
+            css={css`
+              ${metadata.small(theme)};
+              color: ${theme.colors.text.inverseDark};
+              margin-bottom: 0.8rem;
+            `}
+          >
+            Sign up for quarterly updates
+          </Paragraph>
+          <NewsletterSignupForm />
+        </div>
       </div>
     </footer>
   );

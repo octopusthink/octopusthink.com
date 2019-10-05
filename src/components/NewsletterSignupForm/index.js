@@ -19,7 +19,7 @@ const NewsletterSignupForm = (props) => {
       className={className}
       noValidate
       css={css`
-        align-items: center;
+        align-items: end;
         display: grid;
         grid-gap: 0.4rem;
         grid-template-columns: auto auto;
@@ -30,7 +30,16 @@ const NewsletterSignupForm = (props) => {
       `}
     >
       <div>
-        <TextField type="email" name="EMAIL" label="Email" />
+        <TextField
+          autocomplete="email"
+          type="email"
+          name="EMAIL"
+          label="Email"
+          placeholder="eg: you@here.com"
+          css={css`
+            margin-bottom: 0;
+          `}
+        />
       </div>
 
       <div
@@ -44,7 +53,7 @@ const NewsletterSignupForm = (props) => {
       </div>
       <Button
         css={css`
-          margin-top: 0.4rem;
+          margin-bottom: 0;
         `}
         primary
         type="submit"
