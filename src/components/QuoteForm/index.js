@@ -41,6 +41,7 @@ const QuoteForm = () => {
     type_visualdesign: false,
     type_productdesign: false,
     type_accessibility: false,
+    newsletter: false,
   });
   const setField = (field) => {
     return (event) => {
@@ -303,9 +304,16 @@ const QuoteForm = () => {
           css={css`
             padding-bottom: 3.2rem;
           `}
+          onChange={setField('newsletter')}
+          checked={formState.newsletter}
         >
           Sign me up for the quarterly Octopus Think newsletter. I love getting emails.
         </Checkbox>
+        <input
+          type="hidden"
+          name="Signup for newsletter"
+          value={formState.newsletter ? `Yes: ${formState.email}` : 'No'}
+        />
         <div
           css={css`
             align-items: center;
