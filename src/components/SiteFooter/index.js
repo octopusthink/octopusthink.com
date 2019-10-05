@@ -38,22 +38,30 @@ const SiteFooter = () => {
       <div
         css={css`
           padding: ${theme.site.mobilePadding};
+          display: grid;
+          grid-row-gap: ${theme.site.tabletPadding};
 
           @media screen and (min-width: 640px) {
+            grid-template-columns: 6fr 6fr;
             padding: ${theme.site.tabletPadding};
           }
+
           @media screen and (min-width: 1024px) {
             padding: ${theme.site.desktopPadding};
             max-width: ${theme.site.maxSiteWidth};
             margin: 0 auto;
-            display: grid;
             grid-template-columns: 7fr 3fr 2fr;
             grid-column-gap: ${theme.site.desktopPadding};
-            grid-row-gap: 3.2rem;
           }
         `}
       >
-        <div>
+        <div
+          css={css`
+            @media screen and (min-width: 640px) and (max-width: 1023px) {
+              grid-column: 1 / span 2;
+            }
+          `}
+        >
           <Logo
             css={css`
               margin: 0 0 3.2rem -1.6rem;
@@ -106,42 +114,30 @@ const SiteFooter = () => {
 
         <SiteMap
           css={css`
-            margin-top: 8rem;
+            @media screen and (min-width: 1024px) {
+              margin-top: 8rem;
+            }
           `}
         />
 
         <SocialMediaLinks
           css={css`
-            margin-top: 8rem;
+            @media screen and (min-width: 1024px) {
+              margin-top: 8rem;
+            }
           `}
         />
 
-        <Paragraph
-          small
-          inverse
-          dark
-          css={css`
-            font-size: 1.6rem;
-            margin: 0;
-          `}
-        >
-          <span
-            css={css`
-              display: none;
-            `}
-          >
-            Copyright
-          </span>{' '}
-          © 2019 Octopus Think Ltd.
-          <br />
-          UK Registered Company No. 11747595
-          <br />
-          VAT ID: GB324954685
-        </Paragraph>
-
         <div
           css={css`
-            grid-column: 2 / -1;
+            @media screen and (min-width: 640px) and (max-width: 1023px) {
+              grid-column: 1 / span 2;
+            }
+
+            @media screen and (min-width: 1024px) {
+              grid-column: 2 / -1;
+              order: 5;
+            }
 
             label {
               border: 0;
@@ -171,6 +167,37 @@ const SiteFooter = () => {
           </Paragraph>
           <NewsletterSignupForm />
         </div>
+
+        <Paragraph
+          small
+          inverse
+          dark
+          css={css`
+            font-size: 1.6rem;
+            margin: 0;
+
+            @media screen and (min-width: 640px) and (max-width: 1023px) {
+              grid-column: 1 / span 2;
+            }
+
+            @media screen and (min-width: 1024px) {
+              grid-column: 1 / 2;
+            }
+          `}
+        >
+          <span
+            css={css`
+              display: none;
+            `}
+          >
+            Copyright
+          </span>{' '}
+          © 2019 Octopus Think Ltd.
+          <br />
+          UK Registered Company No. 11747595
+          <br />
+          VAT ID: GB324954685
+        </Paragraph>
       </div>
     </footer>
   );
