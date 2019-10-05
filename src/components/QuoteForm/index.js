@@ -14,21 +14,25 @@ import theme from '../../../config/theme';
 import Checkbox from '../Checkbox'; // Move this to Nautilus!
 
 const QuoteForm = () => {
+  const firstCheckboxRef = useRef();
   const stepRefs = {};
   stepRefs[1] = useRef();
   stepRefs[2] = useRef();
 
   const [isEmailValid, setIsEmailValid] = useState(null);
+  const [isNameValid, setIsNameValid] = useState(null);
+  const [isProjectDetailsValid, setIsProjectDetailsValid] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [step, setStep] = useState(1);
-  const [oldStep, setOldStep] = useState(1);
+  const [focusedStep, setFocusedStep] = useState(1);
 
   useEffect(() => {
-    if (oldStep !== step && stepRefs[step] && stepRefs[step].current) {
+    if (focusedStep !== step && stepRefs[step] && stepRefs[step].current) {
       stepRefs[step].current.scrollIntoView();
-      setOldStep(step);
+      firstCheckboxRef.current.focus();
+      setFocusedStep(step);
     }
-  }, [oldStep, step, stepRefs]);
+  }, [focusedStep, step, stepRefs]);
 
   // Form state
   const [formState, setFormState] = useState({
@@ -95,7 +99,6 @@ const QuoteForm = () => {
         >
           <Heading level={3}>About you</Heading>
         </legend>
-
         <Paragraph
           css={css`
             ${step > 1 &&
@@ -108,10 +111,24 @@ const QuoteForm = () => {
         </Paragraph>
         <TextField
           autoComplete="name"
+          error={isNameValid || isNameValid === null ? undefined : 'Please tell us your name. 🙂'}
           type="text"
           label="Name"
           name="Name"
-          onChange={setField('name')}
+          onBlur={() => {
+            setIsNameValid(formState.name && formState.name.length);
+          }}
+          onChange={(event) => {
+            if (formState.name && isNameValid === false) {
+              setIsNameValid(formState.name && formState.name.length);
+            }
+
+            if (isNameValid === null && formState.name && formState.name.length) {
+              setIsNameValid(true);
+            }
+
+            setField('name')(event);
+          }}
           value={formState.name}
         />
         <TextField
@@ -130,7 +147,7 @@ const QuoteForm = () => {
             );
           }}
           onChange={(event) => {
-            if (formState.email && isEmailValid === false) {
+            if (formState.email && formState.email.length && isEmailValid === false) {
               setIsEmailValid(
                 formState.email &&
                   formState.email.length &&
@@ -159,7 +176,7 @@ const QuoteForm = () => {
           value={formState.organisation}
         />
         <Button
-          disabled={!formState.name || !formState.email || !isEmailValid}
+          disabled={!isNameValid || !isEmailValid}
           primary
           css={css`
             margin: 0 0 6.4rem;
@@ -170,6 +187,11 @@ const QuoteForm = () => {
               `}
           `}
           onClick={() => {
+            setIsNameValid(formState.name && formState.name.length);
+            setIsEmailValid(
+              formState.email && formState.email.length && EmailValidator.validate(formState.email),
+            );
+
             if (!formState.name || !formState.email || !isEmailValid) {
               return;
             }
@@ -246,7 +268,11 @@ const QuoteForm = () => {
           >
             Type(s) of work
           </legend>
-          <Checkbox onChange={setField('type_appdev')} checked={formState.type_appdev}>
+          <Checkbox
+            ref={firstCheckboxRef}
+            onChange={setField('type_appdev')}
+            checked={formState.type_appdev}
+          >
             App development
           </Checkbox>
           <Checkbox onChange={setField('type_webdev')} checked={formState.type_webdev}>
@@ -292,9 +318,29 @@ const QuoteForm = () => {
 
         <TextField
           multiline
+          error={
+            isProjectDetailsValid || isProjectDetailsValid === null
+              ? undefined
+              : 'Please tell us a bit about your project.'
+          }
+          onBlur={() => {
+            setIsProjectDetailsValid(formState.project_details && formState.project_details.length);
+          }}
+          onChange={(event) => {
+            setIsProjectDetailsValid(formState.project_details && formState.project_details.length);
+
+            if (
+              isProjectDetailsValid === null &&
+              formState.project_details &&
+              formState.project_details.length
+            ) {
+              setIsProjectDetailsValid(true);
+            }
+
+            setField('project_details')(event);
+          }}
           name="Project details"
           label="Project details"
-          onChange={setField('project_details')}
           value={formState.project_details}
           hint="What do we need to know about your project?"
         />
@@ -307,48 +353,27 @@ const QuoteForm = () => {
           name="Signup for newsletter"
           value={formState.newsletter ? `Yes: ${formState.email}` : 'No'}
         />
-        <div
+        <Button
           css={css`
-            align-items: center;
-            display: grid;
-            grid-template-columns: auto auto;
-            grid-gap: 2.4rem;
-            justify-content: space-between;
             margin: 3.2rem 0 6.4rem;
           `}
+          disabled={!isNameValid || !isEmailValid || !isProjectDetailsValid}
+          onClick={(event) => {
+            if (!isNameValid || !isEmailValid || !isProjectDetailsValid || isSubmitting) {
+              event.preventDefault();
+              return;
+            }
+
+            setIsSubmitting(true);
+          }}
+          onMouseEnter={() => {
+            setIsProjectDetailsValid(formState.project_details && formState.project_details.length);
+          }}
+          type="submit"
+          primary
         >
-          {!isSubmitting && (
-            <Button
-              minimal
-              onClick={() => {
-                setStep(step - 1);
-              }}
-            >
-              ← Go back
-            </Button>
-          )}
-
-          <Button
-            disabled={!formState.name || !formState.email || !formState.project_details}
-            onClick={(event) => {
-              if (
-                !formState.name ||
-                !formState.email ||
-                !formState.project_details ||
-                isSubmitting
-              ) {
-                event.preventDefault();
-                return;
-              }
-
-              setIsSubmitting(true);
-            }}
-            type="submit"
-            primary
-          >
-            {isSubmitting ? 'Sending message…' : 'Send me a quote!'}
-          </Button>
-        </div>
+          {isSubmitting ? 'Sending message…' : 'Send me a quote!'}
+        </Button>
       </fieldset>
     </form>
   );
