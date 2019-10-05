@@ -47,6 +47,7 @@ export const Checkbox = forwardRef((props, ref) => {
 
           &:focus + label {
             outline: 0.2rem solid ${theme.colors.accent.primaryLight};
+            outline-offset: 0.4rem;
             padding-right: 0.8rem;
           }
         `}
@@ -74,14 +75,14 @@ export const Checkbox = forwardRef((props, ref) => {
             display: inline-block;
             height: 2rem;
             width: 2rem;
-            top: -1.5px;
+            top: -1px;
             left: 0;
           }
 
           /*Checkmark*/
           &::after {
             left: 4px;
-            top: 6px;
+            top: 5px;
             content: '';
             display: inline-block;
             height: 6px;

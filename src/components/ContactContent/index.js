@@ -16,11 +16,11 @@ const ContactContent = () => {
         <Heading>Get in touch</Heading>
         <Paragraph>
           We&apos;re based in beautiful Edinburgh, Scotland, but we work remotely for clients around
-          the world. If you want to talk to us about a project,{' '}
+          the world. If you want to talk to us about a project, feel free use the{' '}
           <Link as="a" href="#workwithus">
-            feel free use the contact form below to request a quote
-          </Link>
-          .
+            contact form
+          </Link>{' '}
+          to request a quote.
         </Paragraph>
         <Paragraph>
           The best way to get in touch with us is via email (
