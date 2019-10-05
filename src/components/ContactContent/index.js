@@ -1,22 +1,10 @@
-import {
-  Button,
-  Emphasis,
-  Heading,
-  Icon,
-  Link,
-  List,
-  Paragraph,
-  TextField,
-  interfaceUI,
-} from '@octopusthink/nautilus';
+import { Button, Heading, Icon, Link, List, Paragraph, TextField } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
 import theme from '../../../config/theme';
 import Panel from '../Panel';
-import QuoteForm from '../QuoteForm'; // Move this to Nautilus!
-
-//         */[photo of us together][photo of Edinburgh?]/* * * *//
+import QuoteForm from '../QuoteForm';
 
 const ContactContent = () => {
   return (
@@ -25,12 +13,11 @@ const ContactContent = () => {
         <Heading>Get in touch</Heading>
         <Paragraph>
           We&apos;re based in beautiful Edinburgh, Scotland, but we work remotely for clients around
-          the world.
-          {/* If you want to talk to us about a project,{' '}
+          the world. If you want to talk to us about a project,{' '}
           <Link as="a" href="#workwithus">
             feel free use the contact form below to request a quote
           </Link>
-          . */}
+          .
         </Paragraph>
         <Paragraph>
           The best way to get in touch with us is via email (
@@ -99,7 +86,7 @@ const ContactContent = () => {
                 @octopusthinks
               </Link>
             </List.Item>
-            {/* <List.Item>
+            <List.Item>
               <Icon
                 background={theme.colors.neutral.grey0}
                 fillColor={theme.colors.accent.secondaryLight}
@@ -118,7 +105,7 @@ const ContactContent = () => {
               >
                 @octopusthinks
               </Link>
-            </List.Item> */}
+            </List.Item>
             {/* <List.Item>
               <Icon
                 background={theme.colors.neutral.grey0}
@@ -230,9 +217,9 @@ const ContactContent = () => {
         <Paragraph>
           We&apos;re always interested in hearing from people with exciting projects. If you have
           work you&apos;d like to discuss, drop us a line at{' '}
-          <Link to="mailto:work.with@octopusthink.com">work.with@octopusthink.com</Link>
-          or fill in the form below for a no-strings-attached estimate. You&apos;ll hear back from
-          us within 48 hours.
+          <Link to="mailto:work.with@octopusthink.com">work.with@octopusthink.com</Link> or fill in
+          the form below for a no-strings-attached estimate. You&apos;ll hear back from us within 48
+          hours.
         </Paragraph>
         <QuoteForm />
       </Panel>
