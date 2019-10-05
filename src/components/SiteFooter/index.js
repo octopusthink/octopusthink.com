@@ -151,8 +151,10 @@ const SiteFooter = () => {
               width: 1px;
             }
 
-            button {
-              margin-top: -0.4rem;
+            @media screen and (min-width: 640px) {
+              button {
+                margin-top: -0.4rem;
+              }
             }
           `}
         >
