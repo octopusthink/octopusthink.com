@@ -1,5 +1,5 @@
 import { css } from '@emotion/core';
-import { Button, Paragraph, metadata, useTheme } from '@octopusthink/nautilus';
+import { Button, Link, Paragraph, metadata, useTheme } from '@octopusthink/nautilus';
 import React from 'react';
 
 import Logo from '../../../static/octopusthink.svg';
@@ -197,6 +197,18 @@ const SiteFooter = () => {
           UK Registered Company No. 11747595
           <br />
           VAT ID: GB324954685
+          <br />
+          <Link
+            as="a"
+            css={css`
+              color: ${theme.colors.text.inverse};
+              border: 0;
+            `}
+            href="https://github.com/octopusthink/octopusthink.com/issues/new"
+          >
+            {' '}
+            Report an issue
+          </Link>
         </Paragraph>
       </div>
     </footer>
