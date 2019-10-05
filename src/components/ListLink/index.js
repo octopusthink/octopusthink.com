@@ -24,11 +24,15 @@ const ListLink = (props) => {
           position: relative;
 
           &:hover {
-            color: ${theme.colors.text.inverseLight};
-            border-color: ${theme.colors.neutral.grey600};
+            color: ${theme.colors.accent.primary};
+
+            span::after {
+              border-color: ${theme.colors.accent.primaryLight};
+            }
 
             .icon {
               &::before {
+                opacity: 0.5;
                 transform: scale(1);
               }
 
@@ -96,6 +100,7 @@ const ListLink = (props) => {
 
                 ::before {
                   transform: scale(0.1);
+                  opacity: 0;
                   content: '';
                   position: absolute;
                   top: -8px;
