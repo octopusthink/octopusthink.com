@@ -1,18 +1,17 @@
 import { css, Global } from '@emotion/core';
-import Nautilus from '@octopusthink/nautilus';
-import { Link } from 'gatsby';
+import { useTheme } from '@octopusthink/nautilus';
 import React from 'react';
 import 'typeface-inter';
 
 import SiteHeader from 'components/SiteHeader';
 import SiteFooter from 'components/SiteFooter';
-import theme from 'config/theme';
 
 export const App = (props) => {
+  const theme = useTheme();
   const { children } = props;
 
   return (
-    <Nautilus theme={theme} config={{ LinkComponent: Link }}>
+    <React.Fragment>
       <Global
         styles={css`
           body {
@@ -69,7 +68,7 @@ export const App = (props) => {
       <SiteHeader />
       <main id="content">{children}</main>
       <SiteFooter />
-    </Nautilus>
+    </React.Fragment>
   );
 };
 
