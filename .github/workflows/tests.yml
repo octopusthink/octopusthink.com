@@ -2,14 +2,9 @@
 name: Tests
 
 on:
-  push:
-    branches:
-      - "!*"
-      - "!gh-pages"
-      - "master"
   pull_request:
     branches:
-      - "*"
+      - '*'
 
 jobs:
   build:
