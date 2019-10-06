@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from '@emotion/core';
 
-import ListLink from '../ListLink';
+import ListLink from 'components/ListLink';
 
 const SiteMap = (props) => {
   const { className } = props;

@@ -2,10 +2,10 @@ import { css } from '@emotion/core';
 import { Button, Link, Paragraph, metadata, useTheme } from '@octopusthink/nautilus';
 import React, { useRef } from 'react';
 
-import Logo from '../../../static/octopusthink.svg';
-import NewsletterSignupForm from '../NewsletterSignupForm';
-import SiteMap from '../SiteMap';
-import SocialMediaLinks from '../SocialMediaLinks';
+import NewsletterSignupForm from 'components/NewsletterSignupForm';
+import SiteMap from 'components/SiteMap';
+import SocialMediaLinks from 'components/SocialMediaLinks';
+import Logo from 'static/octopusthink.svg';
 
 const SiteFooter = () => {
   const emailRef = useRef();

@@ -1,23 +1,23 @@
-import { Link, Tags, metadata } from '@octopusthink/nautilus';
+import { Link, Tags, metadata, useTheme } from '@octopusthink/nautilus';
 import { graphql } from 'gatsby';
 import React, { Fragment } from 'react';
 import { css } from '@emotion/core';
-
 import dayjs from 'dayjs';
-import { markdown } from '../../utils/markdown';
 
-import App from '../App';
-import AuthorByline from '../../components/AuthorByline';
-import PageBody from '../../components/PageBody';
-import PageFooter from '../../components/PageFooter';
-import PageHeader from '../../components/PageHeader';
-import PageWrapper from '../../components/PageWrapper';
-import SequentialLink from '../../components/SequentialLink';
-import SEO from '../../components/SEO';
-import config from '../../../config';
-import theme from '../../../config/theme';
+import AuthorByline from 'components/AuthorByline';
+import PageBody from 'components/PageBody';
+import PageFooter from 'components/PageFooter';
+import PageHeader from 'components/PageHeader';
+import PageWrapper from 'components/PageWrapper';
+import SequentialLink from 'components/SequentialLink';
+import SEO from 'components/SEO';
+import config from 'config';
+import App from 'templates/App';
+import { markdown } from 'utils/markdown';
 
 export const BlogPost = (props) => {
+  const theme = useTheme();
+
   const { data, pageContext } = props;
   const { post } = data;
 

@@ -4,9 +4,9 @@ import { Link } from 'gatsby';
 import React from 'react';
 import 'typeface-inter';
 
-import SiteHeader from '../components/SiteHeader';
-import SiteFooter from '../components/SiteFooter';
-import theme from '../../config/theme';
+import SiteHeader from 'components/SiteHeader';
+import SiteFooter from 'components/SiteFooter';
+import theme from 'config/theme';
 
 export const App = (props) => {
   const { children } = props;

@@ -1,12 +1,13 @@
-import { PageTitle, Paragraph } from '@octopusthink/nautilus';
+import { PageTitle, Paragraph, useTheme } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
-import theme from '../../../config/theme';
-import Watermark from '../../../static/watermark.svg';
+import Watermark from 'static/watermark.svg';
 
 const PageHeader = (props) => {
   const { children, metadata, pageTitle, summary, summaryExtra } = props;
+  const theme = useTheme();
+
   return (
     <header
       css={css`

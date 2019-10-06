@@ -2,7 +2,7 @@ import { Heading, List, Link, PageTitle, Paragraph } from '@octopusthink/nautilu
 import React, { createElement } from 'react';
 import RehypeReact from 'rehype-react';
 
-import config from '../../data/SiteConfig';
+import config from 'data/SiteConfig';
 
 export const markdown = (htmlAst) => {
   const renderAst = new RehypeReact({

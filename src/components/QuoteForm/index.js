@@ -5,15 +5,17 @@ import {
   Paragraph,
   TextField,
   interfaceUI,
+  useTheme,
 } from '@octopusthink/nautilus';
 import React, { useEffect, useRef, useState } from 'react';
 import { css } from '@emotion/core';
 import EmailValidator from 'email-validator';
 
-import theme from '../../../config/theme';
-import Checkbox from '../Checkbox'; // Move this to Nautilus!
+import Checkbox from 'components/Checkbox'; // Move this to Nautilus!
 
 const QuoteForm = () => {
+  const theme = useTheme();
+
   const firstCheckboxRef = useRef();
   const stepRefs = {};
   stepRefs[1] = useRef();

@@ -1,9 +1,9 @@
+import { useTheme } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
-import theme from '../../../config/theme';
-
 const Panel = (props) => {
+  const theme = useTheme();
   const { children, className, dark, grid, gridSmall } = props;
 
   const panelBackground = dark ? theme.colors.neutral.black : theme.colors.neutral.white;
