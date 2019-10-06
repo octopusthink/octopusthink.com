@@ -83,7 +83,7 @@ module.exports = {
                 }
               }
             `,
-            output: '/rss.xml',
+            output: config.siteRss,
             title: 'Octopus Thoughts: The Octopus Think Blog',
             description:
               'The Octopus Think Blog blog, in which we talk about design, technology, inclusion, and anything else we’ve been thinking about lately. Oh, and adorable cephalopod stories, because they make us happy.',
@@ -99,7 +99,7 @@ module.exports = {
                 'atom:link': [
                   {
                     _attr: {
-                      href: `${config.siteUrl}/rss.xml`,
+                      href: `${config.siteUrl}${config.siteRss}`,
                       rel: 'self',
                       type: 'application/rss+xml',
                     },
