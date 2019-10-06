@@ -3,6 +3,7 @@ authors: [sarah, matt]
 tags: [updates]
 title: Hello! We're Octopus Think.
 summary: Let's talk about design. And technology. And cephalopods, because we can't always be that serious.
+updated: 2019-10-06
 ---
 
 Hi there! We’re [Sarah](https://triggersandsparks.com) and [Matt](https://tofumatt.com).
@@ -43,4 +44,4 @@ As for the future, we have a _lot_ of different ideas brewing. Follow along to s
 
 Want to keep track of what we're up to? For now, you can follow our updates via Twitter: [@octopusthinks](https://twitter.com/octopusthinks). We'll also be sharing selected stories via Medium [@octopus-thinks](https://medium.com/octopus-thinks).
 
-RSS feed and a newsletter coming soon-ish.
+We also have an [RSS feed](https://octopusthink.com/rss.xml) if you're into that sort of thing, and a newsletter you can sign up for at the bottom of the site.

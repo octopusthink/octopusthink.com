@@ -149,6 +149,14 @@ const onCreateNode = ({ actions, node, getNode }) => {
         value: date.toISOString(),
       });
 
+      if (node.frontmatter && node.frontmatter.updated) {
+        createNodeField({
+          node,
+          name: 'updated',
+          value: moment.utc(node.frontmatter.updated).toISOString(),
+        });
+      }
+
       createNodeField({
         node,
         name: 'timestamp',
@@ -265,6 +273,7 @@ const createPages = async ({ actions, graphql }) => {
                 name
                 summary
               }
+              updated
             }
           }
         }
