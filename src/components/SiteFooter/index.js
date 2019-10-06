@@ -213,15 +213,17 @@ const SiteFooter = () => {
           <br />
           <Link
             as="a"
+            external
             css={css`
-              color: ${theme.colors.text.inverse};
-              border: 0;
+              color: ${theme.colors.text.inverseDark};
+              border-bottom: 1px solid;
             `}
             href="https://github.com/octopusthink/octopusthink.com/issues/new"
           >
             {' '}
-            Report an issue with this website
-          </Link>
+            Report an issue
+          </Link>{' '}
+          with this site
         </Paragraph>
       </div>
     </footer>
