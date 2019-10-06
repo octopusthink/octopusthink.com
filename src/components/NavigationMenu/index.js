@@ -1,6 +1,7 @@
 import { Icon, VisuallyHidden } from '@octopusthink/nautilus';
 import React, { useState } from 'react';
 import { css, Global } from '@emotion/core';
+import useEventListener from '@use-it/event-listener';
 
 import NavigationMenuItem from '../NavigationMenuItem';
 import theme from '../../../config/theme';
@@ -14,6 +15,12 @@ const NavigationMenu = () => {
   const closeMenu = () => {
     setHideMenu(true);
   };
+
+  useEventListener('keydown', (event) => {
+    if (!hideMenu && event.key === 'Escape') {
+      closeMenu();
+    }
+  });
 
   return (
     <React.Fragment>
