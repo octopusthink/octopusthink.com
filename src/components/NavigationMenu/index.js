@@ -1,6 +1,6 @@
 import { Icon, VisuallyHidden } from '@octopusthink/nautilus';
 import React, { useState } from 'react';
-import { css } from '@emotion/core';
+import { css, Global } from '@emotion/core';
 
 import NavigationMenuItem from '../NavigationMenuItem';
 import theme from '../../../config/theme';
@@ -16,144 +16,161 @@ const NavigationMenu = () => {
   };
 
   return (
-    <nav
-      role="navigation"
-      css={css`
-        z-index: 1;
-
-        ${!hideMenu &&
-          css`
-            ::before {
-              background: ${theme.colors.neutral.white};
-              content: '';
-              position: absolute;
-              top: 0;
-              right: 0;
-              bottom: 0;
-              left: 0;
-              opacity: 0.1;
-            }
-          `}
-      `}
-    >
-      <button
+    <React.Fragment>
+      <Global
+        styles={
+          !hideMenu
+            ? css`
+                body {
+                  @media screen and (max-width: 479px) {
+                    overflow: hidden;
+                  }
+                }
+              `
+            : undefined
+        }
+      />
+      <nav
+        role="navigation"
         css={css`
-          @media screen and (max-width: 479px) {
-            background: none;
-            border: none;
-            box-shadow: none;
-            cursor: pointer;
-            height: 5.6rem;
-            width: 5.6rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+          z-index: 1;
 
-            &:focus {
-              border: 2px solid ${theme.colors.accent.primaryLight};
-            }
-          }
-
-          @media screen and (min-width: 480px) {
-            display: none;
-          }
-        `}
-        aria-expanded={hideMenu ? 'false' : 'true'}
-        onClick={toggleMenu}
-        type="button"
-      >
-        {hideMenu ? (
-          <Icon
-            css={css`
-              margin: 0;
+          ${!hideMenu &&
+            css`
+              ::before {
+                @media screen and (max-width: 479px) {
+                  background: ${theme.colors.neutral.white};
+                  content: '';
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                  bottom: 0;
+                  left: 0;
+                  opacity: 0.1;
+                }
+              }
             `}
-            color={theme.colors.neutral.white}
-            name="menu"
-            title="Open navigation menu"
-          />
-        ) : (
-          <Icon
-            css={css`
-              margin: 0;
-            `}
-            color={theme.colors.neutral.white}
-            name="x"
-            title="Close navigation menu"
-          />
-        )}
-      </button>
-
-      <ul
-        css={css`
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-
-          /* Mobile menu */
-          @media screen and (max-width: 479px) {
-            background: ${theme.colors.neutral.black};
-            position: fixed;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            grid-gap: 0;
-            justify-content: space-between;
-            margin-bottom: 0;
-            box-shadow: 4px 0 8px rgba(0, 0, 0, 0.25);
-            width: calc(100% - 6.4rem);
-            transition: left 200ms ease-in;
-            ${hideMenu &&
-              css`
-                left: -100%;
-              `}
-          }
-
-          @media screen and (min-width: 480px) {
-            display: flex;
-            margin-top: 0.4rem;
-          }
-
-          @media screen and (min-width: 480px) and (max-width: 860px) {
-            margin-top: 1.6rem;
-          }
         `}
       >
-        <NavigationMenuItem
-          link="/"
-          onClick={closeMenu}
+        <button
           css={css`
+            @media screen and (max-width: 479px) {
+              background: none;
+              border: none;
+              box-shadow: none;
+              cursor: pointer;
+              height: 5.6rem;
+              width: 5.6rem;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              &:focus {
+                border: 2px solid ${theme.colors.accent.primaryLight};
+              }
+            }
+
             @media screen and (min-width: 480px) {
               display: none;
             }
           `}
+          aria-expanded={hideMenu ? 'false' : 'true'}
+          onClick={toggleMenu}
+          type="button"
         >
-          Home
-        </NavigationMenuItem>
+          {hideMenu ? (
+            <Icon
+              css={css`
+                margin: 0;
+              `}
+              color={theme.colors.neutral.white}
+              name="menu"
+              title="Open navigation menu"
+            />
+          ) : (
+            <Icon
+              css={css`
+                margin: 0;
+              `}
+              color={theme.colors.neutral.white}
+              name="x"
+              title="Close navigation menu"
+            />
+          )}
+        </button>
 
-        <NavigationMenuItem link="/about/" onClick={closeMenu}>
-          About
-        </NavigationMenuItem>
+        <ul
+          css={css`
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
 
-        <NavigationMenuItem link="/services/" onClick={closeMenu}>
-          Services
-        </NavigationMenuItem>
+            /* Mobile menu */
+            @media screen and (max-width: 479px) {
+              background: ${theme.colors.neutral.black};
+              position: fixed;
+              top: 0;
+              left: 0;
+              bottom: 0;
+              grid-gap: 0;
+              justify-content: space-between;
+              margin-bottom: 0;
+              box-shadow: 4px 0 8px rgba(0, 0, 0, 0.25);
+              width: calc(100% - 6.4rem);
+              transition: left 200ms ease-in;
+              ${hideMenu &&
+                css`
+                  left: -100%;
+                `}
+            }
 
-        <NavigationMenuItem link="/work/" onClick={closeMenu}>
-          Work
-        </NavigationMenuItem>
+            @media screen and (min-width: 480px) {
+              display: flex;
+              margin-top: 0.4rem;
+            }
 
-        <NavigationMenuItem link="/blog/" onClick={closeMenu}>
-          Blog
-        </NavigationMenuItem>
+            @media screen and (min-width: 480px) and (max-width: 860px) {
+              margin-top: 1.6rem;
+            }
+          `}
+        >
+          <NavigationMenuItem
+            link="/"
+            onClick={closeMenu}
+            css={css`
+              @media screen and (min-width: 480px) {
+                display: none;
+              }
+            `}
+          >
+            Home
+          </NavigationMenuItem>
 
-        <NavigationMenuItem link="/contact/" onClick={closeMenu}>
-          Contact
-        </NavigationMenuItem>
-      </ul>
-      <VisuallyHidden>
-        <div id="isCurrentPageText">Current page</div>
-      </VisuallyHidden>
-    </nav>
+          <NavigationMenuItem link="/about/" onClick={closeMenu}>
+            About
+          </NavigationMenuItem>
+
+          <NavigationMenuItem link="/services/" onClick={closeMenu}>
+            Services
+          </NavigationMenuItem>
+
+          <NavigationMenuItem link="/work/" onClick={closeMenu}>
+            Work
+          </NavigationMenuItem>
+
+          <NavigationMenuItem link="/blog/" onClick={closeMenu}>
+            Blog
+          </NavigationMenuItem>
+
+          <NavigationMenuItem link="/contact/" onClick={closeMenu}>
+            Contact
+          </NavigationMenuItem>
+        </ul>
+        <VisuallyHidden>
+          <div id="isCurrentPageText">Current page</div>
+        </VisuallyHidden>
+      </nav>
+    </React.Fragment>
   );
 };
 
