@@ -1,32 +1,11 @@
-# Ghost Ship Gatsby Starter
+# octopusthink.com
 
-Create a Gatsby site that includes blog posts, Markdown pages, and [Nautilus](https://nautilus.octopusthink.com/).
-
-## 🚀 Quick start
-
-1.  **Create a Gatsby site.**
-
-    Use the Gatsby CLI to create a new site, specifying the `ghost-ship` as your starter:
-
-    ```bash
-    # Create a new Gatsby site using the ghost-ship starter.
-    npx gatsby new my-site https://github.com/octopusthink/ghost-ship
-    ```
-
-2.  **Start the development server.**
-
-    Navigate into your new site’s directory, install the dependencies, and start the development server:
-
-    ```bash
-    cd my-site/
-    npm install
-    npm start # or `yarn start` if you use `yarn`.
-    ```
-
-3.  **Open the source code and start editing!**
-
-    Your site is now running at [`http://localhost:8000/`](http://localhost:8000/)!
+This is the code powering the blog and website for [Octopus Think](https://octopusthink.com/).
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.txt](LICENSE.txt) file for details.
+Copyright (c) 2019 Octopus Think (https://octopusthink.com/)
+
+The source code is shared under a [Creative Commons 4.0 Attribution-ShareAlike (CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0) license. Basically this means you can use stuff that we've written on here if you attribute us and release your content under the same license—even for commercial purposes!
+
+See the [LICENSE.txt](LICENSE.txt) file for details.
