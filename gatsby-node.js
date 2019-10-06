@@ -7,6 +7,9 @@ const { singular } = require('pluralize');
 
 const config = require('./config');
 
+const projectPath = path.resolve(fs.realpathSync(process.cwd()), '.');
+const srcPath = path.resolve(fs.realpathSync(process.cwd()), 'src');
+
 const { postsPerPage, useDatesInSlugs } = config;
 
 // Gatsby Integers only support 32-bit integers, so this uses that as the
@@ -306,4 +309,13 @@ const createPages = async ({ actions, graphql }) => {
   makePages({ actions, pages });
 };
 
-module.exports = { createPages, onCreateNode };
+const onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      extensions: ['.mjs', '.jsx', '.js', '.json'],
+      modules: [srcPath, projectPath, 'node_modules'],
+    },
+  });
+};
+
+module.exports = { createPages, onCreateNode, onCreateWebpackConfig };

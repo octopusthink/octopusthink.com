@@ -2,8 +2,8 @@ import { Link, SkipLink, useTheme } from '@octopusthink/nautilus';
 import React, { useState } from 'react';
 import { css } from '@emotion/core';
 
-import Logo from '../../../static/octopusthink.svg';
-import NavigationMenu from '../NavigationMenu';
+import NavigationMenu from 'components/NavigationMenu';
+import Logo from 'static/octopusthink.svg';
 
 const SiteHeader = () => {
   const [onHomepage, setOnHomepage] = useState();

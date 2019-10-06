@@ -1,10 +1,11 @@
+import { useTheme } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
-import theme from '../../../config/theme';
-
 const PageBody = (props) => {
   const { children } = props;
+  const theme = useTheme();
+
   return (
     <section
       css={css`

@@ -1,9 +1,7 @@
-import { interfaceUI } from '@octopusthink/nautilus';
+import { interfaceUI, useTheme } from '@octopusthink/nautilus';
 import React, { forwardRef, useMemo, useState } from 'react';
 import { css } from '@emotion/core';
 import shortid from 'shortid';
-
-import theme from '../../../config/theme';
 
 export const Checkbox = forwardRef((props, ref) => {
   const { children, id, ...otherProps } = props;
@@ -11,6 +9,7 @@ export const Checkbox = forwardRef((props, ref) => {
   const inputId = useMemo(() => {
     return id || generatedId;
   }, [generatedId, id]);
+  const theme = useTheme();
 
   return (
     <div

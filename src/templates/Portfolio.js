@@ -1,13 +1,13 @@
 import { graphql } from 'gatsby';
 import React from 'react';
 
-import { markdown } from '../utils/markdown';
+import { markdown } from 'utils/markdown';
 
-import App from './App';
-import PageBody from '../components/PageBody';
-import PageHeader from '../components/PageHeader';
-import PageWrapper from '../components/PageWrapper';
-import SEO from '../components/SEO';
+import PageBody from 'components/PageBody';
+import PageHeader from 'components/PageHeader';
+import PageWrapper from 'components/PageWrapper';
+import SEO from 'components/SEO';
+import App from 'templates/App';
 
 export const Portfolio = (props) => {
   const { data } = props;

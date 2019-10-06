@@ -1,11 +1,11 @@
-import { Heading, Paragraph, Tags } from '@octopusthink/nautilus';
+import { Heading, Paragraph, Tags, useTheme } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
-import theme from '../../../config/theme';
-
 const AuthorByline = (props) => {
   const { alt, avatar, children, name } = props;
+  const theme = useTheme();
+
   return (
     <div
       css={css`

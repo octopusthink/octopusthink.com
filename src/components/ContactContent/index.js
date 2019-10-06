@@ -2,10 +2,10 @@ import { Heading, Link, Paragraph, useTheme } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
-import Panel from '../Panel';
-import QuoteForm from '../QuoteForm';
-import NewsletterSignupForm from '../NewsletterSignupForm';
-import SocialMediaLinks from '../SocialMediaLinks';
+import Panel from 'components/Panel';
+import QuoteForm from 'components/QuoteForm';
+import NewsletterSignupForm from 'components/NewsletterSignupForm';
+import SocialMediaLinks from 'components/SocialMediaLinks';
 
 const ContactContent = () => {
   const theme = useTheme();

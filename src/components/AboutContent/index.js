@@ -2,8 +2,8 @@ import { Button, Heading, List, Paragraph, Strong } from '@octopusthink/nautilus
 import { useStaticQuery, graphql } from 'gatsby';
 import React from 'react';
 
-import IllustratedPoint from '../IllustratedPoint';
-import Panel from '../Panel';
+import IllustratedPoint from 'components/IllustratedPoint';
+import Panel from 'components/Panel';
 
 const ServicesContent = () => {
   const staticData = useStaticQuery(graphql`

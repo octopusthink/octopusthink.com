@@ -1,14 +1,14 @@
-import { Icon, VisuallyHidden } from '@octopusthink/nautilus';
+import { Icon, VisuallyHidden, useTheme } from '@octopusthink/nautilus';
 import React, { useState } from 'react';
 import { css, Global } from '@emotion/core';
 import useEventListener from '@use-it/event-listener';
 
-import NavigationMenuItem from '../NavigationMenuItem';
-import theme from '../../../config/theme';
+import NavigationMenuItem from 'components/NavigationMenuItem';
 
 const NavigationMenu = () => {
   // Menu is hidden by default on mobile.
   const [hideMenu, setHideMenu] = useState(true);
+  const theme = useTheme();
   const toggleMenu = () => {
     setHideMenu(!hideMenu);
   };

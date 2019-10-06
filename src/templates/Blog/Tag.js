@@ -1,11 +1,11 @@
 import { graphql } from 'gatsby';
 import React, { Fragment } from 'react';
 
-import App from '../App';
-import PageHeader from '../../components/PageHeader';
-import PageBody from '../../components/PageBody';
-import PostCard from '../../components/PostCard';
-import SEO from '../../components/SEO';
+import PageHeader from 'components/PageHeader';
+import PageBody from 'components/PageBody';
+import PostCard from 'components/PostCard';
+import SEO from 'components/SEO';
+import App from 'templates/App';
 
 export const BlogTags = (props) => {
   const { data, pageContext } = props;

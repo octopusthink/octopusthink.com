@@ -17,6 +17,12 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/components/NautilusWrapper`),
+      },
+    },
+    {
       resolve: 'gatsby-plugin-feed',
       options: {
         query: `

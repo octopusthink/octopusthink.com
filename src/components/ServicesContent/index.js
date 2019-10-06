@@ -11,15 +11,15 @@ import {
 import React from 'react';
 import { css } from '@emotion/core';
 
-import IllustratedPoint from '../IllustratedPoint';
-import AccessibilityIllustration from '../../../static/illustrations/accessibility.svg';
-import StrategyIllustration from '../../../static/illustrations/strategy.svg';
-import AppIllustration from '../../../static/illustrations/app.svg';
-import WebIllustration from '../../../static/illustrations/web.svg';
-import ProductIllustration from '../../../static/illustrations/product.svg';
-import VisualIllustration from '../../../static/illustrations/visual.svg';
-import Panel from '../Panel';
-import Testimonial from '../Testimonial';
+import IllustratedPoint from 'components/IllustratedPoint';
+import Panel from 'components/Panel';
+import Testimonial from 'components/Testimonial';
+import AccessibilityIllustration from 'static/illustrations/accessibility.svg';
+import StrategyIllustration from 'static/illustrations/strategy.svg';
+import AppIllustration from 'static/illustrations/app.svg';
+import WebIllustration from 'static/illustrations/web.svg';
+import ProductIllustration from 'static/illustrations/product.svg';
+import VisualIllustration from 'static/illustrations/visual.svg';
 
 const ServicesContent = () => {
   const theme = useTheme();

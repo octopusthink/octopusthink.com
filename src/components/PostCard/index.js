@@ -6,15 +6,16 @@ import {
   Tags,
   VisuallyHidden,
   metadata,
+  useTheme,
 } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 import dayjs from 'dayjs';
 
-import config from '../../../config';
-import theme from '../../../config/theme';
+import config from 'config';
 
 const PostCard = (props) => {
+  const theme = useTheme();
   const { date, readingTime, slug, summary, title } = props;
   const formattedDate = dayjs(date).format(config.dateFormat);
 
