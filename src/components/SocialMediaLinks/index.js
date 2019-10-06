@@ -30,6 +30,10 @@ const SocialMediaLinks = (props) => {
       <ListLink a link="//github.com/octopusthink" iconName="github">
         GitHub
       </ListLink>
+
+      <ListLink a link="/blog/rss.xml" iconName="rss">
+        RSS Feed
+      </ListLink>
     </ul>
   );
 };
