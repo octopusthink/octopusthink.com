@@ -2,6 +2,8 @@ import { Heading, List, Link, PageTitle, Paragraph } from '@octopusthink/nautilu
 import React, { createElement } from 'react';
 import RehypeReact from 'rehype-react';
 
+import config from '../../data/SiteConfig';
+
 export const markdown = (htmlAst) => {
   const renderAst = new RehypeReact({
     createElement,
@@ -24,7 +26,7 @@ export const markdown = (htmlAst) => {
           delete props.href;
         } else {
           props.as = 'a';
-          if (!href.startsWith('mailto:')) {
+          if (!href.startsWith('mailto:') && !href.startsWith(config.siteUrl)) {
             props.external = true;
           }
         }
