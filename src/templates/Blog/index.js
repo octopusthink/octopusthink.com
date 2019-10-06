@@ -12,7 +12,7 @@ export const BlogList = (props) => {
   const { data, pageContext } = props;
   const { posts } = data;
   const { numberOfPages, currentPage } = pageContext;
-  const pageTitle = 'Stories';
+  const pageTitle = 'Octopus Thoughts';
   const pageSummary =
     'AKA our blog, in which we talk about design, technology, inclusion, and anything else we’ve been thinking about lately. Oh, and adorable cephalopod stories, because they make us happy.';
   const description =

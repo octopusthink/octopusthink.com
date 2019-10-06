@@ -22,9 +22,10 @@ export const BlogPost = (props) => {
   const { post } = data;
 
   const { htmlAst } = post;
-  const { authors, date, metaDescription, slug, summary, tags, title } = post.fields;
+  const { authors, date, metaDescription, slug, summary, tags, title, updated } = post.fields;
 
   const formattedDate = dayjs(date).format(config.dateFormat);
+  const formattedUpdated = updated && dayjs(updated).format(config.dateFormat);
 
   const formattedMetadata = (
     <div
@@ -35,7 +36,7 @@ export const BlogPost = (props) => {
       `}
     >
       <Tags label="Published on">
-        <Tags.Tag>
+        <Tags.Tag title={formattedUpdated && `Updated ${formattedUpdated}`}>
           <span
             css={css`
               color: ${theme.colors.neutral.grey600};
@@ -152,6 +153,7 @@ export const pageQuery = graphql`
           name
           summary
         }
+        updated
       }
       htmlAst
       rawMarkdownBody

@@ -1,4 +1,12 @@
-import { Button, Heading, Paragraph, Tags, metadata } from '@octopusthink/nautilus';
+import {
+  Button,
+  Link,
+  Heading,
+  Paragraph,
+  Tags,
+  VisuallyHidden,
+  metadata,
+} from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 import dayjs from 'dayjs';
@@ -40,14 +48,16 @@ const PostCard = (props) => {
             <Tags.Tag>{readingTime.text}</Tags.Tag>
           </Tags>
         </div>
-        <Heading
-          css={css`
-            margin-bottom: 1.6rem;
-          `}
-          level={2}
-        >
-          {title}
-        </Heading>
+        <Link tabIndex="-1" to={slug}>
+          <Heading
+            css={css`
+              margin-bottom: 1.6rem;
+            `}
+            level={2}
+          >
+            {title}
+          </Heading>
+        </Link>
       </header>
       <Paragraph
         css={css`
@@ -71,7 +81,7 @@ const PostCard = (props) => {
           navigation
           minimal
         >
-          Continue reading
+          Continue reading<VisuallyHidden> {title}</VisuallyHidden>
         </Button>
       </footer>
     </article>
