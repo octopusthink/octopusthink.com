@@ -1,13 +1,11 @@
 import { graphql } from 'gatsby';
 import React from 'react';
 
+import App from 'templates/App';
 import HomepageContent from 'components/HomepageContent';
 import PageHeader from 'components/PageHeader';
 import PageWrapper from 'components/PageWrapper';
 import SEO from 'components/SEO';
-import Helmet from 'react-helmet';
-
-import App from 'templates/App';
 
 export const Page = (props) => {
   const { data } = props;
