@@ -10,7 +10,8 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
-function SEO({ description, homepage, lang, meta, title }) {
+function SEO(props) {
+  const { description, homepage, lang, meta, title } = props;
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -26,11 +27,9 @@ function SEO({ description, homepage, lang, meta, title }) {
   );
 
   const metaDescription = description || site.siteMetadata.description;
-  let pageTitle;
+  let pageTitle = `${title} · ${site.siteMetadata.title}`;
   if (homepage) {
     pageTitle = `${site.siteMetadata.title} · ${title}`;
-  } else {
-    pageTitle = `${title} · ${site.siteMetadata.title}`;
   }
 
   return (
