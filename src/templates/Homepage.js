@@ -5,6 +5,8 @@ import HomepageContent from 'components/HomepageContent';
 import PageHeader from 'components/PageHeader';
 import PageWrapper from 'components/PageWrapper';
 import SEO from 'components/SEO';
+import Helmet from 'react-helmet';
+
 import App from 'templates/App';
 
 export const Page = (props) => {
@@ -15,7 +17,7 @@ export const Page = (props) => {
 
   return (
     <App>
-      <SEO title={title} description={description} />
+      <SEO title={title} description={description} homepage />
       <PageWrapper>
         <PageHeader
           pageTitle={title}

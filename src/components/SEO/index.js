@@ -10,7 +10,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ description, homepage, lang, meta, title }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -26,14 +26,18 @@ function SEO({ description, lang, meta, title }) {
   );
 
   const metaDescription = description || site.siteMetadata.description;
+  let pageTitle;
+  if (homepage) {
+    pageTitle = `${site.siteMetadata.title} · ${title}`;
+  } else {
+    pageTitle = `${title} · ${site.siteMetadata.title}`;
+  }
 
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title={title}
-      titleTemplate={`%s · ${site.siteMetadata.title}`}
       meta={[
         {
           name: `description`,
@@ -68,7 +72,9 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      <title>{pageTitle}</title>
+    </Helmet>
   );
 }
 
