@@ -35,7 +35,9 @@ const ContactContent = () => {
 
         <ReachingArmIllustration
           css={css`
-            margin-bottom: -200px;
+            position: absolute;
+            bottom: 0;
+            right: -30%;
           `}
         />
       </Panel>

@@ -2,9 +2,11 @@ import { useTheme } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
+import Divider from 'components/Divider';
+
 const Panel = (props) => {
   const theme = useTheme();
-  const { children, className, dark, grid, gridSmall } = props;
+  const { children, className, dark, dividerBottom, grid, gridSmall } = props;
 
   const panelBackground = dark ? theme.colors.neutral.black : theme.colors.neutral.white;
 
@@ -18,40 +20,6 @@ const Panel = (props) => {
         flex-direction: column;
         position: relative;
         overflow: hidden;
-
-        ${dark &&
-          css`
-            ::before,
-            ::after {
-              content: '';
-              display: block;
-              width: 120%;
-              margin-left: -10%;
-              overflow: hidden;
-              height: 50px;
-              background-image: linear-gradient(
-                to bottom left,
-                ${theme.colors.neutral.white},
-                ${theme.colors.neutral.white} 46%,
-                ${theme.colors.accent.primary} 47%,
-                ${theme.colors.accent.primary} 53%,
-                ${theme.colors.neutral.black} 54%,
-                ${theme.colors.neutral.black}
-              );
-            }
-
-            ::after {
-              background-image: linear-gradient(
-                to top right,
-                ${theme.colors.neutral.white},
-                ${theme.colors.neutral.white} 46%,
-                ${theme.colors.accent.primary} 47%,
-                ${theme.colors.accent.primary} 53%,
-                ${theme.colors.neutral.black} 54%,
-                ${theme.colors.neutral.black}
-              );
-            }
-          `}
       `}
     >
       <div
@@ -106,6 +74,8 @@ const Panel = (props) => {
           {children}
         </div>
       </div>
+      {dark && <Divider dark />}
+      {!dark && <Divider light />}
     </section>
   );
 };
