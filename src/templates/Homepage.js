@@ -1,11 +1,11 @@
 import { graphql } from 'gatsby';
 import React from 'react';
 
+import App from 'templates/App';
 import HomepageContent from 'components/HomepageContent';
 import PageHeader from 'components/PageHeader';
 import PageWrapper from 'components/PageWrapper';
 import SEO from 'components/SEO';
-import App from 'templates/App';
 
 export const Page = (props) => {
   const { data } = props;
@@ -15,7 +15,7 @@ export const Page = (props) => {
 
   return (
     <App>
-      <SEO title={title} description={description} />
+      <SEO title={title} description={description} homepage />
       <PageWrapper>
         <PageHeader
           pageTitle={title}
