@@ -139,6 +139,12 @@ module.exports = {
     },
     'gatsby-transformer-yaml',
     {
+      resolve: 'gatsby-plugin-mdx',
+      options: {
+        extensions: ['.mdx', '.md'],
+      },
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',

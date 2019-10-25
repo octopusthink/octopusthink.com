@@ -13,11 +13,11 @@ export const Page = (props) => {
   const { data } = props;
 
   const { page } = data;
-  const { htmlAst } = page;
+  const { mdxAST } = page;
   const { metaDescription, summary, summaryExtra, title } = page.fields;
 
   const description = metaDescription || summary;
-  const content = markdown(htmlAst);
+  const content = markdown(mdxAST);
 
   return (
     <App>
@@ -37,7 +37,7 @@ export const Page = (props) => {
 
 export const pageQuery = graphql`
   query($id: String!) {
-    page: markdownRemark(id: { eq: $id }) {
+    page: mdx(id: { eq: $id }) {
       fields {
         metaDescription
         slug
@@ -45,8 +45,8 @@ export const pageQuery = graphql`
         summaryExtra
         title
       }
-      htmlAst
-      rawMarkdownBody
+      mdxAST
+      rawBody
       id
     }
   }
