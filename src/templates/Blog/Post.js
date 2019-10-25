@@ -1,5 +1,6 @@
 import { Link, Tags, metadata, useTheme } from '@octopusthink/nautilus';
 import { graphql } from 'gatsby';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 import React, { Fragment } from 'react';
 import { css } from '@emotion/core';
 import dayjs from 'dayjs';
@@ -13,7 +14,6 @@ import SequentialLink from 'components/SequentialLink';
 import SEO from 'components/SEO';
 import config from 'config';
 import App from 'templates/App';
-import { markdown } from 'utils/markdown';
 
 export const BlogPost = (props) => {
   const theme = useTheme();
@@ -21,7 +21,7 @@ export const BlogPost = (props) => {
   const { data, pageContext } = props;
   const { post } = data;
 
-  const { htmlAst } = post;
+  const { body } = post;
   const { authors, date, metaDescription, slug, summary, tags, title, updated } = post.fields;
 
   const formattedDate = dayjs(date).format(config.dateFormat);
@@ -85,7 +85,6 @@ export const BlogPost = (props) => {
     </div>
   );
   const description = metaDescription || summary;
-  const content = markdown(htmlAst);
 
   return (
     <App>
@@ -96,7 +95,7 @@ export const BlogPost = (props) => {
         </Fragment>
 
         <PageBody>
-          {content}
+          <MDXRenderer>{body}</MDXRenderer>
           {authors.map((author) => (
             <AuthorByline
               name={author.name}
@@ -133,7 +132,7 @@ export const BlogPost = (props) => {
 
 export const pageQuery = graphql`
   query($id: String!, $nowTimestamp: Int!) {
-    post: markdownRemark(id: { eq: $id }, fields: { timestamp: { lte: $nowTimestamp } }) {
+    post: mdx(id: { eq: $id }, fields: { timestamp: { lte: $nowTimestamp } }) {
       fields {
         authors {
           alt
@@ -155,8 +154,7 @@ export const pageQuery = graphql`
         }
         updated
       }
-      htmlAst
-      rawMarkdownBody
+      body
       id
     }
   }

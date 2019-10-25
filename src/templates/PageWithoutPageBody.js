@@ -1,16 +1,17 @@
 import { graphql } from 'gatsby';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 import React from 'react';
 
-import ContactContent from 'components/ContactContent';
 import PageHeader from 'components/PageHeader';
 import PageWrapper from 'components/PageWrapper';
 import SEO from 'components/SEO';
 import App from 'templates/App';
 
-export const Page = (props) => {
+export const PageWithoutPageBody = (props) => {
   const { data } = props;
 
   const { page } = data;
+  const { body } = page;
   const { metaDescription, summary, summaryExtra, title } = page.fields;
 
   const description = metaDescription || summary;
@@ -25,7 +26,7 @@ export const Page = (props) => {
           summaryExtra={summaryExtra}
           description={description}
         />
-        <ContactContent />
+        <MDXRenderer>{body}</MDXRenderer>
       </PageWrapper>
     </App>
   );
@@ -33,7 +34,7 @@ export const Page = (props) => {
 
 export const pageQuery = graphql`
   query($id: String!) {
-    page: markdownRemark(id: { eq: $id }) {
+    page: mdx(id: { eq: $id }) {
       fields {
         metaDescription
         slug
@@ -41,11 +42,12 @@ export const pageQuery = graphql`
         summaryExtra
         title
       }
-      htmlAst
-      rawMarkdownBody
+      body
+      mdxAST
+      rawBody
       id
     }
   }
 `;
 
-export default Page;
+export default PageWithoutPageBody;

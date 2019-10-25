@@ -46,7 +46,9 @@ const PostCard = (props) => {
           </span>
 
           <Tags label="Reading time">
-            <Tags.Tag>{readingTime.text}</Tags.Tag>
+            <Tags.Tag>
+              {readingTime} min<VisuallyHidden>ute</VisuallyHidden> read
+            </Tags.Tag>
           </Tags>
         </div>
         <Link tabIndex="-1" to={slug}>

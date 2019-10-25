@@ -253,7 +253,7 @@ const onCreateNode = ({ actions, node, getNode }) => {
 const createPages = async ({ actions, graphql }) => {
   const markdownQueryResult = await graphql(`
     query {
-      blogPosts: allMarkdownRemark(filter: {
+      blogPosts: allMdx(filter: {
         fileAbsolutePath: { regex: "//content/blog/" }
         fields: { timestamp: { lte: ${nowTimestamp} } }
       }) {

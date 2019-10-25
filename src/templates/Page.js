@@ -1,7 +1,6 @@
 import { graphql } from 'gatsby';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 import React from 'react';
-
-import { markdown } from 'utils/markdown';
 
 import PageBody from 'components/PageBody';
 import PageHeader from 'components/PageHeader';
@@ -13,11 +12,10 @@ export const Page = (props) => {
   const { data } = props;
 
   const { page } = data;
-  const { mdxAST } = page;
+  const { body } = page;
   const { metaDescription, summary, summaryExtra, title } = page.fields;
 
   const description = metaDescription || summary;
-  const content = markdown(mdxAST);
 
   return (
     <App>
@@ -29,7 +27,9 @@ export const Page = (props) => {
           summaryExtra={summaryExtra}
           description={description}
         />
-        <PageBody>{content}</PageBody>
+        <PageBody>
+          <MDXRenderer>{body}</MDXRenderer>
+        </PageBody>
       </PageWrapper>
     </App>
   );
@@ -45,6 +45,7 @@ export const pageQuery = graphql`
         summaryExtra
         title
       }
+      body
       mdxAST
       rawBody
       id
