@@ -2,6 +2,7 @@ import { MDXProvider } from '@mdx-js/react';
 import { Heading, List, Link, PageTitle, Paragraph } from '@octopusthink/nautilus';
 import React from 'react';
 
+import Image from 'components/Image';
 import config from 'data/SiteConfig';
 
 const components = {
@@ -30,6 +31,8 @@ const components = {
 
     return <Link {...props} />;
   },
+  img: (props) => <Image {...props} />,
+  div: (props) => <div {...props} />,
   /* eslint-enable react/jsx-props-no-spreading */
 };
 

@@ -1,7 +1,8 @@
 import { Heading, Tags, useTheme } from '@octopusthink/nautilus';
-import Img from 'gatsby-image';
 import React from 'react';
 import { css } from '@emotion/core';
+
+import Image from 'components/Image';
 
 const IllustratedPoint = (props) => {
   const {
@@ -36,8 +37,8 @@ const IllustratedPoint = (props) => {
       >
         {Illustration && <Illustration />}
         {photo && (
-          <Img
-            fixed={photo.childImageSharp.fixed}
+          <Image
+            src={photo}
             alt={photoAlt}
             css={css`
               max-width: 100%;
@@ -49,9 +50,9 @@ const IllustratedPoint = (props) => {
         )}
 
         {photoHover && (
-          <Img
+          <Image
             className="hover-image"
-            fixed={photoHover.childImageSharp.fixed}
+            src={photoHover}
             alt=""
             css={css`
               max-width: 100%;
@@ -59,7 +60,7 @@ const IllustratedPoint = (props) => {
               border-radius: 100%;
               opacity: 0;
               position: absolute;
-              top: -243.5px;
+              top: -240px;
               left: 0;
               z-index: 99;
               transition: opacity 400ms ease-in-out;

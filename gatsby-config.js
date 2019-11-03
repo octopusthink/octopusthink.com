@@ -135,6 +135,8 @@ module.exports = {
         exclude: ['/portfolio/*'],
       },
     },
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     'gatsby-transformer-yaml',
     {
       resolve: 'gatsby-plugin-mdx',
@@ -143,6 +145,16 @@ module.exports = {
           default: require.resolve('./src/components/MDXLayout'),
         },
         extensions: ['.mdx', '.md'],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 1280,
+            },
+          },
+          { resolve: 'gatsby-remark-reading-time' },
+          { resolve: 'gatsby-remark-smartypants' },
+        ],
       },
     },
     {
@@ -166,14 +178,6 @@ module.exports = {
         name: 'data',
         path: `${__dirname}/data/`,
         ignore: ['**/*.js'],
-      },
-    },
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
-    {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        plugins: ['gatsby-remark-smartypants', 'gatsby-remark-reading-time'],
       },
     },
     {
