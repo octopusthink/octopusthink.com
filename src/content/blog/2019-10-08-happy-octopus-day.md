@@ -10,4 +10,4 @@ We've been very busy working on Secretive Things and Underwater Planning and (so
 
 [funfactsaboutoctopus.es](https://funfactsaboutoctopus.es)
 
-We've started it off with eight of our favourite octopus facts, and we'll be adding to it sporadically (the best interval!) over the next year. If you've some octopus-facts or octopus art to share, please don't hesitate to [reach out](https://github.com/octopusthink/funfactsaboutoctopus.es/issue/new). (It's open-source, so your pull requests are always welcome!)
+We've started it off with eight of our favourite octopus facts, and we'll be adding to it sporadically (the best interval!) over the next year. If you've some octopus-facts or octopus art to share, please don't hesitate to [reach out](https://github.com/octopusthink/funfactsaboutoctopus.es/issues/new). (It's open-source, so your pull requests are always welcome!)
