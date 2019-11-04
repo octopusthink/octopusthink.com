@@ -1,7 +1,6 @@
 import { graphql } from 'gatsby';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 import React from 'react';
-
-import { markdown } from 'utils/markdown';
 
 import PageBody from 'components/PageBody';
 import PageHeader from 'components/PageHeader';
@@ -12,19 +11,25 @@ import App from 'templates/App';
 export const Portfolio = (props) => {
   const { data } = props;
 
-  const { portfolioPiece } = data;
-  const { htmlAst } = portfolioPiece;
-  const { metaDescription, title, summary } = portfolioPiece.fields;
+  const { page } = data;
+  const { body } = page;
+  const { metaDescription, summary, summaryExtra, title } = page.fields;
 
   const description = metaDescription || summary;
-  const content = markdown(htmlAst);
 
   return (
     <App>
       <SEO title={title} description={description} />
       <PageWrapper>
-        <PageHeader pageTitle={title} summary={summary} />
-        <PageBody>{content}</PageBody>
+        <PageHeader
+          pageTitle={title}
+          summary={summary}
+          summaryExtra={summaryExtra}
+          description={description}
+        />
+        <PageBody>
+          <MDXRenderer>{body}</MDXRenderer>
+        </PageBody>
       </PageWrapper>
     </App>
   );
@@ -32,15 +37,17 @@ export const Portfolio = (props) => {
 
 export const pageQuery = graphql`
   query($id: String!) {
-    portfolioPiece: markdownRemark(id: { eq: $id }) {
+    page: mdx(id: { eq: $id }) {
       fields {
         metaDescription
         slug
         summary
+        summaryExtra
         title
       }
-      htmlAst
-      rawMarkdownBody
+      body
+      mdxAST
+      rawBody
       id
     }
   }

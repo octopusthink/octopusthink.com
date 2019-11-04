@@ -1,8 +1,6 @@
 import { graphql } from 'gatsby';
 import React from 'react';
 
-import { markdown } from 'utils/markdown';
-
 import PageBody from 'components/PageBody';
 import PageHeader from 'components/PageHeader';
 import PageWrapper from 'components/PageWrapper';
@@ -13,17 +11,15 @@ export const NotFound = (props) => {
   const { data } = props;
 
   const { page } = data;
-  const { htmlAst } = page;
+  const { body } = page;
   const { title, summary } = page.fields;
-
-  const content = markdown(htmlAst);
 
   return (
     <App>
       <SEO title={title} />
       <PageWrapper>
         <PageHeader pageTitle={title} summary={summary} />
-        <PageBody>{content}</PageBody>
+        <PageBody>{body}</PageBody>
       </PageWrapper>
     </App>
   );
@@ -31,14 +27,13 @@ export const NotFound = (props) => {
 
 export const pageQuery = graphql`
   query($id: String!) {
-    page: markdownRemark(id: { eq: $id }) {
+    page: mdx(id: { eq: $id }) {
       fields {
         slug
         title
         summary
       }
-      htmlAst
-      rawMarkdownBody
+      body
       id
     }
   }

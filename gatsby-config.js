@@ -39,8 +39,8 @@ module.exports = {
         `,
         feeds: [
           {
-            serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map((edge) => {
+            serialize: ({ query: { site, allMdx } }) => {
+              return allMdx.edges.map((edge) => {
                 return {
                   ...edge.node.fields,
                   title: edge.node.fields.title,
@@ -57,7 +57,7 @@ module.exports = {
             },
             query: `
               {
-                allMarkdownRemark(
+                allMdx(
                   sort: { fields: [fields___date], order: DESC }
                   filter: {
                     fileAbsolutePath: { regex: "//content/blog/" }
@@ -73,9 +73,6 @@ module.exports = {
                           name
                         }
                         date
-                        readingTime {
-                          text
-                        }
                         slug
                         summary
                         title
@@ -84,6 +81,7 @@ module.exports = {
                           summary
                         }
                       }
+                      timeToRead
                     }
                   }
                 }
@@ -137,7 +135,28 @@ module.exports = {
         exclude: ['/portfolio/*'],
       },
     },
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     'gatsby-transformer-yaml',
+    {
+      resolve: 'gatsby-plugin-mdx',
+      options: {
+        defaultLoaders: {
+          default: require.resolve('./src/components/MDXLayout'),
+        },
+        extensions: ['.mdx', '.md'],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 1280,
+            },
+          },
+          { resolve: 'gatsby-remark-reading-time' },
+          { resolve: 'gatsby-remark-smartypants' },
+        ],
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -161,14 +180,6 @@ module.exports = {
         ignore: ['**/*.js'],
       },
     },
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
-    {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        plugins: ['gatsby-remark-smartypants', 'gatsby-remark-reading-time'],
-      },
-    },
     {
       resolve: 'gatsby-plugin-favicon',
       options: {
@@ -185,7 +196,7 @@ module.exports = {
     },
   ],
   mapping: {
-    'MarkdownRemark.fields.authors': 'AuthorsYaml',
-    'MarkdownRemark.fields.tags': 'TagsYaml',
+    'Mdx.fields.authors': 'AuthorsYaml',
+    'Mdx.fields.tags': 'TagsYaml',
   },
 };

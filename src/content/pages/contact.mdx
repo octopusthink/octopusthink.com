@@ -1,0 +1,62 @@
+---
+title: Let’s talk
+summary: Ready to build a new app or website? Need some beautiful designs for a new project? Maybe an idea you want help getting off the ground? Get the ball rolling with a no-strings-attached quote.
+summaryExtra: Just want to keep tabs on what we’re up to? Want to chat about Nessie? That’s cool too.
+description: Get a quote or talk more about React development, inclusive design, or design systems.
+component: PageWithoutPageBody
+---
+
+import { Heading, Link, Paragraph, useTheme } from '@octopusthink/nautilus'
+import React from 'react'
+import { css } from '@emotion/core'
+
+import Panel from 'components/Panel'
+import QuoteForm from 'components/QuoteForm'
+import NewsletterSignupForm from 'components/NewsletterSignupForm'
+import SocialMediaLinks from 'components/SocialMediaLinks'
+
+<Panel>
+
+## Get in touch
+
+We're based in beautiful Edinburgh, Scotland, but we work remotely for clients around the world. If you want to talk to us about a project, feel free use the [contact form](#workwithus) to request a quote.
+
+The best way to get in touch with us is via email ([hello@octopusthink.com](mailto:hello@octopusthink.com)), but you can also follow us if you just want to keep tabs on what we're up to.
+
+</Panel>
+
+<Panel dark grid="5fr 7fr">
+
+<div>
+
+<Heading inverse>Follow along</Heading>
+
+<SocialMediaLinks />
+
+</div>
+
+<div>
+
+<Heading inverse>Sign up for our newsletter</Heading>
+
+<Paragraph small inverse>
+  We send out emails around once a quarter with highlights of what we've been up to, what we're
+  doing next, apps and tools we've built, and things we've found to make your life easier. You can
+  unsubscribe any time you get bored, and we promise never to sell your details.
+</Paragraph>
+
+<NewsletterSignupForm />
+
+</div>
+
+</Panel>
+
+<Panel>
+
+<Heading id="workwithus">Work with us</Heading>
+
+We're always interested in hearing from people with exciting projects. If you have work you'd like to discuss, drop us a line at [work.with@octopusthink.com](mailto:work.with@octopusthink.com) or fill in the form below for a no-strings-attached estimate. You'll hear back from us within 48 hours.
+
+<QuoteForm />
+
+</Panel>

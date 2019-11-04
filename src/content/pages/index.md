@@ -1,7 +1,0 @@
----
-title: Technology that works for you.
-summary: We believe that technology is a tool to make the world a happier, fairer place. We build smart, inclusive, usable digital products to improve people’s lives.
-summaryExtra:  Want your technology to work for you? Get in touch.
-description: Octopus Think is a digital design & technology company based in Scotland. We specialise in accessible, inclusive design and smart React development.
-component: Homepage
----

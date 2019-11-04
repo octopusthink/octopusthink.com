@@ -130,7 +130,7 @@ const onCreateNode = ({ actions, node, getNode }) => {
   const { createNodeField } = actions;
   let slug;
 
-  if (node.internal.type === 'MarkdownRemark') {
+  if (['MarkdownRemark', 'Mdx'].includes(node.internal.type)) {
     const fileNode = getNode(node.parent);
     const parsedFilePath = path.parse(fileNode.relativePath);
 
@@ -253,7 +253,7 @@ const onCreateNode = ({ actions, node, getNode }) => {
 const createPages = async ({ actions, graphql }) => {
   const markdownQueryResult = await graphql(`
     query {
-      blogPosts: allMarkdownRemark(filter: {
+      blogPosts: allMdx(filter: {
         fileAbsolutePath: { regex: "//content/blog/" }
         fields: { timestamp: { lte: ${nowTimestamp} } }
       }) {
@@ -281,7 +281,7 @@ const createPages = async ({ actions, graphql }) => {
           }
         }
       }
-      pages: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "//content/(?!blog).+?/" } }) {
+      pages: allMdx(filter: { fileAbsolutePath: { regex: "//content/(?!blog).+?/" } }) {
         edges {
           node {
             id

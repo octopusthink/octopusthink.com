@@ -3,6 +3,7 @@ import { useTheme } from '@octopusthink/nautilus';
 import React from 'react';
 import 'typeface-inter';
 
+import GhostShipMDX from 'components/GhostShipMDX';
 import SiteHeader from 'components/SiteHeader';
 import SiteFooter from 'components/SiteFooter';
 
@@ -11,7 +12,7 @@ export const App = (props) => {
   const { children } = props;
 
   return (
-    <React.Fragment>
+    <GhostShipMDX>
       <Global
         styles={css`
           body {
@@ -68,7 +69,7 @@ export const App = (props) => {
       <SiteHeader />
       <main id="content">{children}</main>
       <SiteFooter />
-    </React.Fragment>
+    </GhostShipMDX>
   );
 };
 

@@ -25,7 +25,8 @@ export const BlogList = (props) => {
 
       <PageBody>
         {posts.edges.map(({ node }) => {
-          const { date, readingTime, slug, summary, title } = node.fields;
+          const { fields, timeToRead: readingTime } = node;
+          const { date, slug, summary, title } = fields;
           return (
             <Fragment key={slug}>
               <PostCard
@@ -62,7 +63,7 @@ export const BlogList = (props) => {
 
 export const pageQuery = graphql`
   query blogPostsList($skip: Int!, $limit: Int!, $nowTimestamp: Int!) {
-    posts: allMarkdownRemark(
+    posts: allMdx(
       sort: { fields: [fields___date], order: DESC }
       filter: {
         fileAbsolutePath: { regex: "//content/blog/" }
@@ -75,9 +76,6 @@ export const pageQuery = graphql`
         node {
           fields {
             date
-            readingTime {
-              text
-            }
             slug
             summary
             title
@@ -86,6 +84,7 @@ export const pageQuery = graphql`
               summary
             }
           }
+          timeToRead
         }
       }
     }

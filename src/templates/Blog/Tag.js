@@ -29,7 +29,8 @@ export const BlogTags = (props) => {
       <PageHeader pageTitle={pageTitle} summary={pageSummary} />
       <PageBody>
         {posts.edges.map(({ node }) => {
-          const { date, readingTime, slug, summary, title } = node.fields;
+          const { fields, timeToRead: readingTime } = node;
+          const { date, slug, summary, title } = fields;
 
           return (
             <Fragment key={slug}>
@@ -50,7 +51,7 @@ export const BlogTags = (props) => {
 
 export const pageQuery = graphql`
   query($tagId: String!, $nowTimestamp: Int!) {
-    posts: allMarkdownRemark(
+    posts: allMdx(
       sort: { fields: [fields___date], order: DESC }
       filter: {
         fileAbsolutePath: { regex: "//content/blog/" }
@@ -66,9 +67,9 @@ export const pageQuery = graphql`
               name
             }
             date
-            readingTime {
-              text
-            }
+            # readingTime {
+            #   text
+            # }
             slug
             summary
             title
@@ -78,6 +79,7 @@ export const pageQuery = graphql`
               summary
             }
           }
+          timeToRead
         }
       }
     }
