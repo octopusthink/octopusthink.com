@@ -1,5 +1,13 @@
 import { MDXProvider } from '@mdx-js/react';
-import { Heading, List, Link, PageTitle, Paragraph } from '@octopusthink/nautilus';
+import {
+  Emphasis,
+  Heading,
+  List,
+  Link,
+  PageTitle,
+  Paragraph,
+  Strong,
+} from '@octopusthink/nautilus';
 import React from 'react';
 
 import Image from 'components/Image';
@@ -33,6 +41,8 @@ const components = {
   },
   img: (props) => <Image {...props} />,
   div: (props) => <div {...props} />,
+  strong: (props) => <Strong {...props} />,
+  emphasis: (props) => <Emphasis {...props} />,
   /* eslint-enable react/jsx-props-no-spreading */
 };
 
