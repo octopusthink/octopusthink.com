@@ -27,9 +27,7 @@ export const Portfolio = (props) => {
           summaryExtra={summaryExtra}
           description={description}
         />
-        <PageBody>
-          <MDXRenderer>{body}</MDXRenderer>
-        </PageBody>
+        <MDXRenderer>{body}</MDXRenderer>
       </PageWrapper>
     </App>
   );
