@@ -9,20 +9,37 @@ const PortfolioSection = (props) => {
   return (
     <section
       css={css`
+        margin: 0 auto 3.2rem;
+        padding: ${theme.site.mobilePadding};
+
+        @media screen and (min-width: 640px) {
+          padding: ${theme.site.tabletPadding};
+        }
+
         @media screen and (min-width: 800px) {
           display: grid;
           grid-template-columns: 1fr 1fr;
-          margin: 0 auto;
+          grid-gap: ${theme.site.tabletPadding};
+          min-height: 98vh;
+          padding: 0;
+
+          &:nth-of-type(odd) {
+            .portfolioSectionText {
+              order: 2;
+            }
+          }
         }
+
         @media screen and (min-width: 1024px) {
+          grid-gap: ${theme.site.desktopPadding};
           max-width: ${theme.site.maxSiteWidth};
           max-width: 1024px;
         }
       `}
     >
       <div
+        className="portfolioSectionText"
         css={css`
-          //padding: 3.2rem;
           display: flex;
           flex-direction: column;
           justify-content: center;
