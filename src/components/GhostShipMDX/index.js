@@ -22,7 +22,7 @@ const components = {
   p: (props) => <Paragraph {...props} />,
   ul: (props) => <List {...props} />,
   ol: (props) => <List {...props} ordered />,
-  li: List.Item,
+  li: (props) => <List.Item {...props} />,
   a: (originalProps) => {
     const { href } = originalProps;
     const props = { ...originalProps };
