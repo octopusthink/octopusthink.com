@@ -10,6 +10,7 @@ octopusthink.com uses Gatsby. To run a local copy, clone the repo to your local 
 
 ```bash
 npm start
+```
 
 That's it! You can now find the site at [localhost:8000](http://localhost:8000/).
 
@@ -21,6 +22,7 @@ All pull requests must pass the linter rules to be merged into master. Tests are
 
 ````bash
 npm run lint
+```
 
 ### Using the design system
 
@@ -28,7 +30,9 @@ octopusthink.com uses the [Nautilus](https://nautilus.octopusthink.com) design s
 
 To pull the latest changes, uninstall and reinstall the Nautilus dependency:
 
-`npm uninstall nautilus && npm install --save octopusthink/nautilus`
+```bash
+npm uninstall nautilus && npm install --save octopusthink/nautilus
+```
 
 ## License
 
