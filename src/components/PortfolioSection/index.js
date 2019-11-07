@@ -3,7 +3,7 @@ import React from 'react';
 import { css } from '@emotion/core';
 
 const PortfolioSection = (props) => {
-  const { alt, children, heading, image, metadata } = props;
+  const { alt, children, fullWidth, heading, image, metadata } = props;
   const theme = useTheme();
 
   return (
@@ -23,7 +23,7 @@ const PortfolioSection = (props) => {
           min-height: 98vh;
           padding: 0;
 
-          &:nth-of-type(odd) {
+          &:nth-of-type(even) {
             .portfolioSectionText {
               order: 2;
             }
@@ -35,6 +35,12 @@ const PortfolioSection = (props) => {
           max-width: ${theme.site.maxSiteWidth};
           max-width: 1024px;
         }
+
+        ${fullWidth &&
+          css`
+            background: black;
+            display: block !important;
+          `}
       `}
     >
       <div
