@@ -4,7 +4,7 @@ import { css } from '@emotion/core';
 
 const ImagePanel = (props) => {
   const theme = useTheme();
-  const { alt, children, className, dark, image } = props;
+  const { alt, className, dark, image } = props;
 
   const panelBackground = dark ? theme.colors.neutral.black : theme.colors.neutral.white;
 
