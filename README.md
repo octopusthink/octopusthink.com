@@ -10,20 +10,20 @@ octopusthink.com uses Gatsby. To run a local copy, clone the repo to your local 
 
 `npm start`
 
-That's it! You can now find the site at [http://localhost:8000/](http://localhost:8000/). 
+That's it! You can now find the site at [localhost:8000](http://localhost:8000/).
 
-All changes you make to front-end React code and styles will immediately be loaded. Any changes to `gatbsy-config.js` require restarting the Gatsby server (`Control-C` + `npm start`.)
+All changes you make to front-end React code and styles will immediately be loaded. Any changes to `gatbsy-config.js` or `gatsby-node.js` require restarting the Gatsby server.
 
 ### Running tests
 
-All pull requests must pass both unit tests and linter rules to be merged into master. Tests are run against branches using Github actions, but you can also run tests locally:
+All pull requests must pass both unit tests and linter rules to be merged into master. Tests are run against branches using GitHub Actions, but you can also run tests locally:
 
 `npm run lint
 npm run test`
 
 ### Using the design system
 
-octopusthink.com uses the [Nautilus](https://nautilus.octopusthink.com) design system under the hood. Since Nautilus is still very much under development, it's pulling from the latest changes made to the master Github branch, rather than the published version.
+octopusthink.com uses the [Nautilus](https://nautilus.octopusthink.com) design system under the hood. Since Nautilus is still very much under development, it's pulling from the latest changes made to the `master` GitHub branch, rather than the published version.
 
 To pull the latest changes, uninstall and reinstall the Nautilus dependency:
 
