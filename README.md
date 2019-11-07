@@ -20,7 +20,7 @@ All changes you make to front-end React code and styles will immediately be load
 
 All pull requests must pass the linter rules to be merged into master. Tests are run against branches using GitHub Actions, but you can also run tests locally:
 
-````bash
+```bash
 npm run lint
 ```
 
