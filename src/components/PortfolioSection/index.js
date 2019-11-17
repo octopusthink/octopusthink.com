@@ -2,9 +2,13 @@ import { Heading, Tags, useTheme } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
+import Image from 'components/Image';
+
 const PortfolioSection = (props) => {
   const { alt, children, fullWidth, heading, image, metadata } = props;
   const theme = useTheme();
+
+  const imageSrc = image.split('/')[image.split('/').length - 1];
 
   return (
     <section
@@ -64,13 +68,13 @@ const PortfolioSection = (props) => {
           justify-content: center;
         `}
       >
-        <img
-          src={image}
-          alt={alt}
+        <div
           css={css`
             max-width: 100%;
           `}
-        />
+        >
+          <Image src={imageSrc} alt={alt} />
+        </div>
       </div>
     </section>
   );
