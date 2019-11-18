@@ -5,7 +5,7 @@ import { css } from '@emotion/core';
 import NextPanelNavigation from 'components/NextPanelNavigation';
 
 const PortfolioSection = (props) => {
-  const { alt, children, fullWidth, heading, image, metadata, next } = props;
+  const { alt, children, heading, image, metadata, next } = props;
   const theme = useTheme();
   const hashID = heading
     .toLowerCase()
@@ -28,7 +28,6 @@ const PortfolioSection = (props) => {
           grid-template-columns: 1fr 1fr;
           grid-gap: ${theme.site.tabletPadding};
           min-height: 98vh;
-          padding: 0;
 
           &:nth-of-type(even) {
             .portfolioSectionText {
@@ -39,14 +38,9 @@ const PortfolioSection = (props) => {
 
         @media screen and (min-width: 1024px) {
           grid-gap: ${theme.site.desktopPadding};
+          padding: ${theme.site.desktopPadding};
           max-width: ${theme.site.maxSiteWidth};
         }
-
-        ${fullWidth &&
-          css`
-            background: black;
-            display: block !important;
-          `}
       `}
     >
       <div

@@ -23,26 +23,26 @@ const PortfolioSummary = (props) => {
           padding: ${theme.site.tabletPadding};
         }
 
-        @media screen and (min-width: 800px) {
-          padding: 0;
-        }
-
         @media screen and (min-width: 1024px) {
-          grid-gap: ${theme.site.desktopPadding};
+          padding: ${theme.site.desktopPadding};
           max-width: ${theme.site.maxSiteWidth};
-          max-width: 1024px;
         }
       `}
     >
-      <Heading level={2}>In Brief</Heading>
+      <Heading level={2}>Project overview</Heading>
 
       <div
         css={css`
           display: grid;
+          grid-gap: ${theme.site.mobilePadding};
 
           @media screen and (min-width: 640px) {
             grid-template-columns: 1fr 1fr;
             grid-gap: ${theme.site.tabletPadding};
+          }
+
+          @media screen and (min-width: 1024px) {
+            grid-gap: ${theme.site.desktopPadding};
           }
 
           h3 {
