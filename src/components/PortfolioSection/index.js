@@ -1,7 +1,7 @@
 import { Heading, Icon, Tags, useTheme } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
-import smoothScroll from 'smooth-scroll';
+// import smoothScroll from 'smooth-scroll';
 
 const PortfolioSection = (props) => {
   const { alt, children, fullWidth, heading, image, metadata, next } = props;
@@ -10,7 +10,7 @@ const PortfolioSection = (props) => {
   const nextHash = '#' + next;
 
   if (typeof window !== 'undefined') {
-    smoothScroll('a[href*="#"]');
+    require('smooth-scroll')('a[href*="#"]');
   }
 
   return (
