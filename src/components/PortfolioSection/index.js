@@ -7,7 +7,10 @@ import NextPanelNavigation from 'components/NextPanelNavigation';
 const PortfolioSection = (props) => {
   const { alt, children, fullWidth, heading, image, metadata, next } = props;
   const theme = useTheme();
-  const hashID = metadata.toLowerCase().replace(' ', '-');
+  const hashID = heading
+    .toLowerCase()
+    .replace('& ', '')
+    .replace(' ', '-');
 
   return (
     <section
@@ -37,7 +40,6 @@ const PortfolioSection = (props) => {
         @media screen and (min-width: 1024px) {
           grid-gap: ${theme.site.desktopPadding};
           max-width: ${theme.site.maxSiteWidth};
-          max-width: 1024px;
         }
 
         ${fullWidth &&
@@ -60,7 +62,7 @@ const PortfolioSection = (props) => {
         </Tags>
         <Heading level={2}>{heading}</Heading>
         {children}
-        <NextPanelNavigation to={next} />
+        {next && <NextPanelNavigation to={next} />}
       </div>
       <div
         css={css`
