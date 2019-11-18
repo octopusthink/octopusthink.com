@@ -1,17 +1,13 @@
 import { Heading, Icon, Tags, useTheme } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
-// import smoothScroll from 'smooth-scroll';
+
+import NextPanelNavigation from 'components/NextPanelNavigation';
 
 const PortfolioSection = (props) => {
   const { alt, children, fullWidth, heading, image, metadata, next } = props;
   const theme = useTheme();
   const hashID = metadata.toLowerCase().replace(' ', '-');
-  const nextHash = '#' + next;
-
-  if (typeof window !== 'undefined') {
-    require('smooth-scroll')('a[href*="#"]');
-  }
 
   return (
     <section
@@ -64,29 +60,7 @@ const PortfolioSection = (props) => {
         </Tags>
         <Heading level={2}>{heading}</Heading>
         {children}
-        <a
-          href={nextHash}
-          css={css`
-            color: ${theme.colors.neutral.white};
-            background: ${theme.colors.neutral.black};
-            padding: 1.2rem;
-            border-radius: 100%;
-            height: 4.8rem;
-            width: 4.8rem;
-            margin: 0 auto;
-          `}
-        >
-          <Icon
-            title="Move to next panel"
-            name="arrow-down"
-            css={css`
-              margin: 0;
-              svg {
-                opacity: 1;
-              }
-            `}
-          />
-        </a>
+        <NextPanelNavigation to={next} />
       </div>
       <div
         css={css`

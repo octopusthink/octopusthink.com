@@ -2,8 +2,10 @@ import { Heading, useTheme, metadata } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
+import NextPanelNavigation from 'components/NextPanelNavigation';
+
 const PortfolioSummary = (props) => {
-  const { children } = props;
+  const { children, next } = props;
   const theme = useTheme();
 
   return (
@@ -50,6 +52,7 @@ const PortfolioSummary = (props) => {
       >
         {children}
       </div>
+      <NextPanelNavigation to={next} />
     </section>
   );
 };
