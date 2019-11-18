@@ -9,27 +9,37 @@ summary: A WordPress.com theme designed for small businesses, now in use on near
 repo: https://github.com/Automattic/themes/tree/master/pique
 demo: https://piquedemo.wordpress.com/
 ---
+import { Icon, Paragraph } from '@octopusthink/nautilus';
+
 import ImagePanel from 'components/ImagePanel';
+import Panel from 'components/Panel';
 import PortfolioSection from 'components/PortfolioSection';
 import PortfolioSummary from 'components/PortfolioSummary';
+import Testimonial from 'components/Testimonial';
 
 <PortfolioSummary next="the-challenge">
 
   <div>
 
-  ### Problem
+  ### <Icon name="radio" />Problem
   WordPress.com's theme offerings lacked good options for small businesses.
+  </div>
 
-  ### Solution
+  <div>
+
+  ### <Icon name="life-buoy" />Solution
   Sarah designed and built a one-page scrolling theme to make it easier to build these types of sites on WordPress.com.
   </div>
 
   <div>
 
-  ### Outcomes
+  ### <Icon name="star" />Outcomes
   The theme is now in use on over a million sites and has been used as the basis for a number of similar themes to follow.
+  </div>
 
-  ### Our contributions
+  <div>
+
+  ### <Icon name="coffee" />Our contributions
   competitive analysis, wireframing, prototyping, visual design, front-end development, usability testing, documentation
   </div>
 </PortfolioSummary>
@@ -93,6 +103,25 @@ import PortfolioSummary from 'components/PortfolioSummary';
 
   In order to make it simpler for users to build the layouts they need, the theme includes an icon set, map integration, testimonials, and custom button styling, as well as special templates for panels. It was accompanied by an [extensive help page](https://wordpress.com/theme/pique).
 </PortfolioSection>
+
+<Panel dark>
+
+<Testimonial
+  company="WP Tavern"
+  url="https://wptavern.com/pique-a-free-small-business-theme-for-wordpress"
+>
+
+<Paragraph large inverse>
+  Most of the themes created by the professional design team at WordPress.com are geared towards bloggers. That’s why the latest Pique theme is an unusual and exciting release.
+</Paragraph>
+
+<Paragraph large inverse>
+  Pique makes it easy for anyone to build a one-page, branded website with all the specialized content sections that you would traditionally expect from a business theme.
+</Paragraph>
+
+</Testimonial>
+
+</Panel>
 
 <PortfolioSection
   metadata="What did we accomplish?"
