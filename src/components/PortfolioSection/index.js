@@ -10,6 +10,7 @@ const PortfolioSection = (props) => {
   const hashID = heading
     .toLowerCase()
     .replace('& ', '')
+    .replace('?', '')
     .replace(' ', '-');
 
   return (
