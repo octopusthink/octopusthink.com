@@ -1,4 +1,4 @@
-import { Heading, Icon, Tags, useTheme } from '@octopusthink/nautilus';
+import { Heading, Tags, useTheme } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
