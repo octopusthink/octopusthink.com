@@ -1,3 +1,6 @@
 - id: updates
   name: updates
   summary: What have we been up to lately? Here’s where you find out.
+- id: ethics
+  name: ethics
+  summary: How can we use technology to make the world a better place? What are we doing to ensure our work doesn't exclude people? Let's discuss.
