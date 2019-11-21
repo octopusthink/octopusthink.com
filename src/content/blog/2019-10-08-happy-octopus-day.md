@@ -1,5 +1,5 @@
 ---
-authors: [sarah, matt]
+authors: [sarah]
 tags: [updates]
 title: Happy Octopus Day!
 summary: Because it's the 8th of October, of course. It's also Ada Lovelace Day, so basically, it's auspicious all around.
