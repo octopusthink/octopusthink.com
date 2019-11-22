@@ -15,7 +15,11 @@ const WavingOctopusArm = (props) => {
 
         @media screen and (min-width: 640px) {
           bottom: 0;
-          right: 20px;
+          left: 60%;
+        }
+
+        @media screen and (min-width: 1200px) {
+          left: 65%;
         }
       `}
     >
