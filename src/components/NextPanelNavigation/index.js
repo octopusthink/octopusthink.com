@@ -9,7 +9,9 @@ const NextPanelNavigation = (props) => {
 
   if (typeof window !== 'undefined') {
     // eslint-disable-next-line global-require
-    require('smooth-scroll')('a[href*="#"]');
+    require('smooth-scroll')('a[href*="#"]', {
+      updateURL: false,
+    });
   }
 
   return (
