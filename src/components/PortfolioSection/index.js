@@ -1,4 +1,4 @@
-import { Heading, Icon, Tags, useTheme } from '@octopusthink/nautilus';
+import { Heading, Tags, useTheme } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
@@ -11,6 +11,7 @@ const PortfolioSection = (props) => {
   const hashID = heading
     .toLowerCase()
     .replace('& ', '')
+    .replace('?', '')
     .replace(' ', '-');
 
   const imageSrc = image.split('/')[image.split('/').length - 1];

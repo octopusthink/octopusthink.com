@@ -1,4 +1,4 @@
-import { Heading, useTheme, metadata } from '@octopusthink/nautilus';
+import { Heading, useTheme } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
@@ -43,10 +43,6 @@ const PortfolioSummary = (props) => {
 
           @media screen and (min-width: 1024px) {
             grid-gap: ${theme.site.desktopPadding};
-          }
-
-          h3 {
-            ${metadata.large(theme)};
           }
         `}
       >

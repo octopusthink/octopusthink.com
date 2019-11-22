@@ -11,6 +11,7 @@ demo: https://piquedemo.wordpress.com/
 ---
 import { Icon, Paragraph } from '@octopusthink/nautilus';
 
+import IconHeading from 'components/IconHeading';
 import ImagePanel from 'components/ImagePanel';
 import Panel from 'components/Panel';
 import PortfolioSection from 'components/PortfolioSection';
@@ -19,29 +20,29 @@ import Testimonial from 'components/Testimonial';
 
 <PortfolioSummary next="the-challenge">
 
-  <div>
+<div>
+  <IconHeading problem />
 
-  ### <Icon name="radio" />Problem
   WordPress.com's theme offerings lacked good options for small businesses.
-  </div>
+</div>
 
-  <div>
+<div>
+  <IconHeading solution />
 
-  ### <Icon name="life-buoy" />Solution
   Sarah designed and built a one-page scrolling theme to make it easier to build these types of sites on WordPress.com.
-  </div>
+</div>
 
-  <div>
+<div>
+  <IconHeading result />
 
-  ### <Icon name="star" />Outcomes
   The theme is now in use on over a million sites and has been used as the basis for a number of similar themes to follow.
-  </div>
+</div>
 
-  <div>
+<div>
+  <IconHeading role />
 
-  ### <Icon name="coffee" />Our contributions
   competitive analysis, wireframing, prototyping, visual design, front-end development, usability testing, documentation
-  </div>
+</div>
 </PortfolioSummary>
 
 <ImagePanel dark alt="A mockup showing screenshots of the design system documentation site on a desktop, tablet, and phone." image="/portfolio/pique/pique-device-mockup.png" />
