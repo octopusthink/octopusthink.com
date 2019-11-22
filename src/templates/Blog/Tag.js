@@ -1,8 +1,10 @@
 import { graphql } from 'gatsby';
 import React, { Fragment } from 'react';
 
-import PageHeader from 'components/PageHeader';
+import Divider from 'components/Divider';
 import PageBody from 'components/PageBody';
+import PageHeader from 'components/PageHeader';
+import PageWrapper from 'components/PageWrapper';
 import PostCard from 'components/PostCard';
 import SEO from 'components/SEO';
 import App from 'templates/App';
@@ -25,26 +27,27 @@ export const BlogTags = (props) => {
   return (
     <App>
       <SEO title={pageTitle} description={pageSummary} />
+      <PageWrapper>
+        <PageHeader pageTitle={pageTitle} summary={pageSummary} />
+        <PageBody>
+          {posts.edges.map(({ node }) => {
+            const { date, readingTime, slug, summary, title } = node.fields;
 
-      <PageHeader pageTitle={pageTitle} summary={pageSummary} />
-      <PageBody>
-        {posts.edges.map(({ node }) => {
-          const { fields, timeToRead: readingTime } = node;
-          const { date, slug, summary, title } = fields;
-
-          return (
-            <Fragment key={slug}>
-              <PostCard
-                date={date}
-                readingTime={readingTime}
-                slug={slug}
-                summary={summary}
-                title={title}
-              />
-            </Fragment>
-          );
-        })}
-      </PageBody>
+            return (
+              <Fragment key={slug}>
+                <PostCard
+                  date={date}
+                  readingTime={readingTime}
+                  slug={slug}
+                  summary={summary}
+                  title={title}
+                />
+              </Fragment>
+            );
+          })}
+        </PageBody>
+        <Divider light />
+      </PageWrapper>
     </App>
   );
 };

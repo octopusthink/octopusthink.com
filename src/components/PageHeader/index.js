@@ -2,6 +2,7 @@ import { PageTitle, Paragraph, useTheme } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
+import Divider from 'components/Divider';
 import Watermark from 'static/watermark.svg';
 
 const PageHeader = (props) => {
@@ -16,6 +17,7 @@ const PageHeader = (props) => {
         overflow: hidden;
         padding-top: calc(${theme.site.mobilePadding} * 2);
         padding-bottom: calc(${theme.site.mobilePadding} * 2);
+        padding-bottom: 0;
 
         @media screen and (min-width: 640px) {
           min-height: 320px;
@@ -25,27 +27,6 @@ const PageHeader = (props) => {
         @media screen and (min-width: 1024px) {
           min-height: 400px;
           padding-top: ${theme.site.desktopPadding};
-        }
-
-        ::after {
-          content: '';
-          display: block;
-          width: 120%;
-          margin-left: -10%;
-          overflow: hidden;
-          height: 50px;
-          position: absolute;
-          bottom: 0;
-          background-image: linear-gradient(
-            to bottom right,
-            transparent,
-            transparent 46%,
-            ${theme.colors.accent.primary} 47%,
-            ${theme.colors.accent.primary} 53%,
-            ${theme.colors.neutral.white} 54%,
-            ${theme.colors.neutral.white}
-          );
-          z-index: 0;
         }
       `}
     >
@@ -61,7 +42,7 @@ const PageHeader = (props) => {
             bottom: -160px;
             right: -160px;
             opacity: 0.05;
-            z-index: 0;
+            z-index: 2;
           }
           @media screen and (min-width: 1024px) {
             bottom: -120px;
@@ -126,6 +107,14 @@ const PageHeader = (props) => {
           {children}
         </div>
       </div>
+      <Divider
+        dark
+        css={css`
+          bottom: 0;
+          position: absolute;
+          z-index: 1;
+        `}
+      />
     </header>
   );
 };

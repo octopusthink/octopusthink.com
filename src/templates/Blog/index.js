@@ -2,8 +2,10 @@ import { Link, List } from '@octopusthink/nautilus';
 import { graphql } from 'gatsby';
 import React, { Fragment } from 'react';
 
-import PageHeader from 'components/PageHeader';
+import Divider from 'components/Divider';
 import PageBody from 'components/PageBody';
+import PageHeader from 'components/PageHeader';
+import PageWrapper from 'components/PageWrapper';
 import PostCard from 'components/PostCard';
 import SEO from 'components/SEO';
 import App from 'templates/App';
@@ -21,42 +23,48 @@ export const BlogList = (props) => {
   return (
     <App>
       <SEO title={pageTitle} description={description} />
-      <PageHeader pageTitle={pageTitle} summary={pageSummary} />
+      <PageWrapper>
+        <PageHeader pageTitle={pageTitle} summary={pageSummary} />
+        <PageBody>
+          {posts.edges.map(({ node }) => {
+            const { fields, timeToRead: readingTime } = node;
+            const { date, slug, summary, title } = fields;
+            return (
+              <Fragment key={slug}>
+                <PostCard
+                  date={date}
+                  readingTime={readingTime}
+                  slug={slug}
+                  summary={summary}
+                  title={title}
+                />
+              </Fragment>
+            );
+          })}
 
-      <PageBody>
-        {posts.edges.map(({ node }) => {
-          const { fields, timeToRead: readingTime } = node;
-          const { date, slug, summary, title } = fields;
-          return (
-            <Fragment key={slug}>
-              <PostCard
-                date={date}
-                readingTime={readingTime}
-                slug={slug}
-                summary={summary}
-                title={title}
-              />
-            </Fragment>
-          );
-        })}
+          {numberOfPages > 1 && (
+            <List>
+              {Array(numberOfPages)
+                .fill(null)
+                .map((item, i) => {
+                  const index = i + 1;
+                  const link = index === 1 ? '/blog' : `/blog/page=${index}`;
 
-        {numberOfPages > 1 && (
-          <List>
-            {Array(numberOfPages)
-              .fill(null)
-              .map((item, i) => {
-                const index = i + 1;
-                const link = index === 1 ? '/blog' : `/blog/page=${index}`;
-
-                return (
-                  <List.Item key={link}>
-                    {currentPage === index ? <span>{index}</span> : <Link to={link}>{index}</Link>}
-                  </List.Item>
-                );
-              })}
-          </List>
-        )}
-      </PageBody>
+                  return (
+                    <List.Item key={link}>
+                      {currentPage === index ? (
+                        <span>{index}</span>
+                      ) : (
+                        <Link to={link}>{index}</Link>
+                      )}
+                    </List.Item>
+                  );
+                })}
+            </List>
+          )}
+        </PageBody>
+        <Divider light />
+      </PageWrapper>
     </App>
   );
 };

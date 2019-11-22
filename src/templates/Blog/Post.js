@@ -6,6 +6,7 @@ import { css } from '@emotion/core';
 import dayjs from 'dayjs';
 
 import AuthorByline from 'components/AuthorByline';
+import Divider from 'components/Divider';
 import PageBody from 'components/PageBody';
 import PageFooter from 'components/PageFooter';
 import PageHeader from 'components/PageHeader';
@@ -93,7 +94,6 @@ export const BlogPost = (props) => {
         <Fragment key={slug}>
           <PageHeader metadata={formattedMetadata} pageTitle={title} summary={summary} />
         </Fragment>
-
         <PageBody>
           <MDXRenderer>{body}</MDXRenderer>
           {authors.map((author) => (
@@ -125,6 +125,7 @@ export const BlogPost = (props) => {
             />
           )}
         </PageFooter>
+        <Divider light />
       </PageWrapper>
     </App>
   );

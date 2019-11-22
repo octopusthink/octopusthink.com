@@ -17,23 +17,6 @@ const SiteFooter = () => {
         background: ${theme.colors.neutral.black};
         position: relative;
         overflow: hidden;
-
-        ::before {
-          content: '';
-          display: block;
-          width: 120%;
-          margin-left: -10%;
-          overflow: hidden;
-          height: 50px;
-          background-image: linear-gradient(
-            to bottom left,
-            ${theme.colors.neutral.white},
-            ${theme.colors.neutral.white} 46%,
-            ${theme.colors.accent.primary} 47%,
-            ${theme.colors.accent.primary} 53%,
-            ${theme.colors.neutral.black} 54%,
-            ${theme.colors.neutral.black}
-          );
         }
       `}
     >
