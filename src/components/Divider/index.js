@@ -18,7 +18,7 @@ const Divider = (props) => {
         margin-left: -10%;
         overflow: hidden;
         height: 50px;
-        z-index: 20;
+        z-index: 0;
 
         ${light &&
           css`

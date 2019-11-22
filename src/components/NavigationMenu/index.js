@@ -40,7 +40,7 @@ const NavigationMenu = () => {
       <nav
         role="navigation"
         css={css`
-          z-index: 1;
+          z-index: 2;
 
           ${!hideMenu &&
             css`
@@ -125,6 +125,7 @@ const NavigationMenu = () => {
               box-shadow: 4px 0 8px rgba(0, 0, 0, 0.25);
               width: calc(100% - 6.4rem);
               transition: left 200ms ease-in;
+
               ${hideMenu &&
                 css`
                   left: -100%;
