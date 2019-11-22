@@ -2,11 +2,15 @@ import { useTheme } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
+import Image from 'components/Image';
+
 const ImagePanel = (props) => {
   const theme = useTheme();
   const { alt, className, dark, image } = props;
 
   const panelBackground = dark ? theme.colors.neutral.black : theme.colors.neutral.white;
+
+  const imageSrc = image.split('/')[image.split('/').length - 1];
 
   return (
     <section
@@ -50,6 +54,7 @@ const ImagePanel = (props) => {
                 transparent 54%,
                 transparent
               );
+              z-index: 10;
             }
           `}
       `}
@@ -60,17 +65,18 @@ const ImagePanel = (props) => {
           @media screen and (min-width: 1024px) {
             max-width: ${theme.site.maxSiteWidth};
           }
+          width: 100%;
         `}
       >
-        <img
-          src={image}
-          alt={alt}
+        <div
           css={css`
             max-width: 100%;
             margin-bottom: -50px;
             margin-top: 50px;
           `}
-        />
+        >
+          <Image src={imageSrc} alt={alt} />
+        </div>
       </div>
     </section>
   );
