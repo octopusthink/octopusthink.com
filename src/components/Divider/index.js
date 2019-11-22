@@ -4,9 +4,7 @@ import { css } from '@emotion/core';
 
 const Divider = (props) => {
   const theme = useTheme();
-  const { className, dark, bottom, light } = props;
-
-  const panelBackground = dark ? theme.colors.neutral.black : theme.colors.neutral.white;
+  const { className, dark, light } = props;
 
   return (
     <div

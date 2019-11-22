@@ -6,7 +6,7 @@ import Divider from 'components/Divider';
 
 const Panel = (props) => {
   const theme = useTheme();
-  const { children, className, dark, dividerBottom, grid, gridSmall } = props;
+  const { children, className, dark, grid, gridSmall } = props;
 
   const panelBackground = dark ? theme.colors.neutral.black : theme.colors.neutral.white;
 

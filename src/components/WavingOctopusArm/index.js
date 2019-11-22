@@ -1,10 +1,9 @@
-import { useTheme } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
 import ReachingArmIllustration from 'static/illustrations/reaching-octo-arm.svg';
 
-const WavingOctopusArm = (props) => {
+const WavingOctopusArm = () => {
   return (
     <div
       css={css`
