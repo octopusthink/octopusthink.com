@@ -2,6 +2,7 @@ import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import React from 'react';
 
+import Divider from 'components/Divider';
 import PageHeader from 'components/PageHeader';
 import PageWrapper from 'components/PageWrapper';
 import SEO from 'components/SEO';
@@ -27,6 +28,7 @@ export const Portfolio = (props) => {
           description={description}
         />
         <MDXRenderer>{body}</MDXRenderer>
+        <Divider light />
       </PageWrapper>
     </App>
   );
