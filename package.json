@@ -65,6 +65,7 @@
     "remark-retext": "^3.1.3",
     "retext-smartypants": "^3.0.3",
     "shortid": "^2.2.15",
+    "smooth-scroll": "^16.1.0",
     "typeface-inter": "0.0.77"
   },
   "devDependencies": {
@@ -85,9 +86,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/octopusthink/ghost-ship"
+    "url": "https://github.com/octopusthink/octopusthink.com"
   },
   "bugs": {
-    "url": "https://github.com/octopusthink/ghost-ship/issues"
+    "url": "https://github.com/octopusthink/octopusthink.com/issues"
   }
 }

@@ -1,0 +1,137 @@
+---
+id: pique
+title: Pique
+order: 5
+thumbnail: "/portfolio/pique/thumbnail.jpg"
+background: "/portfolio/pique/background.png"
+tags: [competitive analysis, wireframing, prototyping, visual design, front-end development, usability testing, documentation]
+summary: A WordPress.com theme designed for small businesses, now in use on nearly one million WordPress sites.
+repo: https://github.com/Automattic/themes/tree/master/pique
+demo: https://piquedemo.wordpress.com/
+---
+import { Icon, Paragraph } from '@octopusthink/nautilus';
+
+import IconHeading from 'components/IconHeading';
+import ImagePanel from 'components/ImagePanel';
+import Panel from 'components/Panel';
+import PortfolioSection from 'components/PortfolioSection';
+import PortfolioSummary from 'components/PortfolioSummary';
+import Testimonial from 'components/Testimonial';
+
+<PortfolioSummary next="the-challenge">
+
+<div>
+  <IconHeading problem />
+
+  WordPress.com's theme offerings lacked good options for small businesses.
+</div>
+
+<div>
+  <IconHeading solution />
+
+  Sarah designed and built a one-page scrolling theme to make it easier to build these types of sites on WordPress.com.
+</div>
+
+<div>
+  <IconHeading result />
+
+  The theme is now in use on over a million sites and has been used as the basis for a number of similar themes to follow.
+</div>
+
+<div>
+  <IconHeading role />
+
+  competitive analysis, wireframing, prototyping, visual design, front-end development, usability testing, documentation
+</div>
+</PortfolioSummary>
+
+<ImagePanel dark alt="A mockup showing screenshots of the Pique theme demo on a desktop, tablet, and phone." image="/portfolio/pique/pique-device-mockup.png" />
+
+<PortfolioSection
+  metadata="Introduction"
+  heading="The challenge"
+  image="/portfolio/pique/one-page.png"
+  alt="Screenshot of Pique's demo site, showing multiple panels with different types of content typical to a coffeshop."
+  next="research"
+  >
+
+  Small businesses were an underserved market in WordPress.com’s theme offering, which focussed on themes for bloggers. In order to appeal to a wider market and compete with other platforms, WordPress.com needed a solution with the needs to small businesses in mind.
+
+</PortfolioSection>
+
+<PortfolioSection
+  metadata="Defining visual patterns"
+  heading="Research"
+  image="/portfolio/pique/coffeeshop-site-research.png"
+  alt="Screenshots of visual patterns I noticed were common to coffeeshops."
+  next="visual-design"
+  >
+
+  Selecting cafes, restaurants, and coffeeshops as a target market, we started by conducting competitive analysis of the existing market. This research revealed a number of common patterns. A highlight of the findings was that a single-page scrolling site was extremely popular for this niche.
+
+</PortfolioSection>
+
+<PortfolioSection
+  metadata="Mocking up & iterating"
+  heading="Visual design"
+  image="/portfolio/pique/inside-page.png"
+  alt="Screenshots of the interior page design, showing a header to match the main page, a blog post, a sidebar of widgets, and a footer."
+  next="usability-testing"
+  >
+
+  The visual design followed patterns discovered in the research phase, using darker colours, a subdued colour palette, and modern typography. In addition to the scrolling single-page design, the theme also provided interior pages in a complementary style.
+</PortfolioSection>
+
+<PortfolioSection
+  metadata="Building a better user experience"
+  heading="Usability testing"
+  image="/portfolio/pique/testing-customizer.png"
+  alt="Screenshot of WordPress' Customizer, with panels highlighted to allow users to understand where they are."
+  next="documentation-customisation"
+  >
+
+  WordPress's Customizer wasn't designed to handle this sort of pattern, so it was important to keep the experience intuitive. We prototyped solutions and performed lightweight usability testing to choose the best path and ensure users understood this new approach.
+
+</PortfolioSection>
+
+<PortfolioSection
+  metadata="Generating value for businesses"
+  heading="Documentation & customisation"
+  image="/portfolio/pique/help-pages.png"
+  alt="Screenshot of Pique's help page, including detailed documentation and diagrams of custom functionality."
+  next="outcomes"
+  >
+
+  In order to make it simpler for users to build the layouts they need, the theme includes an icon set, map integration, testimonials, and custom button styling, as well as special templates for panels. It was accompanied by an [extensive help page](https://wordpress.com/theme/pique).
+</PortfolioSection>
+
+<Panel dark>
+
+<Testimonial
+  company="WP Tavern"
+  url="https://wptavern.com/pique-a-free-small-business-theme-for-wordpress"
+>
+
+<Paragraph large inverse>
+  Most of the themes created by the professional design team at WordPress.com are geared towards bloggers. That’s why the latest Pique theme is an unusual and exciting release.
+</Paragraph>
+
+<Paragraph large inverse>
+  Pique makes it easy for anyone to build a one-page, branded website with all the specialized content sections that you would traditionally expect from a business theme.
+</Paragraph>
+
+</Testimonial>
+
+</Panel>
+
+<PortfolioSection
+  metadata="What did we accomplish?"
+  heading="Outcomes"
+  image="/portfolio/pique/outcomes.png"
+  alt="Screenshot of Pique in the WordPress.org theme directory, showing a 5-star rating."
+  >
+
+  Pique was well-received on both [WordPress.com](https://en.blog.wordpress.com/2015/12/17/pique/) and [WordPress.org](https://wordpress.org/support/theme/pique/reviews/), picked up some [positive press](https://wptavern.com/pique-a-free-small-business-theme-for-wordpress), and was featured in WordPress.com TV commercials. Pique is now in use on over 900,000 WordPress.com user sites, as well as over 4,000 self-hosted WordPress sites, where it has a 4.8 out of 5 user rating.
+
+  The innovative patterns established in Pique were reused by a variety of different themes, including the default Twenty Seventeen theme. The theme has been used in a number of custom high-profile client sites for its flexibility.
+</PortfolioSection>

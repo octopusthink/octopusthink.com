@@ -2,55 +2,81 @@ import { Heading, Tags, useTheme } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
+import Image from 'components/Image';
+import NextPanelNavigation from 'components/NextPanelNavigation';
+
 const PortfolioSection = (props) => {
-  const { children, heading, metadata } = props;
+  const { alt, children, heading, image, metadata, next } = props;
   const theme = useTheme();
+  const hashID = heading
+    .toLowerCase()
+    .replace('& ', '')
+    .replace('?', '')
+    .replace(' ', '-');
+
+  const imageSrc = image.split('/')[image.split('/').length - 1];
 
   return (
     <section
+      id={hashID}
       css={css`
-        background: ${theme.colors.neutral.white};
-        border: 1px solid ${theme.colors.neutral.grey0};
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.125);
-        display: grid;
-        margin-top: 6.4rem;
-
-        @media screen and (max-width: 639px) {
-          font-size: 0.8em;
-          grid-gap: 2.4rem;
-          padding: 2.4rem;
-          margin-left: -${theme.site.mobilePadding};
-          width: calc(100% + ${theme.site.mobilePadding} + ${theme.site.mobilePadding});
-        }
+        margin: 0 auto 3.2rem;
+        padding: ${theme.site.mobilePadding};
 
         @media screen and (min-width: 640px) {
-          align-items: center;
-          grid-template-columns: 16rem auto;
-          grid-column-gap: 3.2rem;
-          grid-row-gap: 1.6rem;
-          padding: 3.2rem;
-          margin-left: -1.6rem;
-          width: calc(100% + 3.2rem);
+          padding: ${theme.site.tabletPadding};
+        }
+
+        @media screen and (min-width: 800px) {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: ${theme.site.tabletPadding};
+          min-height: 98vh;
+
+          &:nth-of-type(even) {
+            .portfolioSectionText {
+              order: 2;
+            }
+          }
         }
 
         @media screen and (min-width: 1024px) {
-          margin-left: -3.2rem;
-          width: calc(100% + 6.4rem);
+          grid-gap: ${theme.site.desktopPadding};
+          padding: ${theme.site.desktopPadding};
+          max-width: ${theme.site.maxSiteWidth};
         }
       `}
     >
-      <Tags label="Metadata">
-        <Tags.Tag>{metadata}</Tags.Tag>
-      </Tags>
-      <Heading
-        level={2}
+      <div
+        className="portfolioSectionText"
         css={css`
-          margin-bottom: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
         `}
       >
-        {heading}
-      </Heading>
-      {children}
+        <Tags label="Metadata">
+          <Tags.Tag>{metadata}</Tags.Tag>
+        </Tags>
+        <Heading level={2}>{heading}</Heading>
+        {children}
+        {next && <NextPanelNavigation to={next} />}
+      </div>
+      <div
+        css={css`
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        `}
+      >
+        <div
+          css={css`
+            max-width: 100%;
+          `}
+        >
+          <Image src={imageSrc} alt={alt} />
+        </div>
+      </div>
     </section>
   );
 };
