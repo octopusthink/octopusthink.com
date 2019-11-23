@@ -25,9 +25,9 @@ jobs:
         name: Cache Gatsby build
         with:
           path: .cache
-          key: ${{ runner.os }}-node-gatsby-cache
+          key: ${{ runner.os }}-node-gatsby-cache-${{ hashFiles('gatsby-*.js') }}
           restore-keys: |
-            ${{ runner.os }}-node-gatsby-cache
+            ${{ runner.os }}-node-gatsby-cache-${{ hashFiles('gatsby-*.js') }}
       - name: Install dependencies
         run: npm install
       - name: Build site
