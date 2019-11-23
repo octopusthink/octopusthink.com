@@ -190,7 +190,18 @@ const SiteFooter = () => {
           </span>{' '}
           © 2019 Octopus Think Ltd.
           <br />
-          UK Registered Company No. 11747595
+          UK Registered Company No.{' '}
+          <Link
+            as="a"
+            external
+            css={css`
+              color: ${theme.colors.text.inverseDark};
+              border-bottom: 1px solid;
+            `}
+            href="https://beta.companieshouse.gov.uk/company/11747595"
+          >
+            11747595
+          </Link>
           <br />
           VAT ID: GB324954685
           <br />
