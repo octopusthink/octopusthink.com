@@ -25,10 +25,17 @@ jobs:
       - uses: actions/cache@v1
         name: Cache Gatsby build
         with:
-          path: .cache
-          key: ${{ runner.os }}-node-gatsby-cache-${{ hashFiles('gatsby-*.js') }}
+          path: ./.cache
+          key: ${{ runner.os }}-node-gatsby-cache-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-node-gatsby-cache-${{ hashFiles('gatsby-*.js') }}
+            ${{ runner.os }}-node-gatsby-cache-${{ hashFiles('**/package-lock.json') }}
+      - uses: actions/cache@v1
+        name: Cache Gatsby public folder
+        with:
+          path: ./public
+          key: ${{ runner.os }}-node-gatsby-public-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-gatsby-public-${{ hashFiles('**/package-lock.json') }}
       - name: Install dependencies
         run: npm install
       - name: Lint JS
