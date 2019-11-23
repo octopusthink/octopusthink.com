@@ -95,6 +95,7 @@ const makeBlogPosts = ({ actions, blogPosts }) => {
     });
 };
 
+// Make pages for each blog tag.
 const makeBlogTags = ({ actions, tags }) => {
   const { createPage } = actions;
 
@@ -109,6 +110,62 @@ const makeBlogTags = ({ actions, tags }) => {
   });
 };
 
+const makePortfolioPages = ({ actions, portfolioItems }) => {
+  const { createPage } = actions;
+
+  portfolioItems.edges.forEach((edge, index) => {
+    //const nextID = index + 1 < postsToPublish.length ? index + 1 : 0;
+    //const prevID = index - 1 >= 0 ? index - 1 : postsToPublish.length - 1;
+    //const nextEdge = postsToPublish[nextID];
+    //const prevEdge = postsToPublish[prevID];
+
+    // Create pages for each of the portfolio items.
+    createPage({
+      path: edge.node.fields.slug,
+      component: path.resolve('src/templates/Portfolio/Single.js'),
+      context: {
+        nowTimestamp,
+        id: edge.node.id,
+        slug: edge.node.fields.slug,
+        //nexttitle: nextEdge.node.fields.title,
+        //nextslug: `${nextEdge.node.fields.slug}`,
+        //prevtitle: prevEdge.node.fields.title,
+        //prevslug: `${prevEdge.node.fields.slug}`,
+      },
+
+      /* Ignore tags for now!
+      if (edge.node.fields.tags) {
+        edge.node.fields.tags.forEach((tag) => {
+          siteTags.add(tag);
+        });
+      }
+      */
+    });
+  });
+
+  // This creates a paginated index, which we don't need, so we can simplify it.
+  const numberOfPages = 1;
+
+  Array(numberOfPages)
+    .fill(null)
+    .forEach((item, i) => {
+      const index = i + 1;
+      createPage({
+        path: index === 1 ? `/portfolio` : `/portfolio/page=${index}`,
+        component: path.resolve('src/templates/Portfolio/index.js'),
+        context: {
+          nowTimestamp,
+          limit: postsPerPage,
+          skip: i * postsPerPage,
+          currentPage: index,
+          numberOfPages,
+          postsPerPage,
+        },
+      });
+    });
+};
+
+// Create pages of any other type.
 const makePages = ({ actions, pages }) => {
   const { createPage } = actions;
 
@@ -281,7 +338,20 @@ const createPages = async ({ actions, graphql }) => {
           }
         }
       }
-      pages: allMdx(filter: { fileAbsolutePath: { regex: "//content/(?!blog).+?/" } }) {
+      portfolioItems: allMdx(filter: {
+        fileAbsolutePath: { regex: "//content/portfolio/" }
+      }) {
+        edges {
+          node {
+            id
+            fields {
+              slug
+              title
+            }
+          }
+        }
+      }
+      pages: allMdx(filter: { fileAbsolutePath: { regex: "//content/(?!blog|portfolio).+?/" } }) {
         edges {
           node {
             id
@@ -302,10 +372,11 @@ const createPages = async ({ actions, graphql }) => {
     throw markdownQueryResult.errors;
   }
 
-  const { blogPosts, pages } = markdownQueryResult.data;
+  const { blogPosts, pages, portfolioItems } = markdownQueryResult.data;
 
   makeBlogPosts({ actions, blogPosts });
   makeBlogTags({ actions, blogPosts, tags: siteTags });
+  makePortfolioPages({ actions, portfolioItems });
   makePages({ actions, pages });
 };
 
