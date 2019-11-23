@@ -22,6 +22,13 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
       - uses: actions/cache@v1
+        name: Cache npm modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - uses: actions/cache@v1
         name: Cache Gatsby build
         with:
           path: ./.cache
@@ -36,7 +43,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-gatsby-public-${{ hashFiles('**/package-lock.json') }}
       - name: Install dependencies
-        run: npm install
+        run: npm ci
       - name: Build site
         run: npm run build
   lint:
@@ -54,6 +61,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
       - name: Install dependencies
-        run: npm install
+        run: npm ci
       - name: Lint JS
         run: npm run lint
