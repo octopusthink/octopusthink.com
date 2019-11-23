@@ -3,10 +3,11 @@ import { graphql } from 'gatsby';
 import React, { Fragment } from 'react';
 
 import Divider from 'components/Divider';
+import GridLayout from 'components/GridLayout';
 import PageBody from 'components/PageBody';
 import PageHeader from 'components/PageHeader';
 import PageWrapper from 'components/PageWrapper';
-import PostCard from 'components/PostCard';
+import PortfolioCard from 'components/PortfolioCard';
 import SEO from 'components/SEO';
 import App from 'templates/App';
 
@@ -24,17 +25,17 @@ export const PortfolioList = (props) => {
       <SEO title={pageTitle} description={description} />
       <PageWrapper>
         <PageHeader pageTitle={pageTitle} summary={pageSummary} />
-        <PageBody>
+        <GridLayout columns="3">
           {portfolioItems.edges.map(({ node }) => {
             const { fields } = node;
-            const { slug, summary, title } = fields;
+            const { slug, summary, title, thumbnail } = fields;
             return (
               <Fragment key={slug}>
-                <PostCard slug={slug} summary={summary} title={title} />
+                <PortfolioCard slug={slug} summary={summary} title={title} thumbnail={thumbnail} />
               </Fragment>
             );
           })}
-        </PageBody>
+        </GridLayout>
         <Divider light />
       </PageWrapper>
     </App>
@@ -53,6 +54,7 @@ export const pageQuery = graphql`
             slug
             summary
             title
+            thumbnail
           }
         }
       }
