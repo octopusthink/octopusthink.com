@@ -1,4 +1,4 @@
-import { Icon, VisuallyHidden, useTheme } from '@octopusthink/nautilus';
+import { Icon, interfaceUI, VisuallyHidden, useTheme } from '@octopusthink/nautilus';
 import React, { useState } from 'react';
 import { css, Global } from '@emotion/core';
 import useEventListener from '@use-it/event-listener';
@@ -15,6 +15,12 @@ const NavigationMenu = () => {
   const closeMenu = () => {
     setHideMenu(true);
   };
+
+  let buttonLabelText = 'Menu';
+
+  if (!hideMenu) {
+    buttonLabelText = 'Close';
+  }
 
   useEventListener('keydown', (event) => {
     if (!hideMenu && event.key === 'Escape') {
@@ -62,15 +68,23 @@ const NavigationMenu = () => {
         <button
           css={css`
             @media screen and (max-width: 479px) {
+              ${interfaceUI.small(theme)};
               background: none;
               border: none;
               box-shadow: none;
+              color: ${theme.colors.text.inverse};
               cursor: pointer;
-              height: 5.6rem;
-              width: 5.6rem;
               display: flex;
+              height: 5.6rem;
+              flex-direction: column;
               align-items: center;
               justify-content: center;
+              text-transform: uppercase;
+              font-size: 0.9rem;
+              font-weight: 600;
+              width: 5.6rem;
+              letter-spacing: 0.05em;
+              position: relative; // Ensures that the full area is a touch target.
 
               &:focus {
                 border: 2px solid ${theme.colors.accent.primaryLight};
@@ -104,6 +118,7 @@ const NavigationMenu = () => {
               title="Close navigation menu"
             />
           )}
+          {buttonLabelText}
         </button>
 
         <ul
