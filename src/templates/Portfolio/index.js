@@ -7,6 +7,7 @@ import PageHeader from 'components/PageHeader';
 import PageWrapper from 'components/PageWrapper';
 import PortfolioCard from 'components/PortfolioCard';
 import SEO from 'components/SEO';
+import Statistic from 'components/Statistic';
 import App from 'templates/App';
 
 export const PortfolioList = (props) => {
@@ -23,7 +24,12 @@ export const PortfolioList = (props) => {
       <SEO title={pageTitle} description={description} />
       <PageWrapper>
         <PageHeader pageTitle={pageTitle} summary={pageSummary} />
+
         <GridLayout columns="3">
+          <Statistic number="28" label="Years experience" />
+          <Statistic number="134" label="Happy customers" />
+          <Statistic number="256" label="Projects shipped" />
+
           {portfolioItems.edges.map(({ node }) => {
             const { fields } = node;
             const { slug, summary, summaryShort, title, titleShort, thumbnail } = fields;
