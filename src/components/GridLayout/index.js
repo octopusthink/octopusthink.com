@@ -43,12 +43,13 @@ const GridLayout = (props) => {
             justify-items: stretch;
             align-items: stretch;
 
-            @media screen and (min-width: 640px) {
-              grid-template-columns: repeat(${columns}, 1fr);
+            @media screen and (min-width: 608px) {
+              grid-template-columns: repeat(${columns - 1}, 1fr);
               grid-auto-rows: 1fr;
             }
 
-            @media screen and (min-width: 1024px) {
+            @media screen and (min-width: 960px) {
+              grid-template-columns: repeat(${columns}, 1fr);
             }
           `}
         >

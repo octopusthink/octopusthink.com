@@ -63,7 +63,7 @@ const PortfolioCard = (props) => {
             background: rgba(0, 0, 0, 0.85);
             padding: 2.4rem;
             position: absolute;
-            top: 200px;
+            top: calc(100% - 9.6rem);
             left: 0;
             right: 0;
             bottom: 0;

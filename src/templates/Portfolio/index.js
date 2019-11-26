@@ -26,9 +26,9 @@ export const PortfolioList = (props) => {
         <GridLayout columns="3">
           {portfolioItems.edges.map(({ node }) => {
             const { fields } = node;
-            const { slug, summary, summary_short, title, title_short, thumbnail } = fields;
-            const displayTitle = title_short || title;
-            const displaySummary = summary_short || summary;
+            const { slug, summary, summaryShort, title, titleShort, thumbnail } = fields;
+            const displayTitle = titleShort || title;
+            const displaySummary = summaryShort || summary;
 
             return (
               <Fragment key={slug}>
@@ -59,9 +59,9 @@ export const pageQuery = graphql`
           fields {
             slug
             summary
-            summary_short
+            summaryShort
             title
-            title_short
+            titleShort
             thumbnail
           }
         }
