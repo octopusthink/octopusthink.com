@@ -88,7 +88,7 @@ const PortfolioCard = (props) => {
                 css={css`
                   margin-bottom: 1.6rem;
                 `}
-                level={2}
+                level={4}
               >
                 {title}
               </Heading>
