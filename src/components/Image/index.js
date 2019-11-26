@@ -3,6 +3,9 @@ import Img from 'gatsby-image';
 import React from 'react';
 
 const Image = (props) => {
+  const { src } = props;
+  const imageSrc = src.split('/')[src.split('/').length - 1];
+
   const { images } = useStaticQuery(graphql`
     {
       images: allImageSharp {
@@ -36,7 +39,7 @@ const Image = (props) => {
   `);
 
   const imagesFound = images.nodes.filter((node) => {
-    return node.fluid.originalName === props.src;
+    return node.fluid.originalName === imageSrc;
   });
 
   if (imagesFound.length === 0) {

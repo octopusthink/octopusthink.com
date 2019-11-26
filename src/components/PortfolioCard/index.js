@@ -12,6 +12,7 @@ import React from 'react';
 import { css } from '@emotion/core';
 
 import config from 'config';
+import Image from 'components/Image';
 
 const PortfolioCard = (props) => {
   const theme = useTheme();
@@ -23,8 +24,23 @@ const PortfolioCard = (props) => {
       to={slug}
       css={css`
         border-bottom: 0;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.125);
+        position: relative;
+        overflow: hidden;
+
         &:hover {
           .details {
+            top: 0;
+            background: rgba(0, 0, 0, 0.95);
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: center;
+          }
+
+          .tags,
+          .footer,
+          .description {
             opacity: 1;
           }
         }
@@ -32,27 +48,35 @@ const PortfolioCard = (props) => {
     >
       <article
         css={css`
-          background: ${theme.colors.neutral.black} url(${thumbnail});
-          background-position: center;
-          background-size: cover;
-          display: flex;
-          flex-direction: column;
-          align-items: start;
-          justify-content: center;
+          background: ${theme.colors.neutral.black};
         `}
       >
+        <Image
+          src={thumbnail}
+          alt=""
+          css={css`
+            max-width: 100%;
+            width: 600px;
+          `}
+        />
         <div
           className="details"
           css={css`
-            background: ${theme.colors.neutral.black};
-            opacity: 0;
+            background: rgba(0, 0, 0, 0.85);
             padding: 2.4rem;
+            position: absolute;
+            top: 200px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transition: all 200ms ease-out;
           `}
         >
           <header>
             <div
+              className="tags"
               css={css`
-                display: none;
+                opacity: 1;
                 margin-bottom: 0.4rem;
               `}
             >
@@ -73,15 +97,22 @@ const PortfolioCard = (props) => {
             </Link>
           </header>
           <Paragraph
+            className="description"
             inverse
             small
             css={css`
               margin-bottom: 0;
+              opacity: 0;
             `}
           >
             {summary}
           </Paragraph>
-          <footer>
+          <footer
+            className="footer"
+            css={css`
+              opacity: 0;
+            `}
+          >
             <Button
               to={slug}
               css={css`
