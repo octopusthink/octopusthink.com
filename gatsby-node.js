@@ -113,11 +113,11 @@ const makeBlogTags = ({ actions, tags }) => {
 const makePortfolioPages = ({ actions, portfolioItems }) => {
   const { createPage } = actions;
 
-  portfolioItems.edges.forEach((edge, index) => {
-    //const nextID = index + 1 < postsToPublish.length ? index + 1 : 0;
-    //const prevID = index - 1 >= 0 ? index - 1 : postsToPublish.length - 1;
-    //const nextEdge = postsToPublish[nextID];
-    //const prevEdge = postsToPublish[prevID];
+  portfolioItems.edges.forEach((edge) => {
+    // const nextID = index + 1 < postsToPublish.length ? index + 1 : 0;
+    // const prevID = index - 1 >= 0 ? index - 1 : postsToPublish.length - 1;
+    // const nextEdge = postsToPublish[nextID];
+    // const prevEdge = postsToPublish[prevID];
 
     // Create pages for each of the portfolio items.
     createPage({
@@ -127,10 +127,10 @@ const makePortfolioPages = ({ actions, portfolioItems }) => {
         nowTimestamp,
         id: edge.node.id,
         slug: edge.node.fields.slug,
-        //nexttitle: nextEdge.node.fields.title,
-        //nextslug: `${nextEdge.node.fields.slug}`,
-        //prevtitle: prevEdge.node.fields.title,
-        //prevslug: `${prevEdge.node.fields.slug}`,
+        // nexttitle: nextEdge.node.fields.title,
+        // nextslug: `${nextEdge.node.fields.slug}`,
+        // prevtitle: prevEdge.node.fields.title,
+        // prevslug: `${prevEdge.node.fields.slug}`,
       },
 
       /* Ignore tags for now!
@@ -143,26 +143,14 @@ const makePortfolioPages = ({ actions, portfolioItems }) => {
     });
   });
 
-  // This creates a paginated index, which we don't need, so we can simplify it.
-  const numberOfPages = 1;
-
-  Array(numberOfPages)
-    .fill(null)
-    .forEach((item, i) => {
-      const index = i + 1;
-      createPage({
-        path: index === 1 ? `/portfolio` : `/portfolio/page=${index}`,
-        component: path.resolve('src/templates/Portfolio/index.js'),
-        context: {
-          nowTimestamp,
-          limit: postsPerPage,
-          skip: i * postsPerPage,
-          currentPage: index,
-          numberOfPages,
-          postsPerPage,
-        },
-      });
-    });
+  // Create an index page for the portfolio.
+  createPage({
+    path: `/portfolio`,
+    component: path.resolve('src/templates/Portfolio/index.js'),
+    context: {
+      nowTimestamp,
+    },
+  });
 };
 
 // Create pages of any other type.

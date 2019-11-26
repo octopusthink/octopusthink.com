@@ -1,10 +1,8 @@
-import { Link, List } from '@octopusthink/nautilus';
 import { graphql } from 'gatsby';
 import React, { Fragment } from 'react';
 
 import Divider from 'components/Divider';
 import GridLayout from 'components/GridLayout';
-import PageBody from 'components/PageBody';
 import PageHeader from 'components/PageHeader';
 import PageWrapper from 'components/PageWrapper';
 import PortfolioCard from 'components/PortfolioCard';
@@ -12,7 +10,7 @@ import SEO from 'components/SEO';
 import App from 'templates/App';
 
 export const PortfolioList = (props) => {
-  const { data, pageContext } = props;
+  const { data } = props;
   const { portfolioItems } = data;
   const pageTitle = 'Selected projects';
   const pageSummary =

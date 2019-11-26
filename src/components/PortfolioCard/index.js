@@ -5,13 +5,11 @@ import {
   Paragraph,
   Tags,
   VisuallyHidden,
-  metadata,
   useTheme,
 } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
-import config from 'config';
 import Image from 'components/Image';
 
 const PortfolioCard = (props) => {
