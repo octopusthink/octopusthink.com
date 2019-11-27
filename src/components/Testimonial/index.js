@@ -2,7 +2,7 @@ import { Link, metadata, useTheme } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
-const ServicesContent = (props) => {
+const Testimonial = (props) => {
   const { author, children, company, position, url } = props;
   const theme = useTheme();
 
@@ -57,4 +57,4 @@ const ServicesContent = (props) => {
   );
 };
 
-export default ServicesContent;
+export default Testimonial;

@@ -24,6 +24,7 @@ const GridLayout = (props) => {
           padding-bottom: 8rem;
           padding-left: ${theme.site.mobilePadding};
           padding-right: ${theme.site.mobilePadding};
+          width: 100%;
 
           @media screen and (min-width: 640px) {
             padding-left: ${theme.site.tabletPadding};
@@ -40,7 +41,7 @@ const GridLayout = (props) => {
           css={css`
             display: grid;
             grid-gap: ${theme.site.mobilePadding};
-            justify-items: stretch;
+            justify-content: stretch;
             align-items: stretch;
 
             @media screen and (min-width: 608px) {

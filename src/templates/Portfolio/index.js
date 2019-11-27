@@ -8,6 +8,7 @@ import PageWrapper from 'components/PageWrapper';
 import PortfolioCard from 'components/PortfolioCard';
 import SEO from 'components/SEO';
 import Statistic from 'components/Statistic';
+import TestimonialCarousel from 'components/TestimonialCarousel';
 import App from 'templates/App';
 
 export const PortfolioList = (props) => {
@@ -46,6 +47,15 @@ export const PortfolioList = (props) => {
             );
           })}
         </GridLayout>
+
+        <TestimonialCarousel />
+
+        <GridLayout columns="3">
+          <Statistic number="28" label="Years experience" />
+          <Statistic number="134" label="Happy customers" />
+          <Statistic number="256" label="Projects shipped" />
+        </GridLayout>
+
         <Divider light />
       </PageWrapper>
     </App>
