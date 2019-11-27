@@ -32,13 +32,14 @@ export const PortfolioList = (props) => {
 
           {portfolioItems.edges.map(({ node }) => {
             const { fields } = node;
-            const { slug, summary, summaryShort, title, titleShort, thumbnail } = fields;
+            const { category, slug, summary, summaryShort, title, titleShort, thumbnail } = fields;
             const displayTitle = titleShort || title;
             const displaySummary = summaryShort || summary;
 
             return (
               <Fragment key={slug}>
                 <PortfolioCard
+                  category={category}
                   slug={slug}
                   summary={displaySummary}
                   title={displayTitle}
@@ -63,6 +64,7 @@ export const pageQuery = graphql`
       edges {
         node {
           fields {
+            category
             slug
             summary
             summaryShort

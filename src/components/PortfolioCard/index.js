@@ -14,7 +14,7 @@ import Image from 'components/Image';
 
 const PortfolioCard = (props) => {
   const theme = useTheme();
-  const { slug, summary, title, thumbnail } = props;
+  const { category, slug, summary, title, thumbnail } = props;
 
   return (
     <Link
@@ -79,7 +79,7 @@ const PortfolioCard = (props) => {
               `}
             >
               <Tags label="Category">
-                <Tags.Tag>#WordPress</Tags.Tag>
+                <Tags.Tag>#{category}</Tags.Tag>
               </Tags>
             </div>
             <Link tabIndex="-1" to={slug}>
