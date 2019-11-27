@@ -145,7 +145,7 @@ const makePortfolioPages = ({ actions, portfolioItems }) => {
 
   // Create an index page for the portfolio.
   createPage({
-    path: `/portfolio`,
+    path: `/work`,
     component: path.resolve('src/templates/Portfolio/index.js'),
     context: {
       nowTimestamp,
@@ -327,7 +327,7 @@ const createPages = async ({ actions, graphql }) => {
         }
       }
       portfolioItems: allMdx(filter: {
-        fileAbsolutePath: { regex: "//content/portfolio/" }
+        fileAbsolutePath: { regex: "//content/work/" }
       }) {
         edges {
           node {
@@ -339,7 +339,7 @@ const createPages = async ({ actions, graphql }) => {
           }
         }
       }
-      pages: allMdx(filter: { fileAbsolutePath: { regex: "//content/(?!blog|portfolio).+?/" } }) {
+      pages: allMdx(filter: { fileAbsolutePath: { regex: "//content/(?!blog|work).+?/" } }) {
         edges {
           node {
             id

@@ -58,7 +58,7 @@ export const pageQuery = graphql`
   query portfolioItemsList {
     portfolioItems: allMdx(
       sort: { fields: [fields___order], order: ASC }
-      filter: { fileAbsolutePath: { regex: "//content/portfolio/" } }
+      filter: { fileAbsolutePath: { regex: "//content/work/" } }
     ) {
       edges {
         node {
