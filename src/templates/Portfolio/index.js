@@ -12,23 +12,20 @@ import App from 'templates/App';
 
 export const PortfolioList = (props) => {
   const { data } = props;
-  const { portfolioItems } = data;
-  const pageTitle = 'Selected projects';
-  const pageSummary =
-    'We’ve designed and built all sorts of different apps, websites, and products over the years.';
-  const description =
-    'An overview of projects we’ve worked on, ranging from WordPress development and design systems to open-source projects and custom web apps.';
+  const { page, portfolioItems } = data;
+
+  const { metaDescription, summary: pageSummary, title: pageTitle } = page.fields;
 
   return (
     <App>
-      <SEO title={pageTitle} description={description} />
+      <SEO title={pageTitle} description={metaDescription} />
       <PageWrapper>
         <PageHeader pageTitle={pageTitle} summary={pageSummary} />
 
         <GridLayout columns="3">
           <Statistic number="28" label="Years experience" />
-          <Statistic number="134" label="Happy customers" />
-          <Statistic number="256" label="Projects shipped" />
+          <Statistic number="100+" label="Projects shipped" />
+          <Statistic number="1,000+" label="Diet Cokes consumed" />
 
           {portfolioItems.edges.map(({ node }) => {
             const { fields } = node;
@@ -56,7 +53,7 @@ export const PortfolioList = (props) => {
 };
 
 export const pageQuery = graphql`
-  query portfolioItemsList {
+  query portfolioItemsList($id: String!) {
     portfolioItems: allMdx(
       sort: { fields: [fields___order], order: ASC }
       filter: { fileAbsolutePath: { regex: "//content/work/" } }
@@ -74,6 +71,19 @@ export const pageQuery = graphql`
           }
         }
       }
+    }
+    page: mdx(id: { eq: $id }) {
+      fields {
+        metaDescription
+        slug
+        summary
+        summaryExtra
+        title
+      }
+      body
+      mdxAST
+      rawBody
+      id
     }
   }
 `;

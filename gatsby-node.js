@@ -114,42 +114,15 @@ const makePortfolioPages = ({ actions, portfolioItems }) => {
   const { createPage } = actions;
 
   portfolioItems.edges.forEach((edge) => {
-    // const nextID = index + 1 < postsToPublish.length ? index + 1 : 0;
-    // const prevID = index - 1 >= 0 ? index - 1 : postsToPublish.length - 1;
-    // const nextEdge = postsToPublish[nextID];
-    // const prevEdge = postsToPublish[prevID];
-
     // Create pages for each of the portfolio items.
     createPage({
       path: edge.node.fields.slug,
       component: path.resolve('src/templates/Portfolio/Single.js'),
       context: {
-        nowTimestamp,
         id: edge.node.id,
         slug: edge.node.fields.slug,
-        // nexttitle: nextEdge.node.fields.title,
-        // nextslug: `${nextEdge.node.fields.slug}`,
-        // prevtitle: prevEdge.node.fields.title,
-        // prevslug: `${prevEdge.node.fields.slug}`,
       },
-
-      /* Ignore tags for now!
-      if (edge.node.fields.tags) {
-        edge.node.fields.tags.forEach((tag) => {
-          siteTags.add(tag);
-        });
-      }
-      */
     });
-  });
-
-  // Create an index page for the portfolio.
-  createPage({
-    path: `/work`,
-    component: path.resolve('src/templates/Portfolio/index.js'),
-    context: {
-      nowTimestamp,
-    },
   });
 };
 
