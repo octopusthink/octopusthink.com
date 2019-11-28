@@ -25,7 +25,7 @@ export const PortfolioList = (props) => {
         <GridLayout columns="3">
           <Statistic number="28" label="Years experience" />
           <Statistic number="100+" label="Projects shipped" />
-          <Statistic number="1,000+" label="Diet Cokes consumed" />
+          <Statistic number="958" label="Diet Cokes consumed" />
 
           {portfolioItems.edges.map(({ node }) => {
             const { fields } = node;
