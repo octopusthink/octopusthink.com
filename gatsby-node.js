@@ -95,6 +95,7 @@ const makeBlogPosts = ({ actions, blogPosts }) => {
     });
 };
 
+// Make pages for each blog tag.
 const makeBlogTags = ({ actions, tags }) => {
   const { createPage } = actions;
 
@@ -109,6 +110,23 @@ const makeBlogTags = ({ actions, tags }) => {
   });
 };
 
+const makePortfolioPages = ({ actions, portfolioItems }) => {
+  const { createPage } = actions;
+
+  portfolioItems.edges.forEach((edge) => {
+    // Create pages for each of the portfolio items.
+    createPage({
+      path: edge.node.fields.slug,
+      component: path.resolve('src/templates/Portfolio/Single.js'),
+      context: {
+        id: edge.node.id,
+        slug: edge.node.fields.slug,
+      },
+    });
+  });
+};
+
+// Create pages of any other type.
 const makePages = ({ actions, pages }) => {
   const { createPage } = actions;
 
@@ -281,7 +299,20 @@ const createPages = async ({ actions, graphql }) => {
           }
         }
       }
-      pages: allMdx(filter: { fileAbsolutePath: { regex: "//content/(?!blog).+?/" } }) {
+      portfolioItems: allMdx(filter: {
+        fileAbsolutePath: { regex: "//content/work/" }
+      }) {
+        edges {
+          node {
+            id
+            fields {
+              slug
+              title
+            }
+          }
+        }
+      }
+      pages: allMdx(filter: { fileAbsolutePath: { regex: "//content/(?!blog|work).+?/" } }) {
         edges {
           node {
             id
@@ -302,10 +333,11 @@ const createPages = async ({ actions, graphql }) => {
     throw markdownQueryResult.errors;
   }
 
-  const { blogPosts, pages } = markdownQueryResult.data;
+  const { blogPosts, pages, portfolioItems } = markdownQueryResult.data;
 
   makeBlogPosts({ actions, blogPosts });
   makeBlogTags({ actions, blogPosts, tags: siteTags });
+  makePortfolioPages({ actions, portfolioItems });
   makePages({ actions, pages });
 };
 
