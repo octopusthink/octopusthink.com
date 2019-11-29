@@ -1,0 +1,106 @@
+- id: standard
+  name: Dave Whiskus
+  title: CEO
+  company: Standard Broadcast
+  url: https://standard.tv
+  quote: Matt built an entire (https://watchnebula.com/)[streaming video platform]  complete with a custom API and layers upon layers of tests to validate all future changes against. All of this in about six months. It was truly awe-inspiring to watch. Do me a favor and don't hire Octopus Think, because I'd like to book all of their hours myself.
+- id: erinlindsey
+  name: Erin Lindsey
+  title: Author
+  url: https://www.erin-lindsey.com
+  quote: I had a few good proposals for my website, but Sarah was absolutely the right choice. Not only did she completely understand what I was going for, she was able to execute to perfection, pairing an artist’s eye with an engineer’s attention to detail. After helping me find just the right artist to do the background illustration, she meticulously sourced the fonts and images, culminating in an organic, immersive experience that perfectly captures the mood of the books. Small wonder the website has received so many compliments! I fully expect to work with Sarah again in the future.
+- id: paulleone
+  name: Paul Leone
+  title: Author
+  url: https://paul-leone.com/
+  quote: Sarah was a pleasure to work with. She was friendly and explained each stage of the web-design process as it unfolded (no easy task for an oft-befuddled history major), and the end result was everything I could have hoped for. Thoroughly professional work and someone I wouldn’t hesitate to recommend for those looking for a quality website.
+- id: samarajensen
+  name: Samara Jensen
+  title: Author
+  quote: As a new author on the block, I needed a website that would help my work stand out from the crowd and allow me to build an online platform. Sarah gave me all that and more, taking a rough design concept and a very long wish-list and turning it into a reality. She provided help and support every step of the way, with a two-way design process that took all of my feedback into account, and quickly answered all of my technical questions. I’m thrilled with my new website and I’m so glad I decided to work with Sarah!
+- id: theswitch
+  name: Nick Lawrence
+  title: Manager
+  company: The Switch
+  quote: Sarah’s work with The Switch has proved invaluable. Her eye catching site design and logical layout made it perfect to reach and capture our audience, and has helped the band book shows and reach talent agents that The Switch could not have done alone. She gets the job done, and done right!
+- id: zombies
+  name: Lauren Oostveen
+  company: Zombies Ate Lauren
+  quote: Sarah and I might have been in separate time-zones, but we were definitely on the same page when it came to my website ZOMBIES ATE LAUREN. She took a very loose concept (a horror blog with a retro, pulp look) and gave me something that fit my brand, and personality, perfectly. This was my first time working with a designer and I couldn’t have been happier with my experience. Sarah walked me through every step, listened to my feedback, and provided quick results. When ZOMBIES ATE LAUREN launched a few weeks ago, I immediately knew I had the sweetest website on the block. I hope I inspire lots of folks to get in touch with Sarah so they can have their own piece of the web to brag about.
+- id: redballoon
+  name: Laura Melanson
+  title: CEO
+  company: Red Balloon Relations
+  quote: Working with Sarah was straightforward and easy. She understood the personality I wanted to convey and the brand I am trying to build. The end product is proof of that!
+- id: nightmarenibbler
+  name: Susan Smith
+  title: Founder
+  company: Nightmare Nibbler
+  url: http://nightmarenibbler.com/
+  quote: 'I began my quest for a graphic designer a couple of years ago when the seeds for my Nightmare Nibbler project were first sown. Although I had never gone through such a creative process like this before, I had a pre-determined list of qualities that I was looking for in the person I was going to entrust with “my baby”—a few of them included: creativity, talent, good humor, patience, efficiency, flexibility and, as a new small business owner—affordability! I found all of these characteristics and more in Sarah! From day one until the recent launch of my business, Sarah remained enthusiastic and passionate about each of the design elements she was working on. She easily grasped my needs and produced design ideas for my consideration in a timely manner. Sarah’s combination of creativity and professionalism was exactly what I was looking for and what I needed. I look forward to working with Sarah again on any future design needs that I may have! Thanks a million Sarah!!'
+- id: actrees
+  name: Alice Ewan
+  company: ACTrees
+  url: https://www.arborday.org/programs/alliance-for-community-trees/
+  quote: |
+    Sarah revamped our website with a clean, fresh look that made navigation much easier for users and revealed the wealth of content we had created. We’ve received many compliments from our nationwide network of members.
+
+    With her technical know-how and design vision, Sarah created a website that surpassed expectations, all within budget. Our website is now the public face that we want representing our organization.
+- id: wickeremporium
+  name: Tara Joose
+  title: Marketing Director
+  company: Wicker Emporium
+  url: https://wickeremporium.ca
+  quote: As a regular client, I always have a laundry list of design and website needs for Sarah to deliver on each week. No matter how big or small, Sarah faces every challenge with a positive attitude and a smile and she always gets the job done—creatively and professionally. She is a pleasure to work with and a true asset to our company.
+- id: knowtropolis
+  name: Nick Lacelle
+  title: Founder
+  company: Knowtropolis
+  quote: I was blown away by how fast, efficient, and professional Sarah was. Not only was she a joy to work with but the end product was better than I ever could have imagined!
+- id: wordsmith
+  name: Jenni Campbell
+  title: Founder
+  comnpany: Wordsmith Communications
+  quote: Several years later, Sarah’s design work is still opening doors for me professionally. The quality of the website designed by Triggers and Sparks has definitely helped me get work I likely wouldn’t have had access to otherwise. Everyone who sees my website has something great to say about it!
+- id: imagicon
+  name: Iain Keith Murray
+  title: Founder
+  company: Imagicon Illustration
+  quote: Sarah is a pleasure to work with. She always has so many great ideas and her confidence is contagious. She breaks down jobs in a logical fashion and meets every deadline along the way, always standing by her work with a strong professional integrity. As for the quality of her work, it speaks for itself!
+- id: comfort_joy
+  name: Glenn Martin
+  title: CEO
+  company: Comfort & Joy
+  quote: Working with Sarah was such a load off my mind. I was worried I would be working with a temperamental designer that would plow ahead with their own ideas and not take mine into thought. This was the total opposite, she was patient with me and listened to my thoughts and turned them into reality! We FINALLY have a logo that we are proud of and it would never have happened without her patience and understanding.
+- id: travellersjoy
+  name: Tzigany Cameron
+  company: Traveler’s Joy
+  quote: Sarah has a wonderful design sense with a well developed aesthetic. We required her to work with another artist on our project and she was gracious, flexible and helpful every step of the way. Thanks to her insights and expertise we were very satisfied with the results.
+- id: blair
+  name: Blair Doyle
+  title: Senior Software Developer
+  company: HB Studios
+  quote: I’ve worked with Sarah at both HB Studios and Triggers and Sparks. She is an extremely talented and hard working graphic designer. She is a perfectionist at heart and tries to do whatever she can to make her clients happy and make their sites beautiful. She also has a remarkably strong technical background for a designer and is able to develop robust sites using the latest web technologies. I worked as a frontend programmer to her graphic design at HB and her skills, perfectionism and technical knowledge made my job so much easier. I can’t imagine another graphic designer that I would prefer to work with.
+- id: jenny
+  name: Jenny Arnold
+  company: Reading Safari
+  quote: |
+    I was riding the bus home today when I noticed two architects’ storefronts next to each other. One was fairly standard; typical type, the names of the architects; nothing special. The other was simply and cleanly designed, but stood out by a mile. Now, for me to take notice of my environment is sort of rare, and for me to critique it for style is sort of ridiculous. This is what working with Sarah has done to me (and by “working with” I mean “asking her to make me things”).
+
+    I know that at any point I can ask her to design me something – anything from a resume to a new tattoo – and it will be done quickly, efficiently, and beautifully. In person, Sarah pretty much personifies the idea of style – if you’ve met her, you’ll know what I mean – so how can anything she creates help but be the most aesthetically pleasing things known to mankind? Working with her will result in not only you getting exactly what you wanted, but weren’t entirely aware that you wanted, but also in you gaining a new appreciation for the entire idea of design and the possibilities therein. Which, if you think about it, is pretty damn cool.
+- id: travellersjoy2
+  name: Nancy Sherwood
+  company: Traveller's Joy
+  title: Founder
+  url: http://www.travellersjoy.ca
+  quote: Sarah is a very flexible person to work with, while at the same maintaining the integrity of her own style. She is very efficient and prompt which made the work flow easily. Since we were looking for someone with the skill of bridging to our idea of the Traveller’s Joy logo and what we stand for as a tour company, we were very pleased with the results.
+- id: steeleworthy
+  name: Lesley Steeleworthy
+  company: Steeleworthy Wedding
+  quote: Sarah has the ability to take an idea, simple or complicated, and turn it into your wildest dreams! Her rare ability to “get it” has made our life much easier online!
+- id: kisserup
+  name: Pernille Fischer-Boulter
+  company: Kisserup Trade Roots
+  title: CEO & President
+  url: https://www.kisserup.com/
+  quote: I have never had a question on my website that Sarah could not answer, and often she has added much value with ideas and suggestions! My very best references goes out to Sarah and her company!
