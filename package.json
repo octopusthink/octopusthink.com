@@ -53,6 +53,7 @@
     "inter-ui": "^3.10.0",
     "invariant": "^2.2.4",
     "lodash": "^4.17.15",
+    "markdown-to-jsx": "^6.10.3",
     "moment": "^2.24.0",
     "pluralize": "^8.0.0",
     "prop-types": "^15.7.2",

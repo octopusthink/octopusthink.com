@@ -1,10 +1,10 @@
 import { Paragraph } from '@octopusthink/nautilus';
 import React from 'react';
 
-import Divider from 'components/Divider';
+import Markdown from 'components/Markdown';
 import Panel from 'components/Panel';
 import Testimonial from 'components/Testimonial';
-import TestimonialData from '../../../data/testimonials.yaml';
+import TestimonialData from 'data/testimonials.yaml';
 
 // Get a random integer between two values.
 const getRandomInt = (min, max) => {
@@ -12,27 +12,28 @@ const getRandomInt = (min, max) => {
 };
 
 const TestimonialCarousel = () => {
-  // Get a random testimonial
-  const rand = getRandomInt(0, TestimonialData.length);
-  let name;
-  let title;
-  let company;
-  let url;
+  // Get a random testimonial.
+  const testimonialIndex = getRandomInt(0, TestimonialData.length);
+  const testimonial = TestimonialData[testimonialIndex];
 
-  if (TestimonialData) {
-    name = TestimonialData[rand].name;
-    title = TestimonialData[rand].title;
-    company = TestimonialData[rand].company;
-    url = TestimonialData[rand].url;
+  if (!testimonial) {
+    return null;
   }
+
+  const { company, name, quote, title, url } = testimonial;
 
   return (
     <React.Fragment>
       <Panel dark>
         <Testimonial name={name} title={title} company={company} url={url}>
-          <Paragraph large inverse>
-            {TestimonialData[rand].quote}
-          </Paragraph>
+          <Markdown
+            components={{
+              // eslint-disable-next-line react/jsx-props-no-spreading
+              p: (props) => <Paragraph large inverse {...props} />,
+            }}
+          >
+            {quote}
+          </Markdown>
         </Testimonial>
       </Panel>
     </React.Fragment>
