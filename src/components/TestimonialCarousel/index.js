@@ -28,7 +28,6 @@ const TestimonialCarousel = () => {
 
   return (
     <React.Fragment>
-      <Divider light />
       <Panel dark>
         <Testimonial name={name} title={title} company={company} url={url}>
           <Paragraph large inverse>

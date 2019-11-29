@@ -48,6 +48,8 @@ export const PortfolioList = (props) => {
           })}
         </GridLayout>
 
+        <Divider light />
+
         <TestimonialCarousel />
 
         <GridLayout columns="3">
