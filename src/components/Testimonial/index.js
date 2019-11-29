@@ -2,12 +2,37 @@ import { Link, metadata, useTheme } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
+const TestimonialLink = ({ company, name, url }) => {
+  const theme = useTheme();
+
+  if (!url) {
+    return null;
+  }
+
+  return (
+    <Link
+      as="a"
+      href={url}
+      css={css`
+        color: ${theme.colors.text.inverse};
+        border-color: ${theme.colors.text.inverseDark};
+      `}
+    >
+      {company || name}
+    </Link>
+  );
+};
+
 const Testimonial = (props) => {
   const { name, children, company, title, url } = props;
   const theme = useTheme();
 
   let attribution;
-  // If we have a company name and a link, wrap a link around the company name.
+  // eslint-disable-next-line react/jsx-props-no-spreading
+  const nameLink = !company && url ? <TestimonialLink {...props} /> : name;
+  // eslint-disable-next-line react/jsx-props-no-spreading
+  const companyLink = company && url && <TestimonialLink {...props} />;
+
   if (company && url) {
     attribution = (
       <React.Fragment>
@@ -17,30 +42,8 @@ const Testimonial = (props) => {
             {', '}
           </React.Fragment>
         )}
-        <Link
-          as="a"
-          href={url}
-          css={css`
-            color: ${theme.colors.text.inverse};
-            border-color: ${theme.colors.text.inverseDark};
-          `}
-        >
-          {company}
-        </Link>
+        {companyLink}
       </React.Fragment>
-    );
-  } else if (title && url) {
-    attribution = (
-      <Link
-        as="a"
-        href={url}
-        css={css`
-          color: ${theme.colors.text.inverse};
-          border-color: ${theme.colors.text.inverseDark};
-        `}
-      >
-        {title}
-      </Link>
     );
   } else if (title && company) {
     attribution = `${title}, ${company}`;
@@ -78,7 +81,7 @@ const Testimonial = (props) => {
           font-style: normal;
         `}
       >
-        {name}
+        {nameLink}
         {attribution && (
           <React.Fragment>
             {' · '}
