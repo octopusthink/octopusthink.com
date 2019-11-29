@@ -1,28 +1,27 @@
-import { Link, Paragraph, metadata, useTheme } from '@octopusthink/nautilus';
+import { Paragraph } from '@octopusthink/nautilus';
 import React from 'react';
-import { css } from '@emotion/core';
 
-import TestimonialData from '../../../data/testimonials.yaml';
 import Divider from 'components/Divider';
 import Panel from 'components/Panel';
 import Testimonial from 'components/Testimonial';
+import TestimonialData from '../../../data/testimonials.yaml';
 
+// Get a random integer between two values.
 const getRandomInt = (min, max) => {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+  return Math.floor(Math.random() * (Math.floor(max) - Math.ceil(min))) + Math.ceil(min);
 };
 
-const TestimonialCarousel = (props) => {
-  const theme = useTheme();
-
+const TestimonialCarousel = () => {
   // Get a random testimonial
   const rand = getRandomInt(0, TestimonialData.length);
-  let author, position, company, url;
+  let name;
+  let title;
+  let company;
+  let url;
 
   if (TestimonialData) {
-    author = TestimonialData[rand].name;
-    position = TestimonialData[rand].title;
+    name = TestimonialData[rand].name;
+    title = TestimonialData[rand].title;
     company = TestimonialData[rand].company;
     url = TestimonialData[rand].url;
   }
@@ -31,7 +30,7 @@ const TestimonialCarousel = (props) => {
     <React.Fragment>
       <Divider light />
       <Panel dark>
-        <Testimonial author={author} position={position} company={company} url={url}>
+        <Testimonial name={name} title={title} company={company} url={url}>
           <Paragraph large inverse>
             {TestimonialData[rand].quote}
           </Paragraph>

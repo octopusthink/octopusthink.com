@@ -3,8 +3,52 @@ import React from 'react';
 import { css } from '@emotion/core';
 
 const Testimonial = (props) => {
-  const { author, children, company, position, url } = props;
+  const { name, children, company, title, url } = props;
   const theme = useTheme();
+
+  let attribution;
+  // If we have a company name and a link, wrap a link around the company name.
+  if (company && url) {
+    attribution = (
+      <React.Fragment>
+        {title && (
+          <React.Fragment>
+            {title}
+            {', '}
+          </React.Fragment>
+        )}
+        <Link
+          as="a"
+          href={url}
+          css={css`
+            color: ${theme.colors.text.inverse};
+            border-color: ${theme.colors.text.inverseDark};
+          `}
+        >
+          {company}
+        </Link>
+      </React.Fragment>
+    );
+  } else if (title && url) {
+    attribution = (
+      <Link
+        as="a"
+        href={url}
+        css={css`
+          color: ${theme.colors.text.inverse};
+          border-color: ${theme.colors.text.inverseDark};
+        `}
+      >
+        {title}
+      </Link>
+    );
+  } else if (title && company) {
+    attribution = `${title}, ${company}`;
+  } else if (title) {
+    attribution = title;
+  } else if (company) {
+    attribution = company;
+  }
 
   return (
     <blockquote
@@ -32,26 +76,15 @@ const Testimonial = (props) => {
           ${metadata.small(theme)};
           color: ${theme.colors.text.inverseDark};
           font-style: normal;
-          padding-left: 0.4rem;
         `}
       >
-        {author}
-        {position && (
+        {name}
+        {attribution && (
           <React.Fragment>
             {' · '}
-            {position}{' '}
+            {attribution}{' '}
           </React.Fragment>
         )}
-        <Link
-          as="a"
-          href={url}
-          css={css`
-            color: ${theme.colors.text.inverse};
-            border-color: ${theme.colors.text.inverseDark};
-          `}
-        >
-          {company}
-        </Link>
       </cite>
     </blockquote>
   );
