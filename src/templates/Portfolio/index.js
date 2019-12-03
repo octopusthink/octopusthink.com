@@ -3,6 +3,8 @@ import React, { Fragment } from 'react';
 
 import Divider from 'components/Divider';
 import GridLayout from 'components/GridLayout';
+import Image from 'components/Image';
+import Panel from 'components/Panel';
 import PageHeader from 'components/PageHeader';
 import PageWrapper from 'components/PageWrapper';
 import PortfolioCard from 'components/PortfolioCard';
@@ -52,13 +54,12 @@ export const PortfolioList = (props) => {
 
         <TestimonialCarousel />
 
-        <GridLayout columns="3">
-          <Statistic number="28" label="Years experience" />
-          <Statistic number="134" label="Happy customers" />
-          <Statistic number="256" label="Projects shipped" />
-        </GridLayout>
-
-        <Divider light />
+        <Panel fullwidth>
+          <Image
+            src="friend-logos.png"
+            alt="Logos for Google, Firefox, WordPress, 10up, Automattic, WordPress.com, Smitten Kitchen, Standard, Nova Scotia Government"
+          />
+        </Panel>
       </PageWrapper>
     </App>
   );
