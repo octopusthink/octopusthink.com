@@ -28,7 +28,7 @@ export const BlogTags = (props) => {
     <App>
       <SEO title={pageTitle} description={pageSummary} />
       <PageWrapper>
-        <PageHeader pageTitle={pageTitle} summary={pageSummary} />
+        <PageHeader summary={pageSummary} title={pageTitle} />
         <PageBody>
           {posts.edges.map(({ node }) => {
             const { date, readingTime, slug, summary, title } = node.fields;

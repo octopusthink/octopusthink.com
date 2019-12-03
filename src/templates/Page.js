@@ -23,10 +23,10 @@ export const Page = (props) => {
       <SEO title={title} description={description} />
       <PageWrapper>
         <PageHeader
-          pageTitle={title}
           summary={summary}
           summaryExtra={summaryExtra}
           description={description}
+          title={title}
         />
         <PageBody>
           <MDXRenderer>{body}</MDXRenderer>

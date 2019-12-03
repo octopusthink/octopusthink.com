@@ -21,10 +21,10 @@ export const PageWithoutPageBody = (props) => {
       <SEO title={title} description={description} />
       <PageWrapper>
         <PageHeader
-          pageTitle={title}
           summary={summary}
           summaryExtra={summaryExtra}
           description={description}
+          title={title}
         />
         <MDXRenderer>{body}</MDXRenderer>
       </PageWrapper>

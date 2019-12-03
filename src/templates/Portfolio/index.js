@@ -20,7 +20,7 @@ export const PortfolioList = (props) => {
     <App>
       <SEO title={pageTitle} description={metaDescription} />
       <PageWrapper>
-        <PageHeader pageTitle={pageTitle} summary={pageSummary} />
+        <PageHeader summary={pageSummary} title={pageTitle} />
 
         <GridLayout columns="3">
           <Statistic number="28" label="Years experience" />

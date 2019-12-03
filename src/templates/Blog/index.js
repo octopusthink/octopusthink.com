@@ -8,23 +8,22 @@ import PageHeader from 'components/PageHeader';
 import PageWrapper from 'components/PageWrapper';
 import PostCard from 'components/PostCard';
 import SEO from 'components/SEO';
+import config from 'data/SiteConfig';
 import App from 'templates/App';
 
 export const BlogList = (props) => {
   const { data, pageContext } = props;
   const { posts } = data;
   const { numberOfPages, currentPage } = pageContext;
-  const pageTitle = 'Octopus Thoughts';
-  const pageSummary =
-    'AKA our blog, in which we talk about design, technology, inclusion, and anything else we’ve been thinking about lately. Oh, and adorable cephalopod stories, because they make us happy.';
-  const description =
-    'The blog of Octopus Think. Design, technology, inclusion, and adorable cephalopod stories.';
+  const pageTitle = config.blogTitle;
+  const pageSummary = config.blogSummary;
+  const description = config.blogDescription;
 
   return (
     <App>
       <SEO title={pageTitle} description={description} />
       <PageWrapper>
-        <PageHeader pageTitle={pageTitle} summary={pageSummary} />
+        <PageHeader summary={pageSummary} title={pageTitle} />
         <PageBody>
           {posts.edges.map(({ node }) => {
             const { fields, timeToRead: readingTime } = node;
