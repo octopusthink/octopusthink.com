@@ -4,7 +4,6 @@ import { css } from '@emotion/core';
 
 import GridLayout from 'components/GridLayout';
 import Image from 'components/Image';
-import Panel from 'components/Panel';
 
 const FriendLogos = () => {
   return (

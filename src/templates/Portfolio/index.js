@@ -4,7 +4,6 @@ import React, { Fragment } from 'react';
 import Divider from 'components/Divider';
 import FriendLogos from 'components/FriendLogos';
 import GridLayout from 'components/GridLayout';
-import Image from 'components/Image';
 import Panel from 'components/Panel';
 import PageHeader from 'components/PageHeader';
 import PageWrapper from 'components/PageWrapper';
