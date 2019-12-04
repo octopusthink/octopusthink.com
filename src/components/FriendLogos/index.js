@@ -11,9 +11,7 @@ const FriendLogos = () => {
     <React.Fragment>
       <div
         css={css`
-          grid-column: 1 / -1;
           text-align: center;
-          margin: 0;
         `}
       >
         <Heading level={2}>A few of our friends</Heading>
@@ -28,15 +26,15 @@ const FriendLogos = () => {
         <Image src="mozilla.png" alt="Mozilla logo" />
         <Image src="automattic.png" alt="Automattic logo" />
         <Image src="ea.png" alt="EA logo" />
-        <Image src="10up.png" alt="10up logo" />
         <Image src="fernwood.png" alt="Fernwood Publishing logo" />
+        <Image src="10up.png" alt="10up logo" />
         <Image src="nebula.png" alt="Nebula logo" />
         <Image src="arbor-day-foundation.png" alt="Arbor Day Foundation logo" />
         <Image src="hachette.png" alt="Hachette Book Group logo" />
-        <Image src="saffron-marigold.png" alt="Saffron Marigold logo" />
+        <Image src="nslc.png" alt="Nova Scotia Liquor Commission logo" />
         <Image src="wicker-emporium.png" alt="Wicker Emporium logo" />
         <Image src="wordpress.png" alt="WordPress logo" />
-        <Image src="nslc.png" alt="Nova Scotia Liquor Commission logo" />
+        <Image src="saffron-marigold.png" alt="Saffron Marigold logo" />
       </GridLayout>
     </React.Fragment>
   );
