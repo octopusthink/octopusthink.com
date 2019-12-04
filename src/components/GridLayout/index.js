@@ -4,7 +4,7 @@ import { css } from '@emotion/core';
 
 const GridLayout = (props) => {
   const theme = useTheme();
-  const { children, className, columns } = props;
+  const { children, className, columns, gap } = props;
 
   return (
     <section
@@ -24,6 +24,7 @@ const GridLayout = (props) => {
           padding-bottom: 8rem;
           padding-left: ${theme.site.mobilePadding};
           padding-right: ${theme.site.mobilePadding};
+          width: 100%;
 
           @media screen and (min-width: 640px) {
             padding-left: ${theme.site.tabletPadding};
@@ -39,9 +40,18 @@ const GridLayout = (props) => {
         <div
           css={css`
             display: grid;
-            grid-gap: ${theme.site.mobilePadding};
-            justify-items: stretch;
+            justify-content: stretch;
             align-items: stretch;
+
+            ${gap &&
+              css`
+                grid-gap: ${gap}rem;
+              `}
+
+            ${!gap &&
+              css`
+                grid-gap: ${theme.site.mobilePadding};
+              `}
 
             @media screen and (min-width: 608px) {
               grid-template-columns: repeat(${columns - 1}, 1fr);

@@ -6,7 +6,7 @@ import Divider from 'components/Divider';
 
 const Panel = (props) => {
   const theme = useTheme();
-  const { children, className, dark, grid, gridSmall } = props;
+  const { children, className, dark, fullwidth, grid, gridSmall } = props;
 
   const panelBackground = dark ? theme.colors.neutral.black : theme.colors.neutral.white;
 
@@ -29,6 +29,7 @@ const Panel = (props) => {
           padding-bottom: 8rem;
           padding-left: ${theme.site.mobilePadding};
           padding-right: ${theme.site.mobilePadding};
+          width: 100%;
 
           @media screen and (min-width: 640px) {
             padding-left: ${theme.site.tabletPadding};
@@ -44,7 +45,9 @@ const Panel = (props) => {
         <div
           css={css`
             ${!grid &&
+              !fullwidth &&
               css`
+                margin: auto;
                 max-width: ${theme.site.maxContentWidth};
               `}
 

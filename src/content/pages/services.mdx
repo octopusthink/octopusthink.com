@@ -10,7 +10,7 @@ import { Button, Heading, Link, Paragraph } from '@octopusthink/nautilus'
 
 import IllustratedPoint from 'components/IllustratedPoint'
 import Panel from 'components/Panel'
-import Testimonial from 'components/Testimonial'
+import TestimonialCarousel from 'components/TestimonialCarousel'
 import AccessibilityIllustration from 'static/illustrations/accessibility.svg'
 import StrategyIllustration from 'static/illustrations/strategy.svg'
 import AppIllustration from 'static/illustrations/app.svg'
@@ -112,36 +112,8 @@ We've spent the last decade working remotely with small and large organisations 
 
 </Panel>
 
-<Panel dark>
 
-<Testimonial
-  author="Dave Wiskus"
-  position="CEO"
-  company="Standard Broadcast"
-  url="https://standard.tv"
->
-
-<Paragraph large inverse>
-  {/* prettier-ignore */}
-  Matt built an entire <Link
-    as="a"
-    href="https://watchnebula.com/"
-    css={css`
-      color: #e33592;
-    `}
-  >
-    streaming video platform
-  </Link> complete with a custom API and layers upon layers of tests to validate all future changes against.
-  All of this in about six months. It was truly awe-inspiring to watch.
-</Paragraph>
-
-<Paragraph large inverse>
-  Do me a favor and don't hire Octopus Think, because I'd like to book all of their hours myself.
-</Paragraph>
-
-</Testimonial>
-
-</Panel>
+<TestimonialCarousel />
 
 <Panel>
 

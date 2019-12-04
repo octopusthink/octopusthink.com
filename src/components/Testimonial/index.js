@@ -2,9 +2,56 @@ import { Link, metadata, useTheme } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
-const ServicesContent = (props) => {
-  const { author, children, company, position, url } = props;
+const TestimonialLink = ({ company, name, url }) => {
   const theme = useTheme();
+
+  if (!url) {
+    return null;
+  }
+
+  return (
+    <Link
+      as="a"
+      href={url}
+      css={css`
+        color: ${theme.colors.text.inverse};
+        border-color: ${theme.colors.text.inverseDark};
+      `}
+    >
+      {company || name}
+    </Link>
+  );
+};
+
+const Testimonial = (props) => {
+  const { name, children, company, title, url } = props;
+  const theme = useTheme();
+
+  let attribution;
+  // eslint-disable-next-line react/jsx-props-no-spreading
+  const nameLink = !company && url ? <TestimonialLink {...props} /> : name;
+  // eslint-disable-next-line react/jsx-props-no-spreading
+  const companyLink = company && url && <TestimonialLink {...props} />;
+
+  if (company && url) {
+    attribution = (
+      <React.Fragment>
+        {title && (
+          <React.Fragment>
+            {title}
+            {', '}
+          </React.Fragment>
+        )}
+        {companyLink}
+      </React.Fragment>
+    );
+  } else if (title && company) {
+    attribution = `${title}, ${company}`;
+  } else if (title) {
+    attribution = title;
+  } else if (company) {
+    attribution = company;
+  }
 
   return (
     <blockquote
@@ -32,29 +79,18 @@ const ServicesContent = (props) => {
           ${metadata.small(theme)};
           color: ${theme.colors.text.inverseDark};
           font-style: normal;
-          padding-left: 0.4rem;
         `}
       >
-        {author}
-        {position && (
+        {nameLink}
+        {attribution && (
           <React.Fragment>
             {' · '}
-            {position}{' '}
+            {attribution}{' '}
           </React.Fragment>
         )}
-        <Link
-          as="a"
-          href={url}
-          css={css`
-            color: ${theme.colors.text.inverse};
-            border-color: ${theme.colors.text.inverseDark};
-          `}
-        >
-          {company}
-        </Link>
       </cite>
     </blockquote>
   );
 };
 
-export default ServicesContent;
+export default Testimonial;
