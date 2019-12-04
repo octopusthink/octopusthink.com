@@ -6,7 +6,7 @@ import Divider from 'components/Divider';
 import Watermark from 'static/watermark.svg';
 
 const PageHeader = (props) => {
-  const { children, metadata, pageTitle, summary, summaryExtra } = props;
+  const { summary, summaryExtra, title } = props;
   const theme = useTheme();
 
   return (
@@ -70,7 +70,6 @@ const PageHeader = (props) => {
             }
           `}
         >
-          {metadata}
           <PageTitle
             css={css`
               color: white;
@@ -78,7 +77,7 @@ const PageHeader = (props) => {
               letter-spacing: -0.05em;
             `}
           >
-            {pageTitle}
+            {title}
           </PageTitle>
           <Paragraph
             large
@@ -103,8 +102,6 @@ const PageHeader = (props) => {
               {summaryExtra}
             </Paragraph>
           )}
-
-          {children}
         </div>
       </div>
       <Divider

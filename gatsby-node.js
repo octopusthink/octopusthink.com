@@ -5,12 +5,12 @@ const { kebabCase } = require('lodash');
 const moment = require('moment');
 const { singular } = require('pluralize');
 
-const config = require('./config');
+const siteConfig = require('./data/SiteConfig');
 
 const projectPath = path.resolve(fs.realpathSync(process.cwd()), '.');
 const srcPath = path.resolve(fs.realpathSync(process.cwd()), 'src');
 
-const { postsPerPage, useDatesInSlugs } = config;
+const { postsPerPage, useDatesInSlugs } = siteConfig;
 
 // Gatsby Integers only support 32-bit integers, so this uses that as the
 // maximum timestamp value. Sort of a hack, but using `Number.MAX_SAFE_INTEGER`

@@ -2,7 +2,7 @@ import React from 'react';
 import Nautilus from '@octopusthink/nautilus';
 import { Link } from 'gatsby';
 
-import theme from 'config/theme';
+import theme from 'data/theme';
 
 const NautilusWrapper = (props) => {
   const { children } = props;

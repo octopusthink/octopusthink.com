@@ -12,7 +12,7 @@ import React from 'react';
 import { css } from '@emotion/core';
 import dayjs from 'dayjs';
 
-import config from 'config';
+import config from 'data/SiteConfig';
 
 const PostCard = (props) => {
   const theme = useTheme();

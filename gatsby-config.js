@@ -88,12 +88,11 @@ module.exports = {
               }
             `,
             output: config.siteRss,
-            title: 'Octopus Thoughts: The Octopus Think Blog',
-            description:
-              'The Octopus Think Blog blog, in which we talk about design, technology, inclusion, and anything else we’ve been thinking about lately. Oh, and adorable cephalopod stories, because they make us happy.',
+            title: config.blogTitleRSS || config.blogTitle,
+            description: config.blogDescription,
             generator: 'Ghost Ship (https://github.com/octopusthink/ghost-ship)',
             site_url: config.siteUrl,
-            language: 'en-GB',
+            language: config.language,
             copyright: config.copyright,
             custom_namespaces: {
               atom: 'http://www.w3.org/2005/Atom',

@@ -13,7 +13,7 @@ import PageHeader from 'components/PageHeader';
 import PageWrapper from 'components/PageWrapper';
 import SequentialLink from 'components/SequentialLink';
 import SEO from 'components/SEO';
-import config from 'config';
+import config from 'data/SiteConfig';
 import App from 'templates/App';
 
 export const BlogPost = (props) => {
@@ -92,7 +92,7 @@ export const BlogPost = (props) => {
       <SEO title={title} description={description} />
       <PageWrapper>
         <Fragment key={slug}>
-          <PageHeader metadata={formattedMetadata} pageTitle={title} summary={summary} />
+          <PageHeader metadata={formattedMetadata} summary={summary} title={title} />
         </Fragment>
         <PageBody>
           <MDXRenderer>{body}</MDXRenderer>

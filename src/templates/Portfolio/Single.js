@@ -22,7 +22,7 @@ export const Portfolio = (props) => {
       <SEO title={title} description={description} />
       <PageWrapper>
         <PageHeader
-          pageTitle={title}
+          title={title}
           summary={summary}
           summaryExtra={summaryExtra}
           description={description}
