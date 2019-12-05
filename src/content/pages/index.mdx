@@ -6,7 +6,7 @@ description: Octopus Think is a digital design & technology company based in Sco
 component: PageWithoutPageBody
 ---
 
-import { Button, Heading, Paragraph, Strong, useTheme } from '@octopusthink/nautilus';
+import { Button, Heading, Paragraph, Strong, useTheme, metadata } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
@@ -15,10 +15,10 @@ import Image from 'components/Image';
 import Panel from 'components/Panel';
 import AccessibilityIllustration from 'static/illustrations/accessibility.svg';
 import StrategyIllustration from 'static/illustrations/strategy.svg';
-import AppIllustration from 'static/illustrations/app.svg';
-import WebIllustration from 'static/illustrations/web.svg';
-import ProductIllustration from 'static/illustrations/product.svg';
-import VisualIllustration from 'static/illustrations/visual.svg';
+import AppIllustration from 'static/illustrations/app-development.svg';
+import WebIllustration from 'static/illustrations/web-development.svg';
+import ProductIllustration from 'static/illustrations/product-design.svg';
+import VisualIllustration from 'static/illustrations/visual-design.svg';
 
 <Panel grid="auto 40rem">
 
@@ -64,18 +64,15 @@ We don't take ourselves too seriously, but we do **great work**.
     What we do
   </Heading>
 </div>
+<IllustratedPoint label="Strategy" illustration={StrategyIllustration} minimal />
+<IllustratedPoint label="Visual design" illustration={VisualIllustration} minimal />
+<IllustratedPoint label="Product design" illustration={ProductIllustration} minimal />
 
-<IllustratedPoint label="Accessibility" illustration={AccessibilityIllustration} />
+<IllustratedPoint label="Accessibility" illustration={AccessibilityIllustration} minimal />
+<IllustratedPoint label="App development" illustration={AppIllustration} minimal />
+<IllustratedPoint label="Web development" illustration={WebIllustration} minimal />
 
-<IllustratedPoint label="Web development" illustration={WebIllustration} />
 
-<IllustratedPoint label="App development" illustration={AppIllustration} />
-
-<IllustratedPoint label="Strategy & training" illustration={StrategyIllustration} />
-
-<IllustratedPoint label="Product design" illustration={ProductIllustration} />
-
-<IllustratedPoint label="Visual design" illustration={VisualIllustration} />
 
 <div
   css={css`
