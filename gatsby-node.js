@@ -45,8 +45,8 @@ const makeBlogPosts = ({ actions, blogPosts }) => {
   });
 
   postsToPublish.forEach((edge, index) => {
-    const nextID = index + 1 < postsToPublish.length ? index + 1 : 0;
-    const prevID = index - 1 >= 0 ? index - 1 : postsToPublish.length - 1;
+    const nextID = index - 1 >= 0 ? index - 1 : postsToPublish.length - 1;
+    const prevID = index + 1 < postsToPublish.length ? index + 1 : 0;
     const nextEdge = postsToPublish[nextID];
     const prevEdge = postsToPublish[prevID];
 
