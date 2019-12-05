@@ -45,6 +45,8 @@ const makeBlogPosts = ({ actions, blogPosts }) => {
   });
 
   postsToPublish.forEach((edge, index) => {
+    // One expects "next" to be the current index + 1, but I think this is an
+    // oddity in the GraphQL or something.
     const nextID = index - 1 >= 0 ? index - 1 : postsToPublish.length - 1;
     const prevID = index + 1 < postsToPublish.length ? index + 1 : 0;
     const nextEdge = postsToPublish[nextID];
