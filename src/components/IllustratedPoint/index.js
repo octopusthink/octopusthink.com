@@ -1,4 +1,4 @@
-import { Heading, Tags, useTheme } from '@octopusthink/nautilus';
+import { Heading, Paragraph, Tags, useTheme, metadata } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
@@ -9,10 +9,11 @@ const IllustratedPoint = (props) => {
     children,
     illustration: Illustration,
     label,
-    metadata,
+    metadata: metadataProp,
     photo,
     photoAlt,
     photoHover,
+    minimal,
   } = props;
 
   const theme = useTheme();
@@ -21,12 +22,17 @@ const IllustratedPoint = (props) => {
     <div>
       <div
         css={css`
-          height: 24rem;
-          width: 24rem;
+          max-height: 24rem;
+          max-width: 24rem;
           margin: 0 auto 1.6rem;
           align-items: center;
           justify-content: center;
           position: relative;
+
+          ${minimal &&
+            css`
+              margin-bottom: 0;
+            `}
 
           &:hover {
             .hover-image {
@@ -74,7 +80,7 @@ const IllustratedPoint = (props) => {
           text-align: center;
         `}
       >
-        {metadata && (
+        {metadataProp && (
           <Tags label="Title">
             <Tags.Tag>
               <span
@@ -84,19 +90,34 @@ const IllustratedPoint = (props) => {
                   padding-bottom: 0.4rem;
                 `}
               >
-                {metadata}
+                {metadataProp}
               </span>
             </Tags.Tag>
           </Tags>
         )}
-        <Heading
-          level={3}
-          css={css`
-            color: ${theme.colors.text.inverse};
-          `}
-        >
-          {label}
-        </Heading>
+
+        {!minimal && (
+          <Heading
+            level={3}
+            css={css`
+              color: ${theme.colors.text.inverse};
+            `}
+          >
+            {label}
+          </Heading>
+        )}
+
+        {minimal && (
+          <Paragraph
+            css={css`
+              color: ${theme.colors.text.inverse};
+              ${metadata.small(theme)};
+              margin-bottom: 0;
+            `}
+          >
+            {label}
+          </Paragraph>
+        )}
       </div>
 
       <div>{children}</div>
