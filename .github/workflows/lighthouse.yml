@@ -1,0 +1,21 @@
+---
+name: Performance Check
+
+on:
+  push:
+    branches:
+      - '!*'
+      - master
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Audit homepage using Lighthouse
+        if: github.workflow.publish.status == 'success'
+        uses: treosh/lighthouse-ci-action@v2
+        with:
+          urls: |
+            https://octopusthink.com
+            https://octopusthink.com/blog
+            https://octopusthink.com/contact
