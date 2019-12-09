@@ -4,15 +4,16 @@ name: Performance Check
 on:
   push:
     branches:
-      - '!*'
-      - master
+      - '*'
+      # - '!*'
+      # - master
 
 jobs:
   lighthouse:
     runs-on: ubuntu-latest
     steps:
       - name: Audit homepage using Lighthouse
-        if: github.workflow.publish.status == 'success'
+        if: github.workflow.test.status == 'success'
         uses: treosh/lighthouse-ci-action@v2
         with:
           urls: |
