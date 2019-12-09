@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Audit homepage using Lighthouse
-        if: github.workflow.test.status == 'success'
+        if: github.workflow.tests.status == 'success'
         uses: treosh/lighthouse-ci-action@v2
         with:
           urls: |
