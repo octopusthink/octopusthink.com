@@ -25,21 +25,21 @@ import Testimonial from 'components/Testimonial'
 <div>
   <IconHeading problem />
 
-YouTube creators are at the mercy of _the algorithm_. Long-form content loses out to daily vlogs and product unboxings. For the group of STEM and educational YouTubers at Standard, this made it difficult to take risks on YouTube.
+What you see on YouTube is largely determined by their algorithm. Daily vlogs and product unboxings inevitably trump long-form content. For Standard, a group of STEM and educational YouTubers, this makes it difficult to take risks on more thoughtful, in-depth videos.
 
 </div>
 
 <div>
   <IconHeading solution />
 
-We built an unobtrusive, content-rich, subscription-based streaming video platform using React and Django. This allows creators to produce more innovative content, without worrying about advertiser or platform interference.
+We built an unobtrusive subscription-based streaming video platform using React and Django. This allows creators to produce more innovative content, without worrying about advertiser or platform interference.
 
 </div>
 
 <div>
   <IconHeading result />
 
-The public launch wildly exceeded expectations—the site reached over ten thousand subscribers in a month and continues to grow. New Nebula Originals release regularly, and Curiousity Stream has since partnered with Nebula.
+The launch wildly exceeded expectations: the site reached over ten thousand subscribers in a month and continues to grow. Curiousity Stream has since partnered with Nebula, and new original content is being released regularly.
 
 </div>
 
@@ -54,14 +54,14 @@ documentation, leadership, UX, React, technical feasibility assessment, accessib
 <ImagePanel dark alt="" image="/portfolio/nebula/video-wall.jpg" />
 
 <PortfolioSection
-  metadata="Being at the mercy of YouTube's algorithm"
+  metadata="Introduction"
   heading="The challenge"
   image="/portfolio/nebula/nebula-placeholder.png"
   alt=""
-  next="discovery"
+  next="prototyping"
   >
 
-With a focus on educational and <def title="science, technology, engineering, and mathmaticals">STEM</def> content, Standard creators have large, dedicated audiences. They wanted to create a subscription-based video platform for its creators to experiment and release exclusive material directly to fans, without taking outside investment or having a large budget.
+Standard's creators focus on educational and <def title="science, technology, engineering, and mathematics">STEM</def> content. Their dedicated follower bases are interested in more experimental, thoughtful, long-form pieces that YouTube won't promote. To facilitate sharing this type of content with their fans, the creators wanted to create a subscription-based video platform, without taking outside investment or investing a huge amount of resources.
 
 </PortfolioSection>
 
@@ -73,23 +73,19 @@ With a focus on educational and <def title="science, technology, engineering, an
   next="prototyping"
   >
 
-We met with Standard and discussed their goals, constraints, and timeline. They had a clear idea of the platform they wanted, but they weren't clear on _how_ to build it. They wanted to maintain control of the platform, to own the technology, and to stay flexible.
-
-Originally Standard proposed a WordPress-powered site, but we explained how a custom solution would provide better backend and frontend experiences. This allowed the site's API to also serve the Android and iOS apps; something their original WordPress plan couldn't have managed.
+We met with Standard to discuss their goals, constraints, and timeline. They had a clear idea of _what_ they wanted, but they weren't clear on _how_ to build it. They suggested a WordPress-powered site, but we determined that a custom solution would provide a better experience for both authors and users, as well as allowing for a flexible API that could be used by mobile apps.
 
 </PortfolioSection>
 
 <PortfolioSection
-  metadata="Rapidly shipping an MVP to excite and inspire"
+  metadata="From 0 to v1 in two weeks"
   heading="Prototyping"
   image="/portfolio/nebula/nebula-placeholder.png"
   alt=""
   next="technical-infrastructure"
   >
 
-Knowing that collecting assets and getting buy-in from Standard creators and staff was important, we rapidly prototyped and launched a version of Nebula in less than two weeks. The prototype site, running in a basic staging environment, had creator pages, a featured homepage, and individual videos with functioning playback—all powered by a video API.
-
-We scaled down this first front-end to the absolute <def title="Minimum viable product">MVP</def> of a video streaming site—and used an existing UI library to get started quickly. This progress made the six-month timeline feel like an achievable goal, and the act of seeing their idea come to life got creator buy-in.
+To get creator buy-in, we determined the absolute <def title="Minimum viable product">MVP</def> and rapidly prototyped the first version of Nebula in less than two weeks. The prototype site featured creator pages, a featured homepage, and individual videos with functioning playback—all powered by a video API. Seeing their idea come to life got creators on board and excited about the project.
 
 </PortfolioSection>
 
@@ -97,8 +93,8 @@ We scaled down this first front-end to the absolute <def title="Minimum viable p
 
 <Panel dark>
 <Testimonial
-  author="Dave Wiskus"
-  position="CEO"
+  name="Dave Wiskus"
+  title="CEO"
   company="Standard Broadcast"
   url="https://standard.tv"
 >
@@ -126,7 +122,7 @@ We scaled down this first front-end to the absolute <def title="Minimum viable p
 </Panel>
 
 <PortfolioSection
-  metadata="Designing a platform that could scale for many groups"
+  metadata="Designing a platform to scale"
   heading="Technical infrastructure"
   image="/portfolio/nebula/nebula-placeholder.png"
   alt=""
@@ -135,35 +131,29 @@ We scaled down this first front-end to the absolute <def title="Minimum viable p
 
 With the creators on board, it was time to start planning the technical architecture. Matt took the lead on this, designing a backend and infrastructure using tools (Django and AWS) that Standard's existing development team was already familiar with, ensuring long-term maintainability.
 
-This was another reason we eschewed WordPress—we didn't want to add to the technical stack of a small team. We briefed them on any new patterns we would adopt (Redux Sagas, Kubernetes, and continuous deployment) and got buy-in first.
-
 </PortfolioSection>
 
 <PortfolioSection
-  metadata="For apps, creators, tooling, and more"
+  metadata="Building a powerful backend"
   heading="API Design"
   image="/portfolio/nebula/nebula-placeholder.png"
   alt=""
   next="devops"
   >
 
-Standard had a deal with an existing "over-the-top" video hosting provider—Zype—so we built a secure Django API that allowed for subscription management, user accounts, and payment processing with Stripe.
-
-This API powers the website, iOS app, a forthcoming Android app, and internal reporting tools. We worked with the video provider to improve their service and beta test new features like video upload APIs.
+We built a secure Django API that allowed for video consumption from a third-party platform, subscription management, user accounts, and payment processing with Stripe. This API powers the website, mobile apps, and internal reporting tools. We also worked with the video provider to improve their service and beta test new features.
 
 </PortfolioSection>
 
 <PortfolioSection
-  metadata="Extremely automated and designed to scale"
+  metadata="Leveraging automation"
   heading="DevOps"
   image="/portfolio/nebula/nebula-placeholder.png"
   alt=""
   next="front-end-development"
   >
 
-With a single developer (Matt) responsible for developing, testing, deploying, and operating the service during its inception, automation was a key tool in shipping Nebula as quickly and as reliably as we did. Even the quickly-prototyped staging environment had entirely automated deployments on Amazon ECS.
-
-We leveraged managed AWS Kubernetes and GitHub Actions to create a workflow that deployed, scaled, and recovered from failures automatically. The site never experienced downtimes or slow-downs, and deploys to a staging environment happened several times a day, creating a sense of constant iteration and excitment for Standard's team.
+Automation was a key tool in shipping Nebula as quickly and as reliably as we did. We leveraged managed AWS Kubernetes and GitHub Actions to create a workflow that deployed, scaled, and recovered from failures automatically. The site never experienced downtimes or slow-downs, and deploys to a staging environment happened several times a day, creating a sense of constant iteration and excitment for Standard's team.
 
 </PortfolioSection>
 
@@ -175,45 +165,45 @@ We leveraged managed AWS Kubernetes and GitHub Actions to create a workflow that
   next="launch"
   >
 
-We planned out a flexible and idiomatic React front-end for the site, complete with features like server-side rendering (for OpenGraph tags, SEO, and first-load performance), redux/sagas for predictable data management, SASS for easy CSS management, and 90% test coverage using Jest.
+We planned out a flexible and idiomatic React front-end for the site, complete with features like server-side rendering, redux/sagas for predictable data management, and 90% test coverage using Jest.
 
-Nebula is built using server-side React, Redux, and Django, all deployed to AWS for high-availability. The website is entirely responsive and works great on mobile. Because an iPad and Android versions were not launch plans, the responsiveness meant tablet and Android users weren't left out at launch. Background play, Chromecast support, and more were available in the React app.
+Nebula is built using server-side React, Redux, and Django, all deployed to AWS for high-availability. The website is entirely responsive and works great on a mobile device.
 
 </PortfolioSection>
 
 <PortfolioSection
-  metadata="Ready early for a stress-free launch"
+  metadata="Going live, stress-free!"
   heading="Launch"
   image="/portfolio/nebula/nebula-placeholder.png"
   alt=""
   next="post-launch"
   >
 
-Standard creators have a collective tens of millions of followers, so we wanted to ensure the site wouldn't fall over if popular. The site was deployed to AWS, on a scaling, self-healing Kubernetes cluster. Despite large numbers of sign-ups and visitors during the "soft-launch", the site never encountered issues.
+The website was ready early, ensuring a stress-free launch day. Matt was on standby the entire day—fixing minor bugs, ensuring server health, watching Stripe logs, and adding quick-win features in response to user requests.
 
-The website was ready before our planned launch day, ensuring a stress-free launch day with Matt on standby the entire day—fixing minor bugs, ensuring server health, watching Stripe logs, and adding quick-win features in response to user requests. During the launch week, users waited hours rather than days to see new features implemented.
+The site was deployed to AWS on a scaling, self-healing Kubernetes cluster. Despite large numbers of sign-ups and visitors during the launch, the site never encountered issues.
 
 </PortfolioSection>
 
 <PortfolioSection
-  metadata="Hand-off to a well-prepped new team"
+  metadata="Hand-off to a new team"
   heading="Post-Launch"
   image="/portfolio/nebula/nebula-placeholder.png"
   alt=""
   next="outcomes"
   >
 
-Rather than just abandoning the project once it had launched, we were diligent in ensuring the team was well-positioned and prepared to maintain and build upon the structure we'd built for them. Matt spent the last month of the project thoroughly documenting any part of the stack less familiar to Standard's internal development team, improving code quality, and sharing knowledge.
+Rather than just abandoning the project once it had launched, we were diligent in ensuring the team was well-positioned and prepared to maintain and build upon the structure we'd built for them. Matt spent the last month of the project thoroughly documenting any part of the stack less familiar to Standard's internal development team, improving code quality, and mentoring the team.
 
 </PortfolioSection>
 
 <PortfolioSection
-  metadata="Things are going great"
+  metadata="What did we accomplish?"
   heading="Outcomes"
   image="/portfolio/nebula/nebula-placeholder.png"
   alt=""
   >
 
-Nebula’s launch exceeded all stretch goals, and is now a profitable business venture for Standard. Once in the business of helping creators on existing platforms, Standard now has a platform of its own. Its success on the web has encouraged Standard to invest further in the platform, developing an iPad and Android app.
+Nebula’s launch exceeded all stretch goals, and is now a profitable business venture for Standard. Its success on the web has encouraged Standard to invest further in the platform, developing an iPad and Android app. Creators love the new platform—and users love being able to connect more directly with their favourite content creators.
 
 </PortfolioSection>
