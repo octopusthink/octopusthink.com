@@ -87,7 +87,6 @@ export const pageQuery = graphql`
         metaDescription
         slug
         summary
-        summaryExtra
         title
       }
       body

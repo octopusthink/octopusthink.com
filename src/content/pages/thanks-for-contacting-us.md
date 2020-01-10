@@ -1,6 +1,6 @@
 ---
 title: Thanks for getting in touch.
-summaryExtra: Your message has been sent!
+summary: Your message has been sent!
 ---
 
 ## We'll get back to you shortly
