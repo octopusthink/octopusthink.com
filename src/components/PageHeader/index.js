@@ -3,10 +3,11 @@ import React from 'react';
 import { css } from '@emotion/core';
 
 import Divider from 'components/Divider';
+import Markdown from 'components/Markdown';
 import Watermark from 'static/watermark.svg';
 
 const PageHeader = (props) => {
-  const { metadata, summary, summaryExtra, title } = props;
+  const { metadata, summary, title } = props;
   const theme = useTheme();
 
   return (
@@ -80,29 +81,25 @@ const PageHeader = (props) => {
           >
             {title}
           </PageTitle>
-          <Paragraph
-            large
-            inverse
-            light
-            css={css`
-              letter-spacing: -0.025em;
-            `}
+
+          <Markdown
+            components={{
+              p: (summaryProps) => (
+                <Paragraph
+                  large
+                  inverse
+                  light
+                  css={css`
+                    letter-spacing: -0.025em;
+                  `}
+                  // eslint-disable-next-line react/jsx-props-no-spreading
+                  {...summaryProps}
+                />
+              ),
+            }}
           >
             {summary}
-          </Paragraph>
-
-          {summaryExtra && (
-            <Paragraph
-              large
-              inverse
-              light
-              css={css`
-                letter-spacing: -0.025em;
-              `}
-            >
-              {summaryExtra}
-            </Paragraph>
-          )}
+          </Markdown>
         </div>
       </div>
       <Divider
