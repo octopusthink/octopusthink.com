@@ -11,6 +11,7 @@ import React from 'react'
 import { css } from '@emotion/core'
 
 import FriendLogos from 'components/FriendLogos'
+import GridSpanner from 'components/GridSpanner'
 import IllustratedPoint from 'components/IllustratedPoint'
 import Image from 'components/Image'
 import Panel from 'components/Panel'
@@ -57,17 +58,11 @@ We don't take ourselves too seriously, but we do **great work**.
 
 <Panel dark grid="1fr 1fr 1fr" gridSmall="1fr 1fr">
 
-<div
-  css={css`
-    grid-column: 1 / -1;
-    text-align: center;
-    margin: 0;
-  `}
->
+<GridSpanner>
   <Heading inverse level={2}>
     What we do
   </Heading>
-</div>
+</GridSpanner>
 <IllustratedPoint label="Strategy" illustration={StrategyIllustration} minimal />
 <IllustratedPoint label="Visual design" illustration={VisualIllustration} minimal />
 <IllustratedPoint label="Product design" illustration={ProductIllustration} minimal />
@@ -76,31 +71,20 @@ We don't take ourselves too seriously, but we do **great work**.
 <IllustratedPoint label="App development" illustration={AppIllustration} minimal />
 <IllustratedPoint label="Web development" illustration={WebIllustration} minimal />
 
-<div
-  css={css`
-    grid-column: 1 / -1;
-    margin: 0 auto;
-    max-width: max-content;
-  `}
->
+<GridSpanner>
   <Button navigation minimal to="/services/">
     Explore our services
   </Button>
-</div>
+</GridSpanner>
 
 </Panel>
 
 <Panel grid="1fr 1fr 1fr">
-  <div
-  css={css`
-    grid-column: 1 / -1;
-    text-align: center;
-    margin: 0;
-  `}
->
-  <Heading level={2}>What we've done</Heading>
-  </div>
-  {/* Three PortfolioCards should output here, probably based on either numbers here or, if necessary, a flag in the portfolio items' frontmatter. */}
+  <GridSpanner>
+    <Heading level={2}>What we've done</Heading>
+  </GridSpanner>
+  
+  Three PortfolioCards should output here, probably based on either numbers here or, if necessary, a flag in the portfolio items' frontmatter.
 
 <PortfolioCard
   category="{category}"
@@ -110,55 +94,31 @@ We don't take ourselves too seriously, but we do **great work**.
   thumbnail="{thumbnail}"
 />
 
-  <div
-  css={css`
-    grid-column: 1 / -1;
-    margin: 0 auto;
-    max-width: max-content;
-  `}
->
-  <Button navigation minimal to="/portfolio/">
-    Peruse our work
-  </Button>
-</div>
+  <GridSpanner>
+    <Button navigation minimal to="/portfolio/">Peruse our work</Button>
+  </GridSpanner>
 </Panel>
 
 <TestimonialCarousel />
 
 <Panel fullwidth>
-  <div
-  css={css`
-    grid-column: 1 / -1;
-    text-align: center;
-    margin: 0;
-  `}
->
-  <Heading level={2}>
-    The company we keep
-  </Heading>
-</div>
+  <GridSpanner>
+    <Heading level={2}>The company we keep</Heading>
+  </GridSpanner>
 
   <FriendLogos />
 </Panel>
 
 <Panel dark grid="1fr 1fr">
-  <div
-    css={css`
-      grid-column: 1 / -1;
-      text-align: center;
-      margin: 0;
-    `}
-  >
-    <Heading inverse level={2}>
-      What we're up to now
-    </Heading>
-  </div>
+  <GridSpanner>
+    <Heading inverse level={2}>What we're up to now</Heading>
+  </GridSpanner>
 
 The two most recent blog posts should go here, probably using the PostCard component.
 
-  <Button navigation minimal to="/blog/">
-    Read our blog
-  </Button>
+  <GridSpanner>
+    <Button navigation minimal to="/blog/">Read our blog</Button>
+  </GridSpanner>
 </Panel>
 
 <Panel grid="40rem auto">
