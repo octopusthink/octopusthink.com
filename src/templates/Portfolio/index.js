@@ -55,7 +55,7 @@ export const PortfolioList = (props) => {
         <TestimonialCarousel />
 
         <Panel fullwidth>
-          <FriendLogos />
+          <FriendLogos title="A few of our friends" />
         </Panel>
       </PageWrapper>
     </App>
