@@ -144,6 +144,7 @@ export const theme = {
       interactiveTextInverse: colors.pink500,
       interactiveText: colors.pink600,
       hover: colors.cyan200,
+      hoverTextInverse: colors.cyan500,
       hoverText: colors.cyan600,
       focusOutline: colors.pink200,
       focusText: colors.pink600,
