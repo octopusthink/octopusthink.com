@@ -14,7 +14,7 @@ export const Page = (props) => {
 
   const { page } = data;
   const { body } = page;
-  const { metaDescription, summary, title } = page.fields;
+  const { ctaText, ctaURL, metaDescription, summary, title } = page.fields;
 
   const description = metaDescription || summary;
 
@@ -22,9 +22,17 @@ export const Page = (props) => {
     <App>
       <SEO title={title} description={description} />
       <PageWrapper>
-        <PageHeader summary={summary} description={description} title={title} />
+        <PageHeader
+          ctaText={ctaText}
+          ctaURL={ctaURL}
+          summary={summary}
+          description={description}
+          title={title}
+        />
         <PageBody>
-          <MDXRenderer>{body}</MDXRenderer>
+          <MDXRenderer>
+            {ctaURL} {ctaText} {body}
+          </MDXRenderer>
         </PageBody>
         <Divider light />
       </PageWrapper>
@@ -36,6 +44,8 @@ export const pageQuery = graphql`
   query($id: String!) {
     page: mdx(id: { eq: $id }) {
       fields {
+        ctaText
+        ctaURL
         metaDescription
         slug
         summary

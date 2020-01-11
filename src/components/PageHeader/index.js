@@ -2,12 +2,13 @@ import { PageTitle, Paragraph, useTheme } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
+import ButtonInverse from 'components/ButtonInverse';
 import Divider from 'components/Divider';
 import Markdown from 'components/Markdown';
 import Watermark from 'static/watermark.svg';
 
 const PageHeader = (props) => {
-  const { metadata, summary, title } = props;
+  const { ctaText, ctaURL, metadata, summary, title } = props;
   const theme = useTheme();
 
   return (
@@ -100,6 +101,20 @@ const PageHeader = (props) => {
           >
             {summary}
           </Markdown>
+
+          {ctaText && ctaURL && (
+            <ButtonInverse
+              minimal
+              navigation
+              to={ctaURL}
+              css={css`
+                font-size: 2.1rem;
+                margin: 0;
+              `}
+            >
+              {ctaText}
+            </ButtonInverse>
+          )}
         </div>
       </div>
       <Divider
