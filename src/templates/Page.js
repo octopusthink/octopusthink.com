@@ -30,9 +30,7 @@ export const Page = (props) => {
           title={title}
         />
         <PageBody>
-          <MDXRenderer>
-            {ctaURL} {ctaText} {body}
-          </MDXRenderer>
+          <MDXRenderer>{body}</MDXRenderer>
         </PageBody>
         <Divider light />
       </PageWrapper>

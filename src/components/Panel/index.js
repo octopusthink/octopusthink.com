@@ -6,7 +6,12 @@ import Divider from 'components/Divider';
 
 const Panel = (props) => {
   const theme = useTheme();
-  const { children, className, dark, fullwidth, grid, gridSmall } = props;
+  const { children, className, dark, fullwidth, gridMobile, gridTablet, gridDesktop } = props;
+
+  let hasGrid = false;
+  if (gridMobile || gridTablet || gridDesktop) {
+    hasGrid = true;
+  }
 
   const panelBackground = dark ? theme.colors.neutral.black : theme.colors.neutral.white;
 
@@ -44,34 +49,39 @@ const Panel = (props) => {
       >
         <div
           css={css`
-            ${!grid &&
+            ${!hasGrid &&
               !fullwidth &&
               css`
                 margin: auto;
                 max-width: ${theme.site.maxContentWidth};
               `}
 
-            ${grid &&
-              css`
-                display: grid;
-                grid-gap: ${theme.site.tabletPadding};
+            @media screen and (max-width: 639px) {
+              grid-gap: ${theme.site.mobilePadding};
+              ${gridMobile &&
+                css`
+                  display: grid;
+                  grid-template-columns: ${gridMobile};
+                `}
+            }
 
-                @media screen and (min-width: 640px) {
-                  grid-template-columns: ${grid};
-                }
+            @media screen and (min-width: 640px) {
+              grid-gap: ${theme.site.tabletPadding};
+              ${gridTablet &&
+                css`
+                  display: grid;
+                  grid-template-columns: ${gridTablet};
+                `}
+            }
 
-                ${gridSmall &&
-                  css`
-                    @media screen and (max-width: 850px) {
-                      grid-gap: ${theme.site.mobilePadding};
-                      grid-template-columns: ${gridSmall};
-                    }
-                  `}
-
-                @media screen and (min-width: 1024px) {
-                  grid-gap: ${theme.site.desktopPadding};
-                }
-              `}
+            @media screen and (min-width: 1024px) {
+              grid-gap: ${theme.site.desktopPadding};
+              ${gridDesktop &&
+                css`
+                  display: grid;
+                  grid-template-columns: ${gridDesktop};
+                `}
+            }
           `}
         >
           {children}
