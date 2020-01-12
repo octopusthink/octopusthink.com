@@ -30,7 +30,7 @@ import WebIllustration from 'static/illustrations/web-development.svg'
 import ProductIllustration from 'static/illustrations/product-design.svg'
 import VisualIllustration from 'static/illustrations/visual-design.svg'
 
-<Panel grid="auto 40rem">
+<Panel gridTablet="auto 24rem" gridDesktop="auto 40rem">
 
 <div>
 
@@ -54,14 +54,19 @@ We don't take ourselves too seriously, but we do **great work**.
   css={css`
     border-radius: 100%;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.125);
-    max-height: 400px;
-    max-width: 400px;
+    max-height: 40rem;
+    max-width: 40rem;
+    @media screen and (min-width: 640px) and (max-width: 1023px) {
+      align-self: center;
+      max-height: 24rem;
+      max-width: 24rem;
+    }
   `}
 />
 
 </Panel>
 
-<Panel dark grid="1fr 1fr 1fr" gridSmall="1fr 1fr">
+<Panel dark gridMobile="1fr 1fr" gridTablet="1fr 1fr 1fr">
 
 <GridSpanner>
   <Heading inverse level={2}>
@@ -84,7 +89,7 @@ We don't take ourselves too seriously, but we do **great work**.
 
 </Panel>
 
-<Panel grid="1fr 1fr 1fr">
+<Panel gridTablet="1fr 1fr 1fr">
   <GridSpanner>
     <Heading level={2}>What we've done</Heading>
   </GridSpanner>
@@ -110,7 +115,7 @@ We don't take ourselves too seriously, but we do **great work**.
   <FriendLogos abbreviated title="The company we keep" />
 </Panel>
 
-<Panel dark grid="1fr 1fr">
+<Panel dark gridTablet="1fr 1fr">
   <GridSpanner>
     <Heading inverse level={2}>What we're up to now</Heading>
   </GridSpanner>
@@ -122,11 +127,20 @@ The two most recent blog posts should go here, probably using the PostCard compo
   </GridSpanner>
 </Panel>
 
-<Panel grid="40rem auto">
+<Panel gridTablet="24rem auto" gridDesktop="40rem auto">
 
 <Image
   src="construction-sketch-transparent.png"
   alt="A sketch of our mascot, Bubbles: an octopus wearing a hard hat and safety goggles."
+  css={css`
+    max-height: 40rem;
+    max-width: 40rem;
+    @media screen and (min-width: 640px) and (max-width: 1023px) {
+      align-self: center;
+      max-height: 24rem;
+      max-width: 24rem;
+    }
+  `}
 />
 
 <div
