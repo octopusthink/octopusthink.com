@@ -6,7 +6,7 @@ import Divider from 'components/Divider';
 import Watermark from 'static/watermark.svg';
 
 const PageHeader = (props) => {
-  const { summary, summaryExtra, title } = props;
+  const { metadata, summary, summaryExtra, title } = props;
   const theme = useTheme();
 
   return (
@@ -70,6 +70,7 @@ const PageHeader = (props) => {
             }
           `}
         >
+          {metadata}
           <PageTitle
             css={css`
               color: white;
