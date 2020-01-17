@@ -3,8 +3,17 @@ import React from 'react';
 import { css } from '@emotion/core';
 
 const GridLayout = (props) => {
-  const theme = useTheme();
   const { children, className, columns, gap } = props;
+  const theme = useTheme();
+
+  // HACK: Prevent errors encountered by `gatsby-plugin-mdx` on `npm run build`.
+  // It seems to do some kind of "empty context" pass where `theme` is an empty
+  // object. This seems to happen only on the final render and I'm not sure what
+  // causes it, but using this hack still outputs the expected content from what
+  // I can tell, so 🤷🏻‍♂️
+  if (!theme.site) {
+    return null;
+  }
 
   return (
     <section
