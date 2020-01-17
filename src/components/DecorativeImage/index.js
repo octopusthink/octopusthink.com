@@ -8,6 +8,15 @@ const DecorativeImage = (props) => {
   const { alt, background, children, image, overlap, noMargin } = props;
   const theme = useTheme();
 
+  // HACK: Prevent errors encountered by `gatsby-plugin-mdx` on `npm run build`.
+  // It seems to do some kind of "empty context" pass where `theme` is an empty
+  // object. This seems to happen only on the final render and I'm not sure what
+  // causes it, but using this hack still outputs the expected content from what
+  // I can tell, so 🤷🏻‍♂️
+  if (!theme.site) {
+    return null;
+  }
+
   return (
     <div
       css={css`
