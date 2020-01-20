@@ -5,7 +5,7 @@ import React, { Fragment } from 'react';
 import PortfolioCard from 'components/PortfolioCard';
 
 const PortfolioCards = (props) => {
-  const { maxNumber, random } = props;
+  const { number, random } = props;
 
   const portfolioQuery = useStaticQuery(graphql`
     query {
@@ -34,8 +34,8 @@ const PortfolioCards = (props) => {
   if (random) {
     itemsToUse = knuthShuffle(itemsToUse.slice(0));
   }
-  if (maxNumber) {
-    itemsToUse = itemsToUse.slice(0, maxNumber);
+  if (number) {
+    itemsToUse = itemsToUse.slice(0, number);
   }
 
   return (
@@ -62,7 +62,7 @@ const PortfolioCards = (props) => {
 };
 
 PortfolioCards.defaultProps = {
-  maxNumber: 3,
+  number: undefined,
   random: false,
 };
 
