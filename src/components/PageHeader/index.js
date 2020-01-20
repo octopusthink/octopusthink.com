@@ -8,7 +8,7 @@ import Markdown from 'components/Markdown';
 import Watermark from 'static/watermark.svg';
 
 const PageHeader = (props) => {
-  const { ctaText, ctaURL, metadata, summary, summaryExtra, title } = props;
+  const { ctaText, ctaURL, metadata, summary, title } = props;
   const theme = useTheme();
 
   return (
