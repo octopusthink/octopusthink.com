@@ -20,7 +20,7 @@ import GridSpanner from 'components/GridSpanner'
 import IllustratedPoint from 'components/IllustratedPoint'
 import Image from 'components/Image'
 import Panel from 'components/Panel'
-import PortfolioCard from 'components/PortfolioCard'
+import PortfolioCards from 'components/PortfolioCards'
 import TestimonialCarousel from 'components/TestimonialCarousel'
 
 import AccessibilityIllustration from 'static/illustrations/accessibility.svg'
@@ -93,19 +93,11 @@ We don't take ourselves too seriously, but we do **great work**.
   <GridSpanner>
     <Heading level={2}>What we've done</Heading>
   </GridSpanner>
-  
-  Three PortfolioCards should output here, probably based on either numbers here or, if necessary, a flag in the portfolio items' frontmatter.
 
-<PortfolioCard
-  category="{category}"
-  slug="{slug}"
-  summary="{displaySummary}"
-  title="{displayTitle}"
-  thumbnail="{thumbnail}"
-/>
+<PortfolioCards />
 
   <GridSpanner>
-    <Button navigation minimal to="/portfolio/">Peruse our work</Button>
+    <Button navigation minimal to="/work/">Peruse our work</Button>
   </GridSpanner>
 </Panel>
 
