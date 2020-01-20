@@ -8,7 +8,7 @@ import Markdown from 'components/Markdown';
 import Watermark from 'static/watermark.svg';
 
 const PageHeader = (props) => {
-  const { ctaText, ctaURL, summary, title } = props;
+  const { ctaText, ctaURL, metadata, summary, summaryExtra, title } = props;
   const theme = useTheme();
 
   return (
@@ -72,6 +72,7 @@ const PageHeader = (props) => {
             }
           `}
         >
+          {metadata}
           <PageTitle
             css={css`
               color: white;
