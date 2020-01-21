@@ -13,11 +13,16 @@ import { css } from '@emotion/core';
 import dayjs from 'dayjs';
 
 import config from 'data/SiteConfig';
+import ButtonInverse from 'components/ButtonInverse';
 
 const PostCard = (props) => {
   const theme = useTheme();
-  const { date, readingTime, slug, summary, title } = props;
+  const { date, inverse, readingTime, slug, summary, title } = props;
   const formattedDate = dayjs(date).format(config.dateFormat);
+  let ButtonComponent = Button;
+  if (inverse) {
+    ButtonComponent = ButtonInverse;
+  }
 
   return (
     <article
@@ -40,6 +45,11 @@ const PostCard = (props) => {
               ${metadata.small(theme)};
               color: ${theme.colors.neutral.grey800};
               padding: 0 0.4rem 0.4rem 0;
+
+              ${inverse &&
+                css`
+                  color: ${theme.colors.neutral.grey200};
+                `}
             `}
           >
             &middot;
@@ -57,12 +67,14 @@ const PostCard = (props) => {
               margin-bottom: 1.6rem;
             `}
             level={2}
+            inverse={inverse}
           >
             {title}
           </Heading>
         </Link>
       </header>
       <Paragraph
+        inverse={inverse}
         css={css`
           margin-bottom: 0;
         `}
@@ -70,22 +82,16 @@ const PostCard = (props) => {
         {summary}
       </Paragraph>
       <footer>
-        <Button
+        <ButtonComponent
           to={slug}
           css={css`
-            border: 0;
             margin-left: 0;
-
-            &:hover {
-              box-shadow: none;
-              color: ${theme.colors.state.hoverText};
-            }
           `}
           navigation
           minimal
         >
           Continue reading<VisuallyHidden> {title}</VisuallyHidden>
-        </Button>
+        </ButtonComponent>
       </footer>
     </article>
   );
