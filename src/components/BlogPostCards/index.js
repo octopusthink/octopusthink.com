@@ -49,6 +49,7 @@ const BlogPostCards = (props) => {
             slug={slug}
             summary={summary}
             title={title}
+            inverse
           />
         );
       })}
