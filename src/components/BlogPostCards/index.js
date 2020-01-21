@@ -45,6 +45,7 @@ const BlogPostCards = (props) => {
           <PostCard
             key={slug}
             date={date}
+            heading={3}
             readingTime={readingTime}
             slug={slug}
             summary={summary}
