@@ -25,7 +25,7 @@ export const PortfolioList = (props) => {
       <PageWrapper>
         <PageHeader summary={pageSummary} title={pageTitle} />
 
-        <GridLayout columns="3">
+        <GridLayout columnsTablet="2" columnsDesktop="3">
           <Statistic number="28" label="Years experience" />
           <Statistic number="100+" label="Projects shipped" />
           <Statistic number="958" label="Diet Cokes consumed" />
