@@ -16,7 +16,7 @@ const FriendLogos = (props) => {
       >
         <Heading level={2}>{title}</Heading>
       </div>
-      <GridLayout columns="3" gap="8.0">
+      <GridLayout columnsMobile="2" columnsTablet="3" gap="8.0">
         {!abbreviated && <Image src="standard.png" alt="Standard Broadcast logo" />}
         <Image src="firefox.png" alt="Firefox logo" />
         {!abbreviated && <Image src="wordpress.com.png" alt="WordPress.com logo" />}
