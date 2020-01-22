@@ -17,7 +17,7 @@ import ButtonInverse from 'components/ButtonInverse';
 
 const PostCard = (props) => {
   const theme = useTheme();
-  const { date, heading, inverse, readingTime, slug, summary, title } = props;
+  const { date, heading, inverse, noCTA, readingTime, slug, summary, title } = props;
   const formattedDate = dayjs(date).format(config.dateFormat);
   let ButtonComponent = Button;
   if (inverse) {
@@ -85,18 +85,21 @@ const PostCard = (props) => {
       >
         {summary}
       </Paragraph>
-      <footer>
-        <ButtonComponent
-          to={slug}
-          css={css`
-            margin-left: 0;
-          `}
-          navigation
-          minimal
-        >
-          Continue reading<VisuallyHidden> {title}</VisuallyHidden>
-        </ButtonComponent>
-      </footer>
+
+      {!noCTA && (
+        <footer>
+          <ButtonComponent
+            to={slug}
+            css={css`
+              margin-left: 0;
+            `}
+            navigation
+            minimal
+          >
+            Continue reading<VisuallyHidden> {title}</VisuallyHidden>
+          </ButtonComponent>
+        </footer>
+      )}
     </article>
   );
 };
