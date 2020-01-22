@@ -18,6 +18,7 @@ import ButtonInverse from 'components/ButtonInverse'
 import BlogPostCards from 'components/BlogPostCards'
 import FriendLogos from 'components/FriendLogos'
 import GridSpanner from 'components/GridSpanner'
+import Hide from 'components/Hide'
 import IllustratedPoint from 'components/IllustratedPoint'
 import Image from 'components/Image'
 import Panel from 'components/Panel'
@@ -75,12 +76,12 @@ We don't take ourselves too seriously, but we do **great work**.
   </Heading>
 </GridSpanner>
 <IllustratedPoint label="Strategy" illustration={StrategyIllustration} minimal />
-<IllustratedPoint label="Visual design" illustration={VisualIllustration} minimal />
-<IllustratedPoint label="Product design" illustration={ProductIllustration} minimal />
+<IllustratedPoint label={<React.Fragment>Visual <Hide mobile>Design</Hide></React.Fragment>} illustration={VisualIllustration} minimal />
+<IllustratedPoint label={<React.Fragment>Product <Hide mobile>Design</Hide></React.Fragment>} illustration={ProductIllustration} minimal />
 
 <IllustratedPoint label="Accessibility" illustration={AccessibilityIllustration} minimal />
-<IllustratedPoint label="App development" illustration={AppIllustration} minimal />
-<IllustratedPoint label="Web development" illustration={WebIllustration} minimal />
+<IllustratedPoint label={<React.Fragment><Hide tablet desktop screenreaders>Mobile</Hide> App<Hide tablet desktop screenreaders>s</Hide> <Hide mobile>Development</Hide></React.Fragment>} illustration={AppIllustration} minimal />
+<IllustratedPoint label={<React.Fragment>Web<Hide tablet desktop screenreaders>sites</Hide> <Hide mobile>Development</Hide></React.Fragment>} illustration={WebIllustration} minimal />
 
 <GridSpanner>
   <ButtonInverse navigation minimal to="/services/">
@@ -147,9 +148,7 @@ We don't take ourselves too seriously, but we do **great work**.
 
 ## Work with us
 
-Our website is still under construction. That's why our friend Bubbles here is wearing a hard hat—and why he's still in pencil-sketch format. More is coming soon, so stay tuned!
-
-Have a project you'd like to discuss? Drop us a line for a **no-strings-attached** estimate.
+Got a great idea? No matter what stage you're in, we can help with planning, strategy, or execution. Let's figure out how to make your project a reality.
 
 <Button minimal navigation to="/contact/">
   Get in touch with us
