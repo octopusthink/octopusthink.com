@@ -51,6 +51,7 @@ const BlogPostCards = (props) => {
             summary={summary}
             title={title}
             inverse
+            noCTA
           />
         );
       })}
