@@ -22,9 +22,13 @@ const FriendLogos = (props) => {
         <Image src="firefox.png" alt="Firefox logo" />
         {!abbreviated && <Image src="wordpress.com.png" alt="WordPress.com logo" />}
         <Image src="snp.png" alt="Scottish National Party logo" />
-        <Hide mobile>
+        {!abbreviated ? (
           <Image src="ns-government.png" alt="Nova Scotia Government logo" />
-        </Hide>
+        ) : (
+          <Hide mobile>
+            <Image src="ns-government.png" alt="Nova Scotia Government logo" />
+          </Hide>
+        )}
         <Image src="google.png" alt="Google logo" />
         <Image src="mozilla.png" alt="Mozilla logo" />
         <Image src="automattic.png" alt="Automattic logo" />
