@@ -1,0 +1,213 @@
+---
+id: nebula
+title: Nebula
+order: 2
+thumbnail: '/portfolio/nebula/nebula-thumbnail.png'
+# background: '/portfolio/nebula/background-pattern.png'
+tags: [documentation, design-systems, React, accessibility]
+summary: A streaming video platform owned and operated by its creators, with full creative control and a profitable, direct-to-consumer business model.
+summaryShort: A streaming video platform owned and operated by influential creators.
+category: Web app
+---
+
+import { Link, Paragraph } from '@octopusthink/nautilus'
+
+import Divider from 'components/Divider'
+import IconHeading from 'components/IconHeading'
+import ImagePanel from 'components/ImagePanel'
+import Panel from 'components/Panel'
+import PortfolioSection from 'components/PortfolioSection'
+import PortfolioSummary from 'components/PortfolioSummary'
+import Testimonial from 'components/Testimonial'
+
+<PortfolioSummary next="the-challenge">
+
+<div>
+  <IconHeading problem />
+
+What you see on YouTube is largely determined by their algorithm. Daily vlogs and product unboxings inevitably trump long-form content. For Standard, a group of STEM and educational YouTubers, this makes it difficult to take risks on more thoughtful, in-depth videos.
+
+</div>
+
+<div>
+  <IconHeading solution />
+
+We built an unobtrusive subscription-based streaming video platform using React and Django. This allows creators to produce more innovative content, without worrying about advertiser or platform interference.
+
+</div>
+
+<div>
+  <IconHeading result />
+
+The launch wildly exceeded expectations: the site reached over ten thousand subscribers in a month and continues to grow. Curiousity Stream has since partnered with Nebula, and new original content is being released regularly.
+
+</div>
+
+<div>
+  <IconHeading role />
+
+documentation, leadership, UX, React, technical feasibility assessment, accessibility, DevOps, infrastructure (AWS), sever/API development, payment processing
+
+  </div>
+</PortfolioSummary>
+
+<ImagePanel
+  dark
+  alt="A mockup showing screenshots of the Nebula video player on a desktop, tablet, and phone."
+  image="portfolio/nebula/nebula-device-mockup.png"
+/>
+
+<PortfolioSection
+  metadata="Introduction"
+  heading="The challenge"
+  image="/portfolio/nebula/nebula-challenge.png"
+  alt="A YouTube comment by Real Engineering on one of their videos: “Well to prove my point why I won't be uploading the D-Day series to YouTube any time soon. This video has been demonetized. Signing up to [...] watchnebula.com will allow me to make these videos. I just can't take the risk on YouTube anymore.”"
+  next="consultation"
+  >
+
+Standard's creators focus on educational and <def title="science, technology, engineering, and mathematics">STEM</def> content. Their dedicated follower bases are interested in experimental, thoughtful, long-form pieces that YouTube won't promote or monetise. To facilitate sharing this type of content with their fans, the creators wanted to create a subscription-based video platform, without taking outside investment or investing a huge amount of resources.
+
+</PortfolioSection>
+
+<PortfolioSection
+  metadata="Taking the idea from nebulous to Nebula"
+  heading="Consultation"
+  image="/portfolio/nebula/nebula-consultation.png"
+  alt="Screenshots of prototype designs and pages on the Nebula site."
+  next="prototyping"
+  >
+
+We met with Standard to discuss their goals, constraints, and timeline. They had a clear idea of _what_ they wanted, but they weren't clear on _how_ to build it. They suggested a WordPress-powered site, but we determined that a custom solution would provide a better experience for both authors and users, as well as allowing for a flexible API that could be used by mobile apps.
+
+</PortfolioSection>
+
+<PortfolioSection
+  metadata="From 0 to v1 in two weeks"
+  heading="Prototyping"
+  image="/portfolio/nebula/nebula-prototype.png"
+  alt="More screenshots of prototype designs and implemented pages on the Nebula site, used as a proof-of-concept to creators and Standard stakeholders."
+  next="technical-infrastructure"
+  >
+
+To get creator buy-in, we determined the absolute <def title="Minimum viable product">MVP</def> and rapidly prototyped the first version of Nebula in less than two weeks. The prototype site featured creator pages, a featured homepage, and individual videos with functioning playback—all powered by a video API. Seeing their idea come to life got creators on board and excited about the project.
+
+</PortfolioSection>
+
+<Divider light />
+
+<Panel dark>
+<Testimonial
+  name="Dave Wiskus"
+  title="CEO"
+  company="Standard Broadcast"
+  url="https://standard.tv"
+>
+
+<Paragraph large inverse>
+  {/* prettier-ignore */}
+  Matt built an entire <Link
+    as="a"
+    href="https://watchnebula.com/"
+    css={css`
+      color: #e33592;
+    `}
+  >
+    streaming video platform
+  </Link> complete with a custom API and layers upon layers of tests to validate all future changes against.
+  All of this in about six months. It was truly awe-inspiring to watch.
+</Paragraph>
+
+<Paragraph large inverse>
+  Do me a favor and don't hire Octopus Think, because I'd like to book all of their hours myself.
+</Paragraph>
+
+</Testimonial>
+
+</Panel>
+
+<PortfolioSection
+  metadata="Designing a platform to scale"
+  heading="Technical infrastructure"
+  image="/portfolio/nebula/nebula-infrastructure.png"
+  alt="A Kubernetes dashboard and code snippets with highlighted Django code and API endpoint responses."
+  next="api-design"
+  >
+
+With the creators on board, it was time to start planning the technical architecture. Matt took the lead on this, designing a backend and infrastructure using tools (Django and AWS) that Standard's existing development team was already familiar with, ensuring long-term maintainability.
+
+</PortfolioSection>
+
+<PortfolioSection
+  metadata="Building a powerful backend"
+  heading="API Design"
+  image="/portfolio/nebula/nebula-api-design.png"
+  alt="The Nebula payment screen and a sample REST API response used for the web and mobile Nebula apps."
+  next="devops"
+  >
+
+We built a secure Django API that allowed for video consumption from a third-party platform, subscription management, user accounts, and payment processing with Stripe. This API powers the website, mobile apps, and internal reporting tools. We also worked with the video provider to improve their service and beta test new features.
+
+</PortfolioSection>
+
+<PortfolioSection
+  metadata="Leveraging automation"
+  heading="DevOps"
+  image="/portfolio/nebula/nebula-devops.png"
+  alt="Screenshots of various automation screens for Kubernetes, AWS, and GitHub Actions."
+  next="front-end-development"
+  >
+
+Automation was a key tool in shipping Nebula as quickly and as reliably as we did. We leveraged managed AWS Kubernetes and GitHub Actions to create a workflow that deployed, scaled, and recovered from failures automatically. The site never experienced downtimes or slow-downs, and deploys to a staging environment happened several times a day, creating a sense of constant iteration and excitment for Standard's team.
+
+</PortfolioSection>
+
+<PortfolioSection
+  metadata="Fast, fun, and future-proof"
+  heading="Front-end Development"
+  image="/portfolio/nebula/nebula-frontend.png"
+  alt="Website screenshots on various device sizes (mobile, tablet, and desktop), along with a screenshot of Jest test coverage reporter showing 85% test coverage."
+  next="launch"
+  >
+
+We planned out a flexible and idiomatic React front-end for the site, complete with features like server-side rendering, redux/sagas for predictable data management, and widespread test coverage using Jest.
+
+Nebula is built using server-side React, Redux, and Django, all deployed to AWS for high-availability. The website is entirely responsive and works great on a mobile device.
+
+</PortfolioSection>
+
+<PortfolioSection
+  metadata="Going live, stress-free!"
+  heading="Launch"
+  image="/portfolio/nebula/nebula-launch.png"
+  alt="The Nebula welcome/splash page with its pitch to new customers."
+  next="post-launch"
+  >
+
+The website was ready early, ensuring a stress-free launch day. Matt was on standby the entire day—fixing minor bugs, ensuring server health, watching Stripe logs, and adding quick-win features in response to user requests.
+
+The site was deployed to AWS on a scaling, self-healing Kubernetes cluster. Despite large numbers of sign-ups and visitors during the launch, the site never encountered issues.
+
+</PortfolioSection>
+
+<PortfolioSection
+  metadata="Hand-off to a new team"
+  heading="Post-Launch"
+  image="/portfolio/nebula/nebula-post-launch.png"
+  alt="A screenshot of documentation written for the development team that would maintain Nebula after the initial development by Octopus Think ended."
+  next="outcomes"
+  >
+
+Rather than just abandoning the project once it had launched, we were diligent in ensuring the team was well-positioned and prepared to maintain and build upon the structure we'd built for them. Matt spent the last month of the project thoroughly documenting any part of the stack less familiar to Standard's internal development team, improving code quality, and mentoring the team.
+
+</PortfolioSection>
+
+<PortfolioSection
+  metadata="What did we accomplish?"
+  heading="Outcomes"
+  image="/portfolio/nebula/nebula-outcomes.png"
+  alt="Screenshot of the iOS app running on an iPhone along with 5-star reviews and a 4.7 star average review in the iOS App Store."
+  >
+
+Nebula’s launch exceeded all stretch goals, and is now a profitable business venture for Standard. Its success on the web has encouraged Standard to invest further in the platform, developing an iPad and Android app. Creators love the new platform—and users love being able to connect more directly with their favourite content creators.
+
+</PortfolioSection>
