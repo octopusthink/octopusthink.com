@@ -1,26 +1,38 @@
 ---
 title: Technology that works for you.
-summary: We believe that technology is a tool to make the world a happier, fairer place. We build smart, inclusive, usable digital products to improve people'  s lives.
-summaryExtra: Want your technology to work for you? Get in touch.
+summary: |
+  We believe that technology is a tool to make the world a happier, fairer place. We build smart, inclusive, usable digital products to improve people's lives.
+
+  Want your technology to work for you?
+ctaText: Get in touch
+ctaURL: /contact
 description: Octopus Think is a digital design & technology company based in Scotland. We specialise in accessible, inclusive design and smart React development.
 component: PageWithoutPageBody
 ---
 
-import { Button, Heading, Paragraph, Strong, useTheme, metadata } from '@octopusthink/nautilus';
-import React from 'react';
-import { css } from '@emotion/core';
+import { Button, Heading, Paragraph, Strong, useTheme, metadata } from '@octopusthink/nautilus'
+import React from 'react'
+import { css } from '@emotion/core'
 
-import IllustratedPoint from 'components/IllustratedPoint';
-import Image from 'components/Image';
-import Panel from 'components/Panel';
-import AccessibilityIllustration from 'static/illustrations/accessibility.svg';
-import StrategyIllustration from 'static/illustrations/strategy.svg';
-import AppIllustration from 'static/illustrations/app-development.svg';
-import WebIllustration from 'static/illustrations/web-development.svg';
-import ProductIllustration from 'static/illustrations/product-design.svg';
-import VisualIllustration from 'static/illustrations/visual-design.svg';
+import ButtonInverse from 'components/ButtonInverse'
+import BlogPostCards from 'components/BlogPostCards'
+import FriendLogos from 'components/FriendLogos'
+import GridSpanner from 'components/GridSpanner'
+import Hide from 'components/Hide'
+import IllustratedPoint from 'components/IllustratedPoint'
+import Image from 'components/Image'
+import Panel from 'components/Panel'
+import PortfolioCards from 'components/PortfolioCards'
+import TestimonialCarousel from 'components/TestimonialCarousel'
 
-<Panel grid="auto 40rem">
+import AccessibilityIllustration from 'static/illustrations/accessibility.svg'
+import StrategyIllustration from 'static/illustrations/strategy.svg'
+import AppIllustration from 'static/illustrations/app-development.svg'
+import WebIllustration from 'static/illustrations/web-development.svg'
+import ProductIllustration from 'static/illustrations/product-design.svg'
+import VisualIllustration from 'static/illustrations/visual-design.svg'
+
+<Panel gridTablet="auto 24rem" gridDesktop="auto 40rem">
 
 <div>
 
@@ -44,55 +56,88 @@ We don't take ourselves too seriously, but we do **great work**.
   css={css`
     border-radius: 100%;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.125);
-    max-height: 400px;
-    max-width: 400px;
+    max-height: 40rem;
+    max-width: 40rem;
+    @media screen and (min-width: 640px) and (max-width: 1023px) {
+      align-self: center;
+      max-height: 24rem;
+      max-width: 24rem;
+    }
   `}
 />
 
 </Panel>
 
-<Panel dark grid="1fr 1fr 1fr" gridSmall="1fr 1fr">
+<Panel dark gridMobile="1fr 1fr" gridTablet="1fr 1fr 1fr">
 
-<div
-  css={css`
-    grid-column: 1 / -1;
-    text-align: center;
-    margin: 0;
-  `}
->
+<GridSpanner>
   <Heading inverse level={2}>
     What we do
   </Heading>
-</div>
+</GridSpanner>
 <IllustratedPoint label="Strategy" illustration={StrategyIllustration} minimal />
-<IllustratedPoint label="Visual design" illustration={VisualIllustration} minimal />
-<IllustratedPoint label="Product design" illustration={ProductIllustration} minimal />
+<IllustratedPoint label={<React.Fragment>Visual <Hide mobile>Design</Hide></React.Fragment>} illustration={VisualIllustration} minimal />
+<IllustratedPoint label={<React.Fragment>Product <Hide mobile>Design</Hide></React.Fragment>} illustration={ProductIllustration} minimal />
 
 <IllustratedPoint label="Accessibility" illustration={AccessibilityIllustration} minimal />
-<IllustratedPoint label="App development" illustration={AppIllustration} minimal />
-<IllustratedPoint label="Web development" illustration={WebIllustration} minimal />
+<IllustratedPoint label={<React.Fragment><Hide tablet desktop screenreaders>Mobile</Hide> App<Hide tablet desktop screenreaders>s</Hide> <Hide mobile>Development</Hide></React.Fragment>} illustration={AppIllustration} minimal />
+<IllustratedPoint label={<React.Fragment>Web<Hide tablet desktop screenreaders>sites</Hide> <Hide mobile>Development</Hide></React.Fragment>} illustration={WebIllustration} minimal />
 
-
-
-<div
-  css={css`
-    grid-column: 1 / -1;
-    margin: 0 auto;
-    max-width: max-content;
-  `}
->
-  <Button navigation primary to="/services/">
+<GridSpanner>
+  <ButtonInverse navigation minimal to="/services/">
     Explore our services
-  </Button>
-</div>
+  </ButtonInverse>
+</GridSpanner>
 
 </Panel>
 
-<Panel grid="40rem auto">
+<Panel gridMobile="1fr" gridTablet="1fr 1fr" gridDesktop="1fr 1fr 1fr">
+  <GridSpanner>
+    <Heading level={2}>What we’ve done</Heading>
+  </GridSpanner>
+
+<PortfolioCards number={3} />
+
+  <GridSpanner>
+    <Button navigation minimal to="/work/">Peruse our work</Button>
+  </GridSpanner>
+</Panel>
+
+<TestimonialCarousel />
+
+<Panel fullwidth>
+  <FriendLogos abbreviated title="The company we keep" />
+</Panel>
+
+<Panel dark gridDesktop="1fr 1fr">
+  <GridSpanner>
+    <Heading inverse level={2}>What we're up to now</Heading>
+  </GridSpanner>
+
+<BlogPostCards number={2} />
+
+<GridSpanner>
+  <ButtonInverse navigation minimal to="/blog/">
+    Read our blog
+  </ButtonInverse>
+</GridSpanner>
+
+</Panel>
+
+<Panel gridTablet="24rem auto" gridDesktop="40rem auto">
 
 <Image
   src="construction-sketch-transparent.png"
   alt="A sketch of our mascot, Bubbles: an octopus wearing a hard hat and safety goggles."
+  css={css`
+    max-height: 40rem;
+    max-width: 40rem;
+    @media screen and (min-width: 640px) and (max-width: 1023px) {
+      align-self: center;
+      max-height: 24rem;
+      max-width: 24rem;
+    }
+  `}
 />
 
 <div
@@ -103,9 +148,7 @@ We don't take ourselves too seriously, but we do **great work**.
 
 ## Work with us
 
-Our website is still under construction. That's why our friend Bubbles here is wearing a hard hat—and why he's still in pencil-sketch format. More is coming soon, so stay tuned!
-
-Have a project you'd like to discuss? Drop us a line for a **no-strings-attached** estimate.
+Got a great idea? No matter what stage you're in, we can help with planning, strategy, or execution. Let's figure out how to make your project a reality.
 
 <Button minimal navigation to="/contact/">
   Get in touch with us

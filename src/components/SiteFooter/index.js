@@ -1,7 +1,8 @@
 import { css } from '@emotion/core';
-import { Button, Link, Paragraph, metadata, useTheme } from '@octopusthink/nautilus';
+import { Link, Paragraph, metadata, useTheme } from '@octopusthink/nautilus';
 import React, { useRef } from 'react';
 
+import ButtonInverse from 'components/ButtonInverse';
 import NewsletterSignupForm from 'components/NewsletterSignupForm';
 import SiteMap from 'components/SiteMap';
 import SocialMediaLinks from 'components/SocialMediaLinks';
@@ -82,18 +83,17 @@ const SiteFooter = () => {
               margin-bottom: 0;
             `}
           >
-            <Button
+            <ButtonInverse
               minimal
               navigation
               to="/contact"
               css={css`
-                color: ${theme.colors.state.interactiveTextInverse};
                 font-size: 2.1rem;
                 margin: 0;
               `}
             >
               Contact us!
-            </Button>
+            </ButtonInverse>
           </Paragraph>
         </div>
 

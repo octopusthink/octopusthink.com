@@ -13,7 +13,7 @@ export const Portfolio = (props) => {
 
   const { page } = data;
   const { body } = page;
-  const { metaDescription, summary, summaryExtra, title } = page.fields;
+  const { metaDescription, summary, title } = page.fields;
 
   const description = metaDescription || summary;
 
@@ -21,12 +21,7 @@ export const Portfolio = (props) => {
     <App>
       <SEO title={title} description={description} />
       <PageWrapper>
-        <PageHeader
-          title={title}
-          summary={summary}
-          summaryExtra={summaryExtra}
-          description={description}
-        />
+        <PageHeader title={title} summary={summary} description={description} />
         <MDXRenderer>{body}</MDXRenderer>
         <Divider light />
       </PageWrapper>
@@ -41,7 +36,6 @@ export const pageQuery = graphql`
         metaDescription
         slug
         summary
-        summaryExtra
         title
       }
       body

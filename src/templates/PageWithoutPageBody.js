@@ -12,7 +12,7 @@ export const PageWithoutPageBody = (props) => {
 
   const { page } = data;
   const { body } = page;
-  const { metaDescription, summary, summaryExtra, title } = page.fields;
+  const { ctaText, ctaURL, metaDescription, summary, title } = page.fields;
 
   const description = metaDescription || summary;
 
@@ -21,8 +21,9 @@ export const PageWithoutPageBody = (props) => {
       <SEO title={title} description={description} />
       <PageWrapper>
         <PageHeader
+          ctaText={ctaText}
+          ctaURL={ctaURL}
           summary={summary}
-          summaryExtra={summaryExtra}
           description={description}
           title={title}
         />
@@ -36,10 +37,11 @@ export const pageQuery = graphql`
   query($id: String!) {
     page: mdx(id: { eq: $id }) {
       fields {
+        ctaText
+        ctaURL
         metaDescription
         slug
         summary
-        summaryExtra
         title
       }
       body

@@ -58,6 +58,11 @@ const Testimonial = (props) => {
       css={css`
         font-size: 1.2em;
         position: relative;
+        margin: 0 0 0 1.6rem;
+
+        @media screen and (min-width: 640px) {
+          margin-left: 2.4rem;
+        }
 
         &::before {
           color: ${theme.colors.text.inverseDark};

@@ -2,11 +2,13 @@ import { PageTitle, Paragraph, useTheme } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
+import ButtonInverse from 'components/ButtonInverse';
 import Divider from 'components/Divider';
+import Markdown from 'components/Markdown';
 import Watermark from 'static/watermark.svg';
 
 const PageHeader = (props) => {
-  const { metadata, summary, summaryExtra, title } = props;
+  const { ctaText, ctaURL, metadata, summary, title } = props;
   const theme = useTheme();
 
   return (
@@ -80,28 +82,38 @@ const PageHeader = (props) => {
           >
             {title}
           </PageTitle>
-          <Paragraph
-            large
-            inverse
-            light
-            css={css`
-              letter-spacing: -0.025em;
-            `}
+
+          <Markdown
+            components={{
+              p: (summaryProps) => (
+                <Paragraph
+                  large
+                  inverse
+                  light
+                  css={css`
+                    letter-spacing: -0.025em;
+                  `}
+                  // eslint-disable-next-line react/jsx-props-no-spreading
+                  {...summaryProps}
+                />
+              ),
+            }}
           >
             {summary}
-          </Paragraph>
+          </Markdown>
 
-          {summaryExtra && (
-            <Paragraph
-              large
-              inverse
-              light
+          {ctaText && ctaURL && (
+            <ButtonInverse
+              minimal
+              navigation
+              to={ctaURL}
               css={css`
-                letter-spacing: -0.025em;
+                font-size: 2.1rem;
+                margin: 0;
               `}
             >
-              {summaryExtra}
-            </Paragraph>
+              {ctaText}
+            </ButtonInverse>
           )}
         </div>
       </div>

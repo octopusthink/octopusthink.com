@@ -3,9 +3,11 @@ import React from 'react';
 import { css } from '@emotion/core';
 
 import GridLayout from 'components/GridLayout';
+import Hide from 'components/Hide';
 import Image from 'components/Image';
 
-const FriendLogos = () => {
+const FriendLogos = (props) => {
+  const { abbreviated, title } = props;
   return (
     <React.Fragment>
       <div
@@ -13,27 +15,33 @@ const FriendLogos = () => {
           text-align: center;
         `}
       >
-        <Heading level={2}>A few of our friends</Heading>
+        <Heading level={2}>{title}</Heading>
       </div>
-      <GridLayout columns="3" gap="8.0">
-        <Image src="standard.png" alt="Standard Broadcast logo" />
+      <GridLayout columnsMobile="2" columnsTablet="3" gap="8.0">
+        {!abbreviated && <Image src="standard.png" alt="Standard Broadcast logo" />}
         <Image src="firefox.png" alt="Firefox logo" />
-        <Image src="wordpress.com.png" alt="WordPress.com logo" />
+        {!abbreviated && <Image src="wordpress.com.png" alt="WordPress.com logo" />}
         <Image src="snp.png" alt="Scottish National Party logo" />
-        <Image src="ns-government.png" alt="Nova Scotia Government logo" />
+        {!abbreviated ? (
+          <Image src="ns-government.png" alt="Nova Scotia Government logo" />
+        ) : (
+          <Hide mobile>
+            <Image src="ns-government.png" alt="Nova Scotia Government logo" />
+          </Hide>
+        )}
         <Image src="google.png" alt="Google logo" />
         <Image src="mozilla.png" alt="Mozilla logo" />
         <Image src="automattic.png" alt="Automattic logo" />
         <Image src="ea.png" alt="EA logo" />
-        <Image src="fernwood.png" alt="Fernwood Publishing logo" />
+        {!abbreviated && <Image src="fernwood.png" alt="Fernwood Publishing logo" />}
         <Image src="10up.png" alt="10up logo" />
-        <Image src="nebula.png" alt="Nebula logo" />
-        <Image src="arbor-day-foundation.png" alt="Arbor Day Foundation logo" />
-        <Image src="hachette.png" alt="Hachette Book Group logo" />
-        <Image src="nslc.png" alt="Nova Scotia Liquor Commission logo" />
-        <Image src="wicker-emporium.png" alt="Wicker Emporium logo" />
+        {!abbreviated && <Image src="nebula.png" alt="Nebula logo" />}
+        {!abbreviated && <Image src="arbor-day-foundation.png" alt="Arbor Day Foundation logo" />}
+        {!abbreviated && <Image src="hachette.png" alt="Hachette Book Group logo" />}
+        {!abbreviated && <Image src="nslc.png" alt="Nova Scotia Liquor Commission logo" />}
+        {!abbreviated && <Image src="wicker-emporium.png" alt="Wicker Emporium logo" />}
         <Image src="wordpress.png" alt="WordPress logo" />
-        <Image src="saffron-marigold.png" alt="Saffron Marigold logo" />
+        {!abbreviated && <Image src="saffron-marigold.png" alt="Saffron Marigold logo" />}
       </GridLayout>
     </React.Fragment>
   );

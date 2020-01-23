@@ -3,7 +3,7 @@ import React from 'react';
 import { css } from '@emotion/core';
 
 const GridLayout = (props) => {
-  const { children, className, columns, gap } = props;
+  const { children, className, columnsMobile, columnsTablet, columnsDesktop, gap } = props;
   const theme = useTheme();
 
   // HACK: Prevent errors encountered by `gatsby-plugin-mdx` on `npm run build`.
@@ -51,6 +51,7 @@ const GridLayout = (props) => {
             display: grid;
             justify-content: stretch;
             align-items: stretch;
+            grid-auto-rows: 1fr;
 
             ${gap &&
               css`
@@ -62,14 +63,34 @@ const GridLayout = (props) => {
                 grid-gap: ${theme.site.mobilePadding};
               `}
 
-            @media screen and (min-width: 608px) {
-              grid-template-columns: repeat(${columns - 1}, 1fr);
-              grid-auto-rows: 1fr;
-            }
+            ${columnsMobile &&
+              css`
+                grid-template-columns: repeat(${columnsMobile}, 1fr);
+              `}
 
-            @media screen and (min-width: 960px) {
-              grid-template-columns: repeat(${columns}, 1fr);
-            }
+            @media screen and (min-width: 640px) {
+              ${!gap &&
+                css`
+                  grid-gap: ${theme.site.tabletPadding};
+                `}
+              
+              ${columnsTablet &&
+                css`
+                  grid-template-columns: repeat(${columnsTablet}, 1fr);
+                `}
+              }
+
+            @media screen and (min-width: 1024px) {
+              ${!gap &&
+                css`
+                  grid-gap: ${theme.site.desktopPadding};
+                `}
+
+              ${columnsDesktop &&
+                css`
+                  grid-template-columns: repeat(${columnsDesktop}, 1fr);
+                `}
+            } 
           `}
         >
           {children}

@@ -1,23 +1,17 @@
-import {
-  Button,
-  Link,
-  Heading,
-  Paragraph,
-  Tags,
-  VisuallyHidden,
-  useTheme,
-} from '@octopusthink/nautilus';
+import { Link, Heading, Paragraph, Tags, VisuallyHidden, useTheme } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
+import ButtonInverse from 'components/ButtonInverse';
 import Image from 'components/Image';
 
 const PortfolioCard = (props) => {
   const theme = useTheme();
-  const { category, slug, summary, title, thumbnail } = props;
+  const { category, className, slug, summary, title, thumbnail } = props;
 
   return (
     <Link
+      className={className}
       tabIndex="-1"
       to={slug}
       css={css`
@@ -88,7 +82,7 @@ const PortfolioCard = (props) => {
                 css={css`
                   margin-bottom: 1.6rem;
                 `}
-                level={4}
+                level={3}
               >
                 {title}
               </Heading>
@@ -111,7 +105,7 @@ const PortfolioCard = (props) => {
               opacity: 0;
             `}
           >
-            <Button
+            <ButtonInverse
               to={slug}
               css={css`
                 border: 0;
@@ -119,14 +113,13 @@ const PortfolioCard = (props) => {
 
                 &:hover {
                   box-shadow: none;
-                  color: ${theme.colors.state.hoverText};
                 }
               `}
               navigation
               minimal
             >
               Continue reading<VisuallyHidden> {title}</VisuallyHidden>
-            </Button>
+            </ButtonInverse>
           </footer>
         </div>
       </article>
