@@ -7,10 +7,11 @@ import Image from 'components/Image';
 
 const PortfolioCard = (props) => {
   const theme = useTheme();
-  const { category, slug, summary, title, thumbnail } = props;
+  const { category, className, slug, summary, title, thumbnail } = props;
 
   return (
     <Link
+      className={className}
       tabIndex="-1"
       to={slug}
       css={css`
@@ -81,7 +82,7 @@ const PortfolioCard = (props) => {
                 css={css`
                   margin-bottom: 1.6rem;
                 `}
-                level={4}
+                level={3}
               >
                 {title}
               </Heading>
