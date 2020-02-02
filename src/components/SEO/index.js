@@ -35,16 +35,18 @@ function SEO(props) {
   }
 
   const seo = {
+    description: description || site.siteMetadata.description,
+    lang,
     siteName: site.siteMetadata.title,
     title,
-    description: description || site.siteMetadata.description,
     url: canonical || `${site.siteMetadata.siteUrl}${pathname || '/'}`,
   };
+  console.log(seo.lang);
 
   return (
     <Helmet
       htmlAttributes={{
-        lang,
+        lang: seo.lang,
       }}
       meta={[
         {
@@ -70,6 +72,10 @@ function SEO(props) {
         {
           property: `og:url`,
           content: seo.url,
+        },
+        {
+          property: `og:locale`,
+          content: seo.lang,
         },
         {
           name: `twitter:card`,
