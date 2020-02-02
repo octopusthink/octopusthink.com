@@ -102,7 +102,7 @@ const makeBlogTags = ({ actions, tags }) => {
   const { createPage } = actions;
 
   tags.forEach((tag) => {
-    const slug = `/blog/tags/${tag.id}/`;
+    const slug = `/blog/tag/${tag.id}/`;
 
     createPage({
       path: slug,

@@ -26,7 +26,7 @@ export const BlogTags = (props) => {
   } else {
     pageTitle = `Posts tagged #${pageContext.tag}`;
     pageSummary = `An archive of blog posts tagged #${pageContext.tag}`;
-    pageSlug = `${config.blogUrl}tags/${pageContext.tag}`;
+    pageSlug = `${config.blogUrl}tag/${pageContext.tag}`;
   }
 
   return (
