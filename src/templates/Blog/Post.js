@@ -23,7 +23,17 @@ export const BlogPost = (props) => {
   const { post } = data;
 
   const { body } = post;
-  const { authors, date, metaDescription, slug, summary, tags, title, updated } = post.fields;
+  const {
+    authors,
+    canonical,
+    date,
+    metaDescription,
+    slug,
+    summary,
+    tags,
+    title,
+    updated,
+  } = post.fields;
 
   const formattedDate = dayjs(date).format(config.dateFormat);
   const formattedUpdated = updated && dayjs(updated).format(config.dateFormat);
@@ -89,7 +99,7 @@ export const BlogPost = (props) => {
 
   return (
     <App>
-      <SEO title={title} description={description} pathname={slug} />
+      <SEO canonical={canonical} title={title} description={description} pathname={slug} />
       <PageWrapper>
         <Fragment key={slug}>
           <PageHeader metadata={formattedMetadata} summary={summary} title={title} />
@@ -143,6 +153,7 @@ export const pageQuery = graphql`
           name
           title
         }
+        canonical
         date
         metaDescription
         slug
