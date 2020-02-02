@@ -26,11 +26,18 @@ function SEO(props) {
     `,
   );
 
-  const metaDescription = description || site.siteMetadata.description;
-  let pageTitle = `${title} · ${site.siteMetadata.title}`;
+  // Inverse the order of site & page titles on homepage only.
+  // TODO: Try to use Helmet's titleTemplate and/or automatic detection.
+  let pageDisplayTitle = `${title} · ${site.siteMetadata.title}`;
   if (homepage) {
-    pageTitle = `${site.siteMetadata.title} · ${title}`;
+    pageDisplayTitle = `${site.siteMetadata.title} · ${title}`;
   }
+
+  const seo = {
+    siteName: site.siteMetadata.title,
+    title,
+    description: description || site.siteMetadata.description,
+  };
 
   return (
     <Helmet
@@ -40,15 +47,19 @@ function SEO(props) {
       meta={[
         {
           name: `description`,
-          content: metaDescription,
+          content: seo.description,
+        },
+        {
+          property: `og:site_name`,
+          content: seo.siteName,
         },
         {
           property: `og:title`,
-          content: title,
+          content: seo.title,
         },
         {
           property: `og:description`,
-          content: metaDescription,
+          content: seo.description,
         },
         {
           property: `og:type`,
@@ -64,15 +75,15 @@ function SEO(props) {
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: seo.title,
         },
         {
           name: `twitter:description`,
-          content: metaDescription,
+          content: seo.description,
         },
       ].concat(meta)}
     >
-      <title>{pageTitle}</title>
+      <title>{pageDisplayTitle}</title>
     </Helmet>
   );
 }
