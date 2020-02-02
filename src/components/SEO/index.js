@@ -39,6 +39,7 @@ function SEO(props) {
           siteMetadata {
             author
             description
+            language
             siteUrl
             title
           }
@@ -56,7 +57,7 @@ function SEO(props) {
 
   const seo = {
     description: description || site.siteMetadata.description,
-    lang,
+    lang: lang || site.siteMetadata.language,
     modifiedTime,
     publishedTime,
     siteName: site.siteMetadata.title,
@@ -137,7 +138,7 @@ function SEO(props) {
 }
 
 SEO.defaultProps = {
-  lang: `en-GB`,
+  lang: undefined,
   meta: [],
   description: ``,
 };
