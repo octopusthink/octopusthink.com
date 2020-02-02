@@ -7,6 +7,7 @@ import PageHeader from 'components/PageHeader';
 import PageWrapper from 'components/PageWrapper';
 import PostCard from 'components/PostCard';
 import SEO from 'components/SEO';
+import config from 'data/SiteConfig';
 import App from 'templates/App';
 
 export const BlogTags = (props) => {
@@ -15,23 +16,28 @@ export const BlogTags = (props) => {
 
   let pageSummary;
   let pageTitle;
+  let pageSlug;
+
   if (tag.edges.length > 0) {
     const tagData = tag.edges[0].node;
     pageTitle = `Posts tagged #${tagData.name}`;
     pageSummary = tagData.summary;
+    pageSlug = `${config.blogUrl}tag/${tagData.name}`;
   } else {
     pageTitle = `Posts tagged #${pageContext.tag}`;
     pageSummary = `An archive of blog posts tagged #${pageContext.tag}`;
+    pageSlug = `${config.blogUrl}tags/${pageContext.tag}`;
   }
 
   return (
     <App>
-      <SEO title={pageTitle} description={pageSummary} />
+      <SEO title={pageTitle} description={pageSummary} pathname={pageSlug} />
       <PageWrapper>
         <PageHeader summary={pageSummary} title={pageTitle} />
         <PageBody>
           {posts.edges.map(({ node }) => {
-            const { date, readingTime, slug, summary, title } = node.fields;
+            const { fields, timeToRead: readingTime } = node;
+            const { date, slug, summary, title } = fields;
 
             return (
               <Fragment key={slug}>

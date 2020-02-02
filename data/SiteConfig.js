@@ -19,6 +19,7 @@ const config = {
   enablePortfolio: true,
 
   blogTitle: 'Octopus Thoughts',
+  blogUrl: '/blog/',
   blogTitleRSS: 'Octopus Thoughts: The Octopus Think Blog',
   blogDescription:
     'The blog of Octopus Think. Design, technology, inclusion, and adorable cephalopod stories.',

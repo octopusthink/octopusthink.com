@@ -12,13 +12,13 @@ export const PageWithoutPageBody = (props) => {
 
   const { page } = data;
   const { body } = page;
-  const { ctaText, ctaURL, metaDescription, summary, title } = page.fields;
+  const { ctaText, ctaURL, metaDescription, slug, summary, title } = page.fields;
 
   const description = metaDescription || summary;
 
   return (
     <App>
-      <SEO title={title} description={description} />
+      <SEO title={title} description={description} pathname={slug} />
       <PageWrapper>
         <PageHeader
           ctaText={ctaText}

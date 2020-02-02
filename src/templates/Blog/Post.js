@@ -89,7 +89,7 @@ export const BlogPost = (props) => {
 
   return (
     <App>
-      <SEO title={title} description={description} />
+      <SEO title={title} description={description} pathname={slug} />
       <PageWrapper>
         <Fragment key={slug}>
           <PageHeader metadata={formattedMetadata} summary={summary} title={title} />

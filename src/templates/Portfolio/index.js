@@ -17,11 +17,11 @@ export const PortfolioList = (props) => {
   const { data } = props;
   const { page } = data;
 
-  const { metaDescription, summary: pageSummary, title: pageTitle } = page.fields;
+  const { metaDescription, summary: pageSummary, slug, title: pageTitle } = page.fields;
 
   return (
     <App>
-      <SEO title={pageTitle} description={metaDescription} />
+      <SEO title={pageTitle} description={metaDescription} pathname={slug} />
       <PageWrapper>
         <PageHeader summary={pageSummary} title={pageTitle} />
 

@@ -18,10 +18,11 @@ export const BlogList = (props) => {
   const pageTitle = config.blogTitle;
   const pageSummary = config.blogSummary;
   const description = config.blogDescription;
+  const pageSlug = config.blogUrl;
 
   return (
     <App>
-      <SEO title={pageTitle} description={description} />
+      <SEO title={pageTitle} description={description} pathname={pageSlug} />
       <PageWrapper>
         <PageHeader summary={pageSummary} title={pageTitle} />
         <PageBody>
