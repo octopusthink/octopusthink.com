@@ -96,15 +96,21 @@ export const BlogPost = (props) => {
     </div>
   );
   const description = metaDescription || summary;
+  const tagArray = tags.map((tag) => {
+    return tag.name;
+  });
 
   return (
     <App>
       <SEO
+        article
         canonical={canonical}
         description={description}
+        modifiedTime={updated}
         pathname={slug}
+        publishedTime={date}
+        tags={tagArray}
         title={title}
-        type="article"
       />
       <PageWrapper>
         <Fragment key={slug}>

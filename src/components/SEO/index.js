@@ -10,8 +10,28 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
+const outputIfSet = (valueToCheck, objectToOutput) => {
+  if (!valueToCheck) {
+    return {};
+  }
+
+  return { ...objectToOutput };
+};
+
 function SEO(props) {
-  const { canonical, description, homepage, lang, meta, pathname, title, type } = props;
+  const {
+    article,
+    canonical,
+    description,
+    homepage,
+    lang,
+    meta,
+    modifiedTime,
+    pathname,
+    publishedTime,
+    tags,
+    title,
+  } = props;
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -37,12 +57,14 @@ function SEO(props) {
   const seo = {
     description: description || site.siteMetadata.description,
     lang,
+    modifiedTime,
+    publishedTime,
     siteName: site.siteMetadata.title,
+    tags,
     title,
-    type: type || `website`,
+    type: article ? `article` : `website`,
     url: canonical || `${site.siteMetadata.siteUrl}${pathname || '/'}`,
   };
-  console.log(seo.lang);
 
   return (
     <Helmet
@@ -78,6 +100,18 @@ function SEO(props) {
           property: `og:locale`,
           content: seo.lang,
         },
+        outputIfSet(article && seo.publishedTime, {
+          property: `article:published_time`,
+          content: seo.publishedTime,
+        }),
+        outputIfSet(article && seo.modifiedTime, {
+          property: `article:modified_time`,
+          content: seo.modifiedTime,
+        }),
+        outputIfSet(article && seo.tags, {
+          property: `article:tags`,
+          content: seo.tags,
+        }),
         {
           name: `twitter:card`,
           content: `summary`,
