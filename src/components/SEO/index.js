@@ -11,7 +11,7 @@ import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
 function SEO(props) {
-  const { canonical, description, homepage, lang, meta, pathname, title } = props;
+  const { canonical, description, homepage, lang, meta, pathname, title, type } = props;
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -39,6 +39,7 @@ function SEO(props) {
     lang,
     siteName: site.siteMetadata.title,
     title,
+    type: type || `website`,
     url: canonical || `${site.siteMetadata.siteUrl}${pathname || '/'}`,
   };
   console.log(seo.lang);
@@ -67,7 +68,7 @@ function SEO(props) {
         },
         {
           property: `og:type`,
-          content: `website`,
+          content: seo.type,
         },
         {
           property: `og:url`,

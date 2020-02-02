@@ -99,7 +99,13 @@ export const BlogPost = (props) => {
 
   return (
     <App>
-      <SEO canonical={canonical} title={title} description={description} pathname={slug} />
+      <SEO
+        canonical={canonical}
+        description={description}
+        pathname={slug}
+        title={title}
+        type="article"
+      />
       <PageWrapper>
         <Fragment key={slug}>
           <PageHeader metadata={formattedMetadata} summary={summary} title={title} />
