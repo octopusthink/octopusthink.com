@@ -9,12 +9,13 @@ const config = require('./data/SiteConfig.js');
 
 module.exports = {
   siteMetadata: {
+    title: config.siteTitle,
+    defaultImage: config.defaultImage,
+    description: config.siteDescription,
     author: config.twitter,
     copyright: config.copyright,
-    description: config.siteDescription,
     language: config.language,
     siteUrl: config.siteUrl,
-    title: config.siteTitle,
   },
   plugins: [
     {

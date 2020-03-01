@@ -32,6 +32,7 @@ export const BlogPost = (props) => {
     summary,
     tags,
     title,
+    thumbnail,
     updated,
   } = post.fields;
 
@@ -111,6 +112,7 @@ export const BlogPost = (props) => {
         publishedTime={date}
         tags={tagArray}
         title={title}
+        image={thumbnail}
       />
       <PageWrapper>
         <Fragment key={slug}>
@@ -176,6 +178,7 @@ export const pageQuery = graphql`
           name
           summary
         }
+        thumbnail
         updated
       }
       body

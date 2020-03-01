@@ -24,6 +24,7 @@ function SEO(props) {
     canonical,
     description,
     homepage,
+    image,
     lang,
     meta,
     modifiedTime,
@@ -38,6 +39,7 @@ function SEO(props) {
         site {
           siteMetadata {
             author
+            defaultImage
             description
             language
             siteUrl
@@ -58,6 +60,7 @@ function SEO(props) {
   const seo = {
     description: description || site.siteMetadata.description,
     lang: lang || site.siteMetadata.language,
+    image: `${site.siteMetadata.siteUrl}${image || site.siteMetadata.defaultImage}`,
     modifiedTime,
     publishedTime,
     siteName: site.siteMetadata.title,
@@ -101,6 +104,10 @@ function SEO(props) {
           property: `og:locale`,
           content: seo.lang,
         },
+        {
+          property: `og:image`,
+          content: seo.image || defaultSEOImage,
+        },
         outputIfSet(article && seo.publishedTime, {
           property: `article:published_time`,
           content: seo.publishedTime,
@@ -128,6 +135,10 @@ function SEO(props) {
         {
           name: `twitter:description`,
           content: seo.description,
+        },
+        {
+          name: `twitter:image`,
+          content: seo.image || defaultSEOImage,
         },
       ].concat(meta)}
     >
