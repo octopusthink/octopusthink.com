@@ -106,7 +106,7 @@ function SEO(props) {
         },
         {
           property: `og:image`,
-          content: seo.image || defaultSEOImage,
+          content: seo.image,
         },
         outputIfSet(article && seo.publishedTime, {
           property: `article:published_time`,
@@ -138,7 +138,7 @@ function SEO(props) {
         },
         {
           name: `twitter:image`,
-          content: seo.image || defaultSEOImage,
+          content: seo.image,
         },
       ].concat(meta)}
     >
