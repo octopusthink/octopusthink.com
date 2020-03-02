@@ -13,13 +13,13 @@ export const Portfolio = (props) => {
 
   const { page } = data;
   const { body } = page;
-  const { metaDescription, summary, title } = page.fields;
+  const { metaDescription, slug, summary, title } = page.fields;
 
   const description = metaDescription || summary;
 
   return (
     <App>
-      <SEO title={title} description={description} />
+      <SEO title={title} description={description} pathname={slug} />
       <PageWrapper>
         <PageHeader title={title} summary={summary} description={description} />
         <MDXRenderer>{body}</MDXRenderer>

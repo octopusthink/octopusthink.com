@@ -11,6 +11,7 @@ const config = {
   siteRss: '/blog/rss.xml', // Path to the RSS file.
   twitter: '@octopusthinks',
   copyright: `Copyright © ${new Date().getFullYear()}. Octopus Think Ltd.`, // Copyright string for the footer of the website and RSS feed.
+  defaultImage: '/og-images/default.png', // Fallback image used when sharing to social sites.
 
   // Ghost Ship Settings
   enableBlogAuthors: true,
@@ -19,6 +20,7 @@ const config = {
   enablePortfolio: true,
 
   blogTitle: 'Octopus Thoughts',
+  blogUrl: '/blog/',
   blogTitleRSS: 'Octopus Thoughts: The Octopus Think Blog',
   blogDescription:
     'The blog of Octopus Think. Design, technology, inclusion, and adorable cephalopod stories.',

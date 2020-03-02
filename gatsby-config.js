@@ -10,10 +10,12 @@ const config = require('./data/SiteConfig.js');
 module.exports = {
   siteMetadata: {
     title: config.siteTitle,
+    defaultImage: config.defaultImage,
     description: config.siteDescription,
     author: config.twitter,
-    siteUrl: config.siteUrl,
     copyright: config.copyright,
+    language: config.language,
+    siteUrl: config.siteUrl,
   },
   plugins: [
     {
