@@ -76,7 +76,7 @@ export const BlogPost = (props) => {
               return (
                 <Tags.Tag>
                   <Link
-                    to={`/blog/tag/${tag.id}`}
+                    to={`/blog/tags/${tag.id}`}
                     css={css`
                       border: none;
                       color: ${theme.colors.neutral.grey600};

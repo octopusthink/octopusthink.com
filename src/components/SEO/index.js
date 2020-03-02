@@ -149,6 +149,7 @@ function SEO(props) {
 }
 
 SEO.defaultProps = {
+  // If this prop is `undefined`, `siteConfig.language` will be used as a fallback.
   lang: undefined,
   meta: [],
   description: ``,

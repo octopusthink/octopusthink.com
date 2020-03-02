@@ -22,11 +22,11 @@ export const BlogTags = (props) => {
     const tagData = tag.edges[0].node;
     pageTitle = `Posts tagged #${tagData.name}`;
     pageSummary = tagData.summary;
-    pageSlug = `${config.blogUrl}tag/${tagData.name}`;
+    pageSlug = `${config.blogUrl}tags/${tagData.name}`;
   } else {
     pageTitle = `Posts tagged #${pageContext.tag}`;
     pageSummary = `An archive of blog posts tagged #${pageContext.tag}`;
-    pageSlug = `${config.blogUrl}tag/${pageContext.tag}`;
+    pageSlug = `${config.blogUrl}tags/${pageContext.tag}`;
   }
 
   return (
