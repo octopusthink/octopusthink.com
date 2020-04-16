@@ -188,7 +188,7 @@ const SiteFooter = () => {
           >
             Copyright
           </span>{' '}
-          © 2019 Octopus Think Ltd.
+          © 2020 Octopus Think Ltd.
           <br />
           UK Registered Company No.{' '}
           <Link
