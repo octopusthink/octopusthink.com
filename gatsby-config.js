@@ -11,6 +11,8 @@ module.exports = {
   siteMetadata: {
     title: config.siteTitle,
     defaultImage: config.defaultImage,
+    imageHeight: config.imageHeight,
+    imageWidth: config.imageWidth,
     description: config.siteDescription,
     author: config.twitter,
     copyright: config.copyright,

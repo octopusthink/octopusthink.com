@@ -12,6 +12,8 @@ const config = {
   twitter: '@octopusthinks',
   copyright: `Copyright © ${new Date().getFullYear()}. Octopus Think Ltd.`, // Copyright string for the footer of the website and RSS feed.
   defaultImage: '/og-images/default.png', // Fallback image used when sharing to social sites.
+  imageHeight: '630',
+  imageWidth: '1200',
 
   // Ghost Ship Settings
   enableBlogAuthors: true,
