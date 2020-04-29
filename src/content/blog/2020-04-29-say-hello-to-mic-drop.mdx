@@ -1,0 +1,106 @@
+---
+authors: [matt]
+tags: [launch]
+title: Say hello to Mic Drop!
+summary: Mic Drop is a little app for your Mac that makes it super easy to mute (and unmute!) your mic, using a global shortcut or a menu bar control. It's also our very first app, so please forgive us if we use too many exclamation points.
+thumbnail: '/og-images/blog/2020-04-29-say-hello-to-mic-drop.png'
+---
+
+import { Link, VisuallyHidden } from '@octopusthink/nautilus'
+
+import { default as DecorativeImage } from 'components/DecorativeImage'
+
+Sarah and I have been working from home for ages—think since "Umbrella" was playing in every bar and radio station. (Back when people listened to radio stations!) As a lot of people are discovering, this means spending a lot of time in video chats.
+
+From weekly stand-ups to user research interviews, strategy sessions to pair programming—**we spend a _lot_ of time in meetings**.
+
+Inevitably, this leads to a chorus of "Can you hear me?" "Is this thing on?" It means scrambling for the mute button in Zoom, Google Meet, Slack, Skype, and countless other apps to make sure we aren't distracting everyone else on the call by taking a swig of tea or banging away on our "quiet" mechanical keyboards. Almost every single day, I wind up in a meeting with someone silently mouthing words at their screen, and I have to interrupt them with a "Sorry, you're muted!"
+
+Muting yourself is critical to keeping a video call running smoothly, but it's too easy to get it wrong. And when you get it wrong, that can have [very real consequences](https://twitter.com/Alain_Tolhurst/status/1252987811751436293). 🙊
+
+## We built an app to help.
+
+Mic Drop is a super-simple Mac app to help you quickly mute (and then unmute!) your microphone. It's designed for remote workers, user researchers, teachers, podcasters... really, anyone spending as much time in video calls as we do!
+
+<div
+  css={css`
+    margin-bottom: 4.8rem;
+  `}
+>
+  <iframe
+    src="https://player.vimeo.com/video/413219955"
+    width="100%"
+    height="360"
+    frameborder="0"
+    allow="autoplay; fullscreen"
+    allowfullscreen
+  ></iframe>
+</div>
+
+Using a video app's native mute function is an inconsistent experience, and existing Mac apps that handle muting tend to be buggy, outdated, and unsupported.
+
+We wanted a simple app that did a few things really well:
+
+- Shows your mute status in the Mac menu bar.
+- Allows you to set a global keyboard shortcut that mutes your mic in _every_ app.
+- Supports mute toggle, push-to-talk, and push-to-mute.
+- Keeps track of _all_ of your devices.
+
+That last one is a big one if you travel and do meetings with wireless headphones. If you're halfway through your meeting and your AirPods die, your laptop mic won't suddenly activate when your headphones disconnect, leaving your colleagues wondering who's loudly cursing whilst trying to find another set of headphones during the meeting. (True story.)
+
+## How does it work?
+
+Mic Drop allows you to record a custom keyboard shortcut to toggle your microphone. You can use it anytime—in any app—to mute or unmute your microphone. No matter what you're doing, it _just works_.
+
+<DecorativeImage
+  alt="Mic Drop's preferences pane, showing a custom hotkey recorder."
+  image="mic-drop-customisable.png"
+/>
+
+It keeps track of your input devices to make sure they're muted, but Mic Drop **never listens to you** or records your input. And since Mic Drop mutes your mic on a system level, it's also a handy way to prevent apps from listening to you in the background, if you're worried that sort of thing. 🕵🏻‍♂️
+
+Curious about what's under the hood? We wrote a little more about [how it works](https://getmicdrop.com/under-the-hood/).
+
+## Why do I need this?
+
+Unlike the fancy microphones you find in office meeting rooms, our laptop, headset, and webcam microphones pick up a lot of background noise. It's considerate to mute your mic on calls—especially if you're in a busy place or you share a home with small children / large canines / a smoke alarm that goes off every time your partner tries to cook a chicken breast. (Also a true story.)
+
+<DecorativeImage
+  alt="Mic Drop's mute indicator, showing whether you're muted or not."
+  image="mic-drop-confidence-inspiring.png"
+/>
+
+Mic Drop makes it really easy to see if you're muted or not, and to toggle your mic super quickly. Even if you only use one app for your meetings, with Mic Drop that app doesn't need to be in focus for you to toggle your mute settings. That's super helpful if you're the note-taker, or if you're just distracted and looking at kitten videos on the internet. 🤫 (Definitely not a true story.)
+
+<div
+  css={css`
+    margin-bottom: 4.8rem;
+  `}
+>
+  <iframe
+    src="https://player.vimeo.com/video/413226638"
+    width="100%"
+    height="360"
+    frameborder="0"
+    allow="autoplay; fullscreen"
+    allowfullscreen
+  ></iframe>
+</div>
+
+## Did you make this because of COVID-19?
+
+Nope! We started working on Mic Drop last November during a weekend in Luxembourg, back before the pandemic hit. We didn't rush to launch in order to capitalise on the crisis because a) that seems super icky and b) we wanted to be sure everything was well-tested and bulletproof prior to launch.
+
+But we recognise that this global crisis means that a whole lot of people are working from home now. In light of that, we'll be **donating 50% of every sale** to charity for the entirety of 2020.
+
+Lockdown measures mean many of us are spending more time at home. This has very real consequences for those who experience domestic abuse.
+
+That’s why we’re donating 50% of every sale (that’s _revenues_, not profits!) to [Scottish Women’s Aid](https://womensaid.scot/covid-19/).
+
+## Sounds good—how can I get it?
+
+You can learn more (or download a free trial) at [getmicdrop.com](https://getmicdrop.com/). The free trial gives you full functionality for thirty days, so you'll have lots of time to try it out.
+
+If you find it useful, you can purchase Mic Drop for a one-time fee of \$9.99/£9.99/10.99€. It's available on the [Mac App Store](https://apps.apple.com/app/mic-drop/id1489816366) or directly from the [Mic Drop website](https://getmicdrop.com/?action=purchase).
+
+We'll also be giving away occasional free copies of the app over on our Twitter page, so follow [@octopusthinks](https://twitter.com/octopusthinks) if you want to snag a promo code. The [FART_BUTTON](https://twitter.com/EliFitch/status/1249711579429511172) coupon is now expired, but it makes Sarah laugh so much there's always a chance it might make a reappearance. 💨

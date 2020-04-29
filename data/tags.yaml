@@ -1,3 +1,6 @@
+- id: launch
+  name: launch
+  summary: Every now and then we make things.
 - id: updates
   name: updates
   summary: What have we been up to lately? Here’s where you find out.
