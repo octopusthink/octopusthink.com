@@ -76,9 +76,10 @@ export const BlogPost = (props) => {
               return (
                 <Tags.Tag>
                   <Link
+                    unstyled
                     to={`/blog/tags/${tag.id}`}
                     css={css`
-                      border: none;
+                      text-decoration: none;
                       color: ${theme.colors.neutral.grey600};
 
                       &:hover {

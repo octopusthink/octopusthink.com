@@ -196,7 +196,6 @@ const SiteFooter = () => {
             external
             css={css`
               color: ${theme.colors.text.inverseDark};
-              border-bottom: 1px solid;
             `}
             href="https://beta.companieshouse.gov.uk/company/11747595"
           >
@@ -210,7 +209,6 @@ const SiteFooter = () => {
             external
             css={css`
               color: ${theme.colors.text.inverseDark};
-              border-bottom: 1px solid;
             `}
             href="https://github.com/octopusthink/octopusthink.com/issues/new"
           >
