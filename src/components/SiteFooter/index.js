@@ -192,7 +192,6 @@ const SiteFooter = () => {
           <br />
           UK Registered Company No.{' '}
           <Link
-            as="a"
             external
             css={css`
               color: ${theme.colors.text.inverseDark};
@@ -205,7 +204,6 @@ const SiteFooter = () => {
           VAT ID: GB324954685
           <br />
           <Link
-            as="a"
             external
             css={css`
               color: ${theme.colors.text.inverseDark};

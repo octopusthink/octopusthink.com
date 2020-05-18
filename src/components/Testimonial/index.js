@@ -11,7 +11,6 @@ const TestimonialLink = ({ company, name, url }) => {
 
   return (
     <Link
-      as="a"
       href={url}
       css={css`
         color: ${theme.colors.text.inverse};
