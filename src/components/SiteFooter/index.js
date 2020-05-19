@@ -192,11 +192,10 @@ const SiteFooter = () => {
           <br />
           UK Registered Company No.{' '}
           <Link
-            as="a"
             external
             css={css`
+              box-shadow: 0 0.2rem ${theme.colors.text.inverseDark};
               color: ${theme.colors.text.inverseDark};
-              border-bottom: 1px solid;
             `}
             href="https://beta.companieshouse.gov.uk/company/11747595"
           >
@@ -206,11 +205,10 @@ const SiteFooter = () => {
           VAT ID: GB324954685
           <br />
           <Link
-            as="a"
             external
             css={css`
+              box-shadow: 0 0.2rem ${theme.colors.text.inverseDark};
               color: ${theme.colors.text.inverseDark};
-              border-bottom: 1px solid;
             `}
             href="https://github.com/octopusthink/octopusthink.com/issues/new"
           >

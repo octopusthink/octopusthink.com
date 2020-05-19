@@ -33,7 +33,7 @@ const PortfolioSection = (props) => {
           grid-gap: ${theme.site.tabletPadding};
           min-height: 98vh;
 
-          &:nth-of-type(even) {
+          &:nth-of-type(odd) {
             .portfolioSectionText {
               order: 2;
             }

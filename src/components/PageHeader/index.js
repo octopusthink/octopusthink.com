@@ -104,12 +104,12 @@ const PageHeader = (props) => {
 
           {ctaText && ctaURL && (
             <ButtonInverse
+              noMargin
               minimal
               navigation
               to={ctaURL}
               css={css`
                 font-size: 2.1rem;
-                margin: 0;
               `}
             >
               {ctaText}

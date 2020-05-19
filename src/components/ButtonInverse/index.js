@@ -4,12 +4,13 @@ import { css } from '@emotion/core';
 
 const ButtonInverse = (props) => {
   const theme = useTheme();
-  const { children, className, to } = props;
+  const { children, className, noMargin, to } = props;
 
   return (
     <Button
       className={className}
       navigation
+      noMargin={noMargin}
       minimal
       to={to}
       css={css`

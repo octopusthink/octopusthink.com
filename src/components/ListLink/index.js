@@ -11,7 +11,7 @@ const ListLink = (props) => {
   return (
     <li>
       <Link
-        __unstyled
+        unstyled
         as={a ? 'a' : undefined}
         href={a ? link : undefined}
         to={a ? undefined : link}

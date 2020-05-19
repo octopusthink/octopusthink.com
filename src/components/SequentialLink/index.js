@@ -14,6 +14,7 @@ const SequentialLink = (props) => {
 
   return (
     <Link
+      unstyled
       to={to}
       css={css`
         border: 0;
@@ -21,6 +22,7 @@ const SequentialLink = (props) => {
         align-items: center;
         justify-content: end;
         grid-gap: 0.8rem;
+        text-decoration: none;
 
         ${direction === 'previous' &&
           css`
