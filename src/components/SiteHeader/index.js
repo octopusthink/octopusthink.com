@@ -46,8 +46,14 @@ const SiteHeader = () => {
       >
         <SkipLink />
         <Link
+          unstyled
           css={css`
-            border: 0;
+            margin-bottom: 0.4rem;
+
+            &:focus {
+              box-shadow: 0 0 0 0.4rem ${theme.colors.state.focusOutline};
+              outline: none;
+            }
           `}
           getProps={(linkProps) => {
             const { isCurrent: isCurrentRouterLink } = linkProps;

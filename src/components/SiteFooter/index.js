@@ -194,6 +194,7 @@ const SiteFooter = () => {
           <Link
             external
             css={css`
+              box-shadow: 0 0.2rem ${theme.colors.text.inverseDark};
               color: ${theme.colors.text.inverseDark};
             `}
             href="https://beta.companieshouse.gov.uk/company/11747595"
@@ -206,6 +207,7 @@ const SiteFooter = () => {
           <Link
             external
             css={css`
+              box-shadow: 0 0.2rem ${theme.colors.text.inverseDark};
               color: ${theme.colors.text.inverseDark};
             `}
             href="https://github.com/octopusthink/octopusthink.com/issues/new"

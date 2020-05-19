@@ -21,6 +21,11 @@ const NavigationMenuItem = (props) => {
           font-weight: 600;
           padding: 1.6rem;
 
+          &:focus {
+            box-shadow: 0 0 0 0.4rem ${theme.colors.state.focusOutline};
+            outline: none;
+          }
+
           @media screen and (max-width: 479px) {
             border-bottom: 1px solid ${theme.colors.neutral.grey800};
             display: block;
