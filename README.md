@@ -34,34 +34,6 @@ To pull the latest changes, uninstall and reinstall the Nautilus dependency:
 npm uninstall nautilus && npm install --save octopusthink/nautilus
 ```
 
-## Data & content
-
-This site follows standard Gatsby practises for storing content & data. That means that the majority of site content is stored in `.md` or `.mdx` files in `src/content`. All content files are stored in folders based on the type of content they represent. Content is generally used for types of content that are shown on their own dedicated page.
-
-We have three different content types: blog posts, site pages, and portfolio items.
-
-Difference between summaryShort and summary?
-
-### Blog posts 
-### Site pages
-
-### Portfolio items
-
-
-
-(Maybe we can get rid of these entirely?)
-Summary: as on page and blog posts, used for the page heading and the SEO description. 
-summaryShort: used for the text that explains when you hover over the preview on the `/work` page.
-`order:` 
-`thumbnail:`
-
-Additional data that typically doesn't have its own page is stored in `.yaml` files in `data/`. This tends to be used for data that's queried and displayed as part of a larger page, but isn't shown on its own dedicated page.
-
-What we're storing as data:
-- Blog authors, shown in a box in the footer of blog posts
-- Blog tabs, shown in the header of blog posts
-- Client testimonials, shown in the `TestimonialCarousel` component
-
 ## License
 
 Copyright (c) 2020 Octopus Think Ltd. (https://octopusthink.com/)
