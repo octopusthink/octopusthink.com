@@ -64,6 +64,12 @@ export const App = (props) => {
               padding-top: 1.6rem;
             }
           }
+
+          .twitter-tweet-mdx-embed .twitter-tweet {
+            &:not(.twitter-tweet-rendered) {
+              display: none;
+            }
+          }
         `}
       />
       <SiteHeader />
