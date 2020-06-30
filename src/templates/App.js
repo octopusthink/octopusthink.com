@@ -1,6 +1,8 @@
 import { css, Global } from '@emotion/core';
 import { useTheme } from '@octopusthink/nautilus';
+import { MdxEmbedProvider } from '@pauliescanlon/gatsby-mdx-embed';
 import React from 'react';
+import Helmet from 'react-helmet';
 import 'typeface-inter';
 
 import GhostShipMDX from 'components/GhostShipMDX';
@@ -65,15 +67,24 @@ export const App = (props) => {
             }
           }
 
-          .twitter-tweet-mdx-embed .twitter-tweet {
-            &:not(.twitter-tweet-rendered) {
+          .twitter-tweet-mdx-embed {
+            margin-bottom: 3.2rem;
+            min-height: 260px;
+            max-width: 90vw;
+
+            .twitter-tweet:not(.twitter-tweet-rendered) {
               display: none;
             }
           }
         `}
       />
+      <Helmet>
+        <link rel="shortcut icon" href="/favicon.ico" />
+      </Helmet>
       <SiteHeader />
-      <main id="content">{children}</main>
+      <MdxEmbedProvider>
+        <main id="content">{children}</main>
+      </MdxEmbedProvider>
       <SiteFooter />
     </GhostShipMDX>
   );

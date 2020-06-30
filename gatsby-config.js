@@ -161,6 +161,9 @@ module.exports = {
       },
     },
     {
+      resolve: '@pauliescanlon/gatsby-mdx-embed',
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
@@ -181,12 +184,6 @@ module.exports = {
         name: 'data',
         path: `${__dirname}/data/`,
         ignore: ['**/*.js'],
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-favicon',
-      options: {
-        logo: './static/favicon.png',
       },
     },
     {
