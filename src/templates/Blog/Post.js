@@ -65,7 +65,7 @@ export const BlogPost = (props) => {
             css={css`
               ${metadata.small(theme)};
               color: ${theme.colors.neutral.grey600};
-              padding: 0 0.4rem 0.4rem 0;
+              padding-right: 0.4rem;
             `}
           >
             &middot;
@@ -81,6 +81,7 @@ export const BlogPost = (props) => {
                     css={css`
                       text-decoration: none;
                       color: ${theme.colors.neutral.grey600};
+                      padding-right: 0.4rem;
 
                       &:hover {
                         color: ${theme.colors.text.inverseDark};

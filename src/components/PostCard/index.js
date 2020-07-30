@@ -38,6 +38,7 @@ const PostCard = (props) => {
         <div
           css={css`
             margin-bottom: 0.4rem;
+            display: flex;
           `}
         >
           <Tags label="Date Published">
