@@ -3,6 +3,7 @@ authors: [sarah, matt]
 tags: [updates]
 title: Hello! We're Octopus Think.
 summary: Let's talk about design. And technology. And cephalopods, because we can't always be that serious.
+thumbnail: '/og-images/blog/2019-09-21-hello-were-octopus-think.png'
 updated: 2019-10-06
 ---
 
