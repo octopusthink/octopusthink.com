@@ -1,12 +1,12 @@
 ---
 authors: [matt]
 tags: [development]
-title: Why it takes months to mute your mic
+title: How to mute a mic in six months
 summary: |
-  For a relatively simple app, Mic Drop took us quite awhile to build—and that's not even counting all the time we've spent on marketing! It turns out that even a very "simple" app has a lot more going on than you'd think.
+  For a relatively simple app, Mic Drop took a lot longer than you might think to build—and that's not even counting all the time we've spent on marketing! It turns out that there's a lot more to simplicity than there seems—and audio, in particular, is especially complex.
 
-  I wanted to explore what's beneath the surface and share some of what we've learned from our first foray into macOS app development, from a (mostly) technical perspective.
-thumbnail: '/og-images/blog/2020-06-30-remote-meeting-etiquette-guide.png'
+  Matt explores beneath the surface to share what we've learned from our first foray into macOS app development, from a (mostly) technical perspective.
+thumbnail: '/og-images/blog/2020-08-03-how-to-mute-a-mic-in-six-months.png'
 ---
 
 import DecorativeImage from 'components/DecorativeImage'
@@ -30,21 +30,21 @@ That's good for our users, but bad for us when we just wanna ship our damned app
 
 Mic Drop's core functionality—muting the microphone—is **simple to describe but complex to implement**. It's the perfect example of developer hubris: "_Easy. I could build it in a week!_" That's what I thought too.
 
-In November. ([We released Mic Drop in April.](/blog/2020-04-29-say-hello-to-mic-drop)) 😅
+In November. (Note: We [released Mic Drop](/blog/2020-04-29-say-hello-to-mic-drop) in April.) 😅
 
 To mute the microphone, Mic Drop relies on macOS's Core Audio framework. It's a set of APIs that controls low-level audio device functionality on Macs. It's been around for a long time, and as a result it's pretty complex and certainly very-edge-case-y.
 
-It turns out managing inputs like microphones is much more complicated than we thought! From aggregate inputs and loopback devices, not every input device is a real microphone. There are microphones that ignore mute settings, and some that claim to honour mute status but _don't_ (I'm looking at you, LG UltraFine 5K).
+It turns out managing inputs like microphones is much more complicated than we thought! From aggregate inputs and loopback devices, not every input device is a real microphone. There are microphones that ignore mute settings, and some that claim to honour mute status but _don't_. (I'm looking at you, LG UltraFine 5K.)
 
 There's a whole lot of code for handling edge cases in Mic Drop!
 
-## Borrowing from open source & sharing back
+## Let's not reinvent the wheel
 
-We try to avoid reinventing the wheel where it make sense. We built on existing open-source libraries to handle [recording keyboard shortcuts](https://github.com/octopusthink/KeyHolder). Our [customised versions](https://github.com/octopusthink/Magnet) of these libraries are available for you to use in your own projects.
+We built on top of existing open-source libraries to handle [recording keyboard shortcuts](https://github.com/octopusthink/KeyHolder). We've shared these [customised versions](https://github.com/octopusthink/Magnet) of these libraries so you can use them in your own projects.
 
-We've published a [Under the Hood](https://getmicdrop.com/under-the-hood/) page on the Mic Drop website. This is something we'll be doing for all future apps—partly because we're curious, and partly because we're fans of transparency. It allows us an opportunity to explain our choices and gives others a reference for their own projects. 📕
+We published an [Under the Hood](https://getmicdrop.com/under-the-hood/) page on the Mic Drop website. This is something we'll be doing for all future apps—partly because we're curious, and partly because we're fans of transparency. It allows us an opportunity to explain our choices and gives others a reference for their own projects. 📕
 
-It's also one of the most popular pages on the Mic Drop website, so either other people are curious as well, or they're finding it useful! Either way: it's definitely worth sharing.
+It turns out it's one of the most popular pages on the Mic Drop website, so either people are curious or they're finding it useful. We'll definitely stick with the habit.
 
 We're also using [Microsoft's App Center](https://appcenter.ms) to log (anonymous!) usage stats and crash metrics for users who opt-in. It's easy to use, and comes with a dead-simple API for logging events in the app. I'd recommend it! 👍🏻
 
