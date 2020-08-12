@@ -7,3 +7,6 @@
 - id: ethics
   name: ethics
   summary: How can we use technology to make the world a better place? What are we doing to ensure our work doesn't exclude people? Let's discuss.
+- id: development
+  name: development
+  summary: From how we build apps to tutorials on how to use frameworks and open-source libraries, we like to impart our experience and "wisdom", from time-to-time.
