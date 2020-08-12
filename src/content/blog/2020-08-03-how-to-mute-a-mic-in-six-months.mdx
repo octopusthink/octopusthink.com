@@ -11,18 +11,11 @@ thumbnail: '/og-images/blog/2020-08-03-how-to-mute-a-mic-in-six-months.png'
 
 import DecorativeImage from 'components/DecorativeImage'
 
-<!--
-<DecorativeImage
-  alt="ALT DESC HERE"
-  image="IMAGEHERE.png"
-/>
--->
-
 There's an undeniable appeal in simplicity, especially as technology feels increasingly complex. The products we love the most are often the ones that feel the simplest, even if they aren't necessarily the ones that do the least.
 
 From a consumer perspective, this often creates something of a paradox—when an app _feels_ simple, we think that it must have been simple to build, but often, the inverse is true. Building an app that feels simple for users can often require more work under the hood than it would to build a more complex app, because we're managing that complexity in the code, rather than asking the user to handle that complexity for us.
 
-That's good for our users, but bad for us when we just wanna ship our damned app. 😅
+That's good for users—but not so great for us, when we just wanna ship our damned app! 😅
 
 ## If I had more time, I'd write a shorter letter
 
@@ -32,9 +25,19 @@ Mic Drop's core functionality—muting the microphone—is **simple to describe 
 
 In November. (Note: We [released Mic Drop](/blog/2020-04-29-say-hello-to-mic-drop) in April.) 😅
 
+<DecorativeImage
+  alt="A flowchart showing how you might think muting a device would work: press a button, and the device mutes."
+  image="src/images/blog/2020-08-12-muting-how-you-think-it-works.png"
+/>
+
 To mute the microphone, Mic Drop relies on macOS's Core Audio framework. It's a set of APIs that controls low-level audio device functionality on Macs. It's been around for a long time, and as a result it's pretty complex and certainly very-edge-case-y.
 
 It turns out managing inputs like microphones is much more complicated than we thought! From aggregate inputs and loopback devices, not every input device is a real microphone. There are microphones that ignore mute settings, and some that claim to honour mute status but _don't_. (I'm looking at you, LG UltraFine 5K.)
+
+<DecorativeImage
+  alt="A flowchart showing the complex path by which muting a device actually works: press a button, and we first check to see if the device is mutable, then check if it's already muted, then repeat for all other devices connected. "
+  image="src/images/blog/2020-08-12-muting-how-it-actually-works.png"
+/>
 
 There's a whole lot of code for handling edge cases in Mic Drop!
 
