@@ -157,16 +157,16 @@ const NavigationMenu = () => {
             }
           `}
         >
-          <NavigationMenuItem
-            link="/"
-            onClick={closeMenu}
-            css={css`
-              @media screen and (min-width: 480px) {
-                display: none;
-              }
-            `}
-          >
+          <NavigationMenuItem link="/" onClick={closeMenu}>
             Home
+          </NavigationMenuItem>
+
+          <NavigationMenuItem link="/apps/" onClick={closeMenu}>
+            Apps
+          </NavigationMenuItem>
+
+          <NavigationMenuItem link="/blog/" onClick={closeMenu}>
+            Blog
           </NavigationMenuItem>
 
           <NavigationMenuItem link="/about/" onClick={closeMenu}>
@@ -175,14 +175,6 @@ const NavigationMenu = () => {
 
           <NavigationMenuItem link="/services/" onClick={closeMenu}>
             Services
-          </NavigationMenuItem>
-
-          <NavigationMenuItem link="/work/" onClick={closeMenu}>
-            Work
-          </NavigationMenuItem>
-
-          <NavigationMenuItem link="/blog/" onClick={closeMenu}>
-            Blog
           </NavigationMenuItem>
 
           <NavigationMenuItem link="/contact/" onClick={closeMenu}>
