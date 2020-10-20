@@ -2,12 +2,11 @@ import { Button, Heading, Tags, metadata, useTheme } from '@octopusthink/nautilu
 import React from 'react';
 import { css } from '@emotion/core';
 
-import Image from 'components/Image';
+import CardImage from 'components/CardImage';
 
 const AppCard = (props) => {
   const { alt, beta, children, heading, image, link, linkText, type } = props;
   const theme = useTheme();
-  const imageSrc = image.split('/')[image.split('/').length - 1];
 
   return (
     <section
@@ -19,8 +18,9 @@ const AppCard = (props) => {
         }
       `}
     >
-      <Image
-        src={imageSrc}
+      <CardImage
+        link={link}
+        image={image}
         alt={alt}
         css={css`
           border-radius: 3.2rem;
