@@ -10,30 +10,38 @@ const AppCard = (props) => {
   const imageSrc = image.split('/')[image.split('/').length - 1];
 
   return (
-    <section css={css``}>
-      <Image src={imageSrc} alt={alt} />
-
-      <div
+    <section
+      css={css`
+        p {
+          margin-bottom: 0;
+        }
+      `}
+    >
+      <Image
+        src={imageSrc}
+        alt={alt}
         css={css`
-          margin-top: 3.2rem;
+          border-radius: 3.2rem;
+          margin-bottom: 2.4rem;
+        `}
+      />
+
+      <Tags label="Metadata">
+        <Tags.Tag>{metadata}</Tags.Tag>
+      </Tags>
+      <Heading
+        level={2}
+        css={css`
+          margin-bottom: 1.6rem;
         `}
       >
-        <Tags label="Metadata">
-          <Tags.Tag>{metadata}</Tags.Tag>
-        </Tags>
-        <Heading level={2}>{heading}</Heading>
-        {children}
-      </div>
+        {heading}
+      </Heading>
+      {children}
 
-      <div
-        css={css`
-          text-align: center;
-        `}
-      >
-        <Button minimal navigation href={link}>
-          {linkText}
-        </Button>
-      </div>
+      <Button noMargin minimal navigation href={link}>
+        {linkText}
+      </Button>
     </section>
   );
 };
