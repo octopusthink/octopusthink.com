@@ -84,6 +84,7 @@ module.exports = {
                           name
                           summary
                         }
+                        thumbnail
                       }
                       timeToRead
                     }

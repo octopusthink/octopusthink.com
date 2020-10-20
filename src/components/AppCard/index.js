@@ -27,7 +27,6 @@ const AppCard = (props) => {
           margin-bottom: 2.4rem;
         `}
       />
-
       {beta && (
         <span
           css={css`
