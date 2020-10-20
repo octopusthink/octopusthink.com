@@ -1,17 +1,19 @@
-import { Button, Heading, Tags, useTheme } from '@octopusthink/nautilus';
+import { Button, Heading, Tags, metadata, useTheme } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
 import Image from 'components/Image';
 
 const AppCard = (props) => {
-  const { alt, children, heading, image, link, linkText, metadata } = props;
+  const { alt, beta, children, heading, image, link, linkText, type } = props;
   const theme = useTheme();
   const imageSrc = image.split('/')[image.split('/').length - 1];
 
   return (
     <section
       css={css`
+        position: relative;
+
         p {
           margin-bottom: 0;
         }
@@ -26,8 +28,24 @@ const AppCard = (props) => {
         `}
       />
 
+      {beta && (
+        <span
+          css={css`
+            ${metadata.small(theme)};
+            position: absolute;
+            background: ${theme.colors.accent.secondaryDark};
+            color: ${theme.colors.neutral.white};
+            padding: 0.4rem 0.8rem;
+            top: 1.6rem;
+            right: -0.8rem;
+          `}
+        >
+          Beta
+        </span>
+      )}
+
       <Tags label="Metadata">
-        <Tags.Tag>{metadata}</Tags.Tag>
+        <Tags.Tag>{type}</Tags.Tag>
       </Tags>
       <Heading
         level={2}
