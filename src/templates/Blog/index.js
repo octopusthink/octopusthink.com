@@ -37,7 +37,7 @@ export const BlogList = (props) => {
                   slug={slug}
                   summary={summary}
                   title={title}
-                  image={thumbnail}
+                  image={`/images${thumbnail}`}
                 />
               </Fragment>
             );

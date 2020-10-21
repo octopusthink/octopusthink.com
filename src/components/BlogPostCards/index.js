@@ -51,7 +51,7 @@ const BlogPostCards = (props) => {
             slug={slug}
             summary={summary}
             title={title}
-            image={thumbnail}
+            image={`/images${thumbnail}`}
             inverse
             noCTA
           />

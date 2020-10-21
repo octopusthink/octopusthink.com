@@ -165,6 +165,13 @@ module.exports = {
       resolve: '@pauliescanlon/gatsby-mdx-embed',
     },
     {
+      resolve: 'gatsby-plugin-copy-files',
+      options: {
+        source: `${__dirname}/src/images`,
+        destination: '/images',
+      },
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',

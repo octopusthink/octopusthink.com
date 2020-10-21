@@ -6,12 +6,16 @@ import Image from 'components/Image';
 
 const CardImage = (props) => {
   const { alt, image, link } = props;
-  const imageSrc = image.split('/')[image.split('/').length - 1];
+  const imageSrc = image ? image.split('/')[image.split('/').length - 1] : undefined;
 
   const linkProps = {
     href: link.startsWith('http') ? link : undefined,
     to: !link.startsWith('http') ? link : undefined,
   };
+
+  if (!image) {
+    return null;
+  }
 
   return (
     // eslint-disable-next-line react/jsx-props-no-spreading

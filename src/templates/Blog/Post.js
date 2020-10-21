@@ -114,7 +114,7 @@ export const BlogPost = (props) => {
         publishedTime={date}
         tags={tagArray}
         title={title}
-        image={thumbnail}
+        image={`/images${thumbnail}`}
       />
       <PageWrapper>
         <Fragment key={slug}>
