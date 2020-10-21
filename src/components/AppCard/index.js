@@ -43,7 +43,12 @@ const AppCard = (props) => {
         </span>
       )}
 
-      <Tags label="Metadata">
+      <Tags
+        label="Metadata"
+        css={css`
+          margin-bottom: 0.4rem;
+        `}
+      >
         <Tags.Tag>{type}</Tags.Tag>
       </Tags>
       <Heading
