@@ -13,26 +13,24 @@ const SocialMediaLinks = (props) => {
         list-style-type: none;
         margin: 0;
         padding: 0;
+        display: grid;
+
+        @media screen and (min-width: 640px) {
+          grid-gap: 3.2rem;
+          grid-template-columns: 1fr 1fr 1fr;
+        }
       `}
     >
-      <ListLink a link="https://twitter.com/octopusthinks" iconName="twitter">
+      <ListLink a link="https://twitter.com/octopusthinks" iconName="twitter" centre>
         Twitter
       </ListLink>
 
-      <ListLink a link="//instagram.com/octopusthinks" iconName="instagram">
+      <ListLink a link="//instagram.com/octopusthinks" iconName="instagram" centre>
         Instagram
       </ListLink>
 
-      <ListLink a link="mailto:hello@octopusthink.com" iconName="inbox">
-        Email
-      </ListLink>
-
-      <ListLink a link="//github.com/octopusthink" iconName="github">
+      <ListLink a link="//github.com/octopusthink" iconName="github" centre>
         GitHub
-      </ListLink>
-
-      <ListLink a link="/blog/rss.xml" iconName="rss">
-        RSS Feed
       </ListLink>
     </ul>
   );
