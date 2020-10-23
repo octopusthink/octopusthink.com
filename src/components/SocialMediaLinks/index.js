@@ -11,9 +11,10 @@ const SocialMediaLinks = (props) => {
       className={className}
       css={css`
         list-style-type: none;
-        margin: 0;
+        margin: 0 auto;
         padding: 0;
         display: grid;
+        max-width: 40rem;
 
         @media screen and (min-width: 640px) {
           grid-gap: 3.2rem;

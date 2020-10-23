@@ -202,6 +202,12 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `20783413824`,
+      },
+    },
   ],
   mapping: {
     'Mdx.fields.authors': 'AuthorsYaml',
