@@ -65,7 +65,7 @@ const ListLink = (props) => {
           ${centre &&
             css`
               text-align: center;
-        `}
+            `}
         `}
         getProps={(linkProps) => {
           const { isCurrent: isCurrentRouterLink } = linkProps;
