@@ -18,15 +18,7 @@ const AppCard = (props) => {
         }
       `}
     >
-      <CardImage
-        link={link}
-        image={image}
-        alt={alt}
-        css={css`
-          border-radius: 3.2rem;
-          margin-bottom: 2.4rem;
-        `}
-      />
+      <CardImage link={link} image={image} alt={alt} />
       {beta && (
         <span
           css={css`

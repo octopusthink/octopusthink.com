@@ -5,7 +5,7 @@ import { css } from '@emotion/core';
 import Image from 'components/Image';
 
 const CardImage = (props) => {
-  const { alt, image, link } = props;
+  const { alt, image, link, noMargin } = props;
   const imageSrc = image ? image.split('/')[image.split('/').length - 1] : undefined;
 
   const linkProps = {
@@ -25,8 +25,11 @@ const CardImage = (props) => {
         alt={alt}
         css={css`
           border-radius: 3.2rem;
-          margin-bottom: 2.4rem;
           box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.125);
+          ${!noMargin &&
+            css`
+              margin-bottom: 2.4rem;
+            `}
         `}
       />
     </Link>

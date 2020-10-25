@@ -2,8 +2,6 @@
 title: Consulting services
 summary: |
   We also offer consulting services to select clients. We have a broad range of skills and can help with everything from app development to print design.
-
-  Want an accessibility audit? We can do that. UX and user research? Sure. A React app plus an accompanying API running on AWS? You got it. What about a design system built from scratch? You get the idea: we're here to help you kick ass.
 description: We offer React & full-stack development, accessibility audits, WordPress and iOS development, UX & UI design, user research, copyediting, open-source work, and training.
 component: PageWithoutPageBody
 ---
@@ -11,9 +9,13 @@ component: PageWithoutPageBody
 import { Button, Heading, Link, Paragraph } from '@octopusthink/nautilus'
 
 import IllustratedPoint from 'components/IllustratedPoint'
+import GridSpanner from 'components/GridSpanner'
+import Hide from 'components/Hide'
 import Panel from 'components/Panel'
 import TestimonialCarousel from 'components/TestimonialCarousel'
-import QuoteForm from 'components/QuoteForm'
+import PortfolioCards from 'components/PortfolioCards'
+import ContactForm from 'components/ContactForm'
+
 import AccessibilityIllustration from 'static/illustrations/accessibility.svg'
 import StrategyIllustration from 'static/illustrations/strategy.svg'
 import AppIllustration from 'static/illustrations/app-development.svg'
@@ -25,76 +27,11 @@ import VisualIllustration from 'static/illustrations/visual-design.svg'
 
 ## What we know
 
-We have **decades of experience** working on the web—we remember when bandwidth was measured in baud. Over that time, we've picked up a whole range of different skills and keep ourselves up-to-date with best practices in design & development.
+Want an accessibility audit? We can do that. UX and user research? Sure. A React app plus an accompanying API running on AWS? You got it. What about a design system built from scratch? You get the idea: we're here to help you kick ass.
 
-Rather than being narrowly scoped, we have a range of skills and experience allowing us to approach projects with a holistic understanding of how everything fits together. We can smoothly shepherd your project through all phases of implementation—from **research to design, development to deployment**: Octopus Think does it.
+We have **decades of experience** working on the web. Over that time, we've picked up a whole range of different skills and keep ourselves up-to-date with best practices in design &amp; development.
 
-Some may think that makes us masters of none, but we don't believe that (and neither do our clients!)
-
-</Panel>
-
-<Panel dark gridTablet="1fr 1fr">
-
-<IllustratedPoint label="Strategy & training" illustration={StrategyIllustration}>
-  <Paragraph inverse>
-    Not sure how to get started, what JavaScript framework you need, or what your users really need?
-    We can help with planning, strategy, and execution. We also offer bespoke training and
-    workshops, on-site or remotely.
-  </Paragraph>
-</IllustratedPoint>
-
-<IllustratedPoint label="Accessibility" illustration={AccessibilityIllustration}>
-  <Paragraph inverse>
-    Accessibility and inclusion are fundamental to good design. Everything we make begins with an
-    inclusive design process and is built to accessible standards. We can also help with audits,
-    compliance, and testing.
-  </Paragraph>
-</IllustratedPoint>
-
-<IllustratedPoint label="Web development" illustration={WebIllustration}>
-  <Paragraph inverse>
-    Because you need more than just a Facebook page. Django, WordPress, Gatsby, React, Rails—we've
-    been doing this a long time, so we know how to design & build gorgeous websites that are fast,
-    accessible, and mobile-optimised. Oh, and they'll be SEO optimised and privacy-aware to boot.
-  </Paragraph>
-</IllustratedPoint>
-
-<IllustratedPoint label="App development" illustration={AppIllustration}>
-  <Paragraph inverse>
-    Need a web app or a native mobile app? We love building apps that delight users and solve real
-    problems. Whether it's a React Native app or a full-stack solution, you can rest assured that
-    you'll end up with an app that's stable, performant, easy to use, and delightful.
-  </Paragraph>
-</IllustratedPoint>
-
-<IllustratedPoint label="Product design" illustration={ProductIllustration}>
-  <Paragraph inverse>
-    Design isn't just about making it pretty—it's about how it works. We approach problems from a
-    user-centric perspective, ensuring every interaction is intuitive and pleasant. From user
-    research to usability testing and all the journey maps, wireframes, and prototypes in between,
-    we've got you covered.
-  </Paragraph>
-</IllustratedPoint>
-
-<IllustratedPoint label="Visual design" illustration={VisualIllustration}>
-  <Paragraph inverse>
-    Once you've got everything usable, you may want to make it pretty after all. Graphic design is
-    about using visual media to communicate a message. Whatever you need—design systems, branding,
-    visualisations, web design—we ensure your message is communicated clearly and effectively.
-  </Paragraph>
-</IllustratedPoint>
-
-</Panel>
-
-<Panel>
-
-## How we work
-
-Every project is different, so we don't adhere to a rigid process. Our process follows an adaptable framework that responds to the unique needs of your project.
-
-<!-- [process diagram] -->
-
-We've spent the last decade working remotely with small and large organisations so we're great communicators and we know how to manage work across divergent time zones. We're also available to work on-site if the project calls for it, to do staff training, or for short periods during a longer project. Here's what you can expect of working with us:
+Here's what you can expect of working with us:
 
 <div
   css={css`
@@ -115,6 +52,33 @@ We've spent the last decade working remotely with small and large organisations 
 
 </Panel>
 
+<Panel dark gridMobile="1fr 1fr" gridTablet="1fr 1fr 1fr">
+
+<GridSpanner>
+  <Heading inverse level={2}>
+    What we do
+  </Heading>
+</GridSpanner>
+
+<IllustratedPoint label="Strategy" illustration={StrategyIllustration} minimal />
+<IllustratedPoint label={<React.Fragment>Visual <Hide mobile>Design</Hide></React.Fragment>} illustration={VisualIllustration} minimal />
+<IllustratedPoint label={<React.Fragment>Product <Hide mobile>Design</Hide></React.Fragment>} illustration={ProductIllustration} minimal />
+
+<IllustratedPoint label="Accessibility" illustration={AccessibilityIllustration} minimal />
+<IllustratedPoint label={<React.Fragment><Hide tablet desktop screenreaders>Mobile</Hide> App<Hide tablet desktop screenreaders>s</Hide> <Hide mobile>Development</Hide></React.Fragment>} illustration={AppIllustration} minimal />
+<IllustratedPoint label={<React.Fragment>Web<Hide tablet desktop screenreaders>sites</Hide> <Hide mobile>Development</Hide></React.Fragment>} illustration={WebIllustration} minimal />
+
+</Panel>
+
+
+<Panel gridMobile="1fr" gridTablet="1fr 1fr" gridDesktop="1fr 1fr 1fr">
+  <GridSpanner>
+    <Heading level={2}>What we’ve done</Heading>
+  </GridSpanner>
+
+<PortfolioCards number={10} />
+</Panel>
+
 <TestimonialCarousel />
 
 <Panel>
@@ -123,6 +87,6 @@ We've spent the last decade working remotely with small and large organisations 
 
 If you're ready to discuss your project with us, [drop us a line](/contact) or fill out the form below for a no-strings-attached estimate.
 
-<QuoteForm />
+<ContactForm />
 
 </Panel>
