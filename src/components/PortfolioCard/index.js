@@ -1,4 +1,4 @@
-import { Link, Heading, Paragraph, Tags, VisuallyHidden } from '@octopusthink/nautilus';
+import { Link, Heading, Paragraph, Tags, VisuallyHidden, useTheme } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
@@ -7,11 +7,11 @@ import CardImage from 'components/CardImage';
 
 const PortfolioCard = (props) => {
   const { category, className, slug, summary, title, thumbnail } = props;
+  const theme = useTheme();
 
   return (
     <Link
       className={className}
-      tabIndex="-1"
       to={slug}
       css={css`
         border-bottom: 0;
@@ -19,7 +19,8 @@ const PortfolioCard = (props) => {
         margin-bottom: 0;
         box-shadow: none;
 
-        &:hover {
+        &:hover,
+        &:focus {
           box-shadow: none;
 
           .details {
@@ -34,6 +35,12 @@ const PortfolioCard = (props) => {
 
           .details-content {
             opacity: 1;
+          }
+        }
+
+        &:focus {
+          .details {
+            box-shadow: 0 0 0 0.4rem ${theme.colors.state.focusOutline};
           }
         }
       `}

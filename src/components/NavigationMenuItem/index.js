@@ -51,15 +51,6 @@ const NavigationMenuItem = (props) => {
               color: ${theme.colors.accent.secondaryLight};
               cursor: default;
 
-              &:hover {
-                background: none;
-                border-color: ${theme.colors.neutral.grey800};
-              }
-
-              &:focus {
-                color: ${theme.colors.neutral.black};
-              }
-
               @media screen and (min-width: 480px) {
                 position: relative;
 
@@ -72,6 +63,19 @@ const NavigationMenuItem = (props) => {
                   bottom: 0.8rem;
                   left: 1.6rem;
                   right: 1.6rem;
+                }
+              }
+
+              &:hover {
+                background: none;
+                border-color: ${theme.colors.neutral.grey800};
+              }
+
+              &:focus {
+                color: ${theme.colors.neutral.white};
+
+                &::after {
+                  display: none;
                 }
               }
             `}
