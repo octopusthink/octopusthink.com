@@ -74,7 +74,7 @@ export const BlogPost = (props) => {
           <Tags label="Tags">
             {tags.map((tag) => {
               return (
-                <Tags.Tag>
+                <Tags.Tag key={tag.id}>
                   <Link
                     unstyled
                     to={`/blog/tags/${tag.id}`}
@@ -128,6 +128,7 @@ export const BlogPost = (props) => {
               alt={author.alt}
               avatar={author.avatar}
               title={author.title}
+              key={author.name}
             >
               {author.bio}
             </AuthorByline>

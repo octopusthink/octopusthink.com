@@ -10,3 +10,6 @@
 - id: development
   name: development
   summary: From how we build apps to tutorials on how to use frameworks and open-source libraries, we like to impart our experience and "wisdom", from time-to-time.
+- id: remote-work
+  name: remote work
+  summary: We've been working remotely for ages, and we love thinking about how to stay healthy, happy, and productive as a remote worker, whether you're exploring the world or just working on building a better work-life balance.
