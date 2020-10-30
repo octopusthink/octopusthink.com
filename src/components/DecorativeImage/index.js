@@ -1,11 +1,11 @@
-import { useTheme } from '@octopusthink/nautilus';
+import { useTheme, body } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
 import Image from 'components/Image';
 
 const DecorativeImage = (props) => {
-  const { alt, background, children, image, overlap, noMargin } = props;
+  const { alt, background, caption, children, image, overlap, noMargin } = props;
   const theme = useTheme();
 
   // HACK: Prevent errors encountered by `gatsby-plugin-mdx` on `npm run build`.
@@ -18,7 +18,7 @@ const DecorativeImage = (props) => {
   }
 
   return (
-    <div
+    <figure
       css={css`
         ${background &&
           css`
@@ -42,7 +42,18 @@ const DecorativeImage = (props) => {
     >
       <Image src={image} alt={alt} />
       {children}
-    </div>
+      {caption && (
+        <figcaption
+          css={css`
+            ${body.small(theme)};
+            color: ${theme.colors.text.light};
+            text-align: center;
+          `}
+        >
+          {caption}
+        </figcaption>
+      )}
+    </figure>
   );
 };
 
