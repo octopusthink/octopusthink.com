@@ -18,14 +18,20 @@ const CardImage = (props) => {
   }
 
   return (
-    // eslint-disable-next-line react/jsx-props-no-spreading
-    <Link unstyled tabindex="-1" {...linkProps}>
+    <Link
+      unstyled
+      tabindex="-1"
+      // eslint-disable-next-line react/jsx-props-no-spreading
+      {...linkProps}
+    >
       <Image
         src={imageSrc}
         alt={alt}
+        className="CardImage"
         css={css`
           border-radius: 3.2rem;
           box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.125);
+
           ${!noMargin &&
             css`
               margin-bottom: 2.4rem;
