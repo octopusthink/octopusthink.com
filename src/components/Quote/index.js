@@ -1,11 +1,15 @@
 import { Link, metadata, useTheme } from '@octopusthink/nautilus';
-import React from 'react';
+import React, { Fragment } from 'react';
 import { css } from '@emotion/core';
 
 const QuoteLink = ({ company, name, url }) => {
   const theme = useTheme();
 
   if (!url) {
+    return null;
+  }
+
+  if (!theme.site) {
     return null;
   }
 
@@ -26,6 +30,10 @@ const Quote = (props) => {
   const { inverse, name, children, company, title, url } = props;
   const theme = useTheme();
 
+  if (!theme.site) {
+    return null;
+  }
+
   let textColor;
   if (inverse) {
     textColor = theme.colors.text.inverseDark;
@@ -41,15 +49,15 @@ const Quote = (props) => {
 
   if (company && url) {
     attribution = (
-      <React.Fragment>
+      <Fragment>
         {title && (
-          <React.Fragment>
+          <Fragment>
             {title}
             {', '}
-          </React.Fragment>
+          </Fragment>
         )}
         {companyLink}
-      </React.Fragment>
+      </Fragment>
     );
   } else if (title && company) {
     attribution = `${title}, ${company}`;
