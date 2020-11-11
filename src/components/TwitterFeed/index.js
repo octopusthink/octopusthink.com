@@ -5,23 +5,25 @@ import { css } from '@emotion/core';
 const TwitterFeed = (props) => {
   const { number } = props;
 
-  const InstagramQuery = useStaticQuery(graphql`
+  const TweetQuery = useStaticQuery(graphql`
     query {
-      allInstaNode(sort: { order: DESC, fields: timestamp }) {
-        totalCount
-        nodes {
-          id
-          caption
-          timestamp
-          localFile {
-            publicURL
+      allTwitterStatusesUserTimelineOctopusTweets {
+        edges {
+          node {
+            full_text
+            user {
+              name
+            }
           }
         }
       }
     }
   `);
 
-  let posts = InstagramQuery.allInstaNode.nodes.slice(0);
+  console.log('TweetQuery', TweetQuery);
+  return null;
+
+  let posts = TweetQuery.allInstaNode.nodes.slice(0);
   if (number) {
     posts = posts.slice(0, number);
   }

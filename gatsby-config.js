@@ -214,10 +214,19 @@ module.exports = {
         credentials: {
           consumer_key: process.env.TWITTER_CONSUMER_KEY,
           consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
-          bearer_token: process.env.TWITTER_BREARER_TOKEN,
+          bearer_token: process.env.TWITTER_BEARER_TOKEN,
         },
         queries: {
-          // Your GraphQL queries here
+          OctopusTweets: {
+            endpoint: `statuses/user_timeline`,
+            params: {
+              screen_name: `octopusthinks`,
+              include_rts: false,
+              exclude_replies: false,
+              tweet_mode: `extended`,
+              count: 1,
+            },
+          },
         },
       },
     },

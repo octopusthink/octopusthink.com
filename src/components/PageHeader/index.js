@@ -102,7 +102,7 @@ const PageHeader = (props) => {
             {summary}
           </Markdown>
 
-          {ctaText && ctaURL && (
+          {ctaText && ctaText.length && ctaURL && ctaURL.length && (
             <ButtonInverse
               noMargin
               minimal
