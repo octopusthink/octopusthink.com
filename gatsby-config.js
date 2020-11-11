@@ -208,6 +208,19 @@ module.exports = {
         username: `20783413824`,
       },
     },
+    {
+      resolve: `gatsby-source-twitter`,
+      options: {
+        credentials: {
+          consumer_key: process.env.TWITTER_CONSUMER_KEY,
+          consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
+          bearer_token: process.env.TWITTER_BREARER_TOKEN,
+        },
+        queries: {
+          // Your GraphQL queries here
+        },
+      },
+    },
   ],
   mapping: {
     'Mdx.fields.authors': 'AuthorsYaml',

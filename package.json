@@ -49,6 +49,7 @@
     "gatsby-remark-smartypants": "^2.3.6",
     "gatsby-source-filesystem": "^2.3.14",
     "gatsby-source-instagram": "^0.9.0",
+    "gatsby-source-twitter": "^3.2.2",
     "gatsby-transformer-remark": "^2.8.20",
     "gatsby-transformer-sharp": "^2.5.7",
     "gatsby-transformer-yaml": "^2.4.6",
