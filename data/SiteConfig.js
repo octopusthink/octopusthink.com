@@ -7,7 +7,7 @@ const config = {
   siteUrl: 'https://octopusthink.com', // Domain of your website without pathPrefix.
   pathPrefix: '/', // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
   siteDescription:
-    'Octopus Think is a design and development agency based in Scotland. We build inclusive, usable, and smart websites and apps.', // Website description used for RSS feeds/meta description tag.
+    'Octopus Think is a design and development agency based in Scotland and Portugal. We build inclusive, usable, and smart websites and apps.', // Website description used for RSS feeds/meta description tag.
   siteRss: '/blog/rss.xml', // Path to the RSS file.
   twitter: '@octopusthinks',
   copyright: `Copyright © ${new Date().getFullYear()}. Octopus Think Ltd.`, // Copyright string for the footer of the website and RSS feed.
