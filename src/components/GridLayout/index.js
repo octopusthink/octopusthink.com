@@ -51,7 +51,6 @@ const GridLayout = (props) => {
             display: grid;
             justify-content: stretch;
             align-items: stretch;
-            grid-auto-rows: 1fr;
 
             ${gap &&
               css`
