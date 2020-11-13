@@ -45,6 +45,30 @@ const Panel = (props) => {
             padding-left: ${theme.site.desktopPadding};
             padding-right: ${theme.site.desktopPadding};
           }
+
+          ${dark &&
+            css`
+              p {
+                color: ${theme.colors.text.inverse};
+              }
+
+              li {
+                margin-bottom: 1.6rem;
+                color: ${theme.colors.text.inverse};
+              }
+
+              strong {
+                color: ${theme.colors.text.inverseLight};
+                background: linear-gradient(
+                  -180.5deg,
+                  ${theme.colors.neutral.black} 45%,
+                  ${theme.colors.accent.secondaryDark} 45%,
+                  ${theme.colors.accent.secondaryDark} 85%,
+                  ${theme.colors.neutral.black} 85%
+                ) !important;
+                background: none !important;
+              }
+            `}
         `}
       >
         <div

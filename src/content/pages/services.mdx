@@ -6,9 +6,12 @@ description: We offer React & full-stack development, accessibility audits, Word
 component: PageWithoutPageBody
 ---
 
+import { css } from '@emotion/core'
+import { Fragment } from 'react';
 import { Button, Heading, Link, Paragraph } from '@octopusthink/nautilus'
 
 import IllustratedPoint from 'components/IllustratedPoint'
+import FriendLogos from 'components/FriendLogos'
 import GridSpanner from 'components/GridSpanner'
 import Hide from 'components/Hide'
 import Panel from 'components/Panel'
@@ -27,28 +30,9 @@ import VisualIllustration from 'static/illustrations/visual-design.svg'
 
 ## What we know
 
+We've been working on the web since it was in its infancy. Over that time, we've picked up a whole range of different skills that we're constantly sharpening.
+
 Want an accessibility audit? We can do that. UX and user research? Sure. A React app plus an accompanying API running on AWS? You got it. What about a design system built from scratch? You get the idea: we're here to help you kick ass.
-
-We have **decades of experience** working on the web. Over that time, we've picked up a whole range of different skills and keep ourselves up-to-date with best practices in design &amp; development.
-
-Here's what you can expect of working with us:
-
-<div
-  css={css`
-    li {
-      margin-bottom: 1.6rem;
-    }
-  `}
->
-
-- **Frequent status updates.** Communication is what makes or breaks a project.
-- **Clear milestones, ownership, and deliverables.** Setting expectations up-front and having clear lines of delivery makes for a smoother, more pleasant experience.
-- **Friendly, open, and transparent communication.** It's easier to be straightforward about concerns, delays, improvements, or suggestions. When we each respect one another's time, we can get more done.
-- **Zero bullshit.** We don't believe in busywork, complex hierarchies of middle-management, or needless meetings. Instead, we're going to focus on getting things done and getting them done _well_.
-- **Agility and pragmatism.** We aren't dogmatic about things, and we don't believe in one-size-fits-all solutions. Instead, we'll work with you to determine the technologies, tools, and process that best fits your needs.
-- **A stress-free launch day.** We know launching a product is a big deal. We'll be on call for you all day, taking care of anything unexpected that comes up. That way, all you need to do is sit back and watch the compliments come rolling in.
-
-</div>
 
 </Panel>
 
@@ -61,25 +45,46 @@ Here's what you can expect of working with us:
 </GridSpanner>
 
 <IllustratedPoint label="Strategy" illustration={StrategyIllustration} minimal />
-<IllustratedPoint label={<React.Fragment>Visual <Hide mobile>Design</Hide></React.Fragment>} illustration={VisualIllustration} minimal />
-<IllustratedPoint label={<React.Fragment>Product <Hide mobile>Design</Hide></React.Fragment>} illustration={ProductIllustration} minimal />
+<IllustratedPoint label={<Fragment>Visual <Hide mobile>Design</Hide></Fragment>} illustration={VisualIllustration} minimal />
+<IllustratedPoint label={<Fragment>Product <Hide mobile>Design</Hide></Fragment>} illustration={ProductIllustration} minimal />
 
 <IllustratedPoint label="Accessibility" illustration={AccessibilityIllustration} minimal />
-<IllustratedPoint label={<React.Fragment><Hide tablet desktop screenreaders>Mobile</Hide> App<Hide tablet desktop screenreaders>s</Hide> <Hide mobile>Development</Hide></React.Fragment>} illustration={AppIllustration} minimal />
-<IllustratedPoint label={<React.Fragment>Web<Hide tablet desktop screenreaders>sites</Hide> <Hide mobile>Development</Hide></React.Fragment>} illustration={WebIllustration} minimal />
+<IllustratedPoint label={<Fragment><Hide tablet desktop screenreaders>Mobile</Hide> App<Hide tablet desktop screenreaders>s</Hide> <Hide mobile>Development</Hide></Fragment>} illustration={AppIllustration} minimal />
+<IllustratedPoint label={<Fragment>Web<Hide tablet desktop screenreaders>sites</Hide> <Hide mobile>Development</Hide></Fragment>} illustration={WebIllustration} minimal />
 
 </Panel>
 
 
 <Panel gridMobile="1fr" gridTablet="1fr 1fr" gridDesktop="1fr 1fr 1fr">
   <GridSpanner>
-    <Heading level={2}>What we’ve done</Heading>
+    <Heading level={2}>Some of our work</Heading>
   </GridSpanner>
 
 <PortfolioCards number={10} />
 </Panel>
 
 <TestimonialCarousel />
+
+<Panel fullwidth>
+  <FriendLogos abbreviated title="The company we keep" />
+</Panel>
+
+<Panel dark>
+
+<div>
+
+Here's what you can expect of working with us:
+
+- **Frequent status updates.** Communication is what makes or breaks a project.
+- **Clear milestones, ownership, and deliverables.** Setting expectations up-front and having clear lines of delivery makes for a smoother, more pleasant experience.
+- **Friendly, open, and transparent communication.** It's easier to be straightforward about concerns, delays, improvements, or suggestions. When we each respect one another's time, we can get more done.
+- **Zero bullshit.** We don't believe in busywork, complex hierarchies of middle-management, or needless meetings. Instead, we're going to focus on getting things done and getting them done _well_.
+- **Agility and pragmatism.** We aren't dogmatic about things, and we don't believe in one-size-fits-all solutions. Instead, we'll work with you to determine the technologies, tools, and process that best fits your needs.
+- **A stress-free launch day.** We know launching a product is a big deal. We'll be on call for you all day, taking care of anything unexpected that comes up. That way, all you need to do is sit back and watch the compliments come rolling in.
+
+</div>
+
+</Panel>
 
 <Panel>
 
