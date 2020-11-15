@@ -5,7 +5,7 @@ import { css } from '@emotion/core';
 import Image from 'components/Image';
 
 const CardImage = (props) => {
-  const { alt, image, link, noMargin } = props;
+  const { alt, image, link, noMargin, small } = props;
   const imageSrc = image ? image.split('/')[image.split('/').length - 1] : undefined;
 
   const linkProps = {
@@ -35,6 +35,11 @@ const CardImage = (props) => {
           ${!noMargin &&
             css`
               margin-bottom: 2.4rem;
+            `}
+
+          ${small &&
+            css`
+              border-radius: 1.6rem;
             `}
         `}
       />

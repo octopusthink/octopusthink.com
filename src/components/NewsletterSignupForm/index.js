@@ -12,17 +12,24 @@ const NewsletterSignupForm = (props) => {
       className={className}
       noValidate
       css={css`
-        align-items: end;
-        display: grid;
-        grid-gap: 0.8rem;
+        display: flex;
+        flex-direction: column;
+        grid-gap: 0.4rem;
+        align-items: center;
 
-        @media screen and (min-width: 640px) {
-          grid-template-columns: auto auto;
-          grid-gap: 0.4rem;
+        @media screen and (min-width: 460px) {
+          align-items: flex-end;
+          flex-direction: row;
         }
       `}
     >
-      <div>
+      <div
+        css={css`
+          width: 100%;
+          //margin-bottom: 1.6rem;
+          //margin-right: 0.8rem;
+        `}
+      >
         <TextField
           autocomplete="email"
           type="email"

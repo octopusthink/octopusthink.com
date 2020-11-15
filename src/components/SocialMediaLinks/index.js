@@ -14,24 +14,32 @@ const SocialMediaLinks = (props) => {
         margin: 0 auto;
         padding: 0;
         display: grid;
-        max-width: 40rem;
+        grid-template-columns: 1fr 1fr 1fr;
 
-        @media screen and (min-width: 640px) {
+        @media screen and (max-width: 439px) {
+          grid-gap: 1.6rem;
+
+          .label {
+            display: none;
+          }
+        }
+
+        @media screen and (min-width: 440px) {
+          max-width: 48rem;
           grid-gap: 3.2rem;
-          grid-template-columns: 1fr 1fr 1fr;
         }
       `}
     >
       <ListLink a link="https://twitter.com/octopusthinks" iconName="twitter" centre>
-        Twitter
+        <span className="label">Twitter</span>
       </ListLink>
 
       <ListLink a link="//instagram.com/octopusthinks" iconName="instagram" centre>
-        Instagram
+        <span className="label">Instagram</span>
       </ListLink>
 
       <ListLink a link="//github.com/octopusthink" iconName="github" centre>
-        GitHub
+        <span className="label">GitHub</span>
       </ListLink>
     </ul>
   );
