@@ -69,7 +69,7 @@ export const App = (props) => {
 
           .twitter-tweet-mdx-embed {
             margin-bottom: 3.2rem;
-            min-height: 260px;
+            min-height: 200px;
             max-width: 90vw;
 
             .twitter-tweet:not(.twitter-tweet-rendered) {
