@@ -8,7 +8,7 @@ import Markdown from 'components/Markdown';
 import Watermark from 'static/watermark.svg';
 
 const PageHeader = (props) => {
-  const { ctaText, ctaURL, metadata, summary, title } = props;
+  const { metadata, summary, title } = props;
   const theme = useTheme();
 
   return (
@@ -60,7 +60,6 @@ const PageHeader = (props) => {
         <div
           css={css`
             padding: ${theme.site.mobilePadding};
-            //margin: 0 auto;
 
             @media screen and (min-width: 640px) {
               padding: ${theme.site.tabletPadding};
@@ -101,20 +100,6 @@ const PageHeader = (props) => {
           >
             {summary}
           </Markdown>
-
-          {ctaText && ctaText.length && ctaURL && ctaURL.length && (
-            <ButtonInverse
-              noMargin
-              minimal
-              navigation
-              to={ctaURL}
-              css={css`
-                font-size: 2.1rem;
-              `}
-            >
-              {ctaText}
-            </ButtonInverse>
-          )}
         </div>
       </div>
       <Divider
