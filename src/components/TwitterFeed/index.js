@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import { css } from '@emotion/core';

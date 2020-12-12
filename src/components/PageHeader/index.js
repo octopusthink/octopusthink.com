@@ -2,7 +2,6 @@ import { PageTitle, Paragraph, useTheme } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
 
-import ButtonInverse from 'components/ButtonInverse';
 import Divider from 'components/Divider';
 import Markdown from 'components/Markdown';
 import Watermark from 'static/watermark.svg';
