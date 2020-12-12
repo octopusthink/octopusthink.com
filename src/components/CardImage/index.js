@@ -20,7 +20,7 @@ const CardImage = (props) => {
   return (
     <Link
       unstyled
-      tabindex="-1"
+      tabIndex="-1"
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...linkProps}
     >
