@@ -230,6 +230,7 @@ module.exports = {
     //     },
     //   },
     // },
+    { resolve: `gatsby-plugin-meta-redirect` },
   ],
   mapping: {
     'Mdx.fields.authors': 'AuthorsYaml',

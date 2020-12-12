@@ -271,6 +271,11 @@ const onCreateNode = ({ actions, node, getNode }) => {
 };
 
 const createPages = async ({ actions, graphql }) => {
+  const { createRedirect } = actions;
+
+  // Redirects are all here for now...
+  createRedirect({ fromPath: '/work', toPath: '/services', isPermanent: true });
+
   const markdownQueryResult = await graphql(`
     query {
       blogPosts: allMdx(filter: {
