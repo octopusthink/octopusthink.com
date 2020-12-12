@@ -1,12 +1,8 @@
 ---
-title: Apps and sites that don't suck.
+title: Apps that don't suck.
 summary: |
-  We believe that technology is a tool to make the world a better, fairer place.
-
-  We build smart, inclusive, usable digital products to improve people's lives.
-ctaText: Get in touch
-ctaURL: /contact
-description: Octopus Think is a digital design & technology company based in Scotland and Portugal. We specialise in accessible, inclusive design and smart React development.
+  Smart, inclusive, and usable products to make your life a little better.
+description: Octopus Think is a design & technology company based in Scotland and Portugal. We specialise in accessible, inclusive design, smart React development, and beautiful, functional apps.
 component: PageWithoutPageBody
 ---
 
@@ -14,6 +10,7 @@ import { Button, Heading, Paragraph, Strong, useTheme, metadata } from '@octopus
 import React from 'react'
 import { css } from '@emotion/core'
 
+import AppCard from 'components/AppCard'
 import ButtonInverse from 'components/ButtonInverse'
 import BlogPostCards from 'components/BlogPostCards'
 import FriendLogos from 'components/FriendLogos'
@@ -32,20 +29,69 @@ import WebIllustration from 'static/illustrations/web-development.svg'
 import ProductIllustration from 'static/illustrations/product-design.svg'
 import VisualIllustration from 'static/illustrations/visual-design.svg'
 
+<Panel gridTablet="1fr 1fr">
+  <GridSpanner>
+    <Heading level={2}>Our Apps</Heading>
+  </GridSpanner>
+
+  <AppCard
+  type="Mac"
+  heading="Mic Drop"
+  image="/images/portfolio/mic-drop/mic-drop-title.png"
+  alt="An illustration of a computer screen showing a meeting between emoji animals."
+  link="https://getmicdrop.com/?pk_campaign=octopusthink&pk_kwd=apps"
+  linkText="Try Mic Drop"
+>
+
+**Mute your mic in any app.**
+A macOS menu bar app that allows you to quickly mute and unmute yourself using a customisable keyboard shortcut.
+</AppCard>
+
+<AppCard
+  type="Windows &amp; Mac"
+  heading="Turnip"
+  image="/images/portfolio/turnip/turnip-title.png"
+  alt="Two screens overlaid: one showing a list of timers, and the other showing some statistics about how you spend your time."
+  link="https://turniptimer.com/?pk_campaign=octopusthink&pk_kwd=apps"
+  linkText="Join the Turnip beta"
+  beta
+>
+
+**Time tracking for freelancers.**
+A simple timer for your menubar or system tray. Integrates with popular accounting services.
+</AppCard>
+</Panel>
+
+
+<Panel dark gridDesktop="1fr 1fr">
+  <GridSpanner>
+    <Heading inverse level={2}>What we're up to now</Heading>
+  </GridSpanner>
+
+<BlogPostCards number={2} />
+
+<GridSpanner>
+  <ButtonInverse noMargin navigation minimal to="/blog/">
+    Read our blog
+  </ButtonInverse>
+</GridSpanner>
+
+</Panel>
+
 <Panel gridTablet="auto 24rem" gridDesktop="auto 40rem">
 
 <div>
 
-## Who we are
+## Who we are 👋
 
-We're a duo based in Scotland 🏴󠁧󠁢󠁳󠁣󠁴󠁿 and Portugal 🇵🇹 with three decades of **design and development** experience.
+We're a pair of cephalopod-loving humans based in Scotland 🏴󠁧󠁢󠁳󠁣󠁴󠁿 and Portugal 🇵🇹 who also happen to love building stuff.
 
-Sarah is our Chief Design Octopus, a graphic and product designer with a penchant for bold colours and impractical footwear. Matt is our Chief Technical Octopus, a software developer and vintage motorcycle enthusiast.
+Sarah is our Chief Design Octopus, a designer with a penchant for bold colours and impractical footwear. 👠
 
-We don't take ourselves too seriously, but we do **great work**.
+Matt is our Chief Technical Octopus, a developer convinced that Vespas are more practical than cars. 🛵
 
 <Button noMargin minimal navigation to="/about/">
-  Read about us
+  Read all about us
 </Button>
 
 </div>
@@ -68,59 +114,39 @@ We don't take ourselves too seriously, but we do **great work**.
 
 </Panel>
 
-<Panel dark gridMobile="1fr 1fr" gridTablet="1fr 1fr 1fr">
 
-<GridSpanner>
-  <Heading inverse level={2}>
-    What we do
-  </Heading>
-</GridSpanner>
-<IllustratedPoint label="Strategy" illustration={StrategyIllustration} minimal />
-<IllustratedPoint label={<React.Fragment>Visual <Hide mobile>Design</Hide></React.Fragment>} illustration={VisualIllustration} minimal />
-<IllustratedPoint label={<React.Fragment>Product <Hide mobile>Design</Hide></React.Fragment>} illustration={ProductIllustration} minimal />
+<!--
+<Panel dark gridTablet="24rem auto" gridDesktop="40rem auto">
 
-<IllustratedPoint label="Accessibility" illustration={AccessibilityIllustration} minimal />
-<IllustratedPoint label={<React.Fragment><Hide tablet desktop screenreaders>Mobile</Hide> App<Hide tablet desktop screenreaders>s</Hide> <Hide mobile>Development</Hide></React.Fragment>} illustration={AppIllustration} minimal />
-<IllustratedPoint label={<React.Fragment>Web<Hide tablet desktop screenreaders>sites</Hide> <Hide mobile>Development</Hide></React.Fragment>} illustration={WebIllustration} minimal />
+<Image
+  src="construction-sketch-transparent.png"
+  alt="A sketch of our mascot, Bubbles: an octopus wearing a hard hat and safety goggles."
+  css={css`
+    max-height: 40rem;
+    max-width: 40rem;
+    @media screen and (min-width: 640px) and (max-width: 1023px) {
+      align-self: center;
+      max-height: 24rem;
+      max-width: 24rem;
+    }
+  `}
+/>
 
-<GridSpanner>
-  <ButtonInverse noMargin navigation minimal to="/services/">
-    Explore our services
-  </ButtonInverse>
-</GridSpanner>
+<div
+  css={css`
+    align-self: center;
+  `}
+>
 
-</Panel>
+<Heading inverse level={2}>Consulting services</Heading>
 
-<Panel gridMobile="1fr" gridTablet="1fr 1fr" gridDesktop="1fr 1fr 1fr">
-  <GridSpanner>
-    <Heading level={2}>What we’ve done</Heading>
-  </GridSpanner>
+<Paragraph inverse>In addition to making apps, we also provide consulting services to a number of companies you may have heard of. If you've got a project you need help with, we can probably help you out.</Paragraph>
 
-<PortfolioCards number={3} />
+<InverseButton noMargin minimal navigation to="/services/">
+  Explore our services
+</InverseButton>
 
-  <GridSpanner>
-    <Button noMargin navigation minimal to="/work/">Peruse our work</Button>
-  </GridSpanner>
-</Panel>
-
-<TestimonialCarousel />
-
-<Panel fullwidth>
-  <FriendLogos abbreviated title="The company we keep" />
-</Panel>
-
-<Panel dark gridDesktop="1fr 1fr">
-  <GridSpanner>
-    <Heading inverse level={2}>What we're up to now</Heading>
-  </GridSpanner>
-
-<BlogPostCards number={2} />
-
-<GridSpanner>
-  <ButtonInverse noMargin navigation minimal to="/blog/">
-    Read our blog
-  </ButtonInverse>
-</GridSpanner>
+</div>
 
 </Panel>
 
@@ -146,7 +172,7 @@ We don't take ourselves too seriously, but we do **great work**.
   `}
 >
 
-## Work with us
+## Get in touch
 
 Got a great idea? No matter what stage you're in, we can help with planning, strategy, or execution. Let's figure out how to make your project a reality.
 
@@ -156,4 +182,4 @@ Got a great idea? No matter what stage you're in, we can help with planning, str
 
 </div>
 
-</Panel>
+</Panel> -->

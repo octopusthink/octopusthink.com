@@ -3,13 +3,13 @@ import { graphql } from 'gatsby';
 import React, { Fragment } from 'react';
 
 import Divider from 'components/Divider';
-import PageBody from 'components/PageBody';
 import PageHeader from 'components/PageHeader';
 import PageWrapper from 'components/PageWrapper';
 import PostCard from 'components/PostCard';
 import SEO from 'components/SEO';
 import config from 'data/SiteConfig';
 import App from 'templates/App';
+import GridLayout from 'components/GridLayout';
 
 export const BlogList = (props) => {
   const { data, pageContext } = props;
@@ -25,10 +25,10 @@ export const BlogList = (props) => {
       <SEO title={pageTitle} description={description} pathname={pageSlug} />
       <PageWrapper>
         <PageHeader summary={pageSummary} title={pageTitle} />
-        <PageBody>
+        <GridLayout columnsTablet="2" gap="8.0">
           {posts.edges.map(({ node }) => {
             const { fields, timeToRead: readingTime } = node;
-            const { date, slug, summary, title } = fields;
+            const { date, slug, summary, title, thumbnail } = fields;
             return (
               <Fragment key={slug}>
                 <PostCard
@@ -37,6 +37,7 @@ export const BlogList = (props) => {
                   slug={slug}
                   summary={summary}
                   title={title}
+                  image={`/images${thumbnail}`}
                 />
               </Fragment>
             );
@@ -62,7 +63,7 @@ export const BlogList = (props) => {
                 })}
             </List>
           )}
-        </PageBody>
+        </GridLayout>
         <Divider light />
       </PageWrapper>
     </App>
@@ -91,6 +92,7 @@ export const pageQuery = graphql`
               name
               summary
             }
+            thumbnail
           }
           timeToRead
         }

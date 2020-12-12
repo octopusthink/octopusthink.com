@@ -14,10 +14,11 @@ import dayjs from 'dayjs';
 
 import config from 'data/SiteConfig';
 import ButtonInverse from 'components/ButtonInverse';
+import CardImage from 'components/CardImage';
 
 const PostCard = (props) => {
   const theme = useTheme();
-  const { date, heading, inverse, noCTA, readingTime, slug, summary, title } = props;
+  const { date, heading, image, inverse, noCTA, readingTime, slug, summary, title } = props;
   const formattedDate = dayjs(date).format(config.dateFormat);
   let ButtonComponent = Button;
   if (inverse) {
@@ -31,9 +32,24 @@ const PostCard = (props) => {
   return (
     <article
       css={css`
-        margin-bottom: 6.4rem;
+        @media screen and (max-width: 1023px) {
+          margin-bottom: 3.2rem;
+        }
+
+        @media screen and (min-width: 1024px) {
+          margin-bottom: -3.2rem;
+        }
       `}
     >
+      <CardImage
+        link={slug}
+        image={image}
+        alt=""
+        css={css`
+          border-radius: 3.2rem;
+          margin-bottom: 2.4rem;
+        `}
+      />
       <header>
         <div
           css={css`

@@ -1,0 +1,53 @@
+---
+title: Things we’ve made
+summary: |
+  We carefully craft every app we release so you know they’re thoughtfully designed, easy to use, and reliable. Right now, our focus is on building great tools for freelancers and remote workers, but you never know what’s next! Sign up for our newsletter to be the first to know when we're working on something new.
+metaDescription: Apps for Mac and Windows.
+component: PageWithoutPageBody
+canonical: 'https://octopusthink.com/apps/'
+---
+
+import { Button, Icon, Paragraph } from '@octopusthink/nautilus'
+
+import Divider from 'components/Divider'
+import GridLayout from 'components/GridLayout'
+import IconHeading from 'components/IconHeading'
+import ImagePanel from 'components/ImagePanel'
+import Panel from 'components/Panel'
+import AppCard from 'components/AppCard'
+import PortfolioSummary from 'components/PortfolioSummary'
+import Testimonial from 'components/Testimonial'
+
+
+<GridLayout columnsTablet="2" gap="8.0">
+
+<AppCard
+  type="Mac"
+  heading="Mic Drop"
+  image="/images/portfolio/mic-drop/mic-drop-title.png"
+  alt="An illustration of a computer screen showing a meeting between emoji animals."
+  link="https://getmicdrop.com/?pk_campaign=octopusthink&pk_kwd=apps"
+  linkText="Try Mic Drop"
+>
+
+**Mute your mic in any app.**
+A macOS menu bar app that allows you to quickly mute and unmute yourself using a customisable keyboard shortcut.
+</AppCard>
+
+<AppCard
+  type="Windows &amp; Mac"
+  heading="Turnip"
+  image="/images/portfolio/turnip/turnip-title.png"
+  alt="Two screens overlaid: one showing a list of timers, and the other showing some statistics about how you spend your time."
+  link="https://turniptimer.com/?pk_campaign=octopusthink&pk_kwd=apps"
+  linkText="Join the Turnip beta"
+  beta
+>
+
+**Time tracking for freelancers.**
+A simple timer for your menubar or system tray. Integrates with popular accounting services.
+</AppCard>
+
+</GridLayout>
+
+<Divider light />

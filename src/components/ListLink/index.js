@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { css } from '@emotion/core';
 
 const ListLink = (props) => {
-  const { a, children, iconName, link, onClick } = props;
+  const { a, centre, children, iconName, link, onClick } = props;
 
   const [isCurrent, setIsCurrent] = useState();
   const theme = useTheme();
@@ -60,6 +60,11 @@ const ListLink = (props) => {
           ${isCurrent &&
             css`
               color: ${theme.colors.text.inverseDark};
+            `}
+
+          ${centre &&
+            css`
+              text-align: center;
             `}
         `}
         getProps={(linkProps) => {

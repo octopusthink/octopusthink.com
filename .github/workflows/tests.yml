@@ -39,6 +39,10 @@ jobs:
         run: npm install
       - name: Build site
         run: npm run build
+        env:
+          TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
+          TWITTER_CONSUMER_KEY: ${{ secrets.TWITTER_CONSUMER_KEY }}
+          TWITTER_CONSUMER_SECRET: ${{ secrets.TWITTER_CONSUMER_SECRET }}
   lint:
     runs-on: ubuntu-latest
     steps:

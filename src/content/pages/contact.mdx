@@ -1,9 +1,7 @@
 ---
 title: Let’s talk
 summary: |
-  Ready to build a new app or website? Need some beautiful designs for a new project? Maybe an idea you want help getting off the ground? Get the ball rolling with a no-strings-attached quote.
-
-  Just want to keep tabs on what we’re up to? Want to chat about Nessie? That’s cool too.
+  We're based in Scotland and Portugal, but we have friends all over the world. If you'd like to say hello, feel free to drop us a line!
 description: Get a quote or talk more about React development, inclusive design, or design systems.
 component: PageWithoutPageBody
 ---
@@ -13,9 +11,11 @@ import React from 'react'
 import { css } from '@emotion/core'
 
 import Panel from 'components/Panel'
-import QuoteForm from 'components/QuoteForm'
+import ContactForm from 'components/ContactForm'
+import InstagramFeed from 'components/InstagramFeed'
 import NewsletterSignupForm from 'components/NewsletterSignupForm'
 import SocialMediaLinks from 'components/SocialMediaLinks'
+import TwitterFeed from 'components/TwitterFeed'
 import WavingOctopusArm from 'components/WavingOctopusArm'
 
 <Panel gridTablet="8fr 4fr">
@@ -25,39 +25,29 @@ import WavingOctopusArm from 'components/WavingOctopusArm'
   z-index: 100;
 `}>
 
-## Reach out
+## Say hello
 
-We're based in beautiful Scotland and sunny Portugal, but we work remotely for clients around the world. If you want to talk to us about a project, feel free to email us ([hello@octopusthink.com](mailto:hello@octopusthink.com)) to request a quote.
+We're always happy to hear from new friends! If you want to ask a question, explore a great project idea, or just chat about Nessie, you can send us a message at [hello@octopusthink.com](mailto:hello@octopusthink.com).
 
-The best way to get in touch with us is via email, but you can also follow us if you just want to keep tabs on what we're up to.
-
+If you have a support question about Mic Drop, please contact [support@getmicdrop.com](mailto:support@getmicdrop.com).
 </div>
 
 <WavingOctopusArm />
 
 </Panel>
 
-<Panel dark gridTablet="5fr 7fr">
+<Panel dark>
 
-<div>
+<div css={css`text-align: center`}>
 
 <Heading inverse>Follow along</Heading>
 
+<InstagramFeed number="3" />
+<TwitterFeed number="3" />
+
 <SocialMediaLinks />
 
-</div>
 
-<div>
-
-<Heading inverse>Sign up for our newsletter</Heading>
-
-<Paragraph small inverse>
-  We send out emails around once a quarter with highlights of what we've been up to, what we're
-  doing next, apps and tools we've built, and things we've found to make your life easier. You can
-  unsubscribe any time you get bored, and we promise never to sell your details.
-</Paragraph>
-
-<NewsletterSignupForm />
 
 </div>
 
@@ -65,8 +55,16 @@ The best way to get in touch with us is via email, but you can also follow us if
 
 <Panel>
 
-<Heading id="workwithus">Work with us</Heading>
+<Heading>Sign up for our newsletter</Heading>
 
-We're always interested in hearing from people with exciting projects. If you have work you'd like to discuss, drop us a line at [hello@octopusthink.com](mailto:hello@octopusthink.com) for a no-strings-attached estimate. You'll hear back from us within 48 hours.
+<Paragraph small>
+  We send out a newsletter sporadically—usually around once a quarter. Expect general updates, new things we're working on, and invitations to beta programmes when we're ready to test a new app.
+</Paragraph>
+
+<Paragraph small>
+  You can unsubscribe any time, and of course we'll never sell your information or share it with anyone else.
+</Paragraph>
+
+<NewsletterSignupForm />
 
 </Panel>

@@ -3,26 +3,29 @@ import React from 'react';
 import { css } from '@emotion/core';
 
 import ButtonInverse from 'components/ButtonInverse';
-import Image from 'components/Image';
+import CardImage from 'components/CardImage';
 
 const PortfolioCard = (props) => {
-  const theme = useTheme();
   const { category, className, slug, summary, title, thumbnail } = props;
+  const theme = useTheme();
 
   return (
     <Link
       className={className}
-      tabIndex="-1"
       to={slug}
       css={css`
         border-bottom: 0;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.125);
         position: relative;
-        overflow: hidden;
+        margin-bottom: 0;
+        box-shadow: none;
 
-        &:hover {
+        &:hover,
+        &:focus {
+          box-shadow: none;
+
           .details {
-            top: 0;
+            bottom: 0;
+            opacity: 1;
             background: rgba(0, 0, 0, 0.95);
             display: flex;
             flex-direction: column;
@@ -30,53 +33,53 @@ const PortfolioCard = (props) => {
             justify-content: center;
           }
 
-          .tags,
-          .footer,
-          .description {
+          .details-content {
             opacity: 1;
+          }
+        }
+
+        &:focus {
+          .details {
+            box-shadow: 0 0 0 0.4rem ${theme.colors.state.focusOutline};
           }
         }
       `}
     >
-      <article
-        css={css`
-          background: ${theme.colors.neutral.black};
-        `}
-      >
-        <Image
-          src={thumbnail}
-          alt=""
-          css={css`
-            max-width: 100%;
-            width: 600px;
-          `}
-        />
+      <article>
+        <CardImage link={slug} image={thumbnail} alt="" noMargin />
+
         <div
           className="details"
           css={css`
             background: rgba(0, 0, 0, 0.85);
             padding: 2.4rem;
             position: absolute;
-            top: calc(100% - 9.6rem);
+            top: 0;
             left: 0;
             right: 0;
-            bottom: 0;
+            bottom: 100%;
             transition: all 200ms ease-out;
+            border-radius: 3.2rem;
+            opacity: 0;
           `}
         >
-          <header>
-            <div
-              className="tags"
-              css={css`
-                opacity: 1;
-                margin-bottom: 0.4rem;
-              `}
-            >
-              <Tags label="Category">
-                <Tags.Tag>#{category}</Tags.Tag>
-              </Tags>
-            </div>
-            <Link tabIndex="-1" to={slug}>
+          <div
+            className="details-content"
+            css={css`
+              opacity: 0;
+              transition: all 200ms ease-out 200ms;
+            `}
+          >
+            <header>
+              <div
+                css={css`
+                  margin-bottom: 0.4rem;
+                `}
+              >
+                <Tags label="Category">
+                  <Tags.Tag>#{category}</Tags.Tag>
+                </Tags>
+              </div>
               <Heading
                 inverse
                 css={css`
@@ -86,41 +89,28 @@ const PortfolioCard = (props) => {
               >
                 {title}
               </Heading>
-            </Link>
-          </header>
-          <Paragraph
-            className="description"
-            inverse
-            small
-            css={css`
-              margin-bottom: 0;
-              opacity: 0;
-            `}
-          >
-            {summary}
-          </Paragraph>
-          <footer
-            className="footer"
-            css={css`
-              opacity: 0;
-            `}
-          >
-            <ButtonInverse
-              to={slug}
-              css={css`
-                border: 0;
-                margin-left: 0;
+            </header>
+            <Paragraph inverse small noMargin>
+              {summary}
+            </Paragraph>
+            <footer>
+              <ButtonInverse
+                to={slug}
+                noMargin
+                css={css`
+                  border: 0;
 
-                &:hover {
-                  box-shadow: none;
-                }
-              `}
-              navigation
-              minimal
-            >
-              Continue reading<VisuallyHidden> {title}</VisuallyHidden>
-            </ButtonInverse>
-          </footer>
+                  &:hover {
+                    box-shadow: none;
+                  }
+                `}
+                navigation
+                minimal
+              >
+                Continue reading<VisuallyHidden> {title}</VisuallyHidden>
+              </ButtonInverse>
+            </footer>
+          </div>
         </div>
       </article>
     </Link>

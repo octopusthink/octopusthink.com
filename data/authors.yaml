@@ -1,12 +1,12 @@
 - id: sarah
   name: Sarah London Semark
   title: Chief Design Octopus
-  avatar: /photos/sarah-portrait.jpg
+  avatar: /images/photos/sarah-portrait.jpg
   alt: A photo of a young redhead wearing sunglasses and smiling.
   bio: Chief Design Octopus. Advocate for the user. Believes in constructive criticism. Buys books based on their covers.
 - id: matt
   name: Matthew Riley MacPherson
   title: Chief Technical Octopus
-  avatar: /photos/matt-portrait.jpg
+  avatar: /images/photos/matt-portrait.jpg
   alt: A photo of a young man with his eyebrows arched.
   bio: Chief Technical Octopus. Accessibility and React developer. Open-source contributor. Needs coffee to function.

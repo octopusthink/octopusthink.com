@@ -84,6 +84,7 @@ module.exports = {
                           name
                           summary
                         }
+                        thumbnail
                       }
                       timeToRead
                     }
@@ -164,6 +165,13 @@ module.exports = {
       resolve: '@pauliescanlon/gatsby-mdx-embed',
     },
     {
+      resolve: 'gatsby-plugin-copy-files',
+      options: {
+        source: `${__dirname}/src/images`,
+        destination: '/images',
+      },
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
@@ -194,6 +202,35 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `20783413824`,
+      },
+    },
+    // {
+    //   resolve: `gatsby-source-twitter`,
+    //   options: {
+    //     credentials: {
+    //       consumer_key: process.env.TWITTER_CONSUMER_KEY,
+    //       consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
+    //       bearer_token: process.env.TWITTER_BEARER_TOKEN,
+    //     },
+    //     queries: {
+    //       OctopusTweets: {
+    //         endpoint: `statuses/user_timeline`,
+    //         params: {
+    //           screen_name: `octopusthinks`,
+    //           include_rts: false,
+    //           exclude_replies: false,
+    //           tweet_mode: `extended`,
+    //           count: 1,
+    //         },
+    //       },
+    //     },
+    //   },
+    // },
+    { resolve: `gatsby-plugin-meta-redirect` },
   ],
   mapping: {
     'Mdx.fields.authors': 'AuthorsYaml',

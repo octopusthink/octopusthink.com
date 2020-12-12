@@ -23,6 +23,7 @@ const BlogPostCards = (props) => {
                 name
                 summary
               }
+              thumbnail
             }
             timeToRead
           }
@@ -40,7 +41,7 @@ const BlogPostCards = (props) => {
     <Fragment>
       {posts.map(({ node }) => {
         const { fields, timeToRead: readingTime } = node;
-        const { date, slug, summary, title } = fields;
+        const { date, slug, summary, title, thumbnail } = fields;
         return (
           <PostCard
             key={slug}
@@ -50,6 +51,7 @@ const BlogPostCards = (props) => {
             slug={slug}
             summary={summary}
             title={title}
+            image={`/images${thumbnail}`}
             inverse
             noCTA
           />

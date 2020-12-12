@@ -1,18 +1,24 @@
 ---
-title: What we do
+title: Consulting services
 summary: |
-  We have a broad range of skills and take a holistic approach to solving problems for clients. Our small, agile team is able to help with everything from app development to print design.
-
-  Want an accessibility audit? We can do that. UX and user research? Sure. A React app plus an accompanying API running on AWS? You got it. What about a design system built from scratch? You get the idea: we're here to help you kick ass.
+  We also offer consulting services to select clients. We have a broad range of skills and can help with everything from app development to print design.
 description: We offer React & full-stack development, accessibility audits, WordPress and iOS development, UX & UI design, user research, copyediting, open-source work, and training.
 component: PageWithoutPageBody
 ---
 
+import { css } from '@emotion/core'
+import { Fragment } from 'react';
 import { Button, Heading, Link, Paragraph } from '@octopusthink/nautilus'
 
 import IllustratedPoint from 'components/IllustratedPoint'
+import FriendLogos from 'components/FriendLogos'
+import GridSpanner from 'components/GridSpanner'
+import Hide from 'components/Hide'
 import Panel from 'components/Panel'
 import TestimonialCarousel from 'components/TestimonialCarousel'
+import PortfolioCards from 'components/PortfolioCards'
+import ContactForm from 'components/ContactForm'
+
 import AccessibilityIllustration from 'static/illustrations/accessibility.svg'
 import StrategyIllustration from 'static/illustrations/strategy.svg'
 import AppIllustration from 'static/illustrations/app-development.svg'
@@ -24,84 +30,50 @@ import VisualIllustration from 'static/illustrations/visual-design.svg'
 
 ## What we know
 
-We have **decades of experience** working on the web—we remember when bandwidth was measured in baud. Over that time, we've picked up a whole range of different skills and keep ourselves up-to-date with best practices in design & development.
+We've been working on the web since it was in its infancy. Over that time, we've picked up a whole range of different skills that we're constantly sharpening.
 
-Rather than being narrowly scoped, we have a range of skills and experience allowing us to approach projects with a holistic understanding of how everything fits together. We can smoothly shepherd your project through all phases of implementation—from **research to design, development to deployment**: Octopus Think does it.
-
-Some may think that makes us masters of none, but we don't believe that (and neither do our clients!)
+Want an accessibility audit? We can do that. UX and user research? Sure. A React app plus an accompanying API running on AWS? You got it. What about a design system built from scratch? You get the idea: we're here to help you kick ass.
 
 </Panel>
 
-<Panel dark gridTablet="1fr 1fr">
+<Panel dark gridMobile="1fr 1fr" gridTablet="1fr 1fr 1fr">
 
-<IllustratedPoint label="Strategy & training" illustration={StrategyIllustration}>
-  <Paragraph inverse>
-    Not sure how to get started, what JavaScript framework you need, or what your users really need?
-    We can help with planning, strategy, and execution. We also offer bespoke training and
-    workshops, on-site or remotely.
-  </Paragraph>
-</IllustratedPoint>
+<GridSpanner>
+  <Heading inverse level={2}>
+    What we do
+  </Heading>
+</GridSpanner>
 
-<IllustratedPoint label="Accessibility" illustration={AccessibilityIllustration}>
-  <Paragraph inverse>
-    Accessibility and inclusion are fundamental to good design. Everything we make begins with an
-    inclusive design process and is built to accessible standards. We can also help with audits,
-    compliance, and testing.
-  </Paragraph>
-</IllustratedPoint>
+<IllustratedPoint label="Strategy" illustration={StrategyIllustration} minimal />
+<IllustratedPoint label={<Fragment>Visual <Hide mobile>Design</Hide></Fragment>} illustration={VisualIllustration} minimal />
+<IllustratedPoint label={<Fragment>Product <Hide mobile>Design</Hide></Fragment>} illustration={ProductIllustration} minimal />
 
-<IllustratedPoint label="Web development" illustration={WebIllustration}>
-  <Paragraph inverse>
-    Because you need more than just a Facebook page. Django, WordPress, Gatsby, React, Rails—we've
-    been doing this a long time, so we know how to design & build gorgeous websites that are fast,
-    accessible, and mobile-optimised. Oh, and they'll be SEO optimised and privacy-aware to boot.
-  </Paragraph>
-</IllustratedPoint>
-
-<IllustratedPoint label="App development" illustration={AppIllustration}>
-  <Paragraph inverse>
-    Need a web app or a native mobile app? We love building apps that delight users and solve real
-    problems. Whether it's a React Native app or a full-stack solution, you can rest assured that
-    you'll end up with an app that's stable, performant, easy to use, and delightful.
-  </Paragraph>
-</IllustratedPoint>
-
-<IllustratedPoint label="Product design" illustration={ProductIllustration}>
-  <Paragraph inverse>
-    Design isn't just about making it pretty—it's about how it works. We approach problems from a
-    user-centric perspective, ensuring every interaction is intuitive and pleasant. From user
-    research to usability testing and all the journey maps, wireframes, and prototypes in between,
-    we've got you covered.
-  </Paragraph>
-</IllustratedPoint>
-
-<IllustratedPoint label="Visual design" illustration={VisualIllustration}>
-  <Paragraph inverse>
-    Once you've got everything usable, you may want to make it pretty after all. Graphic design is
-    about using visual media to communicate a message. Whatever you need—design systems, branding,
-    visualisations, web design—we ensure your message is communicated clearly and effectively.
-  </Paragraph>
-</IllustratedPoint>
+<IllustratedPoint label="Accessibility" illustration={AccessibilityIllustration} minimal />
+<IllustratedPoint label={<Fragment><Hide tablet desktop screenreaders>Mobile</Hide> App<Hide tablet desktop screenreaders>s</Hide> <Hide mobile>Development</Hide></Fragment>} illustration={AppIllustration} minimal />
+<IllustratedPoint label={<Fragment>Web<Hide tablet desktop screenreaders>sites</Hide> <Hide mobile>Development</Hide></Fragment>} illustration={WebIllustration} minimal />
 
 </Panel>
 
-<Panel>
 
-## How we work
+<Panel gridMobile="1fr" gridTablet="1fr 1fr" gridDesktop="1fr 1fr 1fr">
+  <GridSpanner>
+    <Heading level={2}>Some of our work</Heading>
+  </GridSpanner>
 
-Every project is different, so we don't adhere to a rigid process. Our process follows an adaptable framework that responds to the unique needs of your project.
+<PortfolioCards number={10} />
+</Panel>
 
-<!-- [process diagram] -->
+<TestimonialCarousel />
 
-We've spent the last decade working remotely with small and large organisations so we're great communicators and we know how to manage work across divergent time zones. We're also available to work on-site if the project calls for it, to do staff training, or for short periods during a longer project. Here's what you can expect of working with us:
+<Panel fullwidth>
+  <FriendLogos abbreviated title="The company we keep" />
+</Panel>
 
-<div
-  css={css`
-    li {
-      margin-bottom: 1.6rem;
-    }
-  `}
->
+<Panel dark>
+
+<div>
+
+Here's what you can expect of working with us:
 
 - **Frequent status updates.** Communication is what makes or breaks a project.
 - **Clear milestones, ownership, and deliverables.** Setting expectations up-front and having clear lines of delivery makes for a smoother, more pleasant experience.
@@ -114,18 +86,10 @@ We've spent the last decade working remotely with small and large organisations 
 
 </Panel>
 
-<TestimonialCarousel />
-
 <Panel>
 
 ## Work with us
 
-If you're ready to discuss your project with us, [drop us a line](/contact) for a no-strings-attached estimate.
-
-Just in the planning stages? **Reach out anyway!** We can help you plan, focus, research, and give you unbiased feedback about your idea. We once talked a client out of a lucrative contract because it wasn't the best fit for their needs. Rest assured we have no interest in up-selling you.
-
-<Button navigation to="/contact" minimal>
-  Contact us to discuss your project
-</Button>
+We're always interested in hearing from people with exciting projects. If you're ready to discuss your project with us, drop us a line at [hello@octopusthink.com](mailto:hello@octopusthink.com) for a no-strings-attached estimate. You'll hear back from us within 48 hours.
 
 </Panel>

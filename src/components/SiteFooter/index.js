@@ -2,11 +2,11 @@ import { css } from '@emotion/core';
 import { Link, Paragraph, metadata, useTheme } from '@octopusthink/nautilus';
 import React, { useRef } from 'react';
 
-import ButtonInverse from 'components/ButtonInverse';
 import NewsletterSignupForm from 'components/NewsletterSignupForm';
 import SiteMap from 'components/SiteMap';
 import SocialMediaLinks from 'components/SocialMediaLinks';
 import Logo from 'static/octopusthink.svg';
+import AppsMenu from '../AppsMenu';
 
 const SiteFooter = () => {
   const emailRef = useRef();
@@ -25,29 +25,24 @@ const SiteFooter = () => {
         css={css`
           padding: ${theme.site.mobilePadding};
           display: grid;
-          grid-row-gap: ${theme.site.tabletPadding};
+          grid-gap: ${theme.site.tabletPadding};
 
           @media screen and (min-width: 640px) {
+            grid-gap: ${theme.site.tabletPadding};
             grid-template-columns: 6fr 6fr;
             padding: ${theme.site.tabletPadding};
           }
 
-          @media screen and (min-width: 1024px) {
+          @media screen and (min-width: 860px) {
             padding: ${theme.site.desktopPadding};
             max-width: ${theme.site.maxSiteWidth};
             margin: 0 auto;
-            grid-template-columns: 7fr 3fr 2fr;
-            grid-column-gap: ${theme.site.desktopPadding};
+            grid-template-columns: 6fr 3fr 3fr;
+            grid-gap: ${theme.site.desktopPadding};
           }
         `}
       >
-        <div
-          css={css`
-            @media screen and (min-width: 640px) and (max-width: 1023px) {
-              grid-column: 1 / span 2;
-            }
-          `}
-        >
+        <div>
           <Logo
             css={css`
               margin: 0 0 3.2rem -1.6rem;
@@ -57,88 +52,38 @@ const SiteFooter = () => {
           <Paragraph
             inverse
             large
+            noMargin
             css={css`
               letter-spacing: -0.025em;
             `}
           >
-            Octopus Think is a design &amp; development agency specialising in user-centred design
-            and React development. We build smart, inclusive, usable digital products that make
-            people’s lives better.
-          </Paragraph>
-          <Paragraph
-            inverse
-            large
-            css={css`
-              letter-spacing: -0.025em;
-              margin-bottom: 1.6rem;
-            `}
-          >
-            Ready for your technology to work for you?
-          </Paragraph>
-          <Paragraph
-            inverse
-            large
-            css={css`
-              letter-spacing: -0.025em;
-              margin-bottom: 0;
-            `}
-          >
-            <ButtonInverse
-              minimal
-              navigation
-              to="/contact"
-              css={css`
-                font-size: 2.1rem;
-                margin: 0;
-              `}
-            >
-              Contact us!
-            </ButtonInverse>
+            Octopus Think is a design &amp; development duo based in Scotland and Portugal. We build
+            smart, inclusive, usable digital products that make people’s lives better.
           </Paragraph>
         </div>
 
-        <SiteMap
-          css={css`
-            @media screen and (min-width: 1024px) {
-              margin-top: 8rem;
-            }
-          `}
-        />
+        <SiteMap />
 
-        <SocialMediaLinks
-          css={css`
-            @media screen and (min-width: 1024px) {
-              margin-top: 8rem;
-            }
-          `}
-        />
+        <AppsMenu />
 
         <div
           css={css`
-            @media screen and (min-width: 640px) and (max-width: 1023px) {
-              grid-column: 1 / span 2;
-            }
+            grid-column: 1 / -1;
+            max-width: 640px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
 
-            @media screen and (min-width: 1024px) {
-              grid-column: 2 / -1;
-              order: 5;
-            }
-
-            label {
-              border: 0;
-              clip-path: rect(0 0 0 0);
-              height: 1px;
-              margin: -1px;
-              overflow: hidden;
-              padding: 0;
-              position: absolute;
-              white-space: nowrap;
-              width: 1px;
-            }
-
-            @media screen and (min-width: 640px) {
-              button {
-                margin-top: -0.4rem;
+              label {
+                border: 0;
+                clip-path: rect(0 0 0 0);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+                white-space: nowrap;
+                width: 1px;
               }
             }
           `}
@@ -164,58 +109,96 @@ const SiteFooter = () => {
           <NewsletterSignupForm emailRef={emailRef} />
         </div>
 
+        <SocialMediaLinks
+          css={css`
+            grid-column: 1 / -1;
+          `}
+        />
+
         <Paragraph
           small
           inverse
           dark
           css={css`
             font-size: 1.6rem;
-            margin: 0;
+            margin: 0 auto;
+            grid-column: 1 / -1;
+            width: 100%;
+            text-align: center;
 
-            @media screen and (min-width: 640px) and (max-width: 1023px) {
-              grid-column: 1 / span 2;
-            }
+            .line {
+              white-space: nowrap;
 
-            @media screen and (min-width: 1024px) {
-              grid-column: 1 / 2;
+              @media screen and (max-width: 639px) {
+                display: block;
+                margin-bottom: 0.4rem;
+              }
+
+              @media screen and (min-width: 640px) and (max-width: 1024px) {
+                &:nth-of-type(odd):after {
+                  display: inline;
+                  content: '·';
+                  padding-left: 0.8rem;
+                  padding-right: 0.8rem;
+                }
+
+                &:nth-of-type(even):after {
+                  display: block;
+                  content: '';
+                }
+              }
+
+              @media screen and (min-width: 1024px) {
+                &:not(:last-of-type):after {
+                  display: inline;
+                  content: '·';
+                  padding-left: 0.8rem;
+                  padding-right: 0.8rem;
+                }
+              }
             }
           `}
         >
-          <span
-            css={css`
-              display: none;
-            `}
-          >
-            Copyright
-          </span>{' '}
-          © 2020 Octopus Think Ltd.
-          <br />
-          UK Registered Company No.{' '}
-          <Link
-            external
-            css={css`
-              box-shadow: 0 0.2rem ${theme.colors.text.inverseDark};
-              color: ${theme.colors.text.inverseDark};
-            `}
-            href="https://beta.companieshouse.gov.uk/company/11747595"
-          >
-            11747595
-          </Link>
-          <br />
-          VAT ID: GB324954685
-          <br />
-          <Link
-            external
-            css={css`
-              box-shadow: 0 0.2rem ${theme.colors.text.inverseDark};
-              color: ${theme.colors.text.inverseDark};
-            `}
-            href="https://github.com/octopusthink/octopusthink.com/issues/new"
-          >
-            {' '}
-            Report an issue
-          </Link>{' '}
-          with this site
+          <span className="line">
+            <span
+              css={css`
+                display: none;
+              `}
+            >
+              Copyright
+            </span>{' '}
+            © 2020 Octopus Think Ltd.
+          </span>
+
+          <span className="line">
+            UK Registered Company No.{' '}
+            <Link
+              external
+              css={css`
+                box-shadow: 0 0.2rem ${theme.colors.text.inverseDark};
+                color: ${theme.colors.text.inverseDark};
+              `}
+              href="https://beta.companieshouse.gov.uk/company/11747595"
+            >
+              11747595
+            </Link>
+          </span>
+
+          <span className="line">VAT ID: GB324954685</span>
+
+          <span className="line">
+            <Link
+              external
+              css={css`
+                box-shadow: 0 0.2rem ${theme.colors.text.inverseDark};
+                color: ${theme.colors.text.inverseDark};
+              `}
+              href="https://github.com/octopusthink/octopusthink.com/issues/new"
+            >
+              Report an issue
+            </Link>{' '}
+            with this site
+          </span>
         </Paragraph>
       </div>
     </footer>
