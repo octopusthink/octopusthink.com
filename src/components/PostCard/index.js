@@ -32,7 +32,13 @@ const PostCard = (props) => {
   return (
     <article
       css={css`
-        margin-bottom: -3.2rem;
+        @media screen and (max-width: 1023px) {
+          margin-bottom: 3.2rem;
+        }
+
+        @media screen and (min-width: 1024px) {
+          margin-bottom: -3.2rem;
+        }
       `}
     >
       <CardImage
