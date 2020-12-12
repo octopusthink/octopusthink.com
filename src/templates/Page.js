@@ -14,7 +14,7 @@ export const Page = (props) => {
 
   const { page } = data;
   const { body } = page;
-  const { canonical, ctaText, ctaURL, metaDescription, slug, summary, title } = page.fields;
+  const { canonical, metaDescription, slug, summary, title } = page.fields;
 
   const description = metaDescription || summary;
 
@@ -22,13 +22,7 @@ export const Page = (props) => {
     <App>
       <SEO canonical={canonical} title={title} description={description} pathname={slug} />
       <PageWrapper>
-        <PageHeader
-          ctaText={ctaText}
-          ctaURL={ctaURL}
-          summary={summary}
-          description={description}
-          title={title}
-        />
+        <PageHeader summary={summary} description={description} title={title} />
         <PageBody>
           <MDXRenderer>{body}</MDXRenderer>
         </PageBody>
@@ -43,8 +37,6 @@ export const pageQuery = graphql`
     page: mdx(id: { eq: $id }) {
       fields {
         canonical
-        ctaText
-        ctaURL
         metaDescription
         slug
         summary
