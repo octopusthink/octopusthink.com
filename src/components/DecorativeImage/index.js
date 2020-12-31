@@ -5,7 +5,7 @@ import { css } from '@emotion/core';
 import Image from 'components/Image';
 
 const DecorativeImage = (props) => {
-  const { alt, background, caption, children, image, overlap, noMargin } = props;
+  const { alt, background, caption, children, image, overlap, noMargin, shadow } = props;
   const theme = useTheme();
 
   // HACK: Prevent errors encountered by `gatsby-plugin-mdx` on `npm run build`.
@@ -23,9 +23,13 @@ const DecorativeImage = (props) => {
         ${background &&
           css`
             background: ${theme.colors.neutral.grey800};
-            border: 8px solid ${theme.colors.neutral.grey800};
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.125);
+            //border: 8px solid ${theme.colors.neutral.grey800};
           `}
+          ${shadow ||
+            (background &&
+              css`
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.125);
+              `)}
         ${!noMargin &&
           css`
             margin-top: 6.4rem;
