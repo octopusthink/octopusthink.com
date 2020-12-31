@@ -23,7 +23,6 @@ const DecorativeImage = (props) => {
         ${background &&
           css`
             background: ${theme.colors.neutral.grey800};
-            //border: 8px solid ${theme.colors.neutral.grey800};
           `}
           ${shadow ||
             (background &&
