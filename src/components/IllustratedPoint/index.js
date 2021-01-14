@@ -100,7 +100,10 @@ const IllustratedPoint = (props) => {
           <Heading
             level={3}
             css={css`
+               {
+                inverse&&
               color: ${theme.colors.text.inverse};
+              }
             `}
           >
             {label}
