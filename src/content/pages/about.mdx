@@ -13,6 +13,7 @@ import { Button, Heading, Paragraph } from '@octopusthink/nautilus'
 
 import IllustratedPoint from 'components/IllustratedPoint'
 import Panel from 'components/Panel'
+import StrikeOut from 'components/StrikeOut'
 
 import CareIllustration from 'static/illustrations/we-care.svg'
 import ListenIllustration from 'static/illustrations/we-listen.svg'
@@ -41,15 +42,21 @@ We never, ever sell your data or snoop on you. We only collect data to make our 
 
 </Panel>
 
-<Panel dark gridTablet="1fr 1fr">
+<Panel dark>
 
-<Paragraph inverse> 
+<ul>
+<StrikeOut strikeoutText="clever"> 
+simple
+</StrikeOut>
 
-- ~~clever~~ simple
-- ~~exclusive~~ open
-- ~~safety~~ boldness
+<StrikeOut strikeoutText="exclusive"> 
+open
+</StrikeOut>
 
-</Paragraph>
+<StrikeOut strikeoutText="conservative"> 
+bold
+</StrikeOut>
+</ul>
 
 </Panel>
 
