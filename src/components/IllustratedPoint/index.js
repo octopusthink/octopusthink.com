@@ -6,6 +6,7 @@ import Image from 'components/Image';
 
 const IllustratedPoint = (props) => {
   const {
+    boxed,
     children,
     illustration: Illustration,
     label,
@@ -77,53 +78,68 @@ const IllustratedPoint = (props) => {
 
       <div
         css={css`
-          text-align: center;
+          ${boxed &&
+            css`
+              border-radius: 3.2rem;
+              box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.125);
+              padding: 6.4rem 2.4rem 1.6rem;
+              margin-top: -6.4rem;
+            `}
         `}
       >
-        {metadataProp && (
-          <Tags label="Title">
-            <Tags.Tag>
-              <span
-                css={css`
-                  color: ${theme.colors.neutral.grey600};
-                  display: inline-block;
-                  padding-bottom: 0.4rem;
-                `}
-              >
-                {metadataProp}
-              </span>
-            </Tags.Tag>
-          </Tags>
-        )}
+        <div
+          css={css`
+            text-align: center;
+            ${boxed &&
+              css`
+                margin-bottom: 3.2rem;
+              `}
+          `}
+        >
+          {metadataProp && (
+            <Tags label="Title">
+              <Tags.Tag>
+                <span
+                  css={css`
+                    color: ${theme.colors.neutral.grey600};
+                    display: inline-block;
+                    padding-bottom: 0.4rem;
+                  `}
+                >
+                  {metadataProp}
+                </span>
+              </Tags.Tag>
+            </Tags>
+          )}
 
-        {!minimal && (
-          <Heading
-            level={3}
-            css={css`
-               {
-                inverse&&
-              color: ${theme.colors.text.inverse};
-              }
-            `}
-          >
-            {label}
-          </Heading>
-        )}
+          {!minimal && (
+            <Heading
+              level={3}
+              css={css`
+                 {
+                  inverse&&color: ${theme.colors.text.inverse};
+                }
+              `}
+            >
+              {label}
+            </Heading>
+          )}
 
-        {minimal && (
-          <Paragraph
-            css={css`
-              color: ${theme.colors.text.inverse};
-              ${metadata.small(theme)};
-              margin-bottom: 0;
-            `}
-          >
-            {label}
-          </Paragraph>
-        )}
+          {minimal && (
+            <Paragraph
+              css={css`
+                color: ${theme.colors.text.inverse};
+                ${metadata.small(theme)};
+                margin-bottom: 0;
+              `}
+            >
+              {label}
+            </Paragraph>
+          )}
+        </div>
+
+        <div>{children}</div>
       </div>
-
-      <div>{children}</div>
     </div>
   );
 };
