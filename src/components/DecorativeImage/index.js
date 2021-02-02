@@ -50,7 +50,10 @@ const DecorativeImage = (props) => {
           css={css`
             ${body.small(theme)};
             color: ${theme.colors.text.light};
-            text-align: center;
+            max-width: 60rem;
+            margin-top: 1.6rem;
+            margin-bottom: 1.6rem;
+            opacity: 0.8;
           `}
         >
           {caption}
