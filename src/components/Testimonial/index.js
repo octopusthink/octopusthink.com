@@ -1,36 +1,12 @@
-import { Link, metadata, useTheme } from '@octopusthink/nautilus';
+import { metadata, useTheme } from '@octopusthink/nautilus';
 import React from 'react';
 import { css } from '@emotion/core';
-
-const TestimonialLink = ({ company, name, url }) => {
-  const theme = useTheme();
-
-  if (!url) {
-    return null;
-  }
-
-  return (
-    <Link
-      href={url}
-      css={css`
-        color: ${theme.colors.text.inverse};
-        border-color: ${theme.colors.text.inverseDark};
-      `}
-    >
-      {company || name}
-    </Link>
-  );
-};
 
 const Testimonial = (props) => {
   const { name, children, company, title, url } = props;
   const theme = useTheme();
 
   let attribution;
-  // eslint-disable-next-line react/jsx-props-no-spreading
-  const nameLink = !company && url ? <TestimonialLink {...props} /> : name;
-  // eslint-disable-next-line react/jsx-props-no-spreading
-  const companyLink = company && url && <TestimonialLink {...props} />;
 
   if (company && url) {
     attribution = (
@@ -41,7 +17,7 @@ const Testimonial = (props) => {
             {', '}
           </React.Fragment>
         )}
-        {companyLink}
+        {company}
       </React.Fragment>
     );
   } else if (title && company) {
@@ -85,7 +61,7 @@ const Testimonial = (props) => {
           font-style: normal;
         `}
       >
-        {nameLink}
+        {name}
         {attribution && (
           <React.Fragment>
             {' · '}
