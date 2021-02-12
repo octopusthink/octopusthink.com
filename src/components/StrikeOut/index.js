@@ -24,6 +24,7 @@ const StrikeOut = (props) => {
         css={css`
           color: ${theme.colors.neutral.grey800};
           margin-right: 0.4rem;
+          opacity: 0.75;
           text-decoration: line-through;
         `}
       >
