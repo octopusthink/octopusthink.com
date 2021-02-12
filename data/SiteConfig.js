@@ -9,7 +9,7 @@ const config = {
   siteDescription:
     'Octopus Think is a design and development agency based in Scotland and Portugal. We build inclusive, usable, and smart websites and apps.', // Website description used for RSS feeds/meta description tag.
   siteRss: '/blog/rss.xml', // Path to the RSS file.
-  twitter: '@octopusthinks',
+  twitter: '@octopusthink',
   copyright: `Copyright © ${new Date().getFullYear()}. Octopus Think Ltd.`, // Copyright string for the footer of the website and RSS feed.
   defaultImage: '/images/og-images/default.png', // Fallback image used when sharing to social sites.
   imageHeight: '630',

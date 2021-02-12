@@ -30,15 +30,15 @@ const SocialMediaLinks = (props) => {
         }
       `}
     >
-      <ListLink a link="https://twitter.com/octopusthinks" iconName="twitter" centre>
+      <ListLink a link="https://twitter.com/octopusthink" iconName="twitter" centre>
         <span className="label">Twitter</span>
       </ListLink>
 
-      <ListLink a link="//instagram.com/octopusthinks" iconName="instagram" centre>
+      <ListLink a link="https://instagram.com/octopusthinks" iconName="instagram" centre>
         <span className="label">Instagram</span>
       </ListLink>
 
-      <ListLink a link="//github.com/octopusthink" iconName="github" centre>
+      <ListLink a link="https://github.com/octopusthink" iconName="github" centre>
         <span className="label">GitHub</span>
       </ListLink>
     </ul>

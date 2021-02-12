@@ -43,6 +43,6 @@ As for the future, we have a _lot_ of different ideas brewing. Follow along to s
 
 ## Follow along
 
-Want to keep track of what we're up to? For now, you can follow our updates via Twitter: [@octopusthinks](https://twitter.com/octopusthinks). We'll also be sharing selected stories via Medium [@octopus-thinks](https://medium.com/octopus-thinks).
+Want to keep track of what we're up to? For now, you can follow our updates via Twitter: [@octopusthink](https://twitter.com/octopusthink). We'll also be sharing selected stories via Medium [@octopus-thinks](https://medium.com/octopus-thinks).
 
 We also have an [RSS feed](https://octopusthink.com/blog/rss.xml) if you're into that sort of thing, and a newsletter you can sign up for at the bottom of the site.
