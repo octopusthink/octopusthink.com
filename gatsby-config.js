@@ -220,7 +220,7 @@ module.exports = {
     //       OctopusTweets: {
     //         endpoint: `statuses/user_timeline`,
     //         params: {
-    //           screen_name: `octopusthinks`,
+    //           screen_name: `octopusthink`,
     //           include_rts: false,
     //           exclude_replies: false,
     //           tweet_mode: `extended`,

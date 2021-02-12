@@ -34,7 +34,7 @@ const SocialMediaLinks = (props) => {
         <span className="label">Twitter</span>
       </ListLink>
 
-      <ListLink a link="https://instagram.com/octopusthinks" iconName="instagram" centre>
+      <ListLink a link="https://instagram.com/octopusthink" iconName="instagram" centre>
         <span className="label">Instagram</span>
       </ListLink>
 
