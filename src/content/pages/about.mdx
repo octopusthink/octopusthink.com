@@ -16,6 +16,7 @@ import KeyValue from 'components/KeyValue'
 import GridSpanner from 'components/GridSpanner'
 import Panel from 'components/Panel'
 import StrikeOut from 'components/StrikeOut'
+import Statistic from 'components/Statistic'
 
 import CareIllustration from 'static/illustrations/we-care.svg'
 import ListenIllustration from 'static/illustrations/we-listen.svg'
@@ -104,6 +105,7 @@ bold
 <Heading inverse>Our values</Heading>
 </GridSpanner>
 
+
 - Accessibility and usability can co-exist with beauty.
 - Respect your users.
 - Be inclusive, transparent, and fair.
@@ -112,15 +114,22 @@ bold
 
 </Panel>
 
-<Panel>
+<Panel gridTablet="1fr 1fr 1fr">
+
+<GridSpanner>
 
 ## Impact
 
-- £667.60 donated to Scottish Women's Aid
-- £306.38 donated to Scottish Refugee Council
-- 50% of Mic Drop's 2020 revenues go to charitable organisations.
-- 2.4 million downloads/month of localForage
-- [xxx] commits to WordPress
-- 251 hours donated to open-source projects
+</GridSpanner>
+
+<Statistic preUnits="£" number="1185" label="Donated to charity (2020)" />
+<Statistic number="1.36" postUnits="k/month" label="Mics muted with Mic Drop" />
+<Statistic number="256" postUnits="hours" label="Open-source contributions (2020)" />
+
+
+<Statistic number="2.4" postUnits="million" label="Monthly localForage downloads" />
+<Statistic number="36" postUnits="pots" label="Coffee consumed (day)" />
+<Statistic number="1" postUnits="% profits" label="Donation pledge for 2021" />
+
 
 </Panel>
