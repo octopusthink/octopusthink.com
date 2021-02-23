@@ -167,7 +167,7 @@ const SiteFooter = () => {
             >
               Copyright
             </span>{' '}
-            © 2020 Octopus Think Ltd.
+            © {new Date().getFullYear()} Octopus Think Ltd.
           </span>
 
           <span className="line">
