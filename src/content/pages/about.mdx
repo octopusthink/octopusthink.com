@@ -22,21 +22,21 @@ import CareIllustration from 'static/illustrations/we-care.svg'
 import ListenIllustration from 'static/illustrations/we-listen.svg'
 import PrivacyIllustration from 'static/illustrations/we-respect-your-privacy.svg'
 
-<Panel gridTablet="1fr 1fr 1fr">
+<Panel>
 
-<IllustratedPoint label="We care" metadata="Empathy" illustration={CareIllustration} small>
+<IllustratedPoint horizontal label="We care" illustration={CareIllustration} small>
 
 We believe technology can build a better world, and we're thoughtful about every decision we make. We want technology to improve your life and solve real problems—not just make you buy more stuff.
 
 </IllustratedPoint>
 
-<IllustratedPoint label="We listen" metadata="Support" illustration={ListenIllustration}>
+<IllustratedPoint horizontal label="We listen" illustration={ListenIllustration}>
 
 We respond personally to every single support request, usually within a matter of hours. We fix bugs fast and we often implement new features based on user feedback. We really want to know what you think.
 
 </IllustratedPoint>
 
-<IllustratedPoint label="We respect you" metadata="Privacy" illustration={PrivacyIllustration}>
+<IllustratedPoint horizontal label="We respect you" illustration={PrivacyIllustration}>
 
 We never, ever sell your data or snoop on you. We only collect data to make our product better for you, and we always explain what we're tracking and why—and allow you to opt out. You are not the product.
 
@@ -122,14 +122,14 @@ bold
 
 </GridSpanner>
 
-<Statistic preUnits="£" number="1185" label="Donated to charity (2020)" />
-<Statistic number="1.36" postUnits="k/month" label="Mics muted with Mic Drop" />
+<Statistic preUnits="£" number="1,185" label="Donated to charity (2020)" />
+<Statistic number="21,500" postUnits="mics" label="Muted with Mic Drop (month)" />
 <Statistic number="256" postUnits="hours" label="Open-source contributions (2020)" />
 
 
-<Statistic number="2.4" postUnits="million" label="Monthly localForage downloads" />
+<Statistic number="2.4" postUnits="million" label="localForage downloads (month)" />
 <Statistic number="36" postUnits="pots" label="Coffee consumed (day)" />
-<Statistic number="1" postUnits="% profits" label="Donation pledge for 2021" />
+<Statistic number="1" postUnits="% profits" label="Donation pledge (2021)" />
 
 
 </Panel>

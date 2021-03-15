@@ -8,6 +8,7 @@ const IllustratedPoint = (props) => {
   const {
     boxed,
     children,
+    horizontal,
     illustration: Illustration,
     label,
     metadata: metadataProp,
@@ -20,7 +21,17 @@ const IllustratedPoint = (props) => {
   const theme = useTheme();
 
   return (
-    <div>
+    <div
+      css={css`
+        ${horizontal &&
+          css`
+            display: grid;
+            grid-template-columns: 24rem auto;
+            text-align: left;
+            align-items: center;
+          `}
+      `}
+    >
       <div
         css={css`
           max-height: 24rem;
@@ -89,7 +100,11 @@ const IllustratedPoint = (props) => {
       >
         <div
           css={css`
-            text-align: center;
+            ${!horizontal &&
+              css`
+                text-align: center;
+              `}
+
             ${boxed &&
               css`
                 margin-bottom: 3.2rem;
