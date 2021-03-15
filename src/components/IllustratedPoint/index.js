@@ -26,13 +26,27 @@ const IllustratedPoint = (props) => {
         ${horizontal &&
           css`
             display: grid;
-            grid-template-columns: 24rem auto;
+            grid-template-columns: 32rem auto;
+            grid-gap: 4rem;
             text-align: left;
             align-items: center;
+            max-width: 96rem;
+            margin-bottom: 4rem;
+
+            &:nth-of-type(even) {
+              grid-template-columns: auto 32rem;
+              margin-right: 0;
+              margin-left: auto;
+
+              .illustration {
+                order: 1;
+              }
+            }
           `}
       `}
     >
       <div
+        className="illustration"
         css={css`
           max-height: 24rem;
           max-width: 24rem;
@@ -53,7 +67,13 @@ const IllustratedPoint = (props) => {
           }
         `}
       >
-        {Illustration && <Illustration />}
+        {Illustration && (
+          <Illustration
+            css={css`
+              max-width: 100%;
+            `}
+          />
+        )}
         {photo && (
           <Image
             src={photo}
