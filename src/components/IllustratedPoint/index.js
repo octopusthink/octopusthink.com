@@ -26,20 +26,32 @@ const IllustratedPoint = (props) => {
         ${horizontal &&
           css`
             display: grid;
-            grid-template-columns: 32rem auto;
-            grid-gap: 4rem;
+
             text-align: left;
             align-items: center;
             max-width: 96rem;
             margin-bottom: 4rem;
 
-            &:nth-of-type(even) {
-              grid-template-columns: auto 32rem;
-              margin-right: 0;
-              margin-left: auto;
+            @media screen and (min-width: 640px) {
+              grid-template-columns: 16rem auto;
+              grid-gap: 4rem;
 
-              .illustration {
-                order: 1;
+              &:nth-of-type(even) {
+                grid-template-columns: auto 16rem;
+                margin-right: 0;
+                margin-left: auto;
+
+                .illustration {
+                  order: 1;
+                }
+              }
+            }
+
+            @media screen and (min-width: 860px) {
+              grid-template-columns: 32rem auto;
+
+              &:nth-of-type(even) {
+                grid-template-columns: auto 32rem;
               }
             }
           `}

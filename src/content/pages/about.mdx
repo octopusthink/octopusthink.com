@@ -9,7 +9,8 @@ component: PageWithoutPageBody
 canonical: 'https://octopusthink.com/about/'
 ---
 
-import { Button, Heading, Paragraph } from '@octopusthink/nautilus'
+import { Fragment } from 'react';
+import { Button, Heading, Paragraph, Strong } from '@octopusthink/nautilus'
 
 import IllustratedPoint from 'components/IllustratedPoint'
 import KeyValue from 'components/KeyValue'
@@ -24,18 +25,18 @@ import PrivacyIllustration from 'static/illustrations/we-respect-your-privacy.sv
 
 <Panel gridTablet="100%">
 
-<IllustratedPoint horizontal label="We care." illustration={CareIllustration} small>
+<IllustratedPoint horizontal label={<Fragment>We <Strong>care</Strong>.</Fragment>} illustration={CareIllustration} small>
 
 Technology should be honest, thoughtful, and pleasant to use. More than that, it should improve your life and reduce stress. We think deeply about everything we do in order to build better products that solve real problems in an ethical way. 
 
 </IllustratedPoint>
 
-<IllustratedPoint horizontal label="We listen." illustration={ListenIllustration}>
+<IllustratedPoint horizontal label={<Fragment>We <Strong>listen</Strong>.</Fragment>} illustration={ListenIllustration}>
 
 We love hearing from our users! We fix bugs fast and we plan our roadmap based on user feedback. We also respond personally to every single support request (usually on the same day). We can't always fix everything, but we'll do our best to try.
 </IllustratedPoint>
 
-<IllustratedPoint horizontal label="We respect your privacy." illustration={PrivacyIllustration}>
+<IllustratedPoint horizontal label={<Fragment>We <Strong>respect</Strong> your privacy.</Fragment>} illustration={PrivacyIllustration}>
 
 Sorry, but we're just not interested enough to spy on you. We never, ever sell your data or snoop on you. We only collect data to make our product better for you, and we always explain what we're tracking and why—and allow you to opt out. You are not the product.
 

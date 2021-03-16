@@ -45,8 +45,8 @@ export const App = (props) => {
             strong {
               background: linear-gradient(
                   -180.5deg,
-                  rgba(255, 255, 255, 0) 45%,
-                  ${theme.colors.text.strongBackground} 45%,
+                  rgba(255, 255, 255, 0) 25%,
+                  ${theme.colors.text.strongBackground} 25%,
                   ${theme.colors.text.strongBackground} 85%,
                   rgba(255, 255, 255, 0) 85%
                 ) !important;
