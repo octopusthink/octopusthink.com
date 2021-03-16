@@ -148,7 +148,7 @@ const IllustratedPoint = (props) => {
               <Tags.Tag>
                 <span
                   css={css`
-                    color: ${theme.colors.neutral.grey600};
+                    color: ${theme.colors.text.light};
                     display: inline-block;
                     padding-bottom: 0.4rem;
                   `}

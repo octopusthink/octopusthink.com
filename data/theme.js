@@ -7,7 +7,7 @@ const colors = {
   grey400: '#bec4cd',
   grey500: '#acb3bf',
   grey600: '#97a0af',
-  grey700: '#818996',
+  grey700: '#6d7786',
   grey800: '#666c76',
   grey900: '#3b3f45',
   black: '#181b1c',
@@ -158,7 +158,7 @@ export const theme = {
     text: {
       default: colors.grey900,
       dark: colors.black,
-      light: colors.grey800,
+      light: colors.grey700,
       inverse: colors.grey200,
       inverseLight: colors.white,
       inverseDark: colors.grey600,

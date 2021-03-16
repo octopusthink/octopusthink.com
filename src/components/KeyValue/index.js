@@ -11,7 +11,7 @@ const KeyValue = (props) => {
       <dt
         css={css`
           ${metadata.small(theme)};
-          color: ${theme.colors.neutral.grey600};
+          color: ${theme.colors.text.light};
           display: block;
         `}
       >
