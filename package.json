@@ -22,7 +22,7 @@
     "@jimp/plugin-resize": "^0.14.0",
     "@mdx-js/mdx": "^1.6.6",
     "@mdx-js/react": "^1.6.6",
-    "@octopusthink/nautilus": "github:octopusthink/nautilus",
+    "@octopusthink/nautilus": "git+https://github.com/octopusthink/nautilus#510eef048f4172a217627defcda03a75921f8c0a",
     "@pauliescanlon/gatsby-mdx-embed": "0.0.21",
     "@use-it/event-listener": "^0.1.3",
     "a11y-react-emoji": "^1.1.2",
