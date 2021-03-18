@@ -6,7 +6,9 @@ import Image from 'components/Image';
 
 const IllustratedPoint = (props) => {
   const {
+    boxed,
     children,
+    horizontal,
     illustration: Illustration,
     label,
     metadata: metadataProp,
@@ -19,8 +21,44 @@ const IllustratedPoint = (props) => {
   const theme = useTheme();
 
   return (
-    <div>
+    <div
+      css={css`
+        ${horizontal &&
+          css`
+            display: grid;
+
+            text-align: left;
+            align-items: center;
+            max-width: 96rem;
+            margin-bottom: 4rem;
+
+            @media screen and (min-width: 640px) {
+              grid-template-columns: 16rem auto;
+              grid-gap: 4rem;
+
+              &:nth-of-type(even) {
+                grid-template-columns: auto 16rem;
+                margin-right: 0;
+                margin-left: auto;
+
+                .illustration {
+                  order: 1;
+                }
+              }
+            }
+
+            @media screen and (min-width: 860px) {
+              grid-template-columns: 32rem auto;
+
+              &:nth-of-type(even) {
+                grid-template-columns: auto 32rem;
+              }
+            }
+          `}
+      `}
+    >
       <div
+        className="illustration"
         css={css`
           max-height: 24rem;
           max-width: 24rem;
@@ -41,7 +79,13 @@ const IllustratedPoint = (props) => {
           }
         `}
       >
-        {Illustration && <Illustration />}
+        {Illustration && (
+          <Illustration
+            css={css`
+              max-width: 100%;
+            `}
+          />
+        )}
         {photo && (
           <Image
             src={photo}
@@ -77,50 +121,72 @@ const IllustratedPoint = (props) => {
 
       <div
         css={css`
-          text-align: center;
+          ${boxed &&
+            css`
+              border-radius: 3.2rem;
+              box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.125);
+              padding: 6.4rem 2.4rem 1.6rem;
+              margin-top: -6.4rem;
+            `}
         `}
       >
-        {metadataProp && (
-          <Tags label="Title">
-            <Tags.Tag>
-              <span
-                css={css`
-                  color: ${theme.colors.neutral.grey600};
-                  display: inline-block;
-                  padding-bottom: 0.4rem;
-                `}
-              >
-                {metadataProp}
-              </span>
-            </Tags.Tag>
-          </Tags>
-        )}
+        <div
+          css={css`
+            ${!horizontal &&
+              css`
+                text-align: center;
+              `}
 
-        {!minimal && (
-          <Heading
-            level={3}
-            css={css`
-              color: ${theme.colors.text.inverse};
-            `}
-          >
-            {label}
-          </Heading>
-        )}
+            ${boxed &&
+              css`
+                margin-bottom: 3.2rem;
+              `}
+          `}
+        >
+          {metadataProp && (
+            <Tags label="Title">
+              <Tags.Tag>
+                <span
+                  css={css`
+                    color: ${theme.colors.text.light};
+                    display: inline-block;
+                    padding-bottom: 0.4rem;
+                  `}
+                >
+                  {metadataProp}
+                </span>
+              </Tags.Tag>
+            </Tags>
+          )}
 
-        {minimal && (
-          <Paragraph
-            css={css`
-              color: ${theme.colors.text.inverse};
-              ${metadata.small(theme)};
-              margin-bottom: 0;
-            `}
-          >
-            {label}
-          </Paragraph>
-        )}
+          {!minimal && (
+            <Heading
+              level={3}
+              css={css`
+                 {
+                  inverse&&color: ${theme.colors.text.inverse};
+                }
+              `}
+            >
+              {label}
+            </Heading>
+          )}
+
+          {minimal && (
+            <Paragraph
+              css={css`
+                color: ${theme.colors.text.inverse};
+                ${metadata.small(theme)};
+                margin-bottom: 0;
+              `}
+            >
+              {label}
+            </Paragraph>
+          )}
+        </div>
+
+        <div>{children}</div>
       </div>
-
-      <div>{children}</div>
     </div>
   );
 };

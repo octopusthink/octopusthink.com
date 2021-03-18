@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240">
+  <g fill="none" fill-rule="evenodd">
+    <circle cx="120" cy="120" r="120" fill="#A0DEE3" fill-opacity=".2"/>
+    <path fill="#0B7285" fill-opacity=".25" stroke="#0B7285" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M122.081633,93 C127.830963,93 133.427619,93.5147884 138.871601,94.5443651 C147.953588,100.215962 154,110.328897 154,121.860215 C154,139.610528 139.673112,154 122,154 C104.326888,154 90,139.610528 90,121.860215 C90,110.358693 96.0152052,100.268235 105.058332,94.5891733 C110.332543,93.5762778 115.750469,93.0476854 121.311935,93.0030828 L122.081633,93 L122.081633,93 Z"/>
+    <path stroke="#0B7285" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M122,93 C147.717949,93 170.384615,103.166667 190,123.5 L189.410623,124.10695 C169.930977,144.03565 147.460769,154 122,154 C96.2820513,154 73.6153846,143.833333 54,123.5 L54,123.5 C73.6153846,103.166667 96.2820513,93 122,93 Z"/>
+    <circle cx="121" cy="122" r="10" fill="#0B7285"/>
+    <circle cx="131" cy="122" r="5" fill="#ECF8F9"/>
+    <g stroke-linecap="round" transform="translate(75 72)">
+      <line x2="77" y1="94" stroke="#ECF8F9" stroke-width="8"/>
+      <line x1="1" x2="78" y1="96" y2="2" stroke="#0B7285" stroke-width="4"/>
+    </g>
+  </g>
+</svg>

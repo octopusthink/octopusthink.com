@@ -1,7 +1,7 @@
 ---
 title: Who we are
 summary: |
-  Octopus Think is a design & development duo based in Scotland and Portugal. We build inclusive, usable, and smart digital products. We love open source and are frequent contributors to major  open source projects. We believe technology is a tool to make the world a better place, and we are guided by ethical decision-making.
+ We build smart, inclusive apps. We care about privacy and usability. Our ethics are non-negotiable.
 
   Oh, and we really like strange ocean creatures. 🐙
 metaDescription: Octopus Think is a digital design & development agency based in Scotland and Portugal.
@@ -9,86 +9,126 @@ component: PageWithoutPageBody
 canonical: 'https://octopusthink.com/about/'
 ---
 
-import { Button, Heading, Paragraph } from '@octopusthink/nautilus'
+import { Fragment } from 'react';
+import { Button, Heading, Paragraph, Strong } from '@octopusthink/nautilus'
 
 import IllustratedPoint from 'components/IllustratedPoint'
+import KeyValue from 'components/KeyValue'
+import GridSpanner from 'components/GridSpanner'
 import Panel from 'components/Panel'
+import StrikeOut from 'components/StrikeOut'
+import Statistic from 'components/Statistic'
 
-<Panel>
+import CareIllustration from 'static/illustrations/we-care.svg'
+import ListenIllustration from 'static/illustrations/we-listen.svg'
+import PrivacyIllustration from 'static/illustrations/we-respect-your-privacy.svg'
 
-## We **care** about stuff.
+<Panel gridTablet="100%">
 
-We believe that technology can be a tool to improve people's lives. As technology becomes more intertwined in our everyday lives, it becomes more important that we build products thoughtfully and empathically. Our mission is to leverage everything we've learned to make the world a little bit better—one website, app, or visualisation at a time.
+<IllustratedPoint horizontal label={<Fragment>We <Strong>care</Strong>.</Fragment>} illustration={CareIllustration} small>
 
-We care deeply about making the world a better, fairer place, and we're not willing to compromise our values to make a quick quid. We make the most **ethical decisions** possible, from the projects we take on to the tools we use (sorry Monsanto, we're not interested). We work with governments so vital services are accessible and friendly and we leverage our experience with big companies to help small businesses realise big ideas.
+Technology should be honest, thoughtful, and pleasant to use. More than that, it should improve your life and reduce stress. We build products that solve real problems in an ethical way.
 
-## We don't do **busy work**.
+</IllustratedPoint>
 
-Staying small allows us to be nimble and adapt easily. We get things done without getting bogged down in endless meetings or onerous administrative overhead. If we can take a boring task off your plate so you can direct your energy better—we'll be delighted.
+<IllustratedPoint horizontal label={<Fragment>We <Strong>listen</Strong>.</Fragment>} illustration={ListenIllustration}>
 
-We love **automation and efficiency**, which is a thread that runs through all of our work. Want to talk about tooling and improving your workflows? We love that kind of thing, and it's evidenced in our best work.
+We love hearing from users! We fix bugs fast and we plan our roadmap based on user feedback. We respond personally to every single support request. We can't always fix everything, but we'll do our best to try.
+</IllustratedPoint>
 
-## We get things **done**.
+<IllustratedPoint horizontal label={<Fragment>We <Strong>respect</Strong> your privacy.</Fragment>} illustration={PrivacyIllustration}>
 
-We've been on the Internet since MUDs and Mosaic. (Remember those? No? We do!) We've worked on a wide range of projects with clients of all sizes. We've built experiences for hundreds of **millions of users** across the world. We've contributed thousands of hours to major open-source software projects. We've spoken at conferences all over the world, and we've taught, mentored, and encouraged all sorts of different people along the way.
+We never, ever sell your data or snoop on you. Metrics are used to make products better, not track you. We explain how we handle user data and require your explicit opt-in before obtaining it. You are not the product.
 
-We eschew clever for **simple**, exclusive for **open**, and safety for **boldness**.
+</IllustratedPoint>
+
 
 </Panel>
 
-<Panel dark gridTablet="1fr 1fr">
+<Panel dark>
+
+<ul>
+<StrikeOut strikeoutText="clever">
+simple
+</StrikeOut>
+
+<StrikeOut strikeoutText="exclusive">
+open
+</StrikeOut>
+
+<StrikeOut strikeoutText="conservative">
+bold
+</StrikeOut>
+</ul>
+
+</Panel>
+
+
+
+<Panel gridTablet="1fr 1fr">
   <IllustratedPoint
     label="Sarah London Semark"
     metadata="Chief Design Octopus"
     photo="sarah-serious.jpg"
     photoAlt="Two photos of Sarah: one looking serious, one sticking out her tongue."
     photoHover="sarah-silly.jpg"
+    boxed
   >
-    <Paragraph inverse>
-      Sarah calls herself a "designer who codes", which means she cares most about user needs and
-      typography but can also write a React component when the mood strikes. She’s spoken at
-      conferences around the world about design, inclusion, and technology. You can find her working
-      happily wherever art and science intersect.
-    </Paragraph>
+    <dl>
+    <KeyValue keyName="Official title" valueName="CDO (Chief Design Octopus)" />
+    <KeyValue keyName="What I actually do" valueName="File GitHub issues, doodle octopus arms." />
+    <KeyValue keyName="Favourite typeface" valueName="Harriet" />
+    <KeyValue keyName="Secret superpower" valueName="Can spot a typo a mile away." />
+    </dl>
   </IllustratedPoint>
+
   <IllustratedPoint
     label="Matthew Riley MacPherson"
     metadata="Chief Technical Octopus"
     photo="matt-serious.jpg"
     photoAlt="Two photos of Matt: one serious, looking out a window, and one in which he is being eaten by a stuffed shark and looking silly."
     photoHover="matt-silly.jpg"
+    boxed
   >
-    <Paragraph inverse>
-      Matt is a full-stack developer with a soft spot for React and JavaScript. An enthusiastic
-      contributor to open-source projects, he wrote the popular localForage library. He’s hosted
-      workshops around the world and spoken at conferences on nearly every continent. He cares about
-      accessibility, automation, and writing clean, readable code.
-    </Paragraph>
+    <dl>
+    <KeyValue keyName="Official title" valueName="CTO (Chief Technical Octopus)" />
+    <KeyValue keyName="What I actually do" valueName="Build things, break things, obsess over coffee." />
+    <KeyValue keyName="Favourite typeface" valueName="DejaVu Sans Mono" />
+    <KeyValue keyName="Secret superpower" valueName="Somehow has never received a speeding ticket." />
+    </dl>
   </IllustratedPoint>
 </Panel>
 
-<Panel>
+<Panel dark>
 
-## Our values
+<GridSpanner>
+<Heading inverse>Our values</Heading>
+</GridSpanner>
 
-You shouldn't need to compromise on the things you believe just to keep the lights on. We are advocates of inclusive design, fans of open source, and we believe that technology is a tool to make the world a better place.
+- Accessibility and usability can co-exist with beauty.
+- Respect your users.
+- Be inclusive, transparent, and fair.
+- Privacy is a fundamental human right.
+- Leave your ego at the door.
 
-- We believe that accessibility, beauty, and usability co-exist.
-- We aim for transparency, clarity, and openness.
-- We are advocates for inclusive design and open source.
-- We leave our egos at the door and are pragmatic; not dogmatic.
-- We improve with every project and love to pass on what we're learned.
+</Panel>
 
-Are you making the world a better place? We offer a 15% discount for charities, non-profits, and open-source work.
+<Panel gridTablet="1fr 1fr 1fr">
 
-## Hire us
+<GridSpanner>
 
-Have an idea you want to build? Maybe you need some extra resources to join your existing team?
+## Impact
 
-Drop us a line and we'll talk.
+</GridSpanner>
 
-<Button navigation to="/contact" minimal>
-  Get in touch with us
-</Button>
+<Statistic preUnits="£" number="1,185" label="Donated to charity (2020)" />
+<Statistic number="21,500" postUnits="mics" label="Muted with Mic Drop (per month)" />
+<Statistic number="256" postUnits="hours" label="Open-source contributions (2020)" />
+
+
+<Statistic number="2.4" postUnits="million" label="localForage downloads (per month)" />
+<Statistic number="1" postUnits="% profits" label="Donation pledge (2021)" />
+<Statistic number="36" postUnits="pots" label="Coffee consumed (per day, roughly)" />
+
 
 </Panel>
